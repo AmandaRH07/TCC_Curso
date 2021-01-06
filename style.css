@@ -1,0 +1,71 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+
+* {
+    margin: 0;
+    /* background-color: #fafbf9; */
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+
+main{
+    display: flex; 
+}
+
+/* Classes */
+
+.roof{
+    background-color: #ED553B;
+    height: 75px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: #FCFFF5;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.menu-left{
+    height: 500px;
+    width: 10%;
+    background-color: #112F41;
+    border-radius: 0 5px 5px 0;
+    position: fixed;
+}
+
+.symptoms{
+    background-color: #112f41;
+    height: 350px;
+    width: 1000px;
+    border-radius: 5px;
+    margin: 20%;
+    margin-top: 20px;
+}
+
+.notes{
+    background-color: #FCFFF5;
+    border-radius: 5px;
+    height: 250px;
+    width: 150px;
+    margin: 15px;
+    margin-top: 25px;
+    float: right;
+}
+
+.calendar{
+    /* display: flex;
+    flex-direction: row; */
+    background-color: #4FB99F;
+    height: 300px;
+    width: 1000px;
+    
+}
+
+/* Fim Classes */
