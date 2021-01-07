@@ -3,6 +3,7 @@
 #E6EBE0 gelo
 #ED553B salmao
 #4FB99F verde piscina
+#068587 verde piscina escuro
 #3DCCC7 azul claro 
 #112F41 azul escuro*/
 
@@ -47,6 +48,7 @@ main{
     align-self: start;
 }
 
+/* Específicos */
 .symptoms{
     background-color: #112f41;
     height: 25%;
@@ -79,6 +81,8 @@ main{
     width: 100%;
     height: 100%;
 }
+
+/* Fim específicos */
 
 /* Fim Classes */
 
