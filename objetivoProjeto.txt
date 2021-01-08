@@ -1,0 +1,4 @@
+O MedFile visa solucionar a individualidade e separações de documentos médicos,
+compactando todas as ramificações em um só lugar.
+
+08/01/2021
