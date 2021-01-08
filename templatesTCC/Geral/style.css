@@ -1,0 +1,98 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+
+* {
+    margin: 0;
+    /* background-color: #fafbf9; */
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+
+main{
+    display: flex; 
+}
+
+/* Classes */
+
+.roof{
+    background-color: #ED553B;
+    height: 75px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: #FCFFF5;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+}
+
+/* fiz uma classe para a main e boteo o flex nela */
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-left{
+    height: 450px;
+    width: 10%;
+    background-color: #112F41;
+    border-radius: 0 5px 5px 0;
+    position: fixed;
+    align-self: start;
+}
+
+/* Específicos */
+.symptoms{
+    background-color: #112f41;
+    height: 25%;
+    width: 70%;
+    border-radius: 5px;
+    margin: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.notes{
+    background-color: #FCFFF5;
+    border-radius: 5px;
+    height: 200px;
+    width: 20%;
+    margin: 15px;
+    margin-top: 25px;
+    float: right;
+}
+
+.calendar{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 70%;
+}
+
+.days{
+    background-color: #4FB99F;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fim específicos */
+
+/* Fim Classes */
+
+/* IDs */
+
+#day{
+    background-color: #FCFFF5;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+
+/* Fim IDs */
