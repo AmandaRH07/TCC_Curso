@@ -111,6 +111,7 @@ textarea:focus, input:focus, select:focus, button:focus{
     font-size: 20px;
     border-radius: 10px;
     border: 1px solid #112F41;
+    cursor: pointer;
     
     /* Azul escuro */
     color: #112F41;
