@@ -1,0 +1,137 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+
+* {
+    margin: 0;
+    /* background-color: #fafbf9; */
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+  }
+
+main{
+    display: flex; 
+}
+
+
+
+/* Classes */
+
+.roof{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    height: 100px;
+}
+
+.title{
+    background-color: #ED553B;
+    height: 100px;
+    width: 40%;
+    align-self: flex-end;
+    color: #FCFFF5;
+}
+
+.search{
+    display:flex;
+    align-self: center;
+    border-radius: 5px solid #112F41;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-left{
+    height: 450px;
+    width: 10%;
+    background-color: #112F41;
+    border-radius: 0 5px 5px 0;
+    position: fixed;
+    align-self: start;
+}
+
+/* Específicos */
+
+.center{
+    margin-top: 25px !important;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.scroll-vaccines{
+    background-color: #4FB99F;
+    height: 500px;
+    width: 40%;
+    border-radius: 5px;
+    margin-top: 0 !important;
+    margin: 10%;
+    overflow: scroll;
+}
+
+.right{
+    flex-direction: column;
+    width: 50%;
+}
+
+.information{
+    background-color: #FCFFF5;
+    color: #112F41;
+    border-radius: 5px;
+    border: 1px solid #4FB99F;
+    height: 25%;
+    overflow: scroll;
+}
+
+.register{
+    border-radius: 5px;
+    border: 1px solid #4FB99F;
+    margin-top: 20px;
+    height: 55%;
+    width: 100%;
+}
+
+/* Fim específicos */
+
+/* Fim Classes */
+
+/* IDs */
+
+#vaccines{
+    background-color: #FCFFF5;
+    margin: 10px;
+    height: 20%;
+    width: 80%;
+    border-radius: 5px;
+    align-self: center;
+}
+
+#register-information{
+    border-radius: 15px; 
+    border: 1px solid #4FB99F;
+    padding: 2%;
+    margin: 2%; 
+    justify-content: center;
+    flex-direction: center;
+}
+
+#button{
+    margin-top: 2%;
+    color: #FCFFF5;
+    background-color: #068587;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: center;
+}
+
+/* Fim IDs */
