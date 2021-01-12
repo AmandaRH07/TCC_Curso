@@ -8,13 +8,41 @@
 
 </head>
 
+<script>
+
+    function mudaCor(el){
+        el.style.backgroundColor = '#b0fffc';
+    }
+    
+    </script>
+
 <body>
+    <header>
+        <div class="center">
+            <nav>
+                <ul>
+                    <li><a href="">A</a></li>
+                    <li><a href="">B</a></li>
+                    <li><a href="">C</a></li>
+                    <li><a href="">D</a></li>
+                    <li><a href="">E</a></li>
+                    <li><a href="">F</a></li>
+                    <li><a href="">G</a></li>
+                    <li><a href="">H</a></li>
+                    <li><a href="">I</a></li>
+                    
+                </ul>
+            </nav>
+
+        </div>
+        
+    </header>
     <!-- Não fiz header, porque não vi necessidade kk -->
 
     <main class="content">
-        <div class="menu-left">
-            <!-- aqui vai o menu -->
-        </div> 
+        <!-- <div class="menu-left">
+             aqui vai o menu 
+        </div>  -->
 
         <div class="box1"> 
             <div class="options">
@@ -22,16 +50,16 @@
                     <p class="text">Tipo Sanguíneo</p>
                 </div>
                 <div class="buttons">  
-                    <button class="button-type"><p class="text-button">A+</p></button>
-                    <button class="button-type"><p class="text-button">A-</p></button>
-                    <button class="button-type"><p class="text-button">B+</p></button>
-                    <button class="button-type"><p class="text-button">B-</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">A+</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">A-</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">B+</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">B-</p></button>
                 </div>
                 <div class="buttons">
-                    <button class="button-type"><p class="text-button">AB+</p></button>
-                    <button class="button-type"><p class="text-button">AB-</p></button>
-                    <button class="button-type"><p class="text-button">O+</p></button>
-                    <button class="button-type"><p class="text-button">O-</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">AB+</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">AB-</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">O+</p></button>
+                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">O-</p></button>
                 </div>
                 
             </div>
@@ -46,8 +74,8 @@
                     <img src="img/invert_colors_24px.png" alt="Gota de Sangue" width="100px" height="100px">
                 </div>
                 <div class="buttons">  
-                    <button class="button-bool"><p class="text-bool">SIM</p></button>
-                    <button class="button-bool"><p class="text-bool">NÃO</p></button>
+                    <button class="button-bool" onclick="mudaCor(this)"><p class="text-bool">SIM</p></button>
+                    <button class="button-bool" onclick="mudaCor(this)"><p class="text-bool">NÃO</p></button>
                 </div>
 
             </div>
