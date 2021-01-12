@@ -1,0 +1,218 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+    padding: 0px;
+
+}
+
+  body{
+    overflow-x: hidden;
+    background-color: #FCFFF5;
+}
+
+main{
+    display: flex; 
+}
+
+header{
+    padding: 9px 0;
+    text-align: center;
+    background: #112F41;
+    position: fixed;
+    justify-content: right;
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    justify-self: start;
+    margin: 6.5% 0;
+    border-radius: 0 20px 20px 0;
+}
+
+header li{
+    display: flex;
+    margin: 20px 0px;
+}
+
+header a{
+    text-decoration: none;
+    color: #E6EBE0;
+}
+
+header a:hover{
+    font-family: Poppins-Semibold;
+}
+
+.center{
+    max-width: 1100px;
+    margin: auto;
+    padding: 2% 0;
+}
+
+
+/* ________________________________________________________________________ */
+/* .roof{
+    background-color: #ED553B;
+    height: 75px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: #FCFFF5;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+} */
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .menu-left{
+    height: 450px;
+    width: 10%;
+    background-color: #112F41;
+    border-radius: 0 20px 20px 0;
+    position: fixed;
+    align-self: start;
+}  */
+
+/* Style dos tópicos */
+.box1 , .box2{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 70%;
+}
+
+/* Style dos títulos */
+.title .text{
+    color: #112F41;
+    background-color: #FCFFF5;
+    margin-top: 20px;
+    text-align: center;
+    height: 70px;
+    padding-top: 5px;
+    font-size: 40px;
+}
+
+/* Style dos conteúdos das boxes */
+.options{
+    background-color: #4FB99F;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style da imagem da box2 */
+/* ps.: qualidade ruim */
+.image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Style dos botões em geral */
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 50px 0px;
+    margin-top: 40px;
+}
+
+/* Style botões específicos - tipo sanguíneo */
+.button-type{
+    background-image: url(/static/img/invert_colors_24px.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    background-size: 30px;
+    background-color: #E6EBE0;
+    border:none;
+    height: 70px;
+    width: 70px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 0px 18px #068587;
+}
+
+.text-button{
+    color:#ED553B;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.buttons .button-type:hover, .button-bool:hover{
+    transform: scale(1.05);
+    background-color: #b0fffc;
+}
+
+button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* Style botões específicos - sim ou não */
+.button-bool{
+    background-color: #E6EBE0;
+    border:none; 
+    height: 65px;
+    width: 160px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px #068587;
+
+}
+
+.text-bool{
+    color:#068587;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Tentativa de colocar o rodapé */ 
+/* ps.: não deu certo */
+.waves{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.clara{
+    position: absolute;
+    margin-top: 10%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    justify-items: end;
+}
+
