@@ -2,10 +2,21 @@
 #FCFFF5 branco falso
 #E6EBE0 gelo
 #ED553B salmao
-#4FB99F verde piscina
+#4FB99F verde piscina 
 #068587 verde piscina escuro
 #3DCCC7 azul claro 
 #112F41 azul escuro*/
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
 @font-face {
     font-family: Poppins-Regular;
     src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
@@ -33,53 +44,76 @@ main{
     display: flex; 
 }
 
-header{
-    padding: 9px 0;
-    text-align: center;
-    background: #112F41;
+/* _________________menu lateral_______________ */
+.navbar{
+    margin-top: 6%;
+    width: 5%;
+    height: 75%;
     position: fixed;
-    justify-content: right;
+    background-color: var(--azul-escuro);
+    transition: 0.3s ease;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 0;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0px;
     display: flex;
     flex-direction: column;
-    width: 5%;
-    justify-self: start;
-    margin: 6.5% 0;
-    border-radius: 0 20px 20px 0;
+    align-items: center;
+    
 }
 
-header li{
+.nav-link{
     display: flex;
-    margin: 20px 0px;
-}
-
-header a{
+    align-items: center;
+    padding: 10px;
+    color: var(--branco);
     text-decoration: none;
-    color: #E6EBE0;
+    white-space: nowrap;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
 }
 
-header a:hover{
+.link-text{
+    display: none;
+    margin-left: 1rem;
+    font-size: 15px;
+    
+}
+
+.nav-link img{
+    margin-left: 5px;
+    min-width: 1rem;
+    width: 30px;
+    height: 30px;
+}
+
+.navbar:hover{
+    width: 17%;
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.nav-link:hover{
+    filter: grayscale(0) opacity(1);
+    background: var(--verde-piscina);
+    color: var(--salmao);
+    border-radius: 0 20px 20px 0;
     font-family: Poppins-Semibold;
-}
 
-.center{
+}
+/* __________________fim menu lateral________________ */
+
+/*.center{
     max-width: 1100px;
     margin: auto;
     padding: 2% 0;
-}
-
-
-/* ________________________________________________________________________ */
-/* .roof{
-    background-color: #ED553B;
-    height: 75px;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    color: #FCFFF5;
-    text-align: center;
-    border-radius: 0 0 5px 5px;
 } */
-
 
 .content{
     display: flex;
@@ -87,15 +121,6 @@ header a:hover{
     justify-content: center;
     align-items: center;
 }
-
-/* .menu-left{
-    height: 450px;
-    width: 10%;
-    background-color: #112F41;
-    border-radius: 0 20px 20px 0;
-    position: fixed;
-    align-self: start;
-}  */
 
 /* Style dos tópicos */
 .box1 , .box2{
@@ -107,8 +132,8 @@ header a:hover{
 
 /* Style dos títulos */
 .title .text{
-    color: #112F41;
-    background-color: #FCFFF5;
+    color: var(--azul-escuro);
+    background-color: var(--branco);
     margin-top: 20px;
     text-align: center;
     height: 70px;
@@ -118,7 +143,7 @@ header a:hover{
 
 /* Style dos conteúdos das boxes */
 .options{
-    background-color: #4FB99F;
+    background-color: var(--verde-piscina);
     width: 100%;
     height: 100%;
     border-radius: 30px;
@@ -151,7 +176,7 @@ header a:hover{
     background-repeat: no-repeat;
     background-position-y: 10px;
     background-size: 30px;
-    background-color: #E6EBE0;
+    background-color: var(--gelo);
     border:none;
     height: 70px;
     width: 70px;
@@ -160,18 +185,26 @@ header a:hover{
     font-weight: bold;
     cursor: pointer;
     border-radius: 50px;
-    box-shadow: 0px 0px 18px #068587;
+    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
+    transition: 0.1s;
 }
 
 .text-button{
-    color:#ED553B;
+    color: var(--azul-escuro);
     font-size: 20px;
     padding-top: 30px;
+    font-family: Poppins-Semibold;
 }
 
-.buttons .button-type:hover, .button-bool:hover{
+.button-type:hover, .button-bool:hover{
     transform: scale(1.05);
-    background-color: #b0fffc;
+    background-color: var(--azul-bebe);
+}
+
+/* classe ativada ao clicar no botão */
+.active{
+    background-color: var(--azul-bebe);
+    border: 3px solid var(--salmao);
 }
 
 button:focus {
@@ -181,7 +214,7 @@ button:focus {
 
 /* Style botões específicos - sim ou não */
 .button-bool{
-    background-color: #E6EBE0;
+    background-color: var(--gelo);
     border:none; 
     height: 65px;
     width: 160px;
@@ -190,12 +223,12 @@ button:focus {
     font-weight: bold;
     cursor: pointer;
     border-radius: 15px;
-    box-shadow: 0px 0px 18px #068587;
+    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
 
 }
 
 .text-bool{
-    color:#068587;
+    color: var(--azul-piscina-escuro);
     font-size: 30px;
     text-align: center;
 }
