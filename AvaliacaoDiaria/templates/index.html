@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Avaliação Diária</title>
+    <link rel="stylesheet" href="{% static 'css/styleAvaliacaoDiaria.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <div class="roof">
+            <p> Como você está se sentindo hoje?</p>
+        </div>
+               
+    </header>
+
+    <main class="content">
+        <div class="menu-left">
+            <!-- aqui vai o menu -->
+        </div> 
+
+        <div class="symptoms">
+            <div class="notes">
+                <p>Observações</p>
+            </div>
+        </div> 
+
+        <div class="calendar"> 
+            <p>Calendário Semanal</p>
+            <div class="days"><p>Semana Atual</p>
+                <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
+                <div id="day">
+                </div>
+            </div>
+        </div>
+    </main>
+        
+    <footer>
+        
+
+    </footer>
+
+</body>
+
+</html>

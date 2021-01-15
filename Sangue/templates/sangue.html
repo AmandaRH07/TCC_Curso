@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title> Sangue</title>
-    <link rel="stylesheet" href="styleSangue.css">
+    <link rel="stylesheet" href="{% static 'css/styleSangue.css' %}">
 
 </head>
 
@@ -71,7 +72,7 @@
                     <p class="text">Você é doador(a) de sangue?</p>
                 </div>
                 <div class="image">
-                    <img src="img/invert_colors_24px.png" alt="Gota de Sangue" width="100px" height="100px">
+                    <img src="{% static 'img/invert_colors_24px.png' %}" alt="Gota de Sangue" width="100px" height="100px">
                 </div>
                 <div class="buttons">  
                     <button class="button-bool" onclick="mudaCor(this)"><p class="text-bool">SIM</p></button>
@@ -85,9 +86,9 @@
         
     <footer>
         <div class="waves">
-            <img class="onda-forte" src="img/img-waves/onda-forte.png" alt="">
+            <img class="onda-forte" src="{% static 'img/img-waves/onda-forte.png' %}" alt="">
             <div class="clara">
-                <img class="onda-clara" src="img/img-waves/onda-clara.png" alt="">
+                <img class="onda-clara" src="{% static 'img/img-waves/onda-clara.png' %}" alt="">
             </div>
         </div>
 
