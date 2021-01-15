@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'Sangue',
     'Medicacao',
     'Vacinas',
+    'CadastroDePessoa',
+    'Cirurgias',
+    'DoencasExistentes',
 ]
 
 MIDDLEWARE = [

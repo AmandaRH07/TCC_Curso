@@ -7,105 +7,76 @@
 #3DCCC7 azul claro 
 #112F41 azul escuro*/
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
-
 * {
     margin: 0;
+    /* background-color: #fafbf9; */
     box-sizing: border-box;
-    font-family: "Poppins", serif;
-    outline: none;
+    /* border: 1px solid black; */
   }
+
+main{
+    display: flex; 
+}
 
 
 
 /* Classes */
 
 .roof{
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
     border-radius: 0 0 5px 5px;
     height: 100px;
-    
 }
 
 .title{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #ED553B;
     height: 100px;
     width: 40%;
     align-self: flex-end;
-    border-radius: 0 0 20px 20px ;
+    color: #FCFFF5;
 }
 
-h1{
-
-    font-family: "Poppins", sans-serif;
-    color: #FCFFF5;
-    font-weight: 600;
-    font-size: 3rem;
+.search{
+    display:flex;
+    align-self: center;
+    border-radius: 5px solid #112F41;
 }
 
 .content{
-
     display: flex;
     flex-direction: column;
-    
 }
 
-
-/* .menu-left{
-
+.menu-left{
     height: 450px;
-    width: 5%;
+    width: 10%;
     background-color: #112F41;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 5px 5px 0;
     position: fixed;
     align-self: start;
-}  */
+}
+
+/* Específicos */
 
 .center{
-    
     margin-top: 25px !important;
     margin: 10%;
     display: flex;
     flex-direction: row;
-    padding: 10px;
     justify-content: center;
-   
 }
 
-.conteudo-information{
-
-    text-align: justify;
-    font-size: 15px;
-    color: #112F41;
-    font-weight: normal;
-}
-
-.data-vacinnes{
-
-    text-align: center;
-    font-size: 15px;
-    color: #068587;
-    font-weight: normal;
-
-}
-
-h2{
-
-    color: #112F41;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    padding: 10px;
-    font-size: 20px;
-    text-align: center;
+.scroll-vaccines{
+    background-color: #4FB99F;
+    height: 500px;
+    width: 40%;
+    border-radius: 5px;
+    margin-top: 0 !important;
+    margin: 10%;
+    overflow: scroll;
 }
 
 .right{
@@ -113,237 +84,54 @@ h2{
     width: 50%;
 }
 
-p{
+.information{
+    background-color: #FCFFF5;
     color: #112F41;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    padding: 10px 10px;
-    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #4FB99F;
+    height: 25%;
+    overflow: scroll;
 }
 
 .register{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    border: 2px solid #4FB99F;
+    border-radius: 5px;
+    border: 1px solid #4FB99F;
     margin-top: 20px;
     height: 55%;
     width: 100%;
-    height: 330px;
-}
-
-.titulo-information{
-
-    color: #112F41;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    padding: 10px 10px;
-    font-size: 20px;
-    
-}
-/* Fim Classes */
-
-
-/* Específicos */
-
-.search-box{ 
-
-    position: absolute; 
-    transform: translate(-50%, -50%); 
-    border-radius: 40px; 
-    border: 2px solid #112F41; 
-    margin-left: 440px;
-    margin-top: 0px;
-    top: 75px;
-}
-
-.search-box:hover > .txt-search,.search-box .txt-search:focus{
-
-    width: 300px; 
-}
-
-.search-box:hover > .btn-search{
-
-     background: white; 
-}
-
-.btn-search{ 
-    
-    width: 45px; 
-    height: 45px; 
-    border-radius: 50%; 
-    border: 0px;
-    background: #4FB99F;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    transition: 0.4s;
-    margin-top: 0px;
-    cursor: pointer;
-}
-
-.txt-search{ 
-
-    font-family: 'Poppins';
-    border: none; 
-    background: none; 
-    outline: none; 
-    float: left; 
-    margin-left: 8px; 
-    color: gray;  
-    transition: 0.4s; 
-    padding: 12px;
-    width: 200px;
-} 
-
-.scroll{
-
-    overflow-y:  scroll;
-    
-}
-
-.scroll::-webkit-scrollbar{
-
-    width: 18px;
-    background: #FCFFF5;
-    border-radius: 20px;
-    
-}
-
-.scroll::-webkit-scrollbar-thumb{
-    background: #ED553B;
-    border-radius: 20px;
-    width: 16px;
 }
 
 /* Fim específicos */
 
+/* Fim Classes */
+
 /* IDs */
-
-#scroll-vaccines{
-
-    background-color: #4FB99F;
-    height: 560px;
-    width: 40%;
-    border-radius: 20px;
-    border-right: 2px solid white;
-    margin-top: 0px !important;
-    margin: 10%;
-    border-top: 2px solid #4FB99F;
-    border-bottom: 2px solid #4FB99F;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 10px;
-}
 
 #vaccines{
     background-color: #FCFFF5;
-    margin: 15px;
+    margin: 10px;
     height: 20%;
     width: 80%;
-    border-radius: 20px;
+    border-radius: 5px;
     align-self: center;
-    cursor: pointer;
-    border: 0px;
-}
-
-#vaccines:hover{
-
-    background-color: #ED553B ;
-
-}
-
-#vaccines:hover > .data-vacinnes{
-
-    color:  #FCFFF5;
-}
-
-#information{
-    background-color: #FCFFF5;
-    color: #112F41;
-    border-radius: 15px;
-    border: 2px solid #4FB99F;
-    height: 30%;
-    overflow-y: scroll;
 }
 
 #register-information{
-
-    border-radius: 20px; 
+    border-radius: 15px; 
     border: 1px solid #4FB99F;
     padding: 2%;
     margin: 2%; 
-    align-items: center;
-    width: 200px;
-    color: gray;
-
+    justify-content: center;
+    flex-direction: center;
 }
 
-#cadastro{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-}
-
-#button-left{
+#button{
     margin-top: 2%;
     color: #FCFFF5;
     background-color: #068587;
     border-radius: 10px;
-    display: flex;
-    cursor: pointer;
-    border: #068587;
-    padding: 8px;
-    
+    justify-content: center;
+    flex-direction: center;
 }
 
-#button-right{
-
-    margin-top: 2%;
-    color: #068587;
-    background-color: #FCFFF5;
-    border-radius: 10px;
-    display: flex;
-    cursor: pointer;
-    border: 1px solid #068587;
-    padding: 8px;
-    margin-left: 30px;
-}
-
-#div-button{
-
-    display: flex;
-    flex-direction: row;
-    
-}
-
-#button-right:hover{
-    background-color: #068587;
-    border-radius: 10px;
-    color: #ffff;
-    transform: scale(1.1);
-    
-}
-
-#button-left:hover{
-
-    background-color: #068587;
-    border-radius: 10px;
-    color: #ffff;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 18px #068587;
-}
-
-#register-information-local{
-
-    border-radius: 20px; 
-    border: 1px solid #4FB99F;
-    padding: 4%;
-    margin: 2%;
-    width: 200px;
-}
 /* Fim IDs */
