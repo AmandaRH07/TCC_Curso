@@ -13,6 +13,11 @@
     src: local(Poppins), url(fonts/Poppins/Poppins-Medium.ttf);
 }
 
+@font-face {
+    font-family: Poppins-Light;
+    src: local(Poppins), url(fonts/Poppins/Poppins-Light.ttf);
+}
+
 :root {
     --azul-escuro: #112F41;
     --azul-piscina-escuro: #068587;
@@ -41,14 +46,155 @@ body {
   height: 100%;
   width: 100%;
   font-family: Poppins-Regular;
+  overflow-x: hidden;
 }
 
 #begin{
-    color:var(--salmao)
+    color:var(--branco)
 }
 
 #end{
-    margin-left: -2px;
+    margin-left: -12px;
     color: var(--azul-escuro);
 }
 
+.title{
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+
+    margin-left: 5%;
+    padding-top: 10px;
+    z-index: 100;
+}
+
+header{
+
+    /* height: 60px; */
+    width: 100%;
+
+    justify-items: left;
+    align-items: center;
+
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    width: 100%;
+
+    margin-top: 17%;
+    /* margin-bottom: 5%; */
+}
+
+.box1{
+    width: 30%;
+
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+
+    /* border: 3px solid black; */
+    
+}
+
+.box1 > input{
+    margin: 0 16px 10px;
+    padding-left: 5%;
+
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+
+    height: 50px;
+    width: 92%;
+
+    border-radius: 40px;
+    border: none;
+
+    text-align: left;
+    font-size: 12px;
+    font-family: Poppins-Light;
+}
+
+.box1 ::placeholder{
+    color: var(--branco);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+    margin-top: 15px;
+}
+
+.buttons button{
+    border: 2px solid var(--azul-escuro);
+    border-radius: 40px;
+
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+
+    height: 45px;
+    width: 40%;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    font-family: Poppins-Medium;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background-color: #112f4180;
+}
+
+.box2{
+    
+    display: flex;
+    width: 40%;
+
+    
+}
+
+.box2 > img{
+    width: 90%;
+    height: 90%;
+    z-index: 100;
+}
+
+
+.waves-component{
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    transform: scaleY(-1);
+    
+}
+
+.dark-wave{
+    animation: movedark-wave 3s ease-in-out infinite alternate;
+}
+
+@keyframes movedark-wave{
+    from{
+        transform: translateX(-2500px)
+    }
+}
+
+.light-wave {
+    animation: moveWave2 3s 1.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveWave2 {
+    from {
+      transform: translateX(-1000px);
+    }
+  }
