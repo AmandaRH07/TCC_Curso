@@ -245,6 +245,10 @@ input[type='file'] {
     color: var(--azul-escuro);
 }
 
+label:hover{
+    background-color: #91fdfab6;
+}
+
 ::placeholder {
     color: var(--verde-piscina);
     font-family: "Poppins", sans-serif;
