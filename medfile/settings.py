@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'Sangue',
     'Medicacao',
     'Vacinas',
+    'CadastroDePessoa',
+    'Cirurgias',
+    'DoencasExistentes',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +89,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# configs database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'db_name',
+#         'USER': 'user',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
