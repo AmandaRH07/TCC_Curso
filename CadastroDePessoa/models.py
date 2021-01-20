@@ -8,10 +8,10 @@ class Usuario(models.Model):
         ('sem_resposta', 'Prefiro não responder'),
     )
 
-    foto = models.ImageField(upload_to='', blank=True)
+    foto = models.ImageField(upload_to='usuario_img', blank=True)
     nome = models.CharField('Nome', max_length=100)
     nascimento = models.DateField('Data de Nascimento')
     sexo = models.CharField('Sexo', choices=SEXO_CHOICES, max_length=21)
 
     email = models.EmailField('Email', max_length=254)
-    senha = models.CharField('Senha', min_length=8, max_length=40)
+    senha = models.CharField('Senha', max_length=40)

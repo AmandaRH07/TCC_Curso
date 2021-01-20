@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'CadastroDePessoa',
     'Cirurgias',
     'DoencasExistentes',
+    "Historico",
+    "AlergiasIntolerancias"
 ]
 
 MIDDLEWARE = [
