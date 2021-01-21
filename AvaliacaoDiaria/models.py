@@ -15,6 +15,7 @@ class AvaliacaoDiaria(models.Model):
         ('ansiedade', 'Ansiedade'),
         ('outro', 'Outro'),
     )
+    id_avaliacao_diaria = models.AutoField(primary_key=True) 
     sintomas = models.CharField('Sintomas', choices=SINTOMAS_CHOICES, max_length=15)
     observacoes = models.TextField('Observações') #verificar se precisa max_length
     # chave estrangeira para pessoa

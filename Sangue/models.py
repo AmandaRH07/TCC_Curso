@@ -11,7 +11,7 @@ class TipoSanguineo(models.Model):
         ('oPositivo', 'O+'),
         ('oNegativo', 'O-'),
     )
-
+    id_tipos_sanguineo = models.AutoField(primary_key=True) 
     tipo_sanguineo = models.CharField('Tipo Sanguíneo', choices=TIPO_SANGUINEO_CHOICES, max_length=10)
     doador = models.BooleanField('Doador', default=False)
     historico_doacoes = models.TextField('Histórico de Doações')

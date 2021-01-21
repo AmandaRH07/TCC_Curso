@@ -1,9 +1,11 @@
 from django.db import models
 
 class Alergias(models.Model):
-    # tipo = moldels.
-    # causador
+    id_alergias = models.AutoField(primary_key=True) 
+    tipo = models.TextField("Tipo de Alergia")
+    causador = models.TextField("Tipo de Causador")
 
 class Intolerancias(models.Model):
-    # tipo 
-    # causador
+    id_intolerancias = models.AutoField(primary_key=True) 
+    tipo = models.TextField("Tipo de Alergia")
+    causador = models.TextField("Tipo de Causador")

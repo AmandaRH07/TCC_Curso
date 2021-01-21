@@ -1,6 +1,7 @@
 from django.db import models
 
 class Medicamentos(models.Model):
+    id_medicamentos = models.AutoField(primary_key=True) 
     nome = models.TextField("Nome Medicamento")
     funcao = models.TextField("Função", blank=True)
     data_inicio = models.DateField("Data de Início", blank=True)
