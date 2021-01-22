@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Cadastro de perfil</title>
+    <link rel="stylesheet" href="{% static 'css/styleCadastro.css' %}">
+
+</head>
+
+<body>
+    
+    <section>
+
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        
+    </section>
+
+    <main class="content">
+
+        <div>
+
+            <h1> CADASTRE-SE!</h1>
+
+        </div>
+        <form>
+            <div class="register"> 
+                <input id="edit_information" type="text" required placeholder="Nome completo">
+                <input id="edit_information" type="date" required placeholder="Data nascimento">
+                <input id="edit_information" type="text" maxlength="14" required placeholder="Sexo">
+            </div>
+            <div class="register"> 
+                <input id="edit_information" type="email" required placeholder="E-mail">
+                <input id="edit_information" type="tel" required placeholder="Telefone">
+                <div class="button"> 
+                    <button id="button_information" type="submit"> FINALIZAR CADASTRO</button>
+                </div>
+            </div>
+        </form>
+        
+    </main>
+
+</body>
+
+</html>
