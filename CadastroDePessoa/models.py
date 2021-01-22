@@ -1,4 +1,6 @@
 from django.db import models
+
+
 from AlergiaIntolerancia.models import Alergias, Intolerancias 
 from AvaliacaoDiaria.models import AvaliacaoDiaria
 from Cirurgias.models import Cirurgias
@@ -16,11 +18,13 @@ class Usuario(models.Model):
         ('outro', 'Outro'),
         ('sem_resposta', 'Prefiro não responder'),
     )
+
     id_usuario = models.AutoField(primary_key=True) 
     foto = models.ImageField(upload_to='midia/usuario_img', blank=True) 
     nome = models.CharField('Nome', max_length=100)
     nascimento = models.DateField('Data de Nascimento')
     sexo = models.CharField('Sexo', choices=SEXO_CHOICES, max_length=21)
+    telefone = models.CharField('Telefone', max_length=13, blank=False, unique=True, default='00')
 
     email = models.EmailField('Email', max_length=254)
     senha = models.CharField('Senha', max_length=40)
