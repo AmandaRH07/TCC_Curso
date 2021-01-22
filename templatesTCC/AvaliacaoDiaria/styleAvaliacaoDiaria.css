@@ -65,7 +65,7 @@ main{
     margin-bottom: 20px;
 }
 
-.buttons button{
+.buttons input{
     border-radius: 50%;
     border: 4px solid var(--verde-piscina);
     width: 50px;

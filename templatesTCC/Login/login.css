@@ -111,6 +111,7 @@ header{
     padding: 10px 0;
 
     display: flex;
+    align-items: center;
     flex-direction: column;
     z-index: 100;  
 }
@@ -140,7 +141,7 @@ header{
 .buttons{
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    width: 100%;
 
     margin-top: 15px;
 }

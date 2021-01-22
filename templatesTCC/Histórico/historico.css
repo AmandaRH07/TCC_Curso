@@ -59,30 +59,33 @@ body {
 
 /* _________________menu lateral_______________ */
 .navbar{
+    padding-left: 10px;
     margin-top: 4.5%;
-    width: 5%;
+    width: 4%;
     height: 75%;
     position: fixed;
     background-color: var(--azul-escuro);
     transition: 0.3s ease;
     border-radius: 0 20px 20px 0;
     z-index: 100;
-    
 }
 
-.navbar-nav{
-    list-style: none;
-    padding: 0;
-    margin: 0px;
-    display: flex;
+.nav-bar{
+    display: flex; 
     flex-direction: column;
-    align-items: center;   
+    justify-content: space-around;
+    height: 100%;
+    list-style: none;
 }
+
 
 .nav-link{
     display: flex;
+    margin-left: 0;
+    width: 100%;
+    
     align-items: center;
-    padding: 8px;
+    padding: 5%;
     color: var(--branco);
     text-decoration: none;
     white-space: nowrap;
@@ -98,7 +101,7 @@ body {
 }
 
 .nav-link img{
-    margin-left: 5px;
+    margin-left: 5%;
     min-width: 1rem;
     width: 35px;
     height: 35px;
@@ -150,12 +153,12 @@ body {
 }
 
 .subtitle-container{
+    left: 15%;
+
     padding: 0 20px 2px;
     margin-bottom: 18px;
     margin-left: 50px;
     position: absolute;
-    display: flex;
-    justify-content: right;
     color: var(--azul-escuro);
     font-family: Poppins-Medium;
     font-size: 2rem;
@@ -172,13 +175,13 @@ section {
     margin-right: 7% ;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;  
 }
 
 .primary-card,
 .second-card {
-    width: 50rem;
-    height: 20rem;
+    width: 40%;
+    height: 20%;
     border-radius: 20px;
     min-height: 29rem;
     margin-top: 7rem;
@@ -189,11 +192,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
     padding-top: 5px;
 }
 
-.primary-card > input 
+.primary-card input 
 {
     width: 90%;
     padding: 1.5rem;
@@ -206,6 +209,7 @@ section {
     font-weight: 500;
     background-color: var(--branco);
     height: 53px;
+    
 }
 
 
@@ -315,9 +319,9 @@ label:hover{
     margin-top: 5rem;
     margin-bottom: 30px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: block;
+    direction: row;
+    
 
     overflow-x: scroll;
 }
@@ -326,13 +330,13 @@ label:hover{
     background-color: var(--branco);
 
     height: 80%;
-    width: 50%;
+    width: 12%;
     border-radius: 15px;
 
     margin: 5px;
     text-align: center;
 
-    align-self: center;
+
 }
 
 .history-content .card h2 {
