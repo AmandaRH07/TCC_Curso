@@ -6,6 +6,6 @@ for (let i = 0; i <= btn.length; i++) {
         atual[0].className = atual[0].className.replace(" active", "");
         }
         this.className += " active";
-        });
-        }
+    });
+}
 

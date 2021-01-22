@@ -59,14 +59,13 @@ body {
 
 /* _________________menu lateral_______________ */
 .navbar{
-    margin-top: 6%;
+    margin-top: 4.5%;
     width: 5%;
     height: 75%;
     position: fixed;
     background-color: var(--azul-escuro);
     transition: 0.3s ease;
     border-radius: 0 20px 20px 0;
-    padding: 10px 0;
     z-index: 100;
     
 }
@@ -77,14 +76,13 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 .nav-link{
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     color: var(--branco);
     text-decoration: none;
     white-space: nowrap;
@@ -102,8 +100,8 @@ body {
 .nav-link img{
     margin-left: 5px;
     min-width: 1rem;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 .navbar:hover{
@@ -116,11 +114,16 @@ body {
 
 .nav-link:hover{
     filter: grayscale(0) opacity(1);
-    background: var(--verde-piscina);
+    background: #53b6a138;
     color: var(--salmao);
     border-radius: 0 20px 20px 0;
     font-family: Poppins-Semibold;
 
+}
+
+#historico img, #cirurgia img{
+    width: 40px;
+    height: 40px;
 }
 /* ______fim menu lateral____________ */
 
