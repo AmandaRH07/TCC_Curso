@@ -59,6 +59,7 @@ p{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .register{
@@ -69,7 +70,7 @@ p{
     align-items: center;
     margin-top: 150px;
     height: 300px;
-    width: 100%;
+    width: 100%; 
 
 }
 .button{
