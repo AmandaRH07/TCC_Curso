@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Patua+One&display=swap');
+
 
 @font-face {
     font-family: Poppins-Regular;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
+    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: Poppins-Semibold;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
+    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
 @font-face {
     font-family: Poppins-Medium;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
+    src: local(Poppins), url(fonts/Poppins/Poppins-Medium.ttf);
 }
 
 @font-face {
     font-family: Poppins-Light;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Light.ttf);
+    src: local(Poppins), url(fonts/Poppins/Poppins-Light.ttf);
 }
 
 :root {
@@ -52,16 +55,20 @@ body {
   overflow-x: hidden;
 }
 
+/* _____style-título_____ */
+
 #begin{
     color:var(--branco);
-    font-family: "Prompt", sans-serif;
+    font-size: 80px;
+    font-family: Philosopher;
 }
 
 #end{
     margin-left: -12px;
     color: var(--azul-escuro);
-    font-family: "Prompt", sans-serif;
-    font-size: 70px;
+    font-size: 90px;
+    font-family: Philosopher;
+    font-weight: bold;
 }
 
 .title{
@@ -73,14 +80,13 @@ body {
 }
 
 .title-text{
-    font-size: 60px;
     position: relative;
-    margin-top: 10px;
-   
+      
     margin-left: -15px;
     z-index: 100;
 }
 
+/* _____style-logo_____ */
 
 #logo{
     width: 155px;
@@ -106,6 +112,8 @@ header{
     margin-top: 17%;
 }
 
+/* _____style-box1_____ */
+
 .box1{
     width: 30%;
     padding: 10px 0;
@@ -116,7 +124,7 @@ header{
     z-index: 100;  
 }
 
-.box1 > input{
+form > input{
     margin: 0 16px 10px;
     padding-left: 5%;
 
@@ -134,9 +142,24 @@ header{
     font-family: Poppins-Light;
 }
 
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .box1 ::placeholder{
     color: var(--branco);
 }
+
+/* ____config-para-firefox_____ */
+input:invalid {
+    box-shadow:none;
+}
+
+/* _____style-botões______ */
 
 .buttons{
     display: flex;
@@ -147,13 +170,13 @@ header{
 }
 
 .buttons button{
-    border: 2px solid var(--azul-escuro);
+    border: 2px solid var(--branco);
     border-radius: 40px;
 
-    background-color: var(--branco);
-    color: var(--azul-escuro);
+    background-color: var(--salmao);
+    color: var(--branco);
 
-    height: 45px;
+    height: 50px;
     width: 40%;
 
     text-transform: uppercase;
@@ -164,8 +187,12 @@ header{
 }
 
 .buttons button:hover{
-    background-color: #ed563b75;
+    background-color: #FCFFF5;
+    color: #ED553B;
+    border: 2px solid #ED553B;
 }
+
+/* _____style-da-imagem_____ */
 
 .box2{ 
     display: flex;
@@ -178,6 +205,7 @@ header{
     z-index: 100;
 }
 
+/* _____animação-nuvens_____ */
 
 .waves-component{
     position: absolute;
@@ -185,7 +213,7 @@ header{
     left: 0;
     right: 0;
     transform: scaleY(-1);
-    
+    box-shadow: 40px #061722;
 }
 
 .dark-wave{

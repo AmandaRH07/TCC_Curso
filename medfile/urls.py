@@ -28,7 +28,7 @@ urlpatterns = [
     path('', include('DoencasExistentes.urls')),
     path('', include('Historico.urls')),
     path('', include('Cirurgias.urls')),
-    path('', include('Login.urls')),
+    path('accounts/', include('Accounts.urls')),
 
 
     path('admin/', admin.site.urls),

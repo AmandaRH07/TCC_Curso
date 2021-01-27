@@ -26,7 +26,7 @@
             <h1> CADASTRE-SE!</h1>
 
         </div>
-        <form action="{% url 'cadastro-pessoa' %}" method="post" autocomplete="off" enctype="multipart/form-data">
+        <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="register"> 
                 <input id="edit_information" name="nome" type="text" required placeholder="Nome completo">
@@ -40,8 +40,9 @@
             </div>
             <div class="register"> 
                 <input id="edit_information"  name="email" type="email" required placeholder="E-mail">
+                <input id="edit_information"  name="usuario" type="usuario" required placeholder="Usuario">
                 <input id="edit_information"  name="telefone" type="tel" required placeholder="Telefone">
-                <input id="edit_information"  name="senha" type="password" required placeholder="Telefone">
+                <input id="edit_information"  name="senha" type="password" required placeholder="Senha">
 
                 <div class="button"> 
                     <button id="button_information" type="submit"> FINALIZAR CADASTRO</button>
