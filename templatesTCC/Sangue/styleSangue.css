@@ -1,0 +1,251 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina 
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+    padding: 0px;
+
+}
+
+  body{
+    overflow-x: hidden;
+    background-color: #FCFFF5;
+}
+
+main{
+    display: flex; 
+}
+
+/* _________________menu lateral_______________ */
+.navbar{
+    margin-top: 6%;
+    width: 5%;
+    height: 75%;
+    position: fixed;
+    background-color: var(--azul-escuro);
+    transition: 0.3s ease;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 0;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: var(--branco);
+    text-decoration: none;
+    white-space: nowrap;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+    font-size: 15px;
+    
+}
+
+.nav-link img{
+    margin-left: 5px;
+    min-width: 1rem;
+    width: 30px;
+    height: 30px;
+}
+
+.navbar:hover{
+    width: 17%;
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.nav-link:hover{
+    filter: grayscale(0) opacity(1);
+    background: var(--verde-piscina);
+    color: var(--salmao);
+    border-radius: 0 20px 20px 0;
+    font-family: Poppins-Semibold;
+
+}
+/* __________________fim menu lateral________________ */
+
+/*.center{
+    max-width: 1100px;
+    margin: auto;
+    padding: 2% 0;
+} */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style dos tópicos */
+.box1 , .box2{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 70%;
+}
+
+/* Style dos títulos */
+.title .text{
+    color: var(--azul-escuro);
+    background-color: var(--branco);
+    margin-top: 20px;
+    text-align: center;
+    height: 70px;
+    padding-top: 5px;
+    font-size: 40px;
+}
+
+/* Style dos conteúdos das boxes */
+.options{
+    background-color: var(--verde-piscina);
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style da imagem da box2 */
+/* ps.: qualidade ruim */
+.image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Style dos botões em geral */
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 50px 0px;
+    margin-top: 40px;
+}
+
+/* Style botões específicos - tipo sanguíneo */
+.button-type{
+    background-image: url(img/invert_colors_24px.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    background-size: 30px;
+    background-color: var(--gelo);
+    border:none;
+    height: 70px;
+    width: 70px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
+    transition: 0.1s;
+}
+
+.text-button{
+    color: var(--azul-escuro);
+    font-size: 20px;
+    padding-top: 30px;
+    font-family: Poppins-Semibold;
+}
+
+.button-type:hover, .button-bool:hover{
+    transform: scale(1.05);
+    background-color: var(--azul-bebe);
+}
+
+/* classe ativada ao clicar no botão */
+.active{
+    background-color: var(--azul-bebe);
+    border: 3px solid var(--salmao);
+}
+
+button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* Style botões específicos - sim ou não */
+.button-bool{
+    background-color: var(--gelo);
+    border:none; 
+    height: 65px;
+    width: 160px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
+
+}
+
+.text-bool{
+    color: var(--azul-piscina-escuro);
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Tentativa de colocar o rodapé */ 
+/* ps.: não deu certo */
+.waves{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.clara{
+    position: absolute;
+    margin-top: 10%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    justify-items: end;
+}
+

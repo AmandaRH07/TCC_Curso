@@ -1,0 +1,292 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    outline: none;
+  }
+
+
+
+/* Classes */
+
+.roof{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    height: 100px;
+    
+}
+
+.title{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #4FB99F;
+    height: 80px;
+    width: 50%;
+    align-self: flex-end;
+    border-radius: 0 0 20px 20px ;
+}
+
+h1{
+
+    font-family: "Poppins", sans-serif;
+    color: #112F41;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.content{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+::placeholder{
+    color: #112F41;
+    
+}
+
+.center{
+    
+    margin-top: 25px !important;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    height: 630px;
+   
+}
+.registro_doença{
+
+    width: 450px;
+    height: 280px;
+    background: #ED553B;
+    margin-top: 10px;
+    border-radius: 15px;
+
+
+}
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 280px;
+    
+}
+
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+p{
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+img{
+    width: 400px;
+    height: 300px;
+}
+
+.image{
+
+    position: absolute;
+    margin-top: 300px;
+}
+.titulo-doenca{
+
+    text-align: center;
+    font-size: 18px;
+    color: #ED553B;
+}
+.grau-doenca{
+
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+
+}
+.qnt-mortes{
+
+    
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+}
+
+.information-doencas{
+    display: block;
+    direction: column;
+}
+.information-doencas-right{
+    display: block;
+    direction: column;
+}
+
+/* Fim Classes */
+
+
+/* Específicos */
+
+.scroll{
+
+    overflow-y:  scroll;
+    
+}
+
+.scroll::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: #4FB99F;
+    border-radius: 20px;
+    width: 16px;
+}
+
+select option{
+    color: #112F41;
+    font-weight: 600;
+}
+
+select{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 3%;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ;
+    background-image: url(imgHistoricoFamiliar/icone.png);
+    background-repeat: no-repeat;
+    background-position:  310px;
+    background-size: 20px;
+    
+}
+
+/* Fim específicos */
+
+/* IDs */
+
+#doencas{
+
+    width: 150px;
+    height: 150px;
+    background-color: #FCFFF5 ;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-left: 55px;
+    padding: 8px;
+
+   
+    
+}
+#container-doecas{
+
+    width: 480px;
+    height: 600px;
+    background-color: #112F41;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-bottom: 2px solid #112F41;
+    border-top: 2px solid #112F41;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+#edit_information{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 10px; 
+    margin-top: 18px; 
+    align-items: center;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+#button-left{
+    
+    margin-top: 3%;
+    color: #FCFFF5;
+    background-color: #112F41;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    height: 35px;
+    border: 0px;
+    width: 150px;
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+
+#div-button{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#button-left:hover{
+
+    background-color: #FCFFF5;
+    border: solid 2px #112F41;
+    color: #112F41;
+    padding-top: 3px;
+    font-weight: bold;
+}
+
+
+/* Fim IDs */

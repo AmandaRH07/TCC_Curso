@@ -1,0 +1,360 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina 
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: local(Poppins), url(fonts/Poppins/Poppins-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins-Regular;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+/* _________________menu lateral_______________ */
+.navbar{
+    padding-left: 10px;
+    margin-top: 4.5%;
+    width: 4%;
+    height: 75%;
+    position: fixed;
+    background-color: var(--azul-escuro);
+    transition: 0.3s ease;
+    border-radius: 0 20px 20px 0;
+    z-index: 100;
+}
+
+.nav-bar{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    list-style: none;
+}
+
+
+.nav-link{
+    display: flex;
+    margin-left: 0;
+    width: 100%;
+    
+    align-items: center;
+    padding: 5%;
+    color: var(--branco);
+    text-decoration: none;
+    white-space: nowrap;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+    font-size: 15px;
+    
+}
+
+.nav-link img{
+    margin-left: 5%;
+    min-width: 1rem;
+    width: 35px;
+    height: 35px;
+}
+
+.navbar:hover{
+    width: 17%;
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.nav-link:hover{
+    filter: grayscale(0) opacity(1);
+    background: #53b6a138;
+    color: var(--salmao);
+    border-radius: 0 20px 20px 0;
+    font-family: Poppins-Semibold;
+
+}
+
+#historico img, #cirurgia img{
+    width: 40px;
+    height: 40px;
+}
+/* ______fim menu lateral____________ */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+
+   width: 50%;
+   height: 9rem;
+   border-radius: 0 0 20px 20px;
+
+   font-weight: 600;
+   font-size: 4rem;
+   color: var(--branco);
+}
+
+.subtitle-container{
+    left: 15%;
+
+    padding: 0 20px 2px;
+    margin-bottom: 18px;
+    margin-left: 50px;
+    position: absolute;
+    color: var(--azul-escuro);
+    font-family: Poppins-Medium;
+    font-size: 2rem;
+
+    border-bottom: 2px solid var(--salmao);
+    
+}
+
+section {
+    margin-top: 5%;
+    width: 83%;
+    height: 80%;
+    margin-left: 15%;
+    margin-right: 7% ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+}
+
+.primary-card,
+.second-card {
+    width: 40%;
+    height: 20%;
+    border-radius: 20px;
+    min-height: 29rem;
+    margin-top: 7rem;
+}
+
+.primary-card {
+    background-color: var(--verde-piscina);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding-top: 5px;
+}
+
+.primary-card input 
+{
+    width: 90%;
+    padding: 1.5rem;
+    margin: .5rem 0;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--branco);
+    height: 53px;
+    
+}
+
+
+input[type='file'] {
+    display: none
+}
+
+.first-file, .second-file{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-file{
+    margin-top: 10px;
+}
+
+#file-name, #file-name2, label{
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: Poppins-Regular;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--branco);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input-content p{
+    width: 60%;
+    max-width: 60%;
+    height: 53px;
+    max-height: 53px;
+}
+
+.input-content label{
+    cursor: pointer;
+    color: var(--azul-escuro);
+}
+
+label:hover{
+    background-color: #91fdfab6;
+}
+
+::placeholder {
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.input-content {
+    height: 30%;
+    width: 90%;
+    margin: 5px 0;
+    display: flex;
+    justify-content:right;
+    flex-direction: column;
+    
+}
+
+.primary-card button {
+    width: 17rem;
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+
+    padding: 1rem;
+    margin: 4rem 0 1rem;
+
+
+    background-color: var(--salmao);
+
+    border-radius: 20px;
+    border: none;
+}
+
+.primary-card button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.second-card {
+    background-color: var(--azul-piscina-escuro);
+} 
+
+.second-card h1 {
+    font-weight: 500;
+    color: var(--branco);
+
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.history-content {
+    background-color: var(--azul-escuro);
+    width: 80%;
+    min-height: 30rem;
+
+    border: 3px solid var(--azul-escuro);
+    border-radius: 20px;
+
+    margin-left: 8%;
+    margin-top: 5rem;
+    margin-bottom: 30px;
+
+    display: block;
+    direction: row;
+    
+
+    overflow-x: scroll;
+}
+
+.history-content .card {
+    background-color: var(--branco);
+
+    height: 80%;
+    width: 12%;
+    border-radius: 15px;
+
+    margin: 5px;
+    text-align: center;
+
+
+}
+
+.history-content .card h2 {
+    color: var(--azul-piscina-escuro);
+    font-weight: 500;
+    font-size: 2.3rem;
+}
+
+
+.history-content .card h3 {
+    font-weight: 600;
+    color: var(--verde-piscina);
+}
+
+
+.history-content .card span {
+    font-weight: 600;
+    color: var(--verde-piscina);
+    
+}
+
