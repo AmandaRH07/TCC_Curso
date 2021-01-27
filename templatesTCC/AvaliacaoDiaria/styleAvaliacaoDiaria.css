@@ -65,7 +65,7 @@ main{
     margin-bottom: 20px;
 }
 
-.buttons input{
+.buttons button{
     border-radius: 50%;
     border: 4px solid var(--verde-piscina);
     width: 50px;
@@ -154,10 +154,11 @@ textarea:focus{
 
 /* _______final_conteudo_box1______ */
 
+
+/* ________inicio_conteudo_box2_______ */
 .subtitle{
     position: absolute;
     left: 17%;
-
     font-family: "Poppins", sans-serif;
     font-size: 35px;
     font-weight: 500;
@@ -215,15 +216,12 @@ textarea:focus{
     justify-content: space-around;
 }
 
-/* Fim Classes */
-
-/* IDs */
-
 .week{
     background-color: #FCFFF5;
     height: 90px;
     width: 90px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .box2 .labels label{
