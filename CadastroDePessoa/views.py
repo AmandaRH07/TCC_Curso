@@ -1,6 +1,4 @@
-from django.shortcuts import render, redirect
-from .forms import UsuarioForm
-from .models import Usuario
+from django.shortcuts import render
 
 # Create your views here.
 # def cadastro_pessoa(request):
