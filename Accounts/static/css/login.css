@@ -55,6 +55,10 @@ body {
   overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* _____style-título_____ */
 
 #begin{
@@ -167,6 +171,7 @@ input:invalid {
     width: 100%;
 
     margin-top: 15px;
+    
 }
 
 .buttons button{
@@ -184,6 +189,7 @@ input:invalid {
 
     font-family: Poppins-Medium;
     cursor: pointer;
+
 }
 
 .buttons button:hover{
