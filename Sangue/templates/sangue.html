@@ -5,45 +5,89 @@
 <head>
     <meta charset="UTF-8">
     <title> Sangue</title>
-    <link rel="stylesheet" href="{% static 'css/styleSangue.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sangue/styleSangue.css' %}">
 
 </head>
 
-<script>
-
-    function mudaCor(el){
-        el.style.backgroundColor = '#b0fffc';
-    }
-    
-    </script>
 
 <body>
     <header>
-        <div class="center">
-            <nav>
-                <ul>
-                    <li><a href="">A</a></li>
-                    <li><a href="">B</a></li>
-                    <li><a href="">C</a></li>
-                    <li><a href="">D</a></li>
-                    <li><a href="">E</a></li>
-                    <li><a href="">F</a></li>
-                    <li><a href="">G</a></li>
-                    <li><a href="">H</a></li>
-                    <li><a href="">I</a></li>
-                    
+        <!-- <div class="center">  -->
+            <nav class="navbar">
+
+                <ul class="nav-bar">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Perfil</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Avaliação Diária</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Sangue</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Vacinas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Alergias/Intolerâncias</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Medicação</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Histórico</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Cirurgias</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <img src="{% static 'img/invert_colors_24px.png' %}" alt="">
+                            <span class="link-text">Doenças</span>
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
 
-        </div>
+        <!-- </div> -->
         
     </header>
-    <!-- Não fiz header, porque não vi necessidade kk -->
 
     <main class="content">
-        <!-- <div class="menu-left">
-             aqui vai o menu 
-        </div>  -->
 
         <div class="box1"> 
             <div class="options">
@@ -51,16 +95,16 @@
                     <p class="text">Tipo Sanguíneo</p>
                 </div>
                 <div class="buttons">  
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">A+</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">A-</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">B+</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">B-</p></button>
+                    <button class="button-type" ><p class="text-button">A+</p></button>
+                    <button class="button-type" ><p class="text-button">A-</p></button>
+                    <button class="button-type" ><p class="text-button">B+</p></button>
+                    <button class="button-type" ><p class="text-button">B-</p></button>
                 </div>
                 <div class="buttons">
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">AB+</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">AB-</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">O+</p></button>
-                    <button class="button-type" onclick="mudaCor(this)"><p class="text-button">O-</p></button>
+                    <button class="button-type" ><p class="text-button">AB+</p></button>
+                    <button class="button-type" ><p class="text-button">AB-</p></button>
+                    <button class="button-type" ><p class="text-button">O+</p></button>
+                    <button class="button-type" ><p class="text-button">O-</p></button>
                 </div>
                 
             </div>
@@ -75,8 +119,8 @@
                     <img src="{% static 'img/invert_colors_24px.png' %}" alt="Gota de Sangue" width="100px" height="100px">
                 </div>
                 <div class="buttons">  
-                    <button class="button-bool" onclick="mudaCor(this)"><p class="text-bool">SIM</p></button>
-                    <button class="button-bool" onclick="mudaCor(this)"><p class="text-bool">NÃO</p></button>
+                    <button class="button-bool"><p class="text-bool">SIM</p></button>
+                    <button class="button-bool"><p class="text-bool">NÃO</p></button>
                 </div>
 
             </div>
@@ -93,6 +137,9 @@
         </div>
 
     </footer>
+
+    
+<script src="{% static 'js/sangue.js' %}"></script>
 
 </body>
 

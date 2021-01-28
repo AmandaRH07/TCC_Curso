@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AvaliacaoDiaria.apps.AvaliacaodiariaConfig',
-
+    'Accounts.apps.AccountsConfig',
     'Perfil',
     'Sangue',
     'Medicacao',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'DoencasExistentes',
     'Historico',
     'AlergiaIntolerancia',
-    'Login',
+    
 ]
 
 MIDDLEWARE = [
@@ -149,3 +149,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# AUTH_USER_MODEL = 'Accounts.User'

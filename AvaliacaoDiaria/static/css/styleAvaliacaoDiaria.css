@@ -1,34 +1,50 @@
-/* Cores
-#FCFFF5 branco falso
-#E6EBE0 gelo
-#ED553B salmao
-#4FB99F verde piscina
-#3DCCC7 azul claro 
-#112F41 azul escuro*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Prompt&family=Rancho&display=swap');
 
-* {
+* { 
     margin: 0;
     box-sizing: border-box;
-  }
+}
+body{
+    overflow-x: hidden;
+    margin-left: 30px;
+}
 
 main{
     display: flex; 
 }
 
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
 /* Classes */
 
-.roof{
+.title{
     background-color: #ED553B;
     height: 75px;
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    color: #FCFFF5;
-    text-align: center;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
 }
 
-/* fiz uma classe para a main e boteo o flex nela */
+.title-text{
+    color: var(--branco);
+    font-size: 35px;
+    font-family: "Poppins", sans-serif;
+
+    text-align: center;
+    padding: 7px;
+}
+
 .content{
     display: flex;
     flex-direction: column;
@@ -36,57 +52,182 @@ main{
     align-items: center;
 }
 
-.menu-left{
-    height: 450px;
-    width: 10%;
-    background-color: #112F41;
-    border-radius: 0 5px 5px 0;
-    position: fixed;
-    align-self: start;
-}
-
-.symptoms{
+/* _____conteudo_box1_____ */
+.box1{
+    display: flex;
+    justify-items: center;
     background-color: #112f41;
     height: 25%;
     width: 70%;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 20%;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
+}
+
+.buttons button{
+    border-radius: 50%;
+    border: 4px solid var(--verde-piscina);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: var(--branco);
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.box1-content{
+    width: 80%;
+}
+
+.labels{
+    display: flex;
+    justify-content: space-around;
+}
+
+.labels label{
+    width: 55px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: var(--branco);
 }
 
 .notes{
     background-color: #FCFFF5;
-    border-radius: 5px;
-    height: 200px;
+    height: 250px;
     width: 20%;
     margin: 15px;
     margin-top: 25px;
     float: right;
+    border-radius: 10px;
 }
 
-.calendar{
+.notes label{
+    color: var(--azul-escuro);
+    font-family: "Poppins";
+    margin-left: 5px;
+}
+
+#text-observacao{
+    width: 100%;
+    height: 222px;
+    border: 1px solid var(--branco);
+    border-radius: 0 0 10px 10px;
+    resize: none;
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+    font-family: "Poppins", sans-serif;
+}
+
+textarea:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+.button-2{
+    width: 100%;
+}
+
+#button-save{
+    float: right;
+    border-radius: 20px;
+    text-align: center;
+    padding: 7px 20px;
+    margin: 10px 10px 10px 0px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--branco);
+    font-family: "Poppins", sans-serif;
+}
+
+#button-save:hover{
+    background-color: #3dccc77e;
+    color: var(--branco);
+}
+
+/* _______final_conteudo_box1______ */
+
+
+/* ________inicio_conteudo_box2_______ */
+.subtitle{
+    position: absolute;
+    left: 17%;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--azul-escuro);
+    margin-bottom: 10%;
+}
+
+.box2{
+    margin-top: 150px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     height: 500px;
     width: 70%;
+    background-color: #4FB99F;
+
+    border-radius: 20px;
 }
 
 .days{
-    background-color: #4FB99F;
+    padding-top: 70px;
     width: 100%;
     height: 100%;
 }
 
-/* Fim Classes */
+.box2-subtitle{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    right: 0;
+    top: 555px;
+}
 
-/* IDs */
+.text3{
+    width: 350px;
+    background-color: var(--salmao);
+    color: var(--azul-escuro);
+    border-radius: 10px 0 0 10px;
+    padding: 10px 10px 10px 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-align: left;
+}
 
-#day{
+#text-passada{
+    margin-top: 60%;
+} 
+
+.semana-passada{
+    margin-top: 18%;
+}
+
+.semana-atual, .semana-passada{
+    display: flex;
+    justify-content: space-around;
+}
+
+.week{
     background-color: #FCFFF5;
-    height: 40px;
-    width: 40px;
+    height: 90px;
+    width: 90px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.box2 .labels label{
+    color: var(--azul-escuro);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
 /* Fim IDs */
