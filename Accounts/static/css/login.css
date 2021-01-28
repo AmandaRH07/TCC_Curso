@@ -6,22 +6,22 @@
 
 @font-face {
     font-family: Poppins-Regular;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: Poppins-Semibold;
-    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
 @font-face {
     font-family: Poppins-Medium;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Medium.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
 }
 
 @font-face {
     font-family: Poppins-Light;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Light.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Light.ttf);
 }
 
 :root {
@@ -53,10 +53,6 @@ body {
   width: 100%;
   font-family: Poppins-Regular;
   overflow-x: hidden;
-}
-
-a{
-    text-decoration: none;
 }
 
 /* _____style-título_____ */
@@ -171,7 +167,6 @@ input:invalid {
     width: 100%;
 
     margin-top: 15px;
-    
 }
 
 .buttons button{
@@ -189,7 +184,6 @@ input:invalid {
 
     font-family: Poppins-Medium;
     cursor: pointer;
-
 }
 
 .buttons button:hover{
