@@ -136,20 +136,22 @@ textarea:focus{
 }
 
 #button-save{
+    color: var(--branco);
     float: right;
     border-radius: 20px;
     text-align: center;
     padding: 7px 20px;
     margin: 10px 10px 10px 0px;
-    border: none;
+    border: 3px solid var(--salmao);
     cursor: pointer;
-    background-color: var(--branco);
+    background-color: var(--salmao);
     font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
 #button-save:hover{
-    background-color: #3dccc77e;
-    color: var(--branco);
+    background-color: var(--branco);
+    color: var(--salmao);
 }
 
 /* _______final_conteudo_box1______ */
@@ -190,10 +192,12 @@ textarea:focus{
     z-index: 100;
     right: 0;
     top: 555px;
+
+    width: 25%;
 }
 
 .text3{
-    width: 350px;
+    width: 100%;
     background-color: var(--salmao);
     color: var(--azul-escuro);
     border-radius: 10px 0 0 10px;

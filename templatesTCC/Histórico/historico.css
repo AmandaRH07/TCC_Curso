@@ -59,9 +59,8 @@ body {
 
 /* _________________menu lateral_______________ */
 .navbar{
-    padding-left: 10px;
-    margin-top: 4.5%;
-    width: 4%;
+    margin: 4.5% 0;
+    width: 50px;
     height: 75%;
     position: fixed;
     background-color: var(--azul-escuro);
@@ -81,34 +80,32 @@ body {
 
 .nav-link{
     display: flex;
-    margin-left: 0;
     width: 100%;
+    height: 100%;
     
     align-items: center;
-    padding: 5%;
     color: var(--branco);
     text-decoration: none;
     white-space: nowrap;
     filter: grayscale(100%) opacity(0.7);
     transition: 0.5s;
+    padding-left: 8%;
 }
 
 .link-text{
     display: none;
     margin-left: 1rem;
-    font-size: 15px;
-    
+    font-size: 15px; 
+    padding: 12px 0;
 }
 
 .nav-link img{
-    margin-left: 5%;
-    min-width: 1rem;
     width: 35px;
     height: 35px;
 }
 
 .navbar:hover{
-    width: 17%;
+    width: 18%;
 }
 
 .navbar:hover .link-text{
@@ -121,7 +118,6 @@ body {
     color: var(--salmao);
     border-radius: 0 20px 20px 0;
     font-family: Poppins-Semibold;
-
 }
 
 #historico img, #cirurgia img{
@@ -133,7 +129,7 @@ body {
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     flex-direction: column;
 }
 
@@ -180,7 +176,7 @@ section {
 
 .primary-card,
 .second-card {
-    width: 40%;
+    width: 45%;
     height: 20%;
     border-radius: 20px;
     min-height: 29rem;
@@ -192,7 +188,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     padding-top: 5px;
 }
 
@@ -235,6 +231,9 @@ input[type='file'] {
     font-size: 1.5rem;
     font-weight: 500;
     background-color: var(--branco);
+}
+
+#file-name, #file-name2{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -258,7 +257,7 @@ label:hover{
 
 ::placeholder {
     color: var(--verde-piscina);
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins-Regular;
     font-size: 1.6rem;
     font-weight: 500;
 }
@@ -270,7 +269,6 @@ label:hover{
     display: flex;
     justify-content:right;
     flex-direction: column;
-    
 }
 
 .primary-card button {
@@ -278,21 +276,21 @@ label:hover{
     color: var(--branco);
     font-size: 2rem;
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins-Regular;
 
     padding: 1rem;
-    margin: 4rem 0 1rem;
-
-
+    margin: 10px 0 1rem;
     background-color: var(--salmao);
 
     border-radius: 20px;
-    border: none;
+    border: 3px solid var(--salmao);
 }
 
 .primary-card button:hover {
     cursor: pointer;
-    opacity: .8;
+    color: var(--salmao);
+    background-color: var(--branco);
+    border: 3px solid var(--salmao);
 }
 
 .second-card {
@@ -317,20 +315,17 @@ label:hover{
 
     margin-left: 8%;
     margin-top: 5rem;
-    margin-bottom: 30px;
-
-    display: block;
-    direction: row;
-    
+    margin-bottom: 30px;    
 
     overflow-x: scroll;
 }
+
 
 .history-content .card {
     background-color: var(--branco);
 
     height: 80%;
-    width: 12%;
+    width: px;
     border-radius: 15px;
 
     margin: 5px;
