@@ -1,57 +1,48 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title> Cadastro de perfil</title>
+    <meta charset="UTF-8" />
+    <title>Cadastro de perfil</title>
     <link rel="stylesheet" href="{% static 'css/styleCadastro.css' %}">
-
 </head>
 
 <body>
-    
     <section>
-
         <div class="wave wave1"></div>
         <div class="wave wave2"></div>
-        
     </section>
-
     <main class="content">
-
         <div>
-
-            <h1> CADASTRE-SE!</h1>
-
+            <h1>CADASTRE-SE!</h1>
         </div>
         <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="register"> 
-                <input id="edit_information" name="nome" type="text" required placeholder="Nome completo">
-                <input id="edit_information" name="nascimento" type="date" required placeholder="Data nascimento">
-                    <select id="edit_information" name="sexo" required id="id_sexo">
-                        <option value="feminino">Feminino</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="outro">Outro</option>
-                        <option value="sem_resposta">Prefiro não responder</option>
-                    </select>
+            <div class="register">
+                <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required />
+                <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
+                <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required />
+                <select id="edit_information" name="sexo" id="id_sexo" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro</option>
+                    <option value="sem_resposta">Prefiro não responder</option>
+                </select>
             </div>
-            <div class="register"> 
-                <input id="edit_information"  name="email" type="email" required placeholder="E-mail">
-                <input id="edit_information"  name="usuario" type="usuario" required placeholder="Usuario">
-                <input id="edit_information"  name="telefone" type="tel" required placeholder="Telefone">
-                <input id="edit_information"  name="senha" type="password" required placeholder="Senha">
-
-                <div class="button"> 
-                    <button id="button_information" type="submit"> FINALIZAR CADASTRO</button>
+            <div class="register">
+                <input id="edit_information" name="email" type="email" placeholder="E-mail" required />
+                <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required />
+                <input id="edit_information" name="senha" type="password" placeholder="Senha" required />
+                <input id="edit_information" name="senha2" type="password" placeholder="Confirme a senha" required />
+                <div class="button">
+                    <button id="button_information" type="submit">
+                        FINALIZAR CADASTRO
+                    </button>
                 </div>
             </div>
         </form>
-        
     </main>
-
 </body>
 
 </html>

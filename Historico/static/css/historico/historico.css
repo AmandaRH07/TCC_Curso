@@ -8,17 +8,17 @@
 #112F41 azul escuro*/
 @font-face {
     font-family: Poppins-Regular;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: Poppins-Semibold;
-    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
 @font-face {
     font-family: Poppins-Medium;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Medium.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
 }
 
 * {
