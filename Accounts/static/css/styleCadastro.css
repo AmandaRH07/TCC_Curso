@@ -6,11 +6,16 @@
     box-sizing: border-box;
     font-family: "Poppins", serif;
     outline: none;
+    overflow: hidden;
+
 }
 
-main{
+body, main{
     
     display: flex; 
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 
 }
 
@@ -76,6 +81,32 @@ section .wave.wave2{
 
 /* Classes */
 
+select{
+
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ;
+    background-image: url(../img/icone.png);
+    background-repeat: repeat;
+    background-position:  310px;
+    background-size: 20px;
+    height: 50px;
+    width: 300px;
+    border-radius: 20px; 
+    border: 1px solid #112F41;
+    padding-left: 4%;
+    margin: 2%; 
+    background: #FCFFF5;
+    color: #112F41;
+}
+/* select option{
+    color: #112F41;
+    /* font-weight: 600; 
+    font-family: 'Poppins', serif;
+}  */
+
 .content{
 
     position: absolute;
@@ -84,10 +115,11 @@ section .wave.wave2{
     border-radius: 15px;
     background-color: #FCFFF5;
     box-shadow: 0px 0px 18px #061722;
-    height: 420px;
-    width: 55%;
-    left: 22%;
-    top: 15%;
+    height: 55%;
+    width:55%;
+    margin-top: 7%;
+
+
 }
 
  h1{
@@ -104,7 +136,7 @@ form{
 
     display: flex;
     flex-direction: row;
-    height: 240px;
+    height: 400px;
     margin-left: 0px;
     margin-top: 45px;
 
@@ -114,9 +146,10 @@ form{
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 300px;
-    width: 400px;
-    margin-left: 25px; 
+    width: 500px;
+    /* margin-left: 25px;  */
 }
 
 ::placeholder{
@@ -141,8 +174,8 @@ form{
     width: 300px;
     border-radius: 20px; 
     border: 1px solid #112F41;
-    padding: 2%;
-    margin: 4%; 
+    padding: 4%;
+    margin: 2%; 
     background: #FCFFF5;
     color: #112F41;
 }
@@ -156,7 +189,7 @@ form{
     font-size: 15px;
     border: 0px;
     border-radius: 20px;
-    margin-top: 90px;
+    margin-top: 100px;
     margin-right: 30px;
     height: 40px;
     width: 200px;
