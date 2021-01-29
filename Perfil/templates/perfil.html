@@ -16,7 +16,7 @@
             <div class="container_perfil">
                 <div class="foto_perfil">
                     {% if dados_user.foto %}
-                    <img src="{{ dados_user.foto}}" alt="{{ dados_user.nome }}">
+                        <img src="/media/{{ dados_user.foto}}" alt="{{ dados_user.nome }}" class="foto_perfil">
                     {% endif %}
                 </div>
                 <div>
@@ -32,7 +32,7 @@
         enctype="multipart/form-data">
         {% csrf_token %}
         <div class="register">
-            <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
+            <input type="hidden" name="id_user" value="{{ user.id }}">
             <input id="edit_information" type="file" name="foto" accept="image/*" value="{{ dados_user.foto }}">
             <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required
                 value="{{ dados_user.nome }}" />
