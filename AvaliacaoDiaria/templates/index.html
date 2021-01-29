@@ -5,44 +5,128 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Avaliação Dária</title>
+    <title> Avaliação Diária | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/styleAvaliacaoDiaria.css' %}">
 
 </head>
 
 <body>
     <header>
-        <div class="roof">
-            <p> Como você está se sentindo hoje?</p>
+        <div class="title">
+            <p class="title-text"> Como você está se sentindo hoje?</p>
         </div>
-               
+
     </header>
 
     <main class="content">
-        <div class="menu-left">
-            <!-- aqui vai o menu -->
-        </div> 
 
-        <div class="symptoms">
-            <div class="notes">
-                <p>Observações</p>
-            </div>
-        </div> 
-
-        <div class="calendar"> 
-            <p>Calendário Semanal</p>
-            <div class="days"><p>Semana Atual</p>
-                <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
-                <div id="day">
+        <div class="box1">
+            <div class="box1-content">
+                <div class="buttons">
+                    <button id="dor_cabeca"></button>
+                    <button id="dor_corpo"></button>
+                    <button id="dor_estomago"></button>
+                    <button id="cansaco"></button>
+                    <button id="inchaco"></button>
                 </div>
+
+                <div class="labels">
+                    <label for="dor_cabeca">Dor de cabeça</label>
+                    <label for="dor_corpo">Dor no corpo</label>
+                    <label for="dor_estomago">Dor no estômago</label>
+                    <label for="cansaco">Cansaço</label>
+                    <label for="inchaco">Inchaço</label>
+                </div>
+
+                <div class="buttons">
+                    <button id="nausea"></button>
+                    <button id="vomito"></button>
+                    <button id="falta_ar"></button>
+                    <button id="insonia"></button>
+                    <button id="outro"></button>
+                </div>
+
+                <div class="labels">
+                    <label for="nausea">Náusea</label>
+                    <label for="vomito">Vômito</label>
+                    <label for="falta_ar">Falta de ar</label>
+                    <label for="insonia">Insônia</label>
+                    <label for="outro">Outro</label>
+                </div>
+
+                <div class="button-2">
+                    <button id="button-save">Salvar</button>
+                </div>
+
+            </div>
+
+            <div class="notes">
+                <label for="text-observacao">Observação</label>
+                <textarea name="text" id="text-observacao" cols="30" rows="10" placeholder="Escreva aqui"></textarea>
+            </div>
+
+        </div>
+
+
+        <p class="subtitle">Calendário Semanal</p>
+        <div class="box2-subtitle">
+            <p class="text3" id="text-atual">Semana Atual</p>
+            <p class="text3" id="text-passada">Semana Passada</p>
+        </div>
+
+        <div class="box2">
+            <div class="days">
+                <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
+                <div class="semana-atual">
+                    <div class="week" id="dom"></div>
+                    <div class="week" id="seg"></div>
+                    <div class="week" id="ter"></div>
+                    <div class="week" id="qua"></div>
+                    <div class="week" id="qui"></div>
+                    <div class="week" id="sex"></div>
+                    <div class="week" id="sab"></div>
+                </div>
+
+                <div class="labels">
+                    <label for="dom1">DOM</label>
+                    <label for="seg1">SEG</label>
+                    <label for="ter1">TER</label>
+                    <label for="qua1">QUA</label>
+                    <label for="qui1">QUI</label>
+                    <label for="sex1">SEX</label>
+                    <label for="sab1">SAB</label>
+                </div>
+
+                <div class="semana-passada">
+                    <div class="week" id="day8"></div>
+                    <div class="week" id="day9"></div>
+                    <div class="week" id="day10"></div>
+                    <div class="week" id="day11"></div>
+                    <div class="week" id="day12"></div>
+                    <div class="week" id="day13"></div>
+                    <div class="week" id="day14"></div>
+                </div>
+
+                <div class="labels">
+                    <label for="day8">DOM</label>
+                    <label for="day9">SEG</label>
+                    <label for="day10">TER</label>
+                    <label for="day11">QUA</label>
+                    <label for="day12">QUI</label>
+                    <label for="day13">SEX</label>
+                    <label for="day14">SAB</label>
+                </div>
+
             </div>
         </div>
     </main>
-        
+
     <footer>
-        
+
 
     </footer>
+
+    <script src="{% static 'js/avaliacao_diaria.js' %}"></script>
 
 </body>
 
