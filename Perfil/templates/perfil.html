@@ -32,9 +32,11 @@
             <div class="register">
                 <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
                 <input id="edit_information" type="file" name="foto" accept="image/*" value="{{ dados_user.foto }}">
-                <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required  value="{{ dados_user.foto }}"/>
-                <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
-                <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required />
+                <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required  value="{{ dados_user.nome }}"/>
+                <input id="edit_information" name="usuario" type="text" placeholder="Username" required  value="{{ user }}"/>
+                <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required 
+                value=" {​​​​​{​​​​​ dados_user.nascimento|date:'Y-m-d' }​​​​​}​​​​​"
+                />
                 <select id="edit_information" name="sexo" id="id_sexo" required>
                     <option value="feminino">Feminino</option>
                     <option value="masculino">Masculino</option>
@@ -43,14 +45,14 @@
                 </select>
             </div>
             <div class="register">
-                <input id="edit_information" name="email" type="email" placeholder="E-mail" required />
-                <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required />
+                <input id="edit_information" name="email" type="email" placeholder="E-mail" required value="{{ dados_user.email }}"/>
+                <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required value="{{ dados_user.telefone }}"/>
         </div>
         
+        <div class="button">
+            <button id="button" type="submit">Editar perfil </button>
+        </div>
     </form>
-    <div class="button">
-        <button id="button" type="submit">Editar perfil </button>
-    </div>
     
 </body>
 
