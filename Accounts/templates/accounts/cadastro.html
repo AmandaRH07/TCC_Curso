@@ -20,6 +20,7 @@
         <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="register">
+                <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
                 <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required />
                 <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
                 <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required />

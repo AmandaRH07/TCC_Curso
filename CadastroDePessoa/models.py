@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 from AlergiaIntolerancia.models import Alergias, Intolerancias 
 from AvaliacaoDiaria.models import AvaliacaoDiaria
@@ -27,8 +27,8 @@ class Usuario(models.Model):
     telefone = models.CharField('Telefone', max_length=13, blank=False, unique=True, default='00')
 
     email = models.EmailField('Email', max_length=254)
-    senha = models.CharField('Senha', max_length=40)
-
+   
+    id_fk_cadastro_user = models.ForeignKey(User, verbose_name='CadastroUser', on_delete=models.CASCADE, default="")
     '''
     Aqui estamos fazendo as ligações entre o usuário e os dados que serão 
     cadastrados posteriormente 
