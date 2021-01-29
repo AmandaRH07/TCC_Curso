@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.contrib import messages
+
 from CadastroDePessoa.forms import UsuarioForm
 
 
@@ -28,10 +31,6 @@ def cadastro(request):
         return render(request, 'accounts/cadastro.html')
 
     form = UsuarioForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-
     nome = request.POST.get("nome")
     email = request.POST.get('email')
     usuario = request.POST.get('usuario')
@@ -39,6 +38,18 @@ def cadastro(request):
     
     user = User.objects.create_user(username=usuario, email=email, password=senha, first_name=nome, last_name=nome)
     user.save()
+
+
+    if form.is_valid():
+        print('form valid')
+        form.save()
+        messages.info(request, 'Usuário cadastrado com sucesso!')
+    else:
+        print('form invalid')
+        messages.info(request, 'Erro ao cadastrar usuário!')
+
+  
+
 
     return redirect('index_login')
 
