@@ -28,7 +28,7 @@
 
     </header>
 
-    <form class="content" action="{% url 'index_cadastro' %}" method="post" autocomplete="off"
+    <form class="content" action="{% url 'perfil' %}" method="post" autocomplete="off"
         enctype="multipart/form-data">
         {% csrf_token %}
         <div class="register">
@@ -41,10 +41,11 @@
             <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required
                 value="{{ dados_user.nascimento|date:'Y-m-d' }}" />
             <select id="edit_information" name="sexo" id="id_sexo" required>
-                <option value="feminino">Feminino</option>
-                <option value="masculino">Masculino</option>
-                <option value="outro">Outro</option>
-                <option value="sem_resposta">Prefiro não responder</option>
+                <option value="feminino" {% if dados_user.sexo == 'feminino' %} selected {% endif %}>Feminino</option>
+                <option value="masculino" {% if dados_user.sexo == 'masculino' %} selected {% endif %}>Masculino</option>
+                <option value="outro" {% if dados_user.sexo == 'outro' %} selected {% endif %}>Outro</option>
+                <option value="sem_resposta" {% if dados_user.sexo == 'sem_resposta' %} selected {% endif %}>Prefiro não
+                    responder</option>
             </select>
         </div>
         <div class="register">

@@ -9,7 +9,7 @@ from CadastroDePessoa.models import Usuario
 def perfil(request):
 
     form = UsuarioForm(request.POST or None)
-    print(request.user.id)
+    print(request.user.email)
 
 
     if str(request.method) == 'POST':
@@ -19,4 +19,4 @@ def perfil(request):
         else:
             messages.info(request, 'Erro ao atualizar perfil :(')
 
-    return render(request, "perfil.html", {'dados_user': Usuario.objects.get(email=request.user.email)})
+    return render(request, "perfil.html", {'dados_user': Usuario.objects.get(id_fk_cadastro_user=request.user.id)})
