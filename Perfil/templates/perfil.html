@@ -11,40 +11,55 @@
 
 <body>
     <header>
-        
+
         <div class="roof">
             <div class="container_perfil">
-                <div  class="foto_perfil">
-                    <!-- Imagem -->
+                <div class="foto_perfil">
+                    {% if dados_user.foto %}
+                        <img src="/media/{{ dados_user.foto}}" alt="{{ dados_user.nome }}" class="foto_perfil">
+                    {% endif %}
                 </div>
                 <div>
                     <br>
                     <h2>NOME</h2>
                 </div>
             </div>
-            
         </div>
-            
-</header>
 
-    <form class="content">
+    </header>
 
-        <div class="register"> 
-            <input id="edit_information" type="text" required placeholder="Nome completo">
-            <input id="edit_information" type="date" required placeholder="Data nascimento">
-            <input id="edit_information" type="text" maxlength="14" required placeholder="CPF"> 
+    <form class="content" action="{% url 'perfil' %}" method="post" autocomplete="off"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="register">
+            <input type="hidden" name="id_user" value="{{ user.id }}">
+            <input id="edit_information" type="file" name="foto" accept="image/*" value="{{ dados_user.foto }}">
+            <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required
+                value="{{ dados_user.nome }}" />
+            <input id="edit_information" name="usuario" type="text" placeholder="Username" required
+                value="{{ user }}" />
+            <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required
+                value="{{ dados_user.nascimento|date:'Y-m-d' }}" />
+            <select id="edit_information" name="sexo" id="id_sexo" required>
+                <option value="feminino" {% if dados_user.sexo == 'feminino' %} selected {% endif %}>Feminino</option>
+                <option value="masculino" {% if dados_user.sexo == 'masculino' %} selected {% endif %}>Masculino</option>
+                <option value="outro" {% if dados_user.sexo == 'outro' %} selected {% endif %}>Outro</option>
+                <option value="sem_resposta" {% if dados_user.sexo == 'sem_resposta' %} selected {% endif %}>Prefiro não
+                    responder</option>
+            </select>
         </div>
         <div class="register">
-            <input id="edit_information" type="text" required placeholder="Sexo">
-            <input id="edit_information" type="email" required placeholder="E-mail">
-            <input id="edit_information"  type="tel" required placeholder="Telefone">
+            <input id="edit_information" name="email" type="email" placeholder="E-mail" required
+                value="{{ dados_user.email }}" />
+            <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required
+                value="{{ dados_user.telefone }}" />
         </div>
-        
+
+        <div class="button">
+            <button id="button" type="submit">Editar perfil </button>
+        </div>
     </form>
-    <div class="button">
-        <button id="button" type="submit">Editar perfil </button>
-    </div>
-    
+
 </body>
 
 </html>

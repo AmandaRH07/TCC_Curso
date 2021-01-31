@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Rancho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Patua+One&display=swap');
 
 
-@font-face {
+@font-face { 
     font-family: Poppins-Regular;
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
 }
@@ -169,7 +166,7 @@ input:invalid {
     margin-top: 15px;
 }
 
-.buttons button{
+.buttons button, a{
     border: 2px solid var(--branco);
     border-radius: 40px;
 
@@ -186,10 +183,27 @@ input:invalid {
     cursor: pointer;
 }
 
-.buttons button:hover{
+a{
+    text-decoration: none;
+    font-size: 13px;
+    padding: 12px 0 ;
+}
+
+.buttons button:hover, a:hover{
     background-color: #FCFFF5;
     color: #ED553B;
     border: 2px solid #ED553B;
+}
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--azul-escuro) inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--branco) !important;
+    -webkit-text-fill-font: Poppins-Regular !important;
 }
 
 /* _____style-da-imagem_____ */

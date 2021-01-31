@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from stdimage.models import StdImageField
+
 from AlergiaIntolerancia.models import Alergias, Intolerancias 
 from AvaliacaoDiaria.models import AvaliacaoDiaria
 from Cirurgias.models import Cirurgias
@@ -20,11 +22,11 @@ class Usuario(models.Model):
     )
 
     id_usuario = models.AutoField(primary_key=True) 
-    foto = models.ImageField(upload_to='midia/usuario_img', blank=True) 
+    foto = StdImageField(upload_to='perfil_user', blank=True) 
     nome = models.CharField('Nome', max_length=100)
     nascimento = models.DateField('Data de Nascimento')
     sexo = models.CharField('Sexo', choices=SEXO_CHOICES, max_length=21)
-    telefone = models.CharField('Telefone', max_length=13, blank=False, unique=True, default='00')
+    telefone = models.CharField('Telefone', max_length=13, blank=False, default='00')
 
     email = models.EmailField('Email', max_length=254)
    
