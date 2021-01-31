@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <title> Avaliação Diária | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/styleAvaliacaoDiaria.css' %}">
@@ -22,12 +22,13 @@
 
         <div class="box1">
             <div class="box1-content">
+                
                 <div class="buttons">
-                    <button id="dor_cabeca"></button>
-                    <button id="dor_corpo"></button>
-                    <button id="dor_estomago"></button>
-                    <button id="cansaco"></button>
-                    <button id="inchaco"></button>
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="dor_cabeca" value="dor_cabeca">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="dor_corpo" value="dor_corpo">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="dor_estomago" value="dor_estomago">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="cansaco" value="cansaco">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="inchaco" value="inchaco">
                 </div>
 
                 <div class="labels">
@@ -39,31 +40,38 @@
                 </div>
 
                 <div class="buttons">
-                    <button id="nausea"></button>
-                    <button id="vomito"></button>
-                    <button id="falta_ar"></button>
-                    <button id="insonia"></button>
-                    <button id="outro"></button>
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="nausea" value="nausea">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="coriza" value="coriza">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="falta_ar" value="falta_ar">
+                    <input class="checkbox-round" type="checkbox" name="auto-avaliacao" id="insonia" value="insonia">
+                    <button id="outro" name="auto-avalliacao" onclick="mostrar('form')"></button>
                 </div>
 
                 <div class="labels">
                     <label for="nausea">Náusea</label>
-                    <label for="vomito">Vômito</label>
+                    <label for="vomito">Coriza</label>
                     <label for="falta_ar">Falta de ar</label>
                     <label for="insonia">Insônia</label>
                     <label for="outro">Outro</label>
                 </div>
 
+                <form class="adict-sintoma" id="form">
+                    <input type="text" id="adicionar sintoma" placeholder="Outro:">
+                    <button type="submit" id="adicionar">Salvar</button>
+                </form>
+
                 <div class="button-2">
-                    <button id="button-save">Salvar</button>
+                    <button id="button-save" type="submit" >Salvar</button>
                 </div>
 
             </div>
 
             <div class="notes">
-                <label for="text-observacao">Observação</label>
+                <label for="text-observacao">Observação:</label>
                 <textarea name="text" id="text-observacao" cols="30" rows="10" placeholder="Escreva aqui"></textarea>
             </div>
+                
+            
 
         </div>
 

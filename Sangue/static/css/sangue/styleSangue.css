@@ -19,12 +19,12 @@
 
 @font-face {
     font-family: Poppins-Regular;
-    src: local(Poppins), url(fonts/Poppins/Poppins-Regular.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: Poppins-Semibold;
-    src: local(Poppins), url(fonts/Poppins/Poppins-SemiBold.ttf);
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
 *{
@@ -44,77 +44,6 @@ main{
     display: flex; 
 }
 
-/* _________________menu lateral_______________ */
-.navbar{
-    margin-top: 6%;
-    width: 5%;
-    height: 75%;
-    position: fixed;
-    background-color: var(--azul-escuro);
-    transition: 0.3s ease;
-    border-radius: 0 20px 20px 0;
-    padding: 10px 0;
-}
-
-.navbar-nav{
-    list-style: none;
-    padding: 0;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.nav-link{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    color: var(--branco);
-    text-decoration: none;
-    white-space: nowrap;
-    filter: grayscale(100%) opacity(0.7);
-    transition: 0.5s;
-}
-
-.link-text{
-    display: none;
-    margin-left: 1rem;
-    font-size: 15px;
-    
-}
-
-.nav-link img{
-    margin-left: 5px;
-    min-width: 1rem;
-    width: 30px;
-    height: 30px;
-}
-
-.navbar:hover{
-    width: 17%;
-}
-
-.navbar:hover .link-text{
-    display: block;
-}
-
-.nav-link:hover{
-    filter: grayscale(0) opacity(1);
-    background: var(--verde-piscina);
-    color: var(--salmao);
-    border-radius: 0 20px 20px 0;
-    font-family: Poppins-Semibold;
-
-}
-/* __________________fim menu lateral________________ */
-
-/*.center{
-    max-width: 1100px;
-    margin: auto;
-    padding: 2% 0;
-} */
-
 .content{
     display: flex;
     flex-direction: column;
@@ -129,6 +58,11 @@ main{
     height: 500px;
     width: 70%;
 }
+
+.box2{
+    height: 700px;
+}
+
 
 /* Style dos títulos */
 .title .text{
@@ -152,13 +86,16 @@ main{
     flex-direction: column;
 }
 
+.box2 .options{
+    background-color: var(--azul-claro);
+}
+
 /* Style da imagem da box2 */
 /* ps.: qualidade ruim */
 .image{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
 }
 
 /* Style dos botões em geral */
@@ -166,22 +103,21 @@ main{
     display: flex;
     justify-content: space-around;
     padding: 40px 50px 0px;
-    margin-top: 40px;
 }
 
 /* Style botões específicos - tipo sanguíneo */
 .button-type{
-    background-image: url(img/invert_colors_24px.png);
+    background-image: url(/static/img/icone_sangue.png);
     background-position: top;
     background-repeat: no-repeat;
-    background-position-y: 10px;
-    background-size: 30px;
+    background-position-y: 2px;
+    background-size: 35px;
     background-color: var(--gelo);
-    border:none;
+    border: none;
+    margin-top: 40px;
     height: 70px;
     width: 70px;
     line-height: 30px;
-    text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     border-radius: 50px;
@@ -196,9 +132,13 @@ main{
     font-family: Poppins-Semibold;
 }
 
-.button-type:hover, .button-bool:hover{
+.button-type:hover{
     transform: scale(1.05);
     background-color: var(--azul-bebe);
+}
+
+.button-bool:hover{
+    border: 3px solid var(--azul-piscina-escuro);
 }
 
 /* classe ativada ao clicar no botão */
@@ -215,37 +155,53 @@ button:focus {
 /* Style botões específicos - sim ou não */
 .button-bool{
     background-color: var(--gelo);
-    border:none; 
+    border: 3px solid var(--gelo); 
     height: 65px;
     width: 160px;
     line-height: 30px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
-
+    color: var(--azul-piscina-escuro);
+    z-index: 100;
 }
 
 .text-bool{
-    color: var(--azul-piscina-escuro);
     font-size: 30px;
     text-align: center;
 }
 
-/* Tentativa de colocar o rodapé */ 
-/* ps.: não deu certo */
-.waves{
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
+
+.waves-component{
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: scaleY(1);
+    box-shadow: 40px #061722;
+    margin-top: -42%;
 }
 
-.clara{
-    position: absolute;
-    margin-top: 10%;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    justify-items: end;
+.dark-wave{
+    animation: movedark-wave 3s ease-in-out infinite alternate;
 }
+
+@keyframes movedark-wave{
+    from{
+        transform: translateX(-2500px)
+    }
+}
+
+.light-wave {
+    animation: moveWave2 3s 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes moveWave2 {
+    from {
+        transform: translateX(-1000px);
+    }
+}
+
+
 

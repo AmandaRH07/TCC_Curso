@@ -15,7 +15,7 @@
     font-family: Poppins-Semibold;
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
 }
-
+ 
 @font-face {
     font-family: Poppins-Medium;
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
