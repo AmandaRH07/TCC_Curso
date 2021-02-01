@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .forms import EntryCreationForm
 
 def medicacao(request):
-    return render(request, "medicacao.html")
+    form = EntryCreationForm(request.POST or None)
+    return render(request, "medicacao.html", {"form":form})
+
