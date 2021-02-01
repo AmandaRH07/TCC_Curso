@@ -103,6 +103,7 @@ main{
     display: flex;
     justify-content: space-around;
     padding: 40px 50px 0px;
+    outline: none;
 }
 
 /* Style botões específicos - tipo sanguíneo */
@@ -114,7 +115,6 @@ main{
     background-size: 35px;
     background-color: var(--gelo);
     border: none;
-    margin-top: 40px;
     height: 70px;
     width: 70px;
     line-height: 30px;
@@ -123,11 +123,16 @@ main{
     border-radius: 50px;
     box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
     transition: 0.1s;
+
     outline: thin dotted;
     outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
+    outline: none;
 }
 
+#buttons-1{
+    margin-bottom: 40px;
+}
 
 
 
@@ -179,6 +184,7 @@ button:focus {
     text-align: center;
 }
 
+/* //////////////////////////////////// */
 
 .waves-component{
     position: absolute;
@@ -186,7 +192,8 @@ button:focus {
     right: 0;
     transform: scaleY(1);
     box-shadow: 40px #061722;
-    margin-top: -42%;
+    margin-top: 42%;
+    bottom: -10;
 }
 
 .dark-wave{
@@ -208,6 +215,4 @@ button:focus {
         transform: translateX(-1000px);
     }
 }
-
-
 
