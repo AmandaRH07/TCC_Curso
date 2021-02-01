@@ -6,17 +6,14 @@
     box-sizing: border-box;
     font-family: "Poppins", serif;
     outline: none;
-    overflow: hidden;
 
 }
 
-body, main{
-    
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", serif;
 }
 
 /* Background */
@@ -28,6 +25,7 @@ section{
     height: 100%;
     background: #112F41;
     overflow: hidden;
+
 }
 
 section .wave{
@@ -83,14 +81,13 @@ section .wave.wave2{
 
 select{
 
-
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none ;
+    -moz-appearance: none ; 
     background-image: url(../img/icone.png);
-    background-repeat: repeat;
-    background-position:  310px;
+    background-repeat: no-repeat;
+    background-position: 263px; 
     background-size: 20px;
     height: 50px;
     width: 300px;
@@ -98,14 +95,10 @@ select{
     border: 1px solid #112F41;
     padding-left: 4%;
     margin: 2%; 
-    background: #FCFFF5;
+    background-color: #FCFFF5;
     color: #112F41;
+    font-size: 15px;
 }
-/* select option{
-    color: #112F41;
-    /* font-weight: 600; 
-    font-family: 'Poppins', serif;
-}  */
 
 .content{
 
@@ -115,10 +108,12 @@ select{
     border-radius: 15px;
     background-color: #FCFFF5;
     box-shadow: 0px 0px 18px #061722;
-    height: 55%;
+    height: 80%;
     width:55%;
-    margin-top: 7%;
-
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 
 }
 
@@ -147,9 +142,8 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
+    height: 360px;
     width: 500px;
-    /* margin-left: 25px;  */
 }
 
 ::placeholder{
@@ -160,10 +154,10 @@ form{
 }
 .button{
 
-    display: flex;
-    flex-direction: column;
+    display: block;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 
 /* IDs */
@@ -182,24 +176,108 @@ form{
 
 #button_information{
 
-    position: absolute;
     color: #FCFFF5;
     background: #ED553B;
     font-family: 'Poppins',serif;
     font-size: 15px;
     border: 0px;
     border-radius: 20px;
-    margin-top: 100px;
-    margin-right: 30px;
     height: 40px;
     width: 200px;
     cursor: pointer;
+    
 }
 #button_information:hover{
 
     background-color: #FCFFF5;
     color: #ED553B;
     border: 2px solid #ED553B;
-    transform: scale(1.1);
-    /* box-shadow: 0px 0px 18px #ED553B; */
+}
+
+
+@media (max-width: 768px){
+
+    .content{
+
+        height: 75%;
+        width:70%;
+    
+    }
+    form{
+
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+
+    #edit_information{
+
+        margin: 3%; 
+    }
+}
+
+@media (max-width: 1024px){
+
+    .content{
+
+        height: 52%;
+        width:70%;
+    
+    }
+    h1{
+
+        margin-top: 20px;
+    }
+
+    form{
+
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+
+    #edit_information{
+
+        margin: 5%; 
+    }
+}
+
+ @media (min-width: 1440px){
+
+    .content{
+
+        height: 60%;
+        width:70%;
+        align-items: center;
+        left: 50%;
+    
+    
+    }
+    #edit_information{
+
+        
+        margin: 2.5%; 
+        width: 400px;
+        height: 50px;
+    
+    }
+
+    h1{
+        margin-top: 50px;
+        font-size: 30px;
+    }
+
+    select{
+
+        width: 400px;
+        height: 50px;
+        background-position: 363px; 
+        background-size: 15px;
+    }
+    .button{
+
+        margin-top: 80px;
+    }
+
 }

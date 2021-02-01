@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de perfil</title>
     <link rel="stylesheet" href="{% static 'css/styleCadastro.css' %}">
+    <link rel="shortcut icon" href="#" />
 </head>
 
 <body>
@@ -13,11 +15,11 @@
         <div class="wave wave1"></div>
         <div class="wave wave2"></div>
     </section>
-    <main class="content">
+    <main class="content" >
         <div>
             <h1>CADASTRE-SE!</h1>
         </div>
-        <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data">
+        <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data" >
             {% csrf_token %}
             <div class="register">
                 <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
@@ -32,13 +34,13 @@
                     <option value="sem_resposta">Prefiro não responder</option>
                 </select>
             </div>
-            <div class="register">
+            <div class="register" >
                 <input id="edit_information" name="email" type="email" placeholder="E-mail" required />
                 <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required />
                 <input id="edit_information" name="senha" type="password" placeholder="Senha" required />
                 <input id="edit_information" name="senha2" type="password" placeholder="Confirme a senha" required />
-                <div class="button">
-                    <button id="button_information" type="submit">
+                <div class="button" >
+                    <button id="button_information" >
                         FINALIZAR CADASTRO
                     </button>
                 </div>
