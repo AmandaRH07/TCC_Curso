@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", serif;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+}
+
+/* ****************************************
+                        MENU
+**************************************** */
+
+header nav ul li {
+    list-style: none;
+}    
+
+.side-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+    height: 80%;
+    width: 8%;
+    background-color: #112F41;
+    border-radius: 0 20px 20px 0;
+    position: fixed;
+    top: 10%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--salmao);
+
+   width: 50%;
+   height: 9rem;
+   border-radius: 0 0 20px 20px;
+
+   font-weight: 600;
+   font-size: 4rem;
+   color: var(--branco);
+}
+
+section {
+    width: 83%;
+    margin-left: 15%;
+    margin-right: 7% ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.primary-card,
+.second-card {
+    width: 50rem;
+    height: 8rem;
+    border-radius: 20px;
+    min-height: 29rem;
+    margin-top: 7rem;
+}
+
+.primary-card {
+    background-color: var(--verde-piscina);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-card > input,
+.input-content > input {
+    width: 90%;
+    padding: 1.5rem;
+    margin: .5rem 0;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+::placeholder {
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.input-content {
+    width: 90%;
+    
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.input-content > input {
+    width: 48%;
+}
+
+.primary-card button {
+    width: 17rem;
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+
+    padding: 1rem;
+    margin-top: 1rem;
+
+    background-color: var(--salmao);
+
+    border-radius: 20px;
+    border: 2px solid var(--salmao);
+}
+
+.primary-card button:hover {
+    cursor: pointer;
+    border: 2px solid var(--salmao);
+    background-color: var(--branco);
+    color: var(--salmao);
+}
+
+.second-card {
+    background-color: var(--azul-piscina-escuro);
+} 
+
+.second-card h1 {
+    font-weight: 500;
+    color: var(--branco);
+    padding: 20px 20px;
+}
+
+/* .scroll{
+
+    overflow-x: scroll;
+} */
+
+#history-content {
+    background-color: var(--azul-escuro);
+    width: 80%;
+    min-height: 30rem;
+
+    border-radius: 20px;
+
+    margin-left: 8%;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+#history-content .card {
+    background-color: var(--branco);
+
+    height: 95%;
+    width: 200px;
+    border-radius: 10px;
+
+    margin: 10px;
+    text-align: center;
+    min-width: 200px;
+    
+    
+
+}
+
+#history-content .card h2 {
+    color: var(--azul-piscina-escuro);
+    font-weight: 500;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+}
+
+
+#history-content .card h3 {
+    margin-top: .5rem;
+    font-weight: 600;
+    color: var(--verde-piscina);
+}
+
+
+#history-content .card span {
+    font-weight: 600;
+    color: var(--verde-piscina);
+    padding: 0 1rem;
+}
+
+@media (max-width: 1024px){
+
+    .primary-card,
+    .second-card {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 1440px){
+
+    .primary-card,
+    .second-card {
+        width: 55rem;
+        margin-top: 10rem;
+    }
+    #history-content {
+        
+        margin-top: 8rem;
+    }
+}

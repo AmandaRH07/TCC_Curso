@@ -1,1 +1,40 @@
-<h1>doencas-existentes</h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doenças Existentes | MedFile</title>
+    <link rel="stylesheet" href="{% static 'css/doencas-existentes.css' %}">
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="title-container">
+                <span>Doenças Existentes</span>
+            </div>
+
+        <section>
+            <div class="primary-card">
+                <input type="text" name="" id="" placeholder="Nome:" required>
+                <input type="text" name="" id="" placeholder="Onde:" required>
+                <div class="input-content">
+                    <input type="date" name="" id="" required>
+                    <input type="time" name="" id="" placeholder="Horário">
+                </div>
+                <button type="submit">Cadastrar</button>
+            </div>
+            <div class="second-card">
+                <h1>Sobre:</h1>
+            </div>
+        </section>
+
+    </div>
+    </main>
+</body>
+</html>
