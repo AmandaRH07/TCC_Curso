@@ -208,11 +208,10 @@ section {
     
 }
 
-
 input[type='file'] {
     display: none
 }
-
+ 
 .first-file, .second-file{
     display: flex;
     justify-content: space-between;
@@ -286,6 +285,11 @@ label:hover{
     border: 3px solid var(--salmao);
 }
 
+.primary-card input{
+    color: var(--verde-piscina);
+    font-family: Poppins-Regular;
+}
+
 .primary-card button:hover {
     cursor: pointer;
     color: var(--salmao);
@@ -316,7 +320,7 @@ label:hover{
 
     margin-left: 8%;
     margin-top: 5rem;
-    margin-bottom: 10px;    
+    margin-bottom: 50px;    
 
     overflow-x: scroll;
     display: inline-flex;
@@ -354,6 +358,69 @@ label:hover{
 .history-content .card span {
     font-weight: 600;
     color: var(--verde-piscina);
+}
+
+.third-card{
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10%;
+}
+
+.third-card .first-background{
+    background-color: var(--azul-escuro);
+    width: 60%;
+
+    margin-top: 20%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.third-card .first-background h2{
+    color: var(--branco);
+    text-align: center;
+    width: 70%;
+    padding: 5%;
     
 }
 
+.third-card .question{
+    background-color: var(--verde-piscina);
+    height: 200px;
+    width: 100%;
+    margin-top: -100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20%;
+}
+
+.question-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.question-content label{
+    background: none;
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.question-content input{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--verde-piscina) !important;
+    -webkit-text-fill-font: Poppins-Regular !important;
+}

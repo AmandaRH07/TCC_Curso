@@ -35,7 +35,7 @@
 
 }
 
-  body{
+body{
     overflow-x: hidden;
     background-color: #FCFFF5;
 }
@@ -123,7 +123,13 @@ main{
     border-radius: 50px;
     box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
     transition: 0.1s;
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
 }
+
+
+
 
 .text-button{
     color: var(--azul-escuro);
