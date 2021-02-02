@@ -1,16 +1,10 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title> Sangue | MedFile</title>
-    <link rel="stylesheet" href="{% static 'css/sangue/styleSangue.css' %}">
-
-</head>
-
-
-<body>
+ 
+{% block title %}Sangue{%endblock%}
+{% block css %} {% static 'css/sangue/styleSangue.css' %} {%endblock%}
+{% block content%}
     <header>
         <!-- <div class="center">  -->
 
@@ -87,3 +81,5 @@
 </body>
 
 </html>
+
+{%endblock%}
