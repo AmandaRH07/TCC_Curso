@@ -335,3 +335,103 @@ p{
     width: 200px;
 }
 /* Fim IDs */
+
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+    margin: 4.5% 0;
+    width: 50px;
+    height: 75%;
+    position: fixed;
+    background-color: var(--azul-escuro);
+    transition: 0.3s ease;
+    border-radius: 0 20px 20px 0;
+    z-index: 100;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    list-style: none;
+}
+
+
+.nav-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    color: var(--branco);
+    text-decoration: none;
+    white-space: nowrap;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
+    padding-left: 8%;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+    font-size: 15px;
+    padding: 12px 0;
+}
+
+.nav-link img {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar:hover {
+    width: 18%;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.nav-link:hover {
+    filter: grayscale(0) opacity(1);
+    background: #53b6a138;
+    color: var(--salmao);
+    border-radius: 0 20px 20px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+#historico img,
+#cirurgia img {
+    width: 40px;
+    height: 40px;
+}
