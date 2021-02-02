@@ -1,5 +1,12 @@
+
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
+ 
+{% block title %}Perfil{%endblock%}
+{% block css %} {% static 'css/stylePerfil.css' %} {%endblock%}
+{% block content%}
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -7,7 +14,7 @@
     <title> Editar perfil</title>
     <link rel="stylesheet" href="{% static 'css/stylePerfil.css' %}">
 
-</head>
+</head> -->
 
 <body>
     <header>
@@ -21,7 +28,7 @@
                 </div>
                 <div>
                     <br>
-                    <h2>NOME</h2>
+                    <h1>NOME</h1>
                 </div>
             </div>
         </div>
@@ -40,6 +47,12 @@
                 value="{{ user }}" />
             <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required
                 value="{{ dados_user.nascimento|date:'Y-m-d' }}" />
+        </div>
+        <div class="register">
+            <input id="edit_information" name="email" type="email" placeholder="E-mail" required
+                value="{{ dados_user.email }}" />
+            <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required
+                value="{{ dados_user.telefone }}" />
             <select id="edit_information" name="sexo" id="id_sexo" required>
                 <option value="feminino" {% if dados_user.sexo == 'feminino' %} selected {% endif %}>Feminino</option>
                 <option value="masculino" {% if dados_user.sexo == 'masculino' %} selected {% endif %}>Masculino</option>
@@ -47,19 +60,21 @@
                 <option value="sem_resposta" {% if dados_user.sexo == 'sem_resposta' %} selected {% endif %}>Prefiro não
                     responder</option>
             </select>
-        </div>
-        <div class="register">
-            <input id="edit_information" name="email" type="email" placeholder="E-mail" required
-                value="{{ dados_user.email }}" />
-            <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required
-                value="{{ dados_user.telefone }}" />
+            <div id="buttons">
+                <button class="button" type="submit">Gerar PDF </button>
+                <button class="button" type="submit">Gerar QRcode </button>
+            </div>
+
         </div>
 
-        <div class="button">
-            <button id="button" type="submit">Editar perfil </button>
-        </div>
     </form>
+    <div id="button-container">
+
+        <button id="button-save" type="submit">Salvar </button>
+
+    </div>
 
 </body>
 
 </html>
+{%endblock%}

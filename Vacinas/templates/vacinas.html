@@ -1,36 +1,109 @@
-{% extends 'base.html' %}
-
 {% load static %}
- 
-{% block title %}Vacinas{%endblock%}
-{% block css %} {​​​​​​​​% static 'css/vacinas/styleVacinas.css' %}​​​​​​​​ {%endblock%}
-{% block content%}
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacinas | MedFile</title>
+    <link rel="stylesheet" href="{% static 'css/vacinas/styleVacinas.css'%}">
+</head>
+
+<body>
     <header>
-        <div class="roof" >
-        
-           <div class="title">
+        <nav class="navbar">
+
+            <ul class="nav-bar">
+                <li class="nav-item" id="perfil">
+                    <a href="{% url 'perfil' %}" class="nav-link">
+                        <img src="{% static 'img/icone_perfil.png' %}" alt="">
+                        <span class="link-text">Perfil</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="av_diaria">
+                    <a href="{% url 'index' %}" class="nav-link">
+                        <img src="{% static 'img/icone_home.png' %}" alt="">
+                        <span class="link-text">Avaliação Diária</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="sangue">
+                    <a href="{% url 'sangue' %}" class="nav-link">
+                        <img src="{% static 'img/icone_sangue.png' %}" alt="">
+                        <span class="link-text">Sangue</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="vacina">
+                    <a href="{% url 'vacinas' %}" class="nav-link">
+                        <img src="{% static 'img/icone_vacinacao.png' %}" alt="">
+                        <span class="link-text">Vacinas</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Alergias/Intolerâncias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="medicacao">
+                    <a href="{% url 'medicacao' %}" class="nav-link">
+                        <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
+                        <span class="link-text">Medicação</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="historico">
+                    <a href="{% url 'historico' %}" class="nav-link">
+                        <img src="{% static 'img/icone_historico.png' %}" alt="">
+                        <span class="link-text">Histórico</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="cirurgia">
+                    <a href="{% url 'cirurgias' %}" class="nav-link">
+                        <img src="{% static 'img/icone_cirurgia.png' %}" alt="">
+                        <span class="link-text">Cirurgias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="doenca">
+                    <a href="{% url 'doencas-existentes' %}" class="nav-link">
+                        <img src="{% static 'img/icone_doencas.png' %}" alt="">
+                        <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+        <div class="roof">
+
+            <div class="title">
                 <h1> Vacinas</h1>
-            </div>  
-           
+            </div>
+
         </div>
-    
+
     </header>
-    
 
-    <main class="content" >
 
-        <div class="search-box"> 
+    <main class="content">
+
+        <div class="search-box">
 
             <input class="txt-search" type="text" name="" placeholder="Pesquisar...">
-            <button class="btn-search" type="submit" > 
-            <img style="width: 30px;" src="../static/img/lupa.png"></button>
-            
+            <button class="btn-search" type="submit">
+                <img style="width: 30px;" src="../static/img/lupa.png"></button>
+
         </div>
 
         <br>
-        
-        <div class="center"> 
+
+        <div class="center">
 
             <div id="scroll-vaccines" class="scroll">
 
@@ -63,63 +136,66 @@
                     <h2> Febre Amarela </h2>
                     <p class="data-vacinnes">dd/mm/aaaa</p>
                 </button>
-                
+
                 <button id="vaccines">
                     <h2> Febre Amarela </h2>
                     <p class="data-vacinnes">dd/mm/aaaa</p>
                 </button>
 
-            </div> 
-       
-            <div class="right" >
+            </div>
+
+            <div class="right">
 
                 <div id="information" class="scroll">
 
-                    <p >Informações </p>
-                    
+                    <p>Informações </p>
+
                     <div>
-                        <p class= "conteudo-information">
-                            Santa Catarina é um estado na região sul do Brasil. Com uma longa costa com o Atlântico e muitas ilhas,
-                             ela é conhecida por suas praias e montanhas. Florianópolis, a capital, tem um mercado público tradicional 
-                             com bares, restaurantes e barracas de comida, além de um museu histórico instalado em um palácio do governo 
-                             colonial do século 19. Florianópolis está basicamente na ilha de Santa Catarina, que conta com resorts de praia na extremidade norte. 
+                        <p class="conteudo-information">
+                            Santa Catarina é um estado na região sul do Brasil. Com uma longa costa com o Atlântico e
+                            muitas ilhas,
+                            ela é conhecida por suas praias e montanhas. Florianópolis, a capital, tem um mercado
+                            público tradicional
+                            com bares, restaurantes e barracas de comida, além de um museu histórico instalado em um
+                            palácio do governo
+                            colonial do século 19. Florianópolis está basicamente na ilha de Santa Catarina, que conta
+                            com resorts de praia na extremidade norte.
                         </p>
                     </div>
 
                 </div>
 
-                <div class="register"> 
+                <div class="register">
 
                     <p>Cadastro de Vacina</p>
 
                     <br>
 
                     <div id="cadastro">
-                        <input id="register-information" type=text placeholder="Nome da vacina"> 
+                        <input id="register-information" type=text placeholder="Nome da vacina">
                         <input id="register-information" type=text placeholder="Dose">
                     </div>
-                   
+
                     <div id="cadastro">
                         <input id="register-information" type=text placeholder="Lote">
                         <input id="register-information" type="date">
                     </div>
-                    
+
                     <div id="cadastro">
-                        <input id="register-information-local" type=text placeholder="Local" >
+                        <input id="register-information-local" type=text placeholder="Local">
                     </div>
-                    
+
                     <br>
 
                     <div id="div-button">
                         <button id="button-left" type="submit">Cadastrar </button>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </main>
-     
+
 </body>
 
 </html>
-{%endblock%}

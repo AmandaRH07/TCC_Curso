@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
 * {
     margin: 0;
   }
 
 main{
     display: flex; 
+}
+
+html{
+
+    font-family: "Poppins", sans-serif;
 }
 
 /* Classes */
@@ -30,16 +37,15 @@ main{
     background: #3DCCC7;
 }
 
-h2{
+h1{
     /* Azul escuro */
     color: #112F41;
-    font-family: Tahoma, sans-serif;
     top: 100px;
+
 }
 
 p{
     color: #112F41;
-    font-family: Tahoma, sans-serif;
     font-size: 15px;
 }
 
@@ -67,18 +73,19 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    height: 300px;
+    height: 80%;
     width: 100%;
+    margin-top: 5%;
 
 }
-.button{
+#buttons{
 
     height: 80px;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 form{
@@ -87,38 +94,51 @@ form{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 
 }
 
 ::placeholder{
 
     color: #112F41;
-    font-family: Tahoma, sans-serif;
     font-size: 15px;
 }
 
 textarea:focus, input:focus, select:focus, button:focus{
     outline: 0;
 }
-
-/* IDs */
-
-#button{
+.button{
 
     margin-top: 25px;
     height: 50px;
-    width: 150px;
+    width: 180px;
     font-size: 20px;
-    border-radius: 10px;
-    border: 1px solid #112F41;
+    border-radius: 20px;
+    border: 2px solid #112F41;
     cursor: pointer;
-    
-    /* Azul escuro */
-    color: #112F41;
-
-    /* Verde piscina */
-    background-color: #4FB99F ;
+    margin: 20px;
+    color: #FCFFF5;
+    background-color: #112F41 ;
 }
+.button:hover{
+    background-color: #FCFFF5 ;
+    color: #112F41;
+}
+
+/* IDs */
+
+#buttons{
+
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 #information{
 
@@ -129,27 +149,45 @@ textarea:focus, input:focus, select:focus, button:focus{
     padding: 2%;
     margin: 4%; 
     color: #112F41;
-    font-family: Tahoma, sans-serif;
-    border: 1px solid black;
+
 
 }
 
 #edit_information{
 
     height: 50px;
-    width: 300px;
+    width: 400px;
     border-radius: 15px; 
     border: 1px solid #112F41;
     padding: 2%;
     margin: 4%; 
 
-    border: 1px solid black;
 
 }
 
-#button:hover{
-    background-color: #068587;
-    border-radius: 10px;
-    border: 1px solid #ffff;
-    color: #ffff;
+#button-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#button-save{
+
+    margin-top: 25px;
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid #068587;
+    cursor: pointer;
+    margin: 20px;
+    color: #FCFFF5;
+    background-color: #068587 ;
+}
+
+#button-save:hover{
+    background-color: #FCFFF5 ;
+    color: #068587;
 }

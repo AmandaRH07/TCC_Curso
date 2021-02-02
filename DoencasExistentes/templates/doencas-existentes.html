@@ -1,11 +1,86 @@
-{% extends 'base.html' %}
-
 {% load static %}
- 
-{% block title %}Doenças Existentes{%endblock%}
-{% block css %} {​​​​​​​​% static 'css/doencas-existentes.css' %}​​​​​​​​ {% endblock %}
-{% block content%}
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doenças Existentes | MedFile</title>
+    <link rel="stylesheet" href="{% static 'css/styleMedicacao.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+
+            <ul class="nav-bar">
+                <li class="nav-item" id="perfil">
+                    <a href="{% url 'perfil' %}" class="nav-link">
+                        <img src="{% static 'img/icone_perfil.png' %}" alt="">
+                        <span class="link-text">Perfil</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="av_diaria">
+                    <a href="{% url 'index' %}" class="nav-link">
+                        <img src="{% static 'img/icone_home.png' %}" alt="">
+                        <span class="link-text">Avaliação Diária</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="sangue">
+                    <a href="{% url 'sangue' %}" class="nav-link">
+                        <img src="{% static 'img/icone_sangue.png' %}" alt="">
+                        <span class="link-text">Sangue</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="vacina">
+                    <a href="{% url 'vacinas' %}" class="nav-link">
+                        <img src="{% static 'img/icone_vacinacao.png' %}" alt="">
+                        <span class="link-text">Vacinas</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Alergias/Intolerâncias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="medicacao">
+                    <a href="{% url 'medicacao' %}" class="nav-link">
+                        <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
+                        <span class="link-text">Medicação</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="historico">
+                    <a href="{% url 'historico' %}" class="nav-link">
+                        <img src="{% static 'img/icone_historico.png' %}" alt="">
+                        <span class="link-text">Histórico</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="cirurgia">
+                    <a href="{% url 'cirurgias' %}" class="nav-link">
+                        <img src="{% static 'img/icone_cirurgia.png' %}" alt="">
+                        <span class="link-text">Cirurgias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="doenca">
+                    <a href="{% url 'doencas-existentes' %}" class="nav-link">
+                        <img src="{% static 'img/icone_doencas.png' %}" alt="">
+                        <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
     <main>
         <div class="container">
             <div class="title-container">
@@ -32,5 +107,3 @@
     </main>
 </body>
 </html>
-
-{% endblock %}
