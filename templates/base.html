@@ -1,1 +1,192 @@
-base
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {%endblock%} | MedFile</title>
+    <link rel="stylesheet" href="{% block css %} {% endblock %}">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Prompt&family=Rancho&display=swap');
+
+        :root {
+            --azul-escuro: #112F41;
+            --azul-piscina-escuro: #068587;
+            --verde-piscina: #4FB99F;
+            --salmao: #ED553B;
+            --branco: #FCFFF5;
+            --gelo: #E6EBE0;
+            --azul-claro: #3DCCC7;
+            --azul-bebe: #b0fffc;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .navbar {
+            margin: 4.5% 0;
+            width: 50px;
+            height: 75%;
+            position: fixed;
+            background-color: var(--azul-escuro);
+            transition: 0.3s ease;
+            border-radius: 0 20px 20px 0;
+            z-index: 100;
+        }
+
+        .nav-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            list-style: none;
+        }
+
+
+        .nav-link {
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+            align-items: center;
+            color: var(--branco);
+            text-decoration: none;
+            white-space: nowrap;
+            filter: grayscale(100%) opacity(0.7);
+            transition: 0.5s;
+            padding-left: 8%;
+        }
+
+        .link-text {
+            display: none;
+            margin-left: 1rem;
+            font-size: 15px;
+            padding: 12px 0;
+        }
+
+        .nav-link img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .navbar:hover {
+            width: 18%;
+        }
+
+        .navbar:hover .link-text {
+            display: block;
+        }
+
+        .nav-link:hover {
+            filter: grayscale(0) opacity(1);
+            background: #53b6a138;
+            color: var(--salmao);
+            border-radius: 0 20px 20px 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+
+        #historico img,
+        #cirurgia img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="nav-bar">
+                <li class="nav-item" id="perfil">
+                    <a href="{% url 'perfil' %}" class="nav-link">
+                        <img src="{% static 'img/icone_perfil.png' %}" alt="">
+                        <span class="link-text">Perfil</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="av_diaria">
+                    <a href="{% url 'index' %}" class="nav-link">
+                        <img src="{% static 'img/icone_home.png' %}" alt="">
+                        <span class="link-text">Avaliação Diária</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="sangue">
+                    <a href="{% url 'sangue' %}" class="nav-link">
+                        <img src="{% static 'img/icone_sangue.png' %}" alt="">
+                        <span class="link-text">Sangue</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="vacina">
+                    <a href="{% url 'vacinas' %}" class="nav-link">
+                        <img src="{% static 'img/icone_vacinacao.png' %}" alt="">
+                        <span class="link-text">Vacinas</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Alergias/Intolerâncias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="medicacao">
+                    <a href="{% url 'medicacao' %}" class="nav-link">
+                        <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
+                        <span class="link-text">Medicação</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="historico">
+                    <a href="{% url 'historico' %}" class="nav-link">
+                        <img src="{% static 'img/icone_historico.png' %}" alt="">
+                        <span class="link-text">Histórico</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="cirurgia">
+                    <a href="{% url 'cirurgias' %}" class="nav-link">
+                        <img src="{% static 'img/icone_cirurgia.png' %}" alt="">
+                        <span class="link-text">Cirurgias</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="doenca">
+                    <a href="{% url 'doencas-existentes' %}" class="nav-link">
+                        <img src="{% static 'img/icone_doencas.png' %}" alt="">
+                        <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    {%block content%}
+    {%endblock%}

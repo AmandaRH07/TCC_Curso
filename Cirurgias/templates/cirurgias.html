@@ -1,17 +1,10 @@
+{% extends 'base.html' %}
+
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cirurgias | MedFile</title>
-    <link rel="stylesheet" href="{% static 'css/styleCirurgia.css' %}">
-</head>
-<body>
-
-    <header>
-    </header>
+ 
+{% block title %}Cirurgias{%endblock%}
+{% block css %} {% static 'css/styleCirurgia.css' %} {%endblock%}
+{% block content%}
 
     <main>
         <div class="container">
@@ -107,3 +100,5 @@
     </main>
 </body>
 </html>
+
+{%endblock%}

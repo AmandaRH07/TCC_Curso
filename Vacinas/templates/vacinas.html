@@ -1,16 +1,11 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html>
+ 
+{% block title %}Vacinas{%endblock%}
+{% block css %} {​​​​​​​​% static 'css/vacinas/styleVacinas.css' %}​​​​​​​​ {%endblock%}
+{% block content%}
 
-<head>
-    <meta charset="UTF-8">
-    <title> Vacinas</title>
-    <link rel="stylesheet" href="{% static 'css/styleVacinas.css' %}">
-    
-
-</head>
-
-<body>
     <header>
         <div class="roof" >
         
@@ -25,9 +20,6 @@
 
     <main class="content" >
 
-       
-
-        
         <div class="search-box"> 
 
             <input class="txt-search" type="text" name="" placeholder="Pesquisar...">
@@ -130,3 +122,4 @@
 </body>
 
 </html>
+{%endblock%}

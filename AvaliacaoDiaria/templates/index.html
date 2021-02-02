@@ -1,16 +1,12 @@
+{% extends 'base.html' %}
+
 {% load static %}
+ 
+{% block title %}Avaliação Diária{%endblock%}
+{% block css %} {% static 'css/styleAvaliacaoDiaria.css' %} {%endblock%}
+{% block content%}
 
-<!DOCTYPE html>
-<html>
 
-<head> 
-    <meta charset="UTF-8">
-    <title> Avaliação Diária | MedFile</title>
-    <link rel="stylesheet" href="{% static 'css/styleAvaliacaoDiaria.css' %}">
-
-</head>
-
-<body>
     <header>
         <div class="title">
             <p class="title-text"> Como você está se sentindo hoje?</p>
@@ -139,3 +135,5 @@
 </body>
 
 </html>
+
+{% endblock %}
