@@ -17,4 +17,4 @@ class TipoSanguineo(models.Model):
     tipo_sanguineo = models.CharField('Tipo Sanguíneo', choices=TIPO_SANGUINEO_CHOICES, max_length=10)
     doador = models.BooleanField('Doador', default=False)
     historico_doacoes = models.TextField('Histórico de Doações', blank=True)
-    # fk_usuario_tipo_sanguineo = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+    fk_usuario_tipo_sanguineo = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")

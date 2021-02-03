@@ -8,4 +8,4 @@ class TipoSanguineoForm(forms.ModelForm):
     tipo_sanguineo = forms.ChoiceField(choices=TipoSanguineo.TIPO_SANGUINEO_CHOICES, widget=forms.RadioSelect())
     class Meta:
         model = TipoSanguineo
-        fields = ['tipo_sanguineo','doador', 'historico_doacoes']
+        fields = ['tipo_sanguineo','doador', 'historico_doacoes', 'fk_usuario_tipo_sanguineo']
