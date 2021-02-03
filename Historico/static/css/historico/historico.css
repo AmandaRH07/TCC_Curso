@@ -292,32 +292,48 @@ label:hover{
 }
 
 .third-card{
-    width: 50%;
+    width: 70%;
+}
+
+.box-total{
+    width: 100%;
+    display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+.third-card .subtitle-container-2{
+    color: var(--azul-escuro);
+    font-family: Poppins-Medium;
+    font-size: 2rem;
+
+    width: 30%;
+    border-bottom: 2px solid var(--salmao);
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.third-card-box1{
+    width: 60%;
     display: flex;
     flex-direction: column;
-
-    margin-bottom: 10%;
+    align-items: center;
+   
 }
 
 .third-card .first-background{
     background-color: var(--azul-escuro);
-    width: 60%;
-
-    margin-top: 20%;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     z-index: 100;
 }
 
-.third-card .first-background h2{
+.first-background h2{
     color: var(--branco);
     text-align: center;
-    width: 70%;
-    padding: 5%;
-    
+    width: 100%;
+   
+    padding: 10%;
 }
 
 .third-card .question{
@@ -327,27 +343,26 @@ label:hover{
     margin-top: -100px;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20%;
-}
-
-.question-content{
-    display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
+    align-content: flex-end;
 }
 
-.question-content label{
+.option-1, .option-2{
+    margin-top: 15%;
+
+}
+
+.question label{
     background: none;
     color: var(--azul-escuro);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
 }
 
-.question-content input{
-    width: 15px;
-    height: 15px;
+.question input{
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
