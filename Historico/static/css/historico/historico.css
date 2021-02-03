@@ -114,12 +114,15 @@ section {
     margin-top: 7rem;
 }
 
-.primary-card {
-    background-color: var(--verde-piscina);
+.primary-card form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+.primary-card {
+    background-color: var(--verde-piscina);
     padding-top: 5px;
 }
 
@@ -346,6 +349,7 @@ label:hover{
     flex-direction: row;
     justify-content: space-around;
     align-content: flex-end;
+    position: relative;
 }
 
 .option-1, .option-2{
@@ -364,6 +368,12 @@ label:hover{
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+.question-content{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
 }
 
 input:-webkit-autofill {

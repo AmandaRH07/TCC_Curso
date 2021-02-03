@@ -4,7 +4,7 @@ let $input = document.getElementById('selecao-arquivo-receita');
     
 
 $input.addEventListener('change', function(){
-  $fileName.textContent = this.value;
+  $fileName.textContent = this.value.split('\\').pop();
 })
 
 
@@ -14,7 +14,7 @@ let $input2 = document.getElementById('selecao-arquivo-atestado');
 
 
 $input2.addEventListener('change', function(){
-$fileName2.textContent = this.value;
+$fileName2.textContent = this.value.split('\\').pop();
 }
 );
  
