@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -10,13 +11,13 @@ class AvaliacaoDiaria(models.Model):
         ('dorNoEstomago', 'Dor no estômago'),
         ('inchaco', 'Inchaço'),
         ('nausea', 'Náusea'),
-        ('enjoo', 'Enjôo'),
+        ('coriza', 'Coriza'),
         ('faltaDeAr', 'Falta de ar'),
-        ('ansiedade', 'Ansiedade'),
+        ('insonia', 'Insonia'),
         ('outro', 'Outro'),
     )
     id_avaliacao_diaria = models.AutoField(primary_key=True) 
-    sintomas = models.CharField('Sintomas', choices=SINTOMAS_CHOICES, max_length=15)
-    observacoes = models.TextField('Observações') #verificar se precisa max_length
+    sintomas = MultiSelectField('Sintomas', choices=SINTOMAS_CHOICES, max_length=50, max_choices=10)
+    observacoes = models.TextField('Observações', blank=True) #verificar se precisa max_length
     # chave estrangeira para pessoa
 
