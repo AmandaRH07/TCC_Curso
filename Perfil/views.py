@@ -16,5 +16,5 @@ def perfil(request):
             form.save()
         else:
             print('form invalid')
-
+    
     return render(request, "perfil.html", {'dados_user': Usuario.objects.get(id_fk_cadastro_user=request.user.id), 'form': form})
