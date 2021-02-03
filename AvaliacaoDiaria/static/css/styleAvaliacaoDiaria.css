@@ -52,6 +52,9 @@ main{
 }
 
 /* _____conteudo_box1_____ */
+.content form{
+    width: 100%;
+}
 .box1{
     display: flex;
     justify-items: center;
@@ -62,6 +65,7 @@ main{
     margin: 20%;
     margin-top: 40px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .checkbox-round, .buttons button {
@@ -100,7 +104,7 @@ main{
     width: 55px;
     text-align: center;
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
+    font-size: 1.6rem;
     color: var(--branco);
 }
 
@@ -118,6 +122,7 @@ main{
     color: var(--azul-escuro);
     font-family: "Poppins";
     margin-left: 5px;
+    font-size: 2rem;
 }
 
 #text-observacao{
@@ -129,6 +134,7 @@ main{
     background-color: var(--branco);
     color: var(--azul-escuro);
     font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
 }
 
 textarea:focus{
@@ -153,28 +159,25 @@ textarea:focus{
     font-family: "Poppins", sans-serif; 
     font-weight: 500;
     color: var(--azul-piscina-escuro);
-}
-
-#button-save, .adict-sintoma input, .adict-sintoma button{
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0px;
+    outline: none;
 }
 
 #button-save:hover{
     background-color: #3dccc77e;
     color: var(--branco);
+    outline: none;
 }
 
-.adict-sintoma{
+#txt-outro-sintoma{
     display: none;
     position: absolute;
-    right: 10%;
-    top: 40%;
+    right: 0;
+    top: 45%;
     padding: 15px;
     background-color: var(--salmao);
     border: 2px solid var(--salmao);
     border-radius: 10px;
+    outline: none;
 }
 
 .adict-sintoma input{
@@ -183,9 +186,10 @@ textarea:focus{
     border-radius: 20px;
     padding: 5px 0 5px 5px;
     font-family: "Poppins", sans-serif;
+    outline: none;
 }
 
-.adict-sintoma button{
+/* .adict-sintoma button{
     background-color: var(--azul-piscina-escuro);;
     color: var(--branco);
     padding: 5px;
@@ -194,7 +198,8 @@ textarea:focus{
     border-radius: 20px;
     border: none;
     cursor: pointer;
-}
+    outline: none;
+} */
 
 input::placeholder{
     color: var(--azul-escuro);
@@ -228,11 +233,15 @@ input:-webkit-autofill {
     margin-top: 150px;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+
     height: 500px;
     width: 70%;
     background-color: #4FB99F;
 
     border-radius: 20px;
+
+    position: static;
 }
 
 .days{
@@ -259,15 +268,18 @@ input:-webkit-autofill {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     text-align: left;
+    font-size: 2rem;
 }
 
 #text-passada{
     margin-top: 60%;
 } 
 
-.semana-passada{
-    margin-top: 18%;
-}
+/* .semana-passada{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+} */
 
 .semana-atual, .semana-passada{
     display: flex;

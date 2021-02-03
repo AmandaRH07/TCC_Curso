@@ -8,3 +8,4 @@ function mostrar(elemento){
           document.getElementById('outro').style.backgroundColor = '#FCFFF5'
       }    
   }
+
