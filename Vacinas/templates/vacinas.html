@@ -166,31 +166,32 @@
                 </div>
 
                 <div class="register">
+                    <form action="{% url 'vacinas' %}" method="POST" enctype="multipart/form-data">
+                    {%csrf_token%}
+                        <p>Cadastro de Vacina</p>
 
-                    <p>Cadastro de Vacina</p>
+                        <br>
 
-                    <br>
+                        <div id="cadastro">
+                            <input id="register-information" type=text name="tipo_vacina" placeholder="Nome da vacina">
+                            <input id="register-information" type=text name="dose" placeholder="Dose">
+                        </div>
 
-                    <div id="cadastro">
-                        <input id="register-information" type=text placeholder="Nome da vacina">
-                        <input id="register-information" type=text placeholder="Dose">
-                    </div>
+                        <div id="cadastro">
+                            <input id="register-information" type=text name="lote" placeholder="Lote">
+                            <input id="register-information" type="date" name="data_vacinacao">
+                        </div>
 
-                    <div id="cadastro">
-                        <input id="register-information" type=text placeholder="Lote">
-                        <input id="register-information" type="date">
-                    </div>
+                        <div id="cadastro">
+                            <input id="register-information-local" type=text name="local" placeholder="Local">
+                        </div>
 
-                    <div id="cadastro">
-                        <input id="register-information-local" type=text placeholder="Local">
-                    </div>
+                        <br>
 
-                    <br>
-
-                    <div id="div-button">
-                        <button id="button-left" type="submit">Cadastrar </button>
-                    </div>
-
+                        <div id="div-button">
+                            <button id="button-left" type="submit">Cadastrar </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
