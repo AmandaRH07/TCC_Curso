@@ -18,7 +18,6 @@ class HistoricoConsultas(models.Model):
     id_historico_consultas = models.AutoField(primary_key=True) 
     lugar = models.TextField("Lugar")
     data = models.DateField("Data Consulta")
-    infos_extras = models.TextField("Informações Extras", blank=True)
     receita = models.FileField("Receita", blank=True)
     atestado = models.FileField("Atestado", blank=True)
 

@@ -14,7 +14,7 @@
 
 <main class="content">
     <form action="{% url 'sangue' %}" method="POST" enctype="multipart/form-data">
-        {%csrf_token%}
+        {% csrf_token %}
         <div class="box1">
             <div class="options">
                 <div class="title">
@@ -74,8 +74,7 @@
             </div>
         </div>
 
-        <!-- <button type="submit">ENVIAR</button> -->
-        <input type="submit" value="enviar">
+        <button type="submit">Enviar</button>
         
     </form>
 

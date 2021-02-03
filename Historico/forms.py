@@ -6,4 +6,4 @@ from .models import HistoricoConsultas
 class HistoricoConsultasForm(forms.ModelForm):
     class Meta:
         model = HistoricoConsultas
-        fields = ['lugar', 'data', 'infos_extras', 'receita', 'atestado']
+        fields = ['lugar', 'data', 'receita', 'atestado']
