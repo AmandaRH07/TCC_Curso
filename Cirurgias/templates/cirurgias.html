@@ -11,21 +11,27 @@
             <div class="title-container">
                 <span>Cirurgias</span>
             </div>
-
-        <section>
-            <div class="primary-card">
-                <input type="text" name="" id="" placeholder="Nome:" required>
-                <input type="text" name="" id="" placeholder="Onde:" required>
-                <div class="input-content">
-                    <input type="date" name="" id="" required>
-                    <input type="time" name="" id="" placeholder="Horário">
+            <form action="{% url 'cirurgias' %}" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <section>                
+                <div class="primary-card">
+                    <input type="text" name="cirurgia" id="" placeholder="Nome:" required>
+                    <input type="text" name="hospital" id="" placeholder="Onde:" required>
+                    <div class="input-content">
+                        <input type="date" name="data_cirurgia" id="" required>
+                        <input type="time" name="" id="" placeholder="horario">
+                    </div>
+                    <button type="submit">Cadastrar</button>
+                    <!-- <input type="submit" value="cadastrar"> -->
+                                        
                 </div>
-                <button type="submit">Cadastrar</button>
-            </div>
-            <div class="second-card">
-                <h1>Sobre:</h1>
-            </div>
-        </section>
+                <div class="second-card">
+                    <h1>Sobre:</h1>
+                    <input type="text" name="infos_extras" id="" placeholder="sobre">
+                </div>
+            
+            </section>
+        </form>
 
         <div id="history-content" class="scroll">
             <div class="card">
