@@ -9,7 +9,7 @@ from Cirurgias.models import Cirurgias
 from DoencasExistentes.models import DoencasExistentes 
 from Historico.models import HistoricoConsultas, HistoricoFamiliar 
 from Medicacao.models import Medicamentos
-from Sangue.models import TipoSanguineo
+# from Sangue.models import TipoSanguineo
 from Vacinas.models import Vacinas
 
 
@@ -60,7 +60,7 @@ class Usuario(models.Model):
     medicacao = models.ManyToManyField(Medicamentos)
 
     # Sangue
-    sangue = models.ManyToManyField(TipoSanguineo)
+    # sangue = models.ManyToManyField(TipoSanguineo)
     
     # Vacinas
     vacinas = models.ManyToManyField(Vacinas)
