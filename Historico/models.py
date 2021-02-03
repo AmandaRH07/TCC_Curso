@@ -19,4 +19,6 @@ class HistoricoConsultas(models.Model):
     lugar = models.TextField("Lugar")
     data = models.DateField("Data Consulta")
     infos_extras = models.TextField("Informações Extras", blank=True)
+    receita = models.FileField("Receita", blank=True)
+    atestado = models.FileField("Atestado", blank=True)
 

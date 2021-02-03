@@ -20,24 +20,27 @@
 
                 <div class="primary-card">
 
-                    <input type="text" name="" id="" placeholder="Local">
-                    <input type="date" name="" id="" placeholder="Data">
+                    <form action="{% url 'historico' %}" method="POST" enctype="multipart/form-data">
+                        {%csrf_token%}
+                        <input type="text" name="lugar" id="" placeholder="Local">
+                        <input type="date" name="data" id="" placeholder="Data">
 
 
-                    <div class="input-content">
-                        <div class="first-file">
-                            <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                            <input id='selecao-arquivo-receita' type='file'>
-                            <p id="file-name"></p>
+                        <div class="input-content">
+                            <div class="first-file">
+                                <label for='selecao-arquivo-receita'>Adicionar Receita</label>
+                                <input id='selecao-arquivo-receita' type='file' name="receita">
+                                <p id="file-name"></p>
+                            </div>
+                            <div class="second-file">
+                                <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                                <p id="file-name2"></p>
+                            </div>
                         </div>
-                        <div class="second-file">
-                            <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                            <input id='selecao-arquivo-atestado' type='file'>
-                            <p id="file-name2"></p>
-                        </div>
+                        <button>Cadastrar</button>
+                    </form>
 
-                    </div>
-                    <button>Cadastrar</button>
                 </div>
                 <div class="second-card">
                     <h1>Informações</h1>

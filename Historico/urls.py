@@ -1,6 +1,7 @@
 from django.urls import path
 from django.views.generic import TemplateView
+from . import views
 
 urlpatterns = [
-    path('historico', TemplateView.as_view(template_name='historico.html'), name='historico')
+    path('historico', views.historico_consultas, name='historico'),
 ]
