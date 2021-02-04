@@ -22,4 +22,3 @@ class HistoricoConsultas(models.Model):
     receita = models.FileField("Receita", blank=True)
     atestado = models.FileField("Atestado", blank=True)
     fk_usuario_historico_consulta = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
-

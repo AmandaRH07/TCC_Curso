@@ -8,4 +8,4 @@ class DoencasExistentes(models.Model):
     ano_diagnostico = models.DateField('Ano do diagnóstico')
     exame = models.FileField(upload_to="exames", blank=True)
 
-    fk_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+    fk_usuario_doencas_existentes = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")

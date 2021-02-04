@@ -10,5 +10,8 @@ def historico_consultas(request):
     if str(request.method) == 'POST' or str(request.method) == 'FILES':
         if form.is_valid():
             form.save()
+        else: 
+            print("invalido")
+            print(form)
 
     return render(request, "historico.html", {"form": form, 'dados_user': usuario})
