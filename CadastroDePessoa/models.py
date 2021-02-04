@@ -5,12 +5,12 @@ from stdimage.models import StdImageField
 
 from AlergiaIntolerancia.models import Alergias, Intolerancias 
 from AvaliacaoDiaria.models import AvaliacaoDiaria
-from Cirurgias.models import Cirurgias
+# from Cirurgias.models import Cirurgias
 from DoencasExistentes.models import DoencasExistentes 
 from Historico.models import HistoricoConsultas, HistoricoFamiliar 
 from Medicacao.models import Medicamentos
 # from Sangue.models import TipoSanguineo
-from Vacinas.models import Vacinas
+# from Vacinas.models import Vacinas
 
 
 class Usuario(models.Model):
