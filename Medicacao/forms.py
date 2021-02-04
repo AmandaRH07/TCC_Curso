@@ -1,7 +1,7 @@
 from django import forms
 from .models import Medicamentos
 
-class EntryCreationForm(forms.ModelForm):
+class MedicacaoForm(forms.ModelForm):
 
     class Meta:
         model = Medicamentos
