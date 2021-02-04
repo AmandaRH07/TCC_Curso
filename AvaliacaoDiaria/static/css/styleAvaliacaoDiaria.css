@@ -169,7 +169,6 @@ textarea:focus{
 }
 
 #txt-outro-sintoma{
-    display: none;
     position: absolute;
     right: 0;
     top: 45%;
@@ -219,21 +218,19 @@ input:-webkit-autofill {
 
 
 /* ________inicio_conteudo_box2_______ */
-.subtitle{
-    position: absolute;
-    left: 17%;
+.box2 > .subtitle{
     font-family: "Poppins", sans-serif;
     font-size: 35px;
     font-weight: 500;
     color: var(--azul-escuro);
-    margin-bottom: 10%;
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+
 }
 
-.box2{
-    margin-top: 150px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+.box2-container{
+    /* margin-top: 150px; */
 
     height: 500px;
     width: 70%;
@@ -244,49 +241,61 @@ input:-webkit-autofill {
     position: static;
 }
 
-.days{
-    padding-top: 70px;
+.box2-content{
+    display: grid;
     width: 100%;
     height: 100%;
 }
 
-.box2-subtitle{
-    position: absolute;
+.box2{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    z-index: 100;
-    right: 0;
-    top: 555px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
+
+.box2-first-subtitle{
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    top: 30px;
+    align-items: center;
+}
 .text3{
-    width: 350px;
     background-color: var(--salmao);
     color: var(--azul-escuro);
     border-radius: 10px 0 0 10px;
-    padding: 10px 10px 10px 50px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     text-align: left;
     font-size: 2rem;
+    width: 20%;
+    padding: 5px 8px;
+
 }
 
-#text-passada{
+/* #text-passada{
     margin-top: 60%;
-} 
-
-/* .semana-passada{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
-} */
+}  */
 
 .semana-atual, .semana-passada{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .week{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.days{
     background-color: #FCFFF5;
     height: 90px;
     width: 90px;
@@ -294,10 +303,11 @@ input:-webkit-autofill {
     cursor: pointer;
 }
 
-.box2 .labels label{
+.week label{
     color: var(--azul-escuro);
     font-family: "Poppins", sans-serif;
     font-weight: 500;
+    font-size: 2rem;
 }
 
 /* Fim IDs */
