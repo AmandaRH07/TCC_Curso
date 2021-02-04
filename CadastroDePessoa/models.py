@@ -51,7 +51,7 @@ class Usuario(models.Model):
     doencas = models.ManyToManyField(DoencasExistentes)
 
     # Histórico de Consultas
-    # historico_consultas = models.ManyToManyField(HistoricoConsultas)
+    historico_consultas = models.ManyToManyField(HistoricoConsultas)
 
     # Histórico Familiar
     historico_familiar = models.ManyToManyField(HistoricoFamiliar)
