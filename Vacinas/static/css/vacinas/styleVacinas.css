@@ -49,7 +49,7 @@ h1{
     font-family: "Poppins", sans-serif;
     color: #FCFFF5;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .content{
@@ -109,8 +109,12 @@ h2{
 }
 
 .right{
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 50%;
+    height: 100%;
 }
 
 p{
@@ -121,6 +125,14 @@ p{
     font-size: 20px;
 }
 
+form > p{
+    color: #112F41;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-align: center;
+}
 .register{
 
     display: flex;
@@ -129,9 +141,15 @@ p{
     border-radius: 15px;
     border: 2px solid #4FB99F;
     margin-top: 20px;
-    height: 55%;
+    height: 100%;
     width: 100%;
     height: 330px;
+}
+
+form{
+
+    width: 100%;
+    height: 100%;
 }
 
 .titulo-information{
@@ -154,7 +172,7 @@ p{
     transform: translate(-50%, -50%); 
     border-radius: 40px; 
     border: 2px solid #112F41; 
-    margin-left: 440px;
+    margin-left: 430px;
     margin-top: 0px;
     top: 75px;
 }
@@ -287,6 +305,7 @@ p{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     
 }
 
@@ -311,9 +330,10 @@ p{
 #div-button{
 
     display: flex;
-    flex-direction: row;
-    width: 200px;
+    flex-direction: column;
+    width: 100%;
     justify-content: center;
+    align-items: center;
     
 }
 
@@ -330,7 +350,7 @@ p{
 
     border-radius: 20px; 
     border: 1px solid #4FB99F;
-    padding: 4%;
+    padding: 2%;
     margin: 2%;
     width: 200px;
 }
@@ -434,4 +454,41 @@ body {
 #cirurgia img {
     width: 40px;
     height: 40px;
+}
+
+@media (max-width: 1440px){
+
+    .center{
+
+        margin: 5%;
+    }
+
+    #scroll-vaccines{
+
+        height: 700px;
+        
+    }
+    
+    .right{
+
+        width: 50%;
+        margin-top: 10px;
+    }
+    .register{
+
+        height: 380px;
+        margin-top: 10%;
+    }
+    #register-information{
+
+        width: 260px;
+    }
+    #register-information-local{
+
+        width: 260px;
+    }
+    .search-box{
+
+        margin-left: 440px;
+    }
 }
