@@ -1,4 +1,5 @@
 from django.db import models
+from CadastroDePessoa.models import Usuario
 
 
 class HistoricoFamiliar(models.Model):
@@ -20,4 +21,5 @@ class HistoricoConsultas(models.Model):
     data = models.DateField("Data Consulta")
     receita = models.FileField("Receita", blank=True)
     atestado = models.FileField("Atestado", blank=True)
+    fk_usuario_historico_consulta = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
 
