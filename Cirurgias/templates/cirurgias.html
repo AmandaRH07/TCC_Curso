@@ -19,7 +19,6 @@
                     <input type="text" name="hospital" id="" placeholder="Onde:" required>
                     <div class="input-content">
                         <input type="date" name="data_cirurgia" id="" required>
-                        <input type="time" name="" id="" placeholder="horario">
                     </div>
                     <button type="submit">Cadastrar</button>
                     <!-- fk -->
@@ -36,73 +35,22 @@
         </form>
 
         <div id="history-content" class="scroll">
+            {% for dado in dados_cirurgias %}
             <div class="card">
-                <h2>Roacutan</h2>
+                <h2>{{dado.cirurgia}}</h2>
                 <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
+                <span>{{dado.data_cirurgia|date:'d-m-Y'}}</span>
+                {% if dado.hospital %}
+                    <h3>Local</h3>
+                    <span>{{dado.hospital}}</span>
+                {% endif %}
+                {% if dado.hospital %}
+                    <h3>Informações Extras</h3>
+                    <span>{{dado.infos_extras}}</span>
+                {% endif %}
             </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
+            {% endfor %}
+            
         </div>
     </div>
     </main>
