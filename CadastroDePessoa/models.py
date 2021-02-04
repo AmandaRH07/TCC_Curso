@@ -3,14 +3,14 @@ from django.contrib.auth.models import User
 
 from stdimage.models import StdImageField
 
-from AlergiaIntolerancia.models import Alergias, Intolerancias 
-from AvaliacaoDiaria.models import AvaliacaoDiaria
-from Cirurgias.models import Cirurgias
-from DoencasExistentes.models import DoencasExistentes 
-from Historico.models import HistoricoConsultas, HistoricoFamiliar 
-from Medicacao.models import Medicamentos
-# from Sangue.models import TipoSanguineo
-from Vacinas.models import Vacinas
+# from AlergiaIntolerancia.models import Alergias, Intolerancias 
+# from AvaliacaoDiaria.models import AvaliacaoDiaria
+# from Cirurgias.models import Cirurgias
+# from DoencasExistentes.models import DoencasExistentes 
+# from Historico.models import HistoricoConsultas, HistoricoFamiliar 
+# from Medicacao.models import Medicamentos
+# # from Sangue.models import TipoSanguineo
+# from Vacinas.models import Vacinas
 
 
 class Usuario(models.Model):
@@ -35,32 +35,32 @@ class Usuario(models.Model):
     Aqui estamos fazendo as ligações entre o usuário e os dados que serão 
     cadastrados posteriormente 
     '''
-    # Alergias 
-    alergias = models.ManyToManyField(Alergias)
+    # # Alergias 
+    # alergias = models.ManyToManyField(Alergias)
 
-    # Intolerancias
-    intolerancias = models.ManyToManyField(Intolerancias)
+    # # Intolerancias
+    # intolerancias = models.ManyToManyField(Intolerancias)
 
-    # Avaliação Diaria
-    avaliacao_diaria = models.ManyToManyField(AvaliacaoDiaria)
+    # # Avaliação Diaria
+    # avaliacao_diaria = models.ManyToManyField(AvaliacaoDiaria)
     
-    # Cirurgias
-    cirurgias = models.ManyToManyField(Cirurgias)
+    # # Cirurgias
+    # cirurgias = models.ManyToManyField(Cirurgias)
 
-    # Doenças Existentes
-    doencas = models.ManyToManyField(DoencasExistentes)
+    # # Doenças Existentes
+    # doencas = models.ManyToManyField(DoencasExistentes)
 
-    # Histórico de Consultas
-    historico_consultas = models.ManyToManyField(HistoricoConsultas)
+    # # Histórico de Consultas
+    # historico_consultas = models.ManyToManyField(HistoricoConsultas)
 
-    # Histórico Familiar
-    historico_familiar = models.ManyToManyField(HistoricoFamiliar)
+    # # Histórico Familiar
+    # historico_familiar = models.ManyToManyField(HistoricoFamiliar)
 
-    # Medicação
-    medicacao = models.ManyToManyField(Medicamentos)
+    # # Medicação
+    # medicacao = models.ManyToManyField(Medicamentos)
 
-    # Sangue
-    # sangue = models.ManyToManyField(TipoSanguineo)
+    # # Sangue
+    # # sangue = models.ManyToManyField(TipoSanguineo)
     
-    # Vacinas
-    vacinas = models.ManyToManyField(Vacinas)
+    # # Vacinas
+    # vacinas = models.ManyToManyField(Vacinas)
