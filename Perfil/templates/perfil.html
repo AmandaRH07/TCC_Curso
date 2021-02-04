@@ -6,20 +6,18 @@
 {% block title %}Perfil{%endblock%}
 {% block css %} {% static 'css/stylePerfil.css' %} {%endblock%}
 {% block content%}
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title> Editar perfil</title>
-    <link rel="stylesheet" href="{% static 'css/stylePerfil.css' %}">
-
-</head> -->
 
 <body>
         <header>
 
             <div class="roof">
+                <div class="title-text">
+                    <img src="../static/img/MedFile_logo.png" alt="">
+                    <span id="begin">Med</span>
+                    <span id="end">File</span>
+                </div>
+                
+                
                 <div class="container_perfil">
                     <div class="foto_perfil">
                         {% if dados_user.foto %}
@@ -32,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            
 
         </header>
 
@@ -61,14 +60,15 @@
                         responder</option>
                 </select>
                 <div id="buttons">
-                    <button class="button">Gerar PDF </button>
-                    <button class="button">Gerar QRcode </button>
+                    <button class="button">Visualizar todas as informações </button>
                 </div>
             </div>
-            <div id="button-container">
-                <button id="button-save" type="submit">Salvar </button>
-            </div>
         </form>
+
+        <div id="button-container">
+            <button id="button-save" type="submit">Salvar </button>
+        </div>
+
     </body>
 </html>
 {%endblock%}

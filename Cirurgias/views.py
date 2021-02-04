@@ -1,12 +1,17 @@
-from django.shortcuts import render
-from .forms import CirurgiasForm
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 
+from .forms import CirurgiasForm
+from .models import Cirurgias
 from CadastroDePessoa.models import Usuario
 
 def cirurgia(request):
     usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
-    form = CirurgiasForm(request.POST or None)
-    if str(request.method) == 'POST' or str(request.method) == 'FILES':
+    dados_cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario.id_usuario)
+
+    if str(request.method) == 'POST':
+        form = CirurgiasForm(request.POST)
         if form.is_valid():
             form.save()
-    return render(request, "cirurgias.html", {"form": form, 'dados_user': usuario})
+            return HttpResponseRedirect("cirurgias")
+    return render(request, "cirurgias.html", {'dados_user': usuario, 'dados_cirurgias': dados_cirurgias})

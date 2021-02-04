@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap');
 * {
     margin: 0;
   }
@@ -59,7 +59,7 @@ p{
     border-radius: 0 0 20px 20px;
 }
 
-/* fiz uma classe para a main e boteo o flex nela */
+
 .content{
     display: flex;
     flex-direction: row;
@@ -78,15 +78,7 @@ p{
     margin-top: 5%;
 
 }
-#buttons{
 
-    height: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
 
 form{
 
@@ -112,7 +104,7 @@ textarea:focus, input:focus, select:focus, button:focus{
 
     margin-top: 25px;
     height: 50px;
-    width: 180px;
+    width: 400px;
     font-size: 20px;
     border-radius: 20px;
     border: 2px solid #112F41;
@@ -125,6 +117,57 @@ textarea:focus, input:focus, select:focus, button:focus{
     background-color: #FCFFF5 ;
     color: #112F41;
 }
+select{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 3%;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ;
+    background-image: url(../img/icone.png);
+    background-repeat: no-repeat;
+    background-position:  360px;
+    background-size: 20px;
+    
+}
+img{
+
+    width: 80px;
+    height: 60px;
+    margin: 5px;
+}
+
+/* logo */
+#begin{
+    color:var(--branco);
+    font-size: 30px;
+    font-family: Philosopher;
+    margin-top: 18px;
+}
+
+#end{
+    margin-top: 18px;
+    color: var(--azul-escuro);
+    font-size: 30px;
+    font-family: Philosopher;
+    font-weight: bold;
+}
+
+.title-text{
+    
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+
+}
+
+/* fim logo */
 
 /* IDs */
 
@@ -190,4 +233,21 @@ textarea:focus, input:focus, select:focus, button:focus{
 #button-save:hover{
     background-color: #FCFFF5 ;
     color: #068587;
+}
+
+
+@media (max-width: 1024px){
+
+    form{
+
+        height: 70%;
+    }
+}
+
+@media (min-width: 1440px){
+
+    form{
+
+        height: 70%;
+    }
 }
