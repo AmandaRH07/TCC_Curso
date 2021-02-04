@@ -35,7 +35,7 @@ class Usuario(models.Model):
     Aqui estamos fazendo as ligações entre o usuário e os dados que serão 
     cadastrados posteriormente 
     '''
-    # Alergias 
+    Alergias 
     alergias = models.ManyToManyField(Alergias)
 
     # Intolerancias
