@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="{% static 'css/styleMedicacao.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
-
 <body>
     <header>
         <nav class="navbar">
@@ -89,28 +87,25 @@
                 <span>Doenças Existentes</span>
             </div>
 
-            <section>
-                <form action="{% url 'doencas-existentes' %}" method="post" autocomplete="off"
-                    enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="primary-card">
-                        <input type="text" name="doenca" id="" placeholder="Nome:" required>
-                        <div class="input-content">
-                            <input type="date" name="ano_diagnostico" id="" required>
-                            <input type="file" name="exame" id="">
-                            <input type="hidden" name="fk_usuario" value="{{ usuario.id_usuario }}">
-                        </div>
-                        <button type="submit">Cadastrar</button>
+        <section>
+            <form action="{% url 'doencas-existentes' %}" method="post" autocomplete="off" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="primary-card">
+                    <input type="text" name="doenca" id="" placeholder="Nome:" required>
+                    <div class="input-content">
+                        <input type="date" name="ano_diagnostico" id="" required>
+                        <input type="file" name="exame" id="">
                     </div>
-                </form>
-
-                <div class="second-card">
-                    <h1>Sobre:</h1>
+                    <button type="submit">Cadastrar</button>
                 </div>
-            </section>
+            </form>
+            
+            <div class="second-card">
+                <h1>Sobre:</h1>
+            </div>
+        </section>
 
-        </div>
+    </div>
     </main>
 </body>
-
 </html>

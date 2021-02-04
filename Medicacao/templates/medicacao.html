@@ -92,17 +92,14 @@
                 <form action="{% url 'medicacao' %}" method="POST">
                     <div class="primary-card">
                         {% csrf_token %}
-                        {{ form }}
-                            <!-- form -->
-                        <input type="text" name="nome" id="" placeholder="Nome">
-                        <input type="text" name="funcao" id="" placeholder="Função">
+                        <!-- {{form.as_p}} -->
+                        <input type="text" name="" id="" placeholder="Nome">
+                        <input type="text" name="" id="" placeholder="Função">
                         <div class="input-content">
-                            <input type="date" name="data_inicio" id="">
-                            <input type="date" name="data_final" id="">
-                            <input type="text" name="infos_extras" id="">
-                            <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" placeholder="Informações extras">
+                            <input type="date" name="" id="">
+                            <input type="time" name="" id="" placeholder="Horário">
                         </div>
-                        <button type="submit"> Cadastrar</button>
+                        <button> <input type="submit" name="" id="" value="     "> Cadastrar</button>
                     </div>
                 </form>                
             
