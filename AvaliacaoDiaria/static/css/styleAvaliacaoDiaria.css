@@ -54,6 +54,10 @@ main{
 /* _____conteudo_box1_____ */
 .content form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .box1{
     display: flex;
@@ -62,7 +66,7 @@ main{
     height: 25%;
     width: 70%;
     border-radius: 20px;
-    margin: 20%;
+    /* margin: 20%; */
     margin-top: 40px;
     margin-bottom: 20px;
     position: relative;
@@ -264,6 +268,16 @@ input:-webkit-autofill {
     justify-content: flex-end;
     width: 100%;
     top: 30px;
+    align-items: center;
+}
+
+.box2-second-subtitle{
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    bottom: 1;
     align-items: center;
 }
 .text3{
