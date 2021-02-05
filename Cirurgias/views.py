@@ -5,6 +5,9 @@ from .forms import CirurgiasForm
 from .models import Cirurgias
 from CadastroDePessoa.models import Usuario
 
+from django.contrib.auth.decorators import login_required
+
+@login_required(redirect_field_name='index_login')
 def cirurgia(request):
     usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
     dados_cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario.id_usuario)

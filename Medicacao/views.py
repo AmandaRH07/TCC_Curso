@@ -7,6 +7,8 @@ from .models import Medicamentos
 
 from CadastroDePessoa.models import Usuario
 
+
+
 @login_required(redirect_field_name='index_login')
 def medicacao(request):
     usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
