@@ -112,55 +112,28 @@
         </section>
 
         <div class="history-content">
+            {% for dado in dados_medicamentos %}
             <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
+                <h2>{{dado.nome}}</h2>
+                {% if dado.funcao %}
+                    <h3>Função</h3>
+                    <span>{{dado.funcao}}</span>
+                {% endif %}
+                {% if dado.data_inicio %}
+                    <h3>Data Inicio</h3>
+                    <span>{{dado.data_inicio|date:'d-m-Y'}}</span>
+                {% endif %}
+                {% if dado.data_final %}
+                    <h3>Data Final</h3>
+                    <span>{{dado.data_final|date:'d-m-Y'}}</span>
+                {% endif %}
+                {% if dado.infos_extras %}
+                    <h3>Informações Extras</h3>
+                    <span>{{dado.infos_extras}}</span>
+                {% endif %}
+               
             </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
-
-            <div class="card">
-                <h2>Roacutan</h2>
-                <h3>Data</h3>
-                <span>00/00/00</span>
-                <h3>Horário</h3>
-                <span>00:00</span>
-                <h3>Função</h3>
-                <span>Tratamento de acnes</span>
-            </div>
+            {% endfor %}
         </div>
     </div>
     </main>

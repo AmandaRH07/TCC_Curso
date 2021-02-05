@@ -106,41 +106,12 @@
         <div class="center">
 
             <div id="scroll-vaccines" class="scroll">
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
-
-                <button id="vaccines">
-                    <h2> Febre Amarela </h2>
-                    <p class="data-vacinnes">dd/mm/aaaa</p>
-                </button>
+                {% for dado in dados_vacinas %}
+                    <button id="vaccines">
+                        <h2> {{dado.tipo_vacina}} </h2>
+                        <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
+                    </button>
+                {% endfor  %}
 
             </div>
 
