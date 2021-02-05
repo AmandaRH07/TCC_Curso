@@ -9,7 +9,6 @@ from CadastroDePessoa.models import Usuario
 
 from django.contrib.auth.decorators import login_required
 
-@login_required(redirect_field_name='index_login')
 def login(request):
     if request.method !="POST":
         return render(request, 'accounts/login.html')

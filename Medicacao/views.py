@@ -19,4 +19,5 @@ def medicacao(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect("medicacao")
+            
     return render(request, "medicacao.html", {"usuario": usuario, 'dados_medicamentos': dados_medicamentos})
