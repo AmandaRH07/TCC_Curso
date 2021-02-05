@@ -17,4 +17,5 @@ def cirurgia(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect("cirurgias")
+            
     return render(request, "cirurgias.html", {'dados_user': usuario, 'dados_cirurgias': dados_cirurgias})

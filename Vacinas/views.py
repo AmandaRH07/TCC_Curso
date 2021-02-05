@@ -18,4 +18,5 @@ def vacinas(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect("vacinas")
+            
     return render(request, "vacinas.html", {'dados_user': usuario, 'dados_vacinas': dados_vacinas})

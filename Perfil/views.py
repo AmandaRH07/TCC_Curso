@@ -7,14 +7,11 @@ from CadastroDePessoa.models import Usuario
 
 @login_required(redirect_field_name='index_login')
 def perfil(request):
-
     user = Usuario.objects.get(id_fk_cadastro_user=request.user)
     form = UsuarioUpdateForm(request.POST, request.FILES or None, instance=user)
 
     if str(request.method) == 'POST' or str(request.method) == 'FILES':
         if form.is_valid():
             form.save()
-        else:
-            print('form invalid')
     
     return render(request, "perfil.html", {'dados_user': Usuario.objects.get(id_fk_cadastro_user=request.user.id), 'form': form})

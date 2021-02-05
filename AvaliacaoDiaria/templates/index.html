@@ -5,7 +5,7 @@
 {% block title %}Avaliação Diária{%endblock%}
 {% block css %} {% static 'css/styleAvaliacaoDiaria.css' %} {%endblock%}
 {% block content%}
- 
+
 
 <header>
     <div class="title">
@@ -22,10 +22,8 @@
             <div class="box1-content">
 
                 <div class="buttons">
-                    <input class="checkbox-round" type="checkbox" value="dorDeCabeca" id="dor_cabeca"
-                        name="sintomas">
-                    <input class="checkbox-round" type="checkbox" value="dorNoCorpo" id="dor_corpo"
-                        name="sintomas">
+                    <input class="checkbox-round" type="checkbox" value="dorDeCabeca" id="dor_cabeca" name="sintomas">
+                    <input class="checkbox-round" type="checkbox" value="dorNoCorpo" id="dor_corpo" name="sintomas">
                     <input class="checkbox-round" type="checkbox" value="dorNoEstomago" id="dor_estomago"
                         name="sintomas">
                     <input class="checkbox-round" type="checkbox" value="cansaco" id="cansaco" name="sintomas">
@@ -37,15 +35,15 @@
                     <label for="dor_corpo">Dor no corpo</label>
                     <label for="dor_estomago">Dor no estômago</label>
                     <label for="cansaco">Cansaço</label>
-                    <label for="inchaco">Inchaço</label> 
+                    <label for="inchaco">Inchaço</label>
                 </div>
 
                 <div class="buttons">
                     <input class="checkbox-round" type="checkbox" value="nausea" id="nausea" name="sintomas">
                     <input class="checkbox-round" type="checkbox" value="coriza" id="coriza" name="sintomas">
                     <input class="checkbox-round" type="checkbox" value="faltaDeAr" id="falta_ar" name="sintomas">
-                    <input class="checkbox-round" type="checkbox" value="insonia" id="insonia" name="sintomas">                    
-                    <button id="outro" name="outro" ></button>
+                    <input class="checkbox-round" type="checkbox" value="insonia" id="insonia" name="sintomas">
+                    <button id="outro" name="outro"></button>
                 </div>
 
                 <div class="labels">
@@ -57,134 +55,133 @@
                 </div>
 
                 <div class="adict-sintoma" id="txt-outro-sintoma" style="display: none;">
-                    <input type="text" id="adicionar sintoma" placeholder="Outro:">
+                    <input type="text" id="adicionar sintoma" placeholder="Outro:" name="outro">
                 </div>
-
+                
                 <div class="button-2">
                     <button id="button-save" type="submit">Salvar</button>
-                    <!-- fk -->
-                    <input type="hidden" name="fk_usuario_avaliacao_diaria" value="{​​​​​{​​​​​dados_user.id_usuario}​​​​​}​​​​​">
                 </div>
 
+                <!-- fk -->
+                <input type="hidden" name="fk_usuario_avaliacao_diaria" value="{{dados_user.id_usuario}}">
             </div>
 
             <div class="notes">
                 <label for="text-observacao">Observação:</label>
-                <textarea name="observacoes" id="text-observacao" cols="30" rows="10" placeholder="Escreva aqui"></textarea>
+                <textarea name="observacoes" id="text-observacao" cols="30" rows="10"
+                    placeholder="Escreva aqui"></textarea>
             </div>
 
 
         </div>
+    </form>
 
+    <div class="box2">
 
-        <div class="box2">
+        <p class="subtitle">Calendário Semanal</p>
+        <div class="box2-first-subtitle">
+            <p class="text3" id="text-atual">Semana Atual</p>
+        </div>
 
-            <p class="subtitle">Calendário Semanal</p>
-            <div class="box2-first-subtitle">
-                <p class="text3" id="text-atual">Semana Atual</p>
-            </div>
+        <div class="box2-second-subtitle">
+            <p class="text3" id="text-passada">Semana Passada</p>
+        </div>
 
-            <div class="box2-second-subtitle">
-                <p class="text3" id="text-passada">Semana Passada</p>
-            </div>
+        <div class="box2-container">
 
-            <div class="box2-container">
-
-                <!-- <div class="box2-subtitle">
+            <!-- <div class="box2-subtitle">
                     <p class="text3" id="text-atual">Semana Atual</p>
                     <p class="text3" id="text-passada">Semana Passada</p>
                 </div> -->
 
-                
 
-                <div class="box2-content">
-                    <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
-                    
-                    
-                    <div class="semana-atual">
-                        
-                        <div class="week">
-                            <div class="days" id="dom"></div>
-                            <label for="dom">DOM</label>
-                        </div>
-                        
-                        <div class="week">
-                            <div class="days" id="seg"></div>
-                            <label for="seg">SEG</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="ter"></div>
-                            <label for="ter">TER</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="qua"></div>
-                            <label for="qua">QUA</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="qui"></div>
-                            <label for="qui">QUI</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="sex"></div>
-                            <label for="sex">SEX</label>
-                        </div>
-                        
-                        <div class="week">
-                            <div class="days" id="sab"></div>
-                            <label for="sab">SAB</label>
-                        </div>
-        
+
+            <div class="box2-content">
+                <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
+
+
+                <div class="semana-atual">
+
+                    <div class="week">
+                        <div class="days" id="dom"></div>
+                        <label for="dom">DOM</label>
                     </div>
-     
-                    <div class="semana-passada">
-                        <div class="week">
-                            <div class="days" id="dom1"></div>
-                            <label for="dom1">DOM</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="seg1"></div>
-                            <label for="seg1">SEG</label>
-                        </div>
-                        
-                        <div class="week">
-                            <div class="days" id="ter1"></div>
-                            <label for="ter1">TER</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="qua1"></div>
-                            <label for="qua1">QUA</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="qui1"></div>
-                            <label for="qui1">QUI</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="sex1"></div>
-                            <label for="sex1">SEX</label>
-                        </div>
-    
-                        <div class="week">
-                            <div class="days" id="sab1"></div>
-                            <label for="sab1">SAB</label>
-                        </div>
-    
+
+                    <div class="week">
+                        <div class="days" id="seg"></div>
+                        <label for="seg">SEG</label>
                     </div>
-    
+
+                    <div class="week">
+                        <div class="days" id="ter"></div>
+                        <label for="ter">TER</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="qua"></div>
+                        <label for="qua">QUA</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="qui"></div>
+                        <label for="qui">QUI</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="sex"></div>
+                        <label for="sex">SEX</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="sab"></div>
+                        <label for="sab">SAB</label>
+                    </div>
+
                 </div>
-            </div>
 
+                <div class="semana-passada">
+                    <div class="week">
+                        <div class="days" id="dom1"></div>
+                        <label for="dom1">DOM</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="seg1"></div>
+                        <label for="seg1">SEG</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="ter1"></div>
+                        <label for="ter1">TER</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="qua1"></div>
+                        <label for="qua1">QUA</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="qui1"></div>
+                        <label for="qui1">QUI</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="sex1"></div>
+                        <label for="sex1">SEX</label>
+                    </div>
+
+                    <div class="week">
+                        <div class="days" id="sab1"></div>
+                        <label for="sab1">SAB</label>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-        
-    </form>
+    </div>
+
 </main>
 
 <footer>
