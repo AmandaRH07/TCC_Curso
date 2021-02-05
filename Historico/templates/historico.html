@@ -7,9 +7,10 @@
 {% block content%}
 
     <main>
+
         <div class="container">
             <div class="title-container">
-                <span>Histórico</span>
+                <span> Histórico </span>
             </div>
 
             <section>
@@ -51,7 +52,22 @@
             </section>
 
             <div class="history-content">
-                <div class="card">
+                {% for dado in dados_historico %}
+                    <div class="card">
+                        <h3>Local</h3>
+                        <h2>{{dado.lugar}}</h2>
+                        <h3>Data</h3>
+                        <h2>{{dado.data}}</h2>
+                        <!-- <span>00/00/00</span>
+                        <h3>Horário</h3>
+                        <span>00:00</span>
+
+                        <h3>Função</h3>
+                        <span>Tratamento de acnes</span> -->
+                    </div>
+                {% endfor %}
+
+                <!-- <div class="card">
                     <h2>Roacutan</h2>
                     <h3>Data</h3>
                     <span>00/00/00</span>
@@ -139,17 +155,7 @@
                     <span>00:00</span>
                     <h3>Função</h3>
                     <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
+                </div> -->
             </div>
 
             <div class="third-card">

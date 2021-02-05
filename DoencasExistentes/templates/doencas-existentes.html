@@ -105,7 +105,11 @@
                 </form>
 
                 <div class="second-card">
-                    <h1>Sobre:</h1>
+                {% for dado in dados_doencas_existentes %}
+                    <h2>{{dado.doenca}}</h2>
+                    <h2>Ano Diagnóstico</h2>
+                    <spam>{{dado.ano_diagnostico}}</spam>
+                {% endfor %}
                 </div>
             </section>
 
