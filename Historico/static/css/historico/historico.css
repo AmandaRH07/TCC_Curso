@@ -105,13 +105,14 @@ section {
     justify-content: space-around;  
 }
 
-.primary-card,
-.second-card {
-    width: 45%;
+.primary-card {
+    width: 70%;
     height: 20%;
     border-radius: 20px;
     min-height: 29rem;
     margin-top: 7rem;
+    background-color: var(--verde-piscina);
+    padding-top: 5px;
 }
 
 .primary-card form {
@@ -121,10 +122,6 @@ section {
     align-items: center;
 }
 
-.primary-card {
-    background-color: var(--verde-piscina);
-    padding-top: 5px;
-}
 
 .primary-card input 
 {
@@ -231,19 +228,8 @@ label:hover{
     border: 3px solid var(--salmao);
 }
 
-.second-card {
-    background-color: var(--azul-piscina-escuro);
-} 
 
-.second-card h1 {
-    font-weight: 500;
-    color: var(--branco);
-
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.history-content {
+#history-content {
     background-color: var(--azul-escuro);
     width: 80%;
     min-height: 30rem;
@@ -380,3 +366,277 @@ input:-webkit-autofill {
     -webkit-text-fill-color: var(--verde-piscina) !important;
     -webkit-text-fill-font: Poppins-Regular !important;
 }
+
+
+/* STYLE HISTÓRICO FAMILIAR */
+
+
+/* Classes */
+
+.roof{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 100px;
+    margin-top: 8%;
+    
+}
+
+.title{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #4FB99F;
+    height: 80px;
+    width: 50%;
+    align-self: flex-end;
+    border-radius: 20px  0px 0px 20px;
+    
+}
+
+h1{
+
+    font-family: "Poppins", sans-serif;
+    color: #112F41;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.content{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+::placeholder{
+    color: #112F41;
+    
+}
+
+.center{
+    
+    margin-top: 5%!important;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    height: 630px;
+   
+}
+.registro_doença{
+
+    width: 450px;
+    height: 280px;
+    background: #ED553B;
+    margin-top: 10px;
+    border-radius: 15px;
+
+
+}
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 280px;
+    
+}
+
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+p{
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+img{
+    width: 400px;
+    height: 300px;
+}
+
+.image{
+
+    position: absolute;
+    margin-top: 300px;
+}
+.titulo-doenca{
+
+    text-align: center;
+    font-size: 18px;
+    color: #ED553B;
+}
+.grau-doenca{
+
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+
+}
+.qnt-mortes{
+
+    
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+}
+
+.information-doencas{
+    display: block;
+
+}
+
+
+/* Fim Classes */
+
+
+/* Específicos */
+
+.scroll{
+
+    overflow-y:  scroll;
+    
+}
+
+.scroll::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: #4FB99F;
+    border-radius: 20px;
+    width: 16px;
+}
+
+
+select{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 3%;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ;
+    background-image: url(/Historico/static/img/icone.png);
+    background-repeat: no-repeat;
+    background-position:  310px;
+    background-size: 20px;
+    
+}
+
+/* Fim específicos */
+
+/* IDs */
+
+#doencas{
+
+    width: 300px;
+    height: 150px;
+    background-color: #FCFFF5 ;
+    border-radius: 15px;
+    margin-top: 40px;
+    padding: 8px;
+ 
+}
+
+#doencas:hover{
+
+    transform: scale(1.1);
+}
+#container-doecas{
+
+    width: 480px;
+    height: 600px;
+    background-color: #112F41;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-bottom: 2px solid #112F41;
+    border-top: 2px solid #112F41;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+
+}
+
+
+
+#edit_information{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 10px; 
+    margin-top: 18px; 
+    align-items: center;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+#button-left{
+    
+    margin-top: 3%;
+    color: #FCFFF5;
+    background-color: #112F41;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    height: 35px;
+    border: 0px;
+    width: 150px;
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+
+#div-button{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#button-left:hover{
+
+    background-color: #FCFFF5;
+    border: solid 2px #112F41;
+    color: #112F41;
+    padding-top: 3px;
+    font-weight: bold;
+}
+
+
+/* Fim IDs */
