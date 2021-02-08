@@ -12,6 +12,7 @@
 
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", serif; 
     outline: none;
@@ -64,16 +65,6 @@ h1{
 }
 
 
-/* .menu-left{
-
-    height: 450px;
-    width: 5%;
-    background-color: #112F41;
-    border-radius: 0 20px 20px 0;
-    position: fixed;
-    align-self: start;
-}  */
-
 .center{
     
     margin-top: 25px !important;
@@ -110,6 +101,7 @@ h2{
     padding: 10px;
     font-size: 20px;
     text-align: center;
+    text-decoration: none;
 }
 
 .right{
@@ -127,6 +119,14 @@ p{
     font-weight: 600;
     padding: 10px 10px;
     font-size: 20px;
+    text-decoration: none;
+}
+
+#vaccines > a{
+
+    text-decoration: none;
+
+
 }
 
 form > p{
@@ -136,6 +136,7 @@ form > p{
     padding: 10px 10px;
     font-size: 20px;
     text-align: center;
+    
 }
 .register{
 
@@ -154,6 +155,7 @@ form{
 
     width: 100%;
     height: 100%;
+
 }
 
 .titulo-information{
@@ -303,6 +305,8 @@ form{
     width: 200px;
     color: gray;
     appearance: none;
+    background-color: #FCFFF5;
+
 
 }
 
@@ -359,6 +363,7 @@ form{
     margin: 2%;
     width: 200px;
     color: gray;
+    background-color: #FCFFF5;
 }
 /* Fim IDs */
 
@@ -374,24 +379,9 @@ form{
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
 
-html {
-    font-size: 62.5%;
-}
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-}
+
 
 .navbar {
     margin: 4.5% 0;
@@ -462,7 +452,7 @@ body {
     height: 40px;
 }
 
-@media (max-width: 1440px){
+@media (min-width: 1440px){
 
     .center{
 
@@ -482,19 +472,25 @@ body {
     }
     .register{
 
-        height: 380px;
+        height: 480px;
         margin-top: 10%;
     }
-    #register-information{
+    .register-information{
 
-        width: 260px;
+        width: 320px;
     }
     #register-information-local{
 
         width: 260px;
     }
-    .search-box{
+    #information{
+        background-color: #FCFFF5;
+        height: 50%;
+    }
+    form > p{
 
-        margin-left: 440px;
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin: 10px;
     }
 }

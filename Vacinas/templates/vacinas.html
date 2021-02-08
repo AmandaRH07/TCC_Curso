@@ -94,13 +94,13 @@
 
     <main class="content">
 
-        <div class="search-box">
+        <!-- <div class="search-box">
 
             <input class="txt-search" type="text" name="" placeholder="Pesquisar...">
             <button class="btn-search" type="submit">
                 <img style="width: 30px;" src="../static/img/lupa.png"></button>
 
-        </div>
+        </div> -->
 
         <br>
 
@@ -109,7 +109,7 @@
             <div id="scroll-vaccines" class="scroll">
                 {% for dado in dados_vacinas %}
                     <button id="vaccines">
-                        <a href="{% url 'vacinas_detail' dado.id_vacinas %}">
+                        <a href="{% url 'vacinas_detail' dado.id_vacinas %}" >
                             <h2>{{dado.tipo_vacina}} </h2>
                             <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
                         </a>
@@ -167,7 +167,7 @@
 
                         <div id="cadastro">
                             <input class="register-information" type=text name="lote" placeholder="Lote:">
-                            <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')" class="register-information">
+                            <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')" class="register-information" name="data_vacinacao">
                         </div>
 
                         <div id="cadastro">
