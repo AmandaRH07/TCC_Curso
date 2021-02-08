@@ -9,6 +9,7 @@
     <title>Doenças Existentes | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/styleMedicacao.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
 </head>
 
 <body>
@@ -44,13 +45,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item" id="ale_into">
-                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
-                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
-                        <span class="link-text">Alergias/Intolerâncias</span>
-                    </a>
-                </li>
-
                 <li class="nav-item" id="medicacao">
                     <a href="{% url 'medicacao' %}" class="nav-link">
                         <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
@@ -76,6 +70,13 @@
                     <a href="{% url 'doencas-existentes' %}" class="nav-link">
                         <img src="{% static 'img/icone_doencas.png' %}" alt="">
                         <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'index_logout' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Sair</span>
                     </a>
                 </li>
 

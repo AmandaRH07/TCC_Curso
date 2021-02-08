@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacinas | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/vacinas/styleVacinas.css'%}">
+    <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
 </head>
 
 <body>
@@ -42,13 +43,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item" id="ale_into">
-                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
-                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
-                        <span class="link-text">Alergias/Intolerâncias</span>
-                    </a>
-                </li>
-
                 <li class="nav-item" id="medicacao">
                     <a href="{% url 'medicacao' %}" class="nav-link">
                         <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
@@ -74,6 +68,13 @@
                     <a href="{% url 'doencas-existentes' %}" class="nav-link">
                         <img src="{% static 'img/icone_doencas.png' %}" alt="">
                         <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'index_logout' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Sair</span>
                     </a>
                 </li>
 
@@ -108,8 +109,10 @@
             <div id="scroll-vaccines" class="scroll">
                 {% for dado in dados_vacinas %}
                     <button id="vaccines">
-                        <h2> {{dado.tipo_vacina}} </h2>
-                        <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
+                        <a href="{% url 'vacinas_detail' dado.id_vacinas %}">
+                            <h2>{{dado.tipo_vacina}} </h2>
+                            <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
+                        </a>
                     </button>
                 {% endfor  %}
 
@@ -120,17 +123,31 @@
                 <div id="information" class="scroll">
 
                     <p>Informações </p>
+                    {% if vacina_detail %}
+                        <p>{{vacina_detail.tipo_vacina}}</p>
+                        <p>{{vacina_detail.data_vacinacao}}</p>
+                        {% if vacina_detail.dose %}
+                            <p>Dose: {{vacina_detail.dose}}</p>
+                        {% endif %}
+                        {% if vacina_detail.lote %}
+                            <p>Lote: {{vacina_detail.lote}}</p>
+                        {% endif %}
+                        {% if vacina_detail.local %}
+                            <p>Local: {{vacina_detail.local}}</p>
+                        {% endif %}
 
+                        <button id="button-left">
+                            <a href="{% url 'delete_vacina' vacina_detail.id_vacinas %}">Excluir</a>
+                        </button>
+                        <button id="button-left">Editar</button>
+
+                    {% else %}
+                        <h2>Clique na vacina para ver mais dados.</h2>
+                    {% endif %}
                     <div>
                         <p class="conteudo-information">
-                            Santa Catarina é um estado na região sul do Brasil. Com uma longa costa com o Atlântico e
-                            muitas ilhas,
-                            ela é conhecida por suas praias e montanhas. Florianópolis, a capital, tem um mercado
-                            público tradicional
-                            com bares, restaurantes e barracas de comida, além de um museu histórico instalado em um
-                            palácio do governo
-                            colonial do século 19. Florianópolis está basicamente na ilha de Santa Catarina, que conta
-                            com resorts de praia na extremidade norte.
+                            
+                            
                         </p>
                     </div>
 

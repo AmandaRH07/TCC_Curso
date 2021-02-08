@@ -39,12 +39,13 @@
             <div class="card">
                 <h2>{{dado.cirurgia}}</h2>
                 <h3>Data</h3>
-                <span>{{dado.data_cirurgia|date:'d-m-Y'}}</span>
+                <span>{{dado.data_cirurgia|date:'d-m-Y'
+                    }}</span>
                 {% if dado.hospital %}
                     <h3>Local</h3>
                     <span>{{dado.hospital}}</span>
                 {% endif %}
-                {% if dado.hospital %}
+                {% if dado.infos_extras %}
                     <h3>Informações Extras</h3>
                     <span>{{dado.infos_extras}}</span>
                 {% endif %}

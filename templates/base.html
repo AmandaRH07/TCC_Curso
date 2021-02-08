@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} {%endblock%} | MedFile</title>
     <link rel="stylesheet" href="{% block css %} {% endblock %}">
+    <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Prompt&family=Rancho&display=swap');
@@ -148,13 +149,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item" id="ale_into">
-                    <a href="{% url 'alergia-intolerancia' %}" class="nav-link">
-                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
-                        <span class="link-text">Alergias/Intolerâncias</span>
-                    </a>
-                </li>
-
                 <li class="nav-item" id="medicacao">
                     <a href="{% url 'medicacao' %}" class="nav-link">
                         <img src="{% static 'img/icone_medicamentos.png' %}" alt="">
@@ -180,6 +174,13 @@
                     <a href="{% url 'doencas-existentes' %}" class="nav-link">
                         <img src="{% static 'img/icone_doencas.png' %}" alt="">
                         <span class="link-text">Doenças</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" id="ale_into">
+                    <a href="{% url 'index_logout' %}" class="nav-link">
+                        <img src="{% static 'img/icone_alergias.png' %}" alt="">
+                        <span class="link-text">Sair</span>
                     </a>
                 </li>
 

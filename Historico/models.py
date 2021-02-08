@@ -19,6 +19,6 @@ class HistoricoConsultas(models.Model):
     id_historico_consultas = models.AutoField(primary_key=True) 
     lugar = models.TextField("Lugar")
     data = models.DateField("Data Consulta")
-    receita = models.FileField("Receita", blank=True)
-    atestado = models.FileField("Atestado", blank=True)
+    receita = models.FileField("Receita", blank=True, upload_to='receitas')
+    atestado = models.FileField("Atestado", blank=True, upload_to='atestados')
     fk_usuario_historico_consulta = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
