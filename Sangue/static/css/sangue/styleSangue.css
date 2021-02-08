@@ -32,12 +32,11 @@
     box-sizing: border-box;
     font-family: Poppins-Regular;
     padding: 0px;
-
 }
 
 body{
     overflow-x: hidden;
-    background-color: #FCFFF5;
+    background-color: var(--branco);
 }
 
 main{
