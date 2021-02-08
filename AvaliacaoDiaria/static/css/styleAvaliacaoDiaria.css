@@ -1,17 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Prompt&family=Rancho&display=swap');
-
-* { 
-    margin: 0;
-    box-sizing: border-box;
-}
-body{ 
-    overflow-x: hidden;
-}
-
-main{
-    display: flex; 
-}
-
 :root {
     --azul-escuro: #112F41;
     --azul-piscina-escuro: #068587;
@@ -22,6 +9,21 @@ main{
     --azul-claro: #3DCCC7;
     --azul-bebe: #b0fffc;
 }
+
+* { 
+    margin: 0;
+    box-sizing: border-box;
+}
+body{ 
+    overflow-x: hidden;
+    background-color: var(--branco);
+}
+
+main{
+    display: flex; 
+}
+
+
 
 /* Classes */
 

@@ -20,6 +20,16 @@
     font-family: Poppins-Medium;
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
 }
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
 
 * {
     margin: 0;
@@ -27,6 +37,7 @@
     outline: none;
     box-sizing: border-box;
     font-family: Poppins-Regular;
+    
 }
 
 html {
@@ -43,18 +54,7 @@ body {
 body {
     font-size: 1.6rem;
     color: #555;
-}
-
-
-:root {
-    --azul-escuro: #112F41;
-    --azul-piscina-escuro: #068587;
-    --verde-piscina: #4FB99F;
-    --salmao: #ED553B;
-    --branco: #FCFFF5;
-    --gelo: #E6EBE0;
-    --azul-claro: #3DCCC7;
-    --azul-bebe: #b0fffc;
+    background-color: var(--branco);
 }
 
 .container {

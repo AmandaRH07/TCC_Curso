@@ -5,6 +5,7 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
+    
 }
 
 html {
@@ -16,6 +17,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Poppins", serif;
+  background-color: var(--branco);
 }
 
 body {
@@ -31,25 +33,24 @@ body {
     --branco: #FCFFF5;
 }
 
-/* ****************************************
-                        MENU
-**************************************** */
+.scroll{
 
-header nav ul li {
-    list-style: none;
-}    
+    overflow-x:  scroll;
+    
+}
 
-.side-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--azul-escuro);
-    height: 80%;
-    width: 8%;
-    background-color: #112F41;
-    border-radius: 0 20px 20px 0;
-    position: fixed;
-    top: 10%;
+.scroll::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: #4FB99F;
+    border-radius: 20px;
+    width: 16px;
 }
 
 .container {
@@ -75,21 +76,11 @@ header nav ul li {
 }
 
 section {
-    width: 83%;
-    margin-left: 15%;
-    margin-right: 7% ;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.primary-card,
-.second-card {
-    width: 50rem;
-    height: 8rem;
-    border-radius: 20px;
-    min-height: 29rem;
-    margin-top: 7rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .primary-card {
@@ -98,6 +89,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100rem;
+    height: 8rem;
+    border-radius: 20px;
+    min-height: 29rem;
+    margin-top: 7rem;
 }
 
 .primary-card > input,
@@ -145,34 +141,24 @@ section {
     background-color: var(--salmao);
 
     border-radius: 20px;
-    border: none;
+    border: 3px solid var(--salmao);
 }
 
 .primary-card button:hover {
     cursor: pointer;
-    opacity: .8;
+    color: var(--salmao);
+    background: var(--branco);
+  
 }
 
-.second-card {
-    background-color: var(--azul-piscina-escuro);
-} 
 
-.second-card h1 {
-    font-weight: 500;
-    color: var(--branco);
-
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.history-content {
+#history-content {
     background-color: var(--azul-escuro);
     width: 80%;
     min-height: 30rem;
 
     border-radius: 20px;
 
-    margin-left: 8%;
     margin-top: 5rem;
 
     display: flex;
