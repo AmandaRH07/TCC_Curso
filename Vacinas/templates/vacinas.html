@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="navbar">
-
+ 
             <ul class="nav-bar">
                 <li class="nav-item" id="perfil">
                     <a href="{% url 'perfil' %}" class="nav-link">
@@ -161,17 +161,17 @@
                         <br>
 
                         <div id="cadastro">
-                            <input id="register-information" type=text name="tipo_vacina" placeholder="Nome da vacina">
-                            <input id="register-information" type=text name="dose" placeholder="Dose">
+                            <input class="register-information" type=text name="tipo_vacina" placeholder="Nome da vacina:">
+                            <input class="register-information" type=text name="dose" placeholder="Dose:">
                         </div>
 
                         <div id="cadastro">
-                            <input id="register-information" type=text name="lote" placeholder="Lote">
-                            <input id="register-information" type="date" name="data_vacinacao">
+                            <input class="register-information" type=text name="lote" placeholder="Lote:">
+                            <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')" class="register-information">
                         </div>
 
                         <div id="cadastro">
-                            <input id="register-information-local" type=text name="local" placeholder="Local">
+                            <input id="register-information-local" type=text name="local" placeholder="Local:">
                         </div>
 
                         <br>

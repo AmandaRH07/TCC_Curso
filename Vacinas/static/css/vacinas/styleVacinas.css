@@ -13,13 +13,17 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", serif; 
     outline: none;
+    
   }
 
 
 
 /* Classes */
+body{
+    background-color: #FCFFF5;
+}
 
 .roof{
 
@@ -289,7 +293,7 @@ form{
     overflow-y: scroll;
 }
 
-#register-information{
+.register-information{
 
     border-radius: 20px; 
     border: 1px solid #4FB99F;
@@ -298,6 +302,7 @@ form{
     align-items: center;
     width: 200px;
     color: gray;
+    appearance: none;
 
 }
 
@@ -353,6 +358,7 @@ form{
     padding: 2%;
     margin: 2%;
     width: 200px;
+    color: gray;
 }
 /* Fim IDs */
 
