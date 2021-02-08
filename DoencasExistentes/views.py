@@ -19,3 +19,6 @@ def doencas_existentes(request):
             return HttpResponseRedirect("doencas-existentes")
         
     return render(request, "doencas-existentes.html", {"usuario": usuario, 'dados_doencas_existentes':dados_doencas_existentes})
+
+
+
