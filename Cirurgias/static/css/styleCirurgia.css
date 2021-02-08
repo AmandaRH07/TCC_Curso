@@ -5,6 +5,8 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
+   
+    
 }
 
 html {
@@ -21,6 +23,7 @@ body {
 body {
     font-size: 1.6rem;
     color: #555;
+    background-color: #FCFFF5;
 }
 
 :root {

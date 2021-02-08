@@ -90,49 +90,51 @@
             </div>
 
         <section>
-                <form action="{% url 'medicacao' %}" method="POST">
+                <form {% if medicacao_detail %} action="{% url 'medicacao_detail' medicacao_detail.id_medicamentos %}" {% else %} action="{% url 'medicacao' %}" {% endif %} method="POST">
                     <div class="primary-card">
                         {% csrf_token %}
-                        {{ form }}
-                            <!-- form -->
-                        <input type="text" name="nome" id="" placeholder="Nome">
-                        <input type="text" name="funcao" id="" placeholder="Função">
+
+                        <input type="text" name="nome" id="" placeholder="Nome do medicamento:" value="{% if medicacao_detail %} {{ medicacao_detail.nome }} {% endif %}">
+                        <input type="text" name="funcao" id="" placeholder="Função do medicamento:"  value="{% if medicacao_detail %} {{ medicacao_detail.funcao }} {% endif %}">
                         <div class="input-content">
-                            <input type="date" name="data_inicio" id="">
-                            <input type="date" name="data_final" id="">
-                            <input type="text" name="infos_extras" id="">
-                            <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" placeholder="Informações extras">
+                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" value="{% if medicacao_detail %}{{ medicacao_detail.data_inicio|date:'d-m-Y' }}{% endif %}">
+                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" value="{% if medicacao_detail %}{{ medicacao_detail.data_final|date:'d-m-Y' }}{% endif %}">
+                            <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" >
+
                         </div>
-                        <button type="submit"> Cadastrar</button>
+                        {% if medicacao_detail %}
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'medicacao_delete' medicacao_detail.id_medicamentos %}">Excluir</a>
+                        {% else %}
+                            <button type="submit"> Cadastrar</button>
+                        {% endif %}
                     </div>
                 </form>                
             
-            <div class="second-card">
-                <h1>Informações</h1>
-            </div>
         </section>
 
-        <div class="history-content">
+        <div id="history-content" class="scroll">
             {% for dado in dados_medicamentos %}
             <div class="card">
-                <h2>{{dado.nome}}</h2>
-                {% if dado.funcao %}
-                    <h3>Função</h3>
-                    <span>{{dado.funcao}}</span>
-                {% endif %}
-                {% if dado.data_inicio %}
-                    <h3>Data Inicio</h3>
-                    <span>{{dado.data_inicio|date:'d-m-Y'}}</span>
-                {% endif %}
-                {% if dado.data_final %}
-                    <h3>Data Final</h3>
-                    <span>{{dado.data_final|date:'d-m-Y'}}</span>
-                {% endif %}
-                {% if dado.infos_extras %}
-                    <h3>Informações Extras</h3>
-                    <span>{{dado.infos_extras}}</span>
-                {% endif %}
-               
+                <a href="{% url 'medicacao_detail' dado.id_medicamentos %}">
+                        <h2>{{dado.nome}}</h2>
+                        {% if dado.funcao %}
+                            <h3>Função</h3>
+                            <span>{{dado.funcao}}</span>
+                        {% endif %}
+                        {% if dado.data_inicio %}
+                            <h3>Data Inicio</h3>
+                            <span>{{dado.data_inicio|date:'d-m-Y'}}</span>
+                        {% endif %}
+                        {% if dado.data_final %}
+                            <h3>Data Final</h3>
+                            <span>{{dado.data_final|date:'d-m-Y'}}</span>
+                        {% endif %}
+                        {% if dado.infos_extras %}
+                            <h3>Informações Extras</h3>
+                            <span>{{dado.infos_extras}}</span>
+                        {% endif %}
+                </a>
             </div>
             {% endfor %}
         </div>
