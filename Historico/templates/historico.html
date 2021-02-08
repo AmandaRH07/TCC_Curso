@@ -206,14 +206,27 @@
 
             <div class="left">
 
-                <form class="registro_doença">
+                <form class="registro_doença" action="{% url 'historico-familiar' %}" method="POST">
 
                     <div class="register"> 
+                        <!-- <form action="{% url 'historico-familiar' %}" method="POST"> -->
+                            {%csrf_token%}
+                            <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias">
+                            <!-- <input id="edit_information" type="text" required placeholder="Grau de parentesco" > -->
+                            <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
+                                <option value="primeiro_grau">Primeiro Grau</option>
+                                <option value="segundo_grau">Segundo Grau</option>
+                                <option value="Terceiro_grau">Terceiro Grau</option>
+                                <option value="outros">Outros</option>
+                            </select>
 
-                        <input id="edit_information" type="text" required placeholder="Nome da doença:">
-                        <input id="edit_information" type="date" required placeholder="Grau de parentesco">
+                            <!-- fk -->
+                            <input type="hidden" name="fk_usuario_historico_familiar" value="{{dados_user.id_usuario}}">
 
-                        <select>
+                            <button id="button-left" type="submit">Cadastrar</button>
+                        <!-- </form> -->
+
+                        <!-- <select>
                             <option selected disabled value=""> Número de mortes da doença na família</option>
                             <option value="0">Nenhuma</option>
                             <option value="1">1</option>
@@ -222,9 +235,9 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">mais de 5</option>
-                        </select>
+                        </select> -->
 
-                        <button id="button-left" type="submit">Cadastrar</button>
+                        
                         
                         <div class="image"><img src="../static/img/ilustracao.png" alt=""></div>
 
@@ -240,7 +253,17 @@
 
                     <div class="information-doencas">
 
-                        <div id="doencas">
+                        {% for dado in dados_familiar %}
+                            <div id="doencas">
+
+                                <p class="titulo-doenca"> {{dado.doenca_hereditarias}} </p>
+                                <p class="grau-doenca"> {{dado.grau_parentesco}} </p>
+                                <!-- <p class="qnt-mortes">Mortes 2</p> -->
+
+                            </div>
+                        {% endfor %}
+
+                        <!-- <div id="doencas">
 
                             <p class="titulo-doenca"> Doença 01</p>
                             <p class="grau-doenca" >Grau 2</p>
@@ -274,14 +297,7 @@
                             <p class="grau-doenca" >Grau 2</p>
                             <p class="qnt-mortes">Mortes 2</p>
 
-                        </div>
-                        <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div>
+                        </div> -->
 
                     </div>
                     

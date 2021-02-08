@@ -11,8 +11,8 @@ class HistoricoFamiliar(models.Model):
     )
     id_historico_familiar = models.AutoField(primary_key=True) 
     doenca_hereditarias = models.TextField("Doenças Hereditarias", blank=True)
-    tipo_doenca = models.TextField("Tipo da Doença", blank=True)
     grau_parentesco = models.CharField("Grau Parentesco", choices=GRAU_PARENTESCO, max_length=13)
+    fk_usuario_historico_familiar = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
 
 
 class HistoricoConsultas(models.Model):
