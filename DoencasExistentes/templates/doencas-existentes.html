@@ -91,25 +91,31 @@
             </div>
 
             <section>
-                <form action="{% url 'doencas-existentes' %}" method="post" autocomplete="off"
-                    enctype="multipart/form-data">
+                <form {% if doenca_detail %} action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" {% else %} action="{% url 'doencas-existentes' %}" {% endif %} method="POST"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="primary-card">
-                        <input type="text" name="doenca" id="" placeholder="Nome:" required>
+                        <input type="text" name="doenca" id="" placeholder="Nome:" required value="{% if doenca_detail %} {{ doenca_detail.doenca }} {% endif %}">
                         <div class="input-content">
-                            <input type="date" name="ano_diagnostico" id="" required>
+                            <input type="date" name="ano_diagnostico"  required value="{% if doenca_detail %}{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}{% endif %}">
                             <input type="file" name="exame" id="">
                             <input type="hidden" name="fk_usuario_doencas_existentes" value="{{ usuario.id_usuario }}">
                         </div>
-                        <button type="submit">Cadastrar</button>
+                        {% if doenca_detail %}
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'doencas_existentes_delete' doenca_detail.id_doencas_existentes %}">Excluir</a>
+                        {% else %}
+                            <button type="submit"> Cadastrar</button>
+                        {% endif %}
                     </div>
                 </form>
 
                 <div class="second-card">
-                {% for dado in dados_doencas_existentes %}
-                    <h2>{{dado.doenca}}</h2>
-                    <h2>Ano Diagnóstico</h2>
-                    <spam>{{dado.ano_diagnostico}}</spam>
+                    {% for dado in dados_doencas_existentes %}
+                    <a href="{% url 'doencas_existentes_detail' dado.id_doencas_existentes%}">
+                        <h2>{{ dado.doenca }}</h2>
+                        <h2>Ano Diagnóstico</h2>
+                        <spam>{{ dado.ano_diagnostico }}</spam>
+                    </a>
                 {% endfor %}
                 </div>
             </section>
