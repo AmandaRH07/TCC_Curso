@@ -5,6 +5,7 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
+   
 }
 
 html {
@@ -24,6 +25,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #FCFFF5;
     
 }
 
