@@ -29,8 +29,10 @@ def medicacao_detail(request, pk):
 
     medicacao_detail = Medicamentos.objects.get(id_medicamentos=pk)
 
+
     if str(request.method) == 'POST':
         form = MedicacaoForm(request.POST, instance=medicacao_detail)
+        print(form)
         if form.is_valid():
             form.save()
             return redirect('medicacao')

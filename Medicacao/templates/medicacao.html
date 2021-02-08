@@ -97,8 +97,8 @@
                         <input type="text" name="nome" id="" placeholder="Nome do medicamento:" value="{% if medicacao_detail %} {{ medicacao_detail.nome }} {% endif %}">
                         <input type="text" name="funcao" id="" placeholder="Função do medicamento:"  value="{% if medicacao_detail %} {{ medicacao_detail.funcao }} {% endif %}">
                         <div class="input-content">
-                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" value="{% if medicacao_detail %}{{ medicacao_detail.data_inicio|date:'d-m-Y' }}{% endif %}">
-                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" value="{% if medicacao_detail %}{{ medicacao_detail.data_final|date:'d-m-Y' }}{% endif %}">
+                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information"  name="data_inicio" value="{% if medicacao_detail %}{{ medicacao_detail.data_inicio|date:'Y-m-d' }}{% endif %}">
+                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" name="data_final" value="{% if medicacao_detail %}{{ medicacao_detail.data_final|date:'Y-m-d' }}{% endif %}">
                             <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" >
 
                         </div>
