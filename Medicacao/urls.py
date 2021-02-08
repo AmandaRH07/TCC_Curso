@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import medicacao, medicacao_detail, medicacao_delete
 
 urlpatterns = [
-    path('medicacao', views.medicacao, name='medicacao')
+    path('medicacao', medicacao, name='medicacao'),
+    path('medicacao/<int:pk>', medicacao_detail, name="medicacao_detail"),
+    path('medicacao-delete/<int:pk>', medicacao_delete, name="medicacao_delete")
 ]
