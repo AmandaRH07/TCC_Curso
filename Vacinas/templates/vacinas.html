@@ -154,11 +154,9 @@
                 </div> -->
 
                 <div class="register">
-                    <selection>
-                        <form {% if vacina_detail %} action="{% url 'vacina_detail' vacina_detail.id_vacinas %}" {% else
-                            %} action="{% url 'vacinas' %}" {% endif %} method="POST">
-
-                            {%csrf_token%}
+                    <section>
+                        <form {% if vacina_detail %} action="{% url 'vacina_detail' vacina_detail.id_vacinas %}" {% else %} action="{% url 'vacinas' %}" {% endif %} method="POST">
+                            {% csrf_token %}
                             <p>Cadastro de Vacina</p>
 
                             <br>
@@ -177,19 +175,19 @@
                                     value="{% if vacina_detail %} {{ vacina_detail.lote }} {% endif %}">
                                 <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')"
                                     class="register-information" name="data_vacinacao"
-                                    value="{% if vacina_detail %} {{ vacina_detail.data_vacinacao }} {% endif %}">
+                                    value="{% if vacina_detail %}{{ vacina_detail.data_vacinacao|date:'Y-m-d' }}{% endif %}">
                             </div>
 
                             <div id="cadastro">
                                 <input id="register-information-local" type=text name="local" placeholder="Local:"
                                     value="{% if vacina_detail %} {{ vacina_detail.local }} {% endif %}">
-                                <input type="hidden" name="fk_usuario_vacinas" value="{{usuario.id_usuario}}">
+                                <input type="hidden" name="fk_usuario_vacinas" value="{{ dados_user.id_usuario }}">
                             </div>
 
                             <br>
 
                             <div id="div-button">
-                                {% if vacinas_detail %}
+                                {% if vacina_detail %}
                                     <button type="submit">Editar</button>
                                     <button id="button-left">
                                         <a href="{% url 'delete_vacina' vacina_detail.id_vacinas %}">Excluir</a>
@@ -199,7 +197,7 @@
                                 {% endif %}
                             </div>
                         </form>
-                    </selection>
+                    </section>
                 </div>
             </div>
         </div>
