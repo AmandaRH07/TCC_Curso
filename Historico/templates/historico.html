@@ -25,14 +25,14 @@
                     <form {% if historico_consultas_detail %} action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST"  enctype="multipart/form-data">
                         {% csrf_token %}
                         <input type="text" name="lugar" id="" placeholder="Local" value="{% if historico_consultas_detail %} {{ historico_consultas_detail.lugar }} {% endif %}" required>
-                        <input type="date" name="data" id="" placeholder="Data" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.data|date:'Y-m-d' }}{% endif %}" required>
+                        <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name= "data" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.data|date:'Y-m-d' }}{% endif %}" required>
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
 
                         <div class="input-content">
                             <div class="first-file">
                                 <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' name="receita" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.receita }}{% endif %}">>
+                                <input id='selecao-arquivo-receita' type='file' name="receita" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.receita }}{% endif %}">
                                 <p id="file-name"></p>
                             </div>
                             <div class="second-file">

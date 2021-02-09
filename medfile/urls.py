@@ -26,7 +26,6 @@ urlpatterns = [
     path('', include('Sangue.urls')),
     path('', include('Vacinas.urls')),
     path('', include('CadastroDePessoa.urls')),
-    path('', include('AlergiaIntolerancia.urls')),
     path('', include('Cirurgias.urls')),
     path('', include('DoencasExistentes.urls')),
     path('', include('Historico.urls')),

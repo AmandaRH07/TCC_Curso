@@ -3,7 +3,7 @@
 #E6EBE0 gelo
 #ED553B salmao
 #4FB99F verde piscina 
-#068587 verde piscina escuro
+#068587 verde piscina escuro 
 #3DCCC7 azul claro 
 #112F41 azul escuro*/
 :root {
@@ -62,6 +62,29 @@ main{
     height: 700px;
 }
 
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .buttons input[type=radio]{
+    display: none;
+    outline: none;
+}
+
+.buttons input[type=radio] + label{
+    display:inline-block;    
+    height:20px;    
+    padding:0 0 0 25px;    
+    margin:0 10px 0 0;    
+    background-image: url(/static/img/icone_sangue.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+} */
+
 
 /* Style dos títulos */
 .title .text{
@@ -81,8 +104,7 @@ main{
     height: 100%;
     border-radius: 30px;
     margin-top: 5%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .box2 .options{
@@ -101,51 +123,63 @@ main{
 .buttons{
     display: flex;
     justify-content: space-around;
-    padding: 40px 50px 0px;
-    outline: none;
 }
 
 /* Style botões específicos - tipo sanguíneo */
-.button-type{
-    background-image: url(/static/img/icone_sangue.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-position-y: 2px;
-    background-size: 35px;
-    background-color: var(--gelo);
-    border: none;
-    height: 70px;
-    width: 70px;
-    line-height: 30px;
-    font-weight: bold;
+/* .button-type{ */
+    /* height: 50px;
+    width: 50px;
     cursor: pointer;
-    border-radius: 50px;
-    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
-    transition: 0.1s;
-
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0px;
-    outline: none;
+    background-color: var(--salmao);
+    border: 2px solid var(--salmao); */
+    /* display: none;
+} */
+.button-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#buttons-1{
-    margin-bottom: 40px;
-}
+  .button-option input[type='radio'] {
+    display: none;
+  }
 
+.button-option label {
+    cursor: pointer;
+    position: relative;
+    /* padding-left: 25px;
+    margin-right: 15px; */
+    font-size: 13px;
+  }
+  
+  .button-option label:before {
+    content: "";
+ 
+    width: 50px;
+    height: 50px;
+  
+    border-radius:100%;
+ 
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color:var(--azul-bebe);
+  }
+  
+  .button-option input[type='radio']:checked + label:after {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+  }
 
-
-.text-button{
-    color: var(--azul-escuro);
-    font-size: 20px;
-    padding-top: 30px;
-    font-family: Poppins-Semibold;
-}
-
-.button-type:hover{
-    transform: scale(1.05);
-    background-color: var(--azul-bebe);
-}
+/* .button-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 
 .button-bool:hover{
     border: 3px solid var(--azul-piscina-escuro);
