@@ -11,47 +11,56 @@
             <div class="title-container">
                 <span>Cirurgias</span>
             </div>
-            <form action="{% url 'cirurgias' %}" method="POST" enctype="multipart/form-data">
-            {%csrf_token%}
-            <section>                
-                <div class="primary-card">
-                    <input type="text" name="cirurgia" id="" placeholder="Nome:" required>
-                    <input type="text" name="hospital" id="" placeholder="Onde:" required>
-                    <div class="input-content">
-                        <input type="date" name="data_cirurgia" id="" required>
+            <form {% if cirurgia_detail %} action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" {% else %} action="{% url 'cirurgias' %}" {% endif %} method="POST">
+                {%csrf_token%}
+                <section>                
+                    <div class="primary-card">
+                        <input type="text" name="cirurgia" id="" placeholder="Nome:" value="{% if cirurgia_detail %} {{ cirurgia_detail.cirurgia }} {% endif %}">
+
+                        <input type="text" name="hospital" id="" placeholder="Onde:" value="{% if cirurgia_detail %} {{ cirurgia_detail.hospital }} {% endif %}">
+                        <div class="input-content">
+
+                        <input type="text" onfocus="(this.type='date')" name="data_cirurgia" id="" value="{% if cirurgia_detail %} {{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }} {% endif %}">
+
+                        <input type="text" name="infos_extras" id="" placeholder="Anotações" value="{% if cirurgia_detail %} {{ cirurgia_detail.infos_extras }} {% endif %}">
+
+                        <!-- fk -->
+                        <input type="hidden" name="fk_usuario_cirurgias" value="{{dados_user.id_usuario}}">
                     </div>
-                    <button type="submit">Cadastrar</button>
-                    <!-- fk -->
-                    <input type="hidden" name="fk_usuario_cirurgias" value="{{dados_user.id_usuario}}">
-                    <!-- <input type="submit" value="cadastrar"> -->
-                                        
-                </div>
-                <div class="second-card">
-                    <h1>Sobre:</h1>
-                    <input type="text" name="infos_extras" id="" placeholder="sobre">
-                </div>
-            
-            </section>
-        </form>
+
+                    {% if cirurgia_detail %}
+                        <button type="submit">Editar</button>
+                        <a href="{% url 'cirurgia_delete' cirurgia_detail.id_cirugias %}">Excluir</a>
+                    {% else %}
+                        <button type="submit">Cadastrar</button>
+                    {% endif %}
+
+                    
+                    <!-- <div class="second-card">
+                        <h1>Sobre:</h1>
+                        
+                    </div> -->
+                </section>
+            </form>
 
         <div id="history-content" class="scroll">
             {% for dado in dados_cirurgias %}
             <div class="card">
-                <h2>{{dado.cirurgia}}</h2>
-                <h3>Data</h3>
-                <span>{{dado.data_cirurgia|date:'d-m-Y'
-                    }}</span>
-                {% if dado.hospital %}
-                    <h3>Local</h3>
-                    <span>{{dado.hospital}}</span>
-                {% endif %}
-                {% if dado.infos_extras %}
-                    <h3>Informações Extras</h3>
-                    <span>{{dado.infos_extras}}</span>
-                {% endif %}
+                <a href="{% url 'cirurgia_detail' dado.id_cirugias %}">
+                    <h2>{{dado.cirurgia}}</h2>
+                    <h3>Data</h3>
+                    <span>{{dado.data_cirurgia|date:'Y-m-d'}}</span>
+                    {% if dado.hospital %}
+                        <h3>Local</h3>
+                        <span>{{dado.hospital}}</span>
+                    {% endif %}
+                    {% if dado.infos_extras %}
+                        <h3>Informações Extras</h3>
+                        <span>{{dado.infos_extras}}</span>
+                    {% endif %}
+                </a>
             </div>
-            {% endfor %}
-            
+            {% endfor %}   
         </div>
     </div>
     </main>
