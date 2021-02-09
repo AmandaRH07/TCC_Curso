@@ -6,14 +6,8 @@
 {% block css %} {% static 'css/historico/historico.css' %} {%endblock%}
 {% block content%}
 
-
-
-
 <html>
-
 <body>
-    
-
     <main>
 
         <div class="container">
@@ -28,46 +22,49 @@
                 </div>
 
                 <div class="primary-card">
-
-                    <form action="{% url 'historico' %}" method="POST" enctype="multipart/form-data">
-                        {%csrf_token%}
-                        <input type="text" name="lugar" id="" placeholder="Local">
-                        <input type="date" name="data" id="" placeholder="Data">
-
+                    <form {% if historico_consultas_detail %} action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="lugar" id="" placeholder="Local" value="{% if historico_consultas_detail %} {{ historico_consultas_detail.lugar }} {% endif %}" required>
+                        <input type="date" name="data" id="" placeholder="Data" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.data|date:'Y-m-d' }}{% endif %}" required>
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
-
 
                         <div class="input-content">
                             <div class="first-file">
                                 <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' name="receita">
+                                <input id='selecao-arquivo-receita' type='file' name="receita" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.receita }}{% endif %}">>
                                 <p id="file-name"></p>
                             </div>
                             <div class="second-file">
                                 <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                                <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado"  value="{% if historico_consultas_detail %}{{ historico_consultas_detail.atestado }}{% endif %}">
                                 <p id="file-name2"></p>
                             </div>
                         </div>
-                        <button>Cadastrar</button>
+                        {% if historico_consultas_detail %}
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
+                        {% else %}
+                            <button type="submit"> Cadastrar</button>
+                        {% endif %}
                     </form>
-
                 </div>
             </section>
 
             <div id="history-content" class="scroll">
                 {% for dado in dados_historico %}
-                    <div class="card">
-                        <h3>Local</h3>
-                        <h2>{{dado.lugar}}</h2>
-                        <h3>Data</h3>
-                        <h2>{{dado.data}}</h2>
-                        <h3>Receitas</h3>
-                        <span>{{ dado.receita }}</span>
-                        <h3>Atestados</h3>
-                        <span>{{ dado.atestado }}</span>
-                    </div>
+                    <a href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">
+                        <div class="card">
+                            <h3>Local</h3>
+                            <h2>{{dado.lugar}}</h2>
+                            <h3>Data</h3>
+                            <h2>{{dado.data}}</h2>
+                            <h3>Receitas</h3>
+                            <span>{{ dado.receita }}</span>
+                            <h3>Atestados</h3>
+                            <span>{{ dado.atestado }}</span>
+                        </div>
+                    </a>
                 {% endfor %}
 
                 <!-- <div class="card">
@@ -186,11 +183,8 @@
                             </div>
                         
                     </div>
-
                 </div>
- 
             </div>
-
             </div>
         </div>
 
