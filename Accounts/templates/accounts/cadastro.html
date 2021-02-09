@@ -26,7 +26,7 @@
                 <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
                 <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required />
                 <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
-                <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required />
+                <input id="edit_information" placeholder="Data de nascimento:" type="text" onfocus="(this.type='date')" name= "nascimento" required/>
                 <select  name="sexo" id="id_sexo" required>
                     <option selected disabled value=""> Gênero</option>
                     <option value="feminino">Feminino</option>
