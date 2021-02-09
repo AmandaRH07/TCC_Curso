@@ -12,7 +12,7 @@
                 <span>Cirurgias</span>
             </div>
             <form {% if cirurgia_detail %} action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" {% else %} action="{% url 'cirurgias' %}" {% endif %} method="POST">
-                {%csrf_token%}
+                {% csrf_token %}
                 <section>                
                     <div class="primary-card">
                         <input type="text" name="cirurgia" id="" placeholder="Nome:" value="{% if cirurgia_detail %} {{ cirurgia_detail.cirurgia }} {% endif %}">
@@ -25,7 +25,7 @@
                         <input type="text" name="infos_extras" id="" placeholder="Anotações" value="{% if cirurgia_detail %} {{ cirurgia_detail.infos_extras }} {% endif %}">
 
                         <!-- fk -->
-                        <input type="hidden" name="fk_usuario_cirurgias" value="{{dados_user.id_usuario}}">
+                        <input type="hidden" name="fk_usuario_cirurgias" value="{{ dados_user.id_usuario }}">
                     </div>
 
                     {% if cirurgia_detail %}
