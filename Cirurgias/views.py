@@ -26,15 +26,18 @@ def cirurgia_detail(request, pk):
     dados_cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario.id_usuario)
 
     cirurgia_detail = Cirurgias.objects.get(id_cirugias=pk)
+    print('chegou')
 
     if str(request.method) == 'POST':
         form = CirurgiasForm(request.POST, instance=cirurgia_detail)
-        print(form)
         if form.is_valid():
+            print('valid')
             form.save()
             return redirect('cirurgias')
+        else:
+            print(form)
 
-    return render(request, "cirurgias.html", {"usuario": usuario, 'dados_cirurgias': dados_cirurgias, 'cirurgia_detail': cirurgia_detail})
+    return render(request, "cirurgias.html", {"dados_user": usuario, 'dados_cirurgias': dados_cirurgias, 'cirurgia_detail': cirurgia_detail})
 
 
 @login_required(redirect_field_name='index_login')
