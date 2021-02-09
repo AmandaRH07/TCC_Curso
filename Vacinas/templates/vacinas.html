@@ -119,40 +119,6 @@
             </div>
 
             <div class="right">
-
-                <!-- <div id="information" class="scroll">
-
-                    <p>Informações </p>
-                    {% if vacina_detail %}
-                        <p>{{vacina_detail.tipo_vacina}}</p>
-                        <p>{{vacina_detail.data_vacinacao}}</p>
-                        {% if vacina_detail.dose %}
-                            <p>Dose: {{vacina_detail.dose}}</p>
-                        {% endif %}
-                        {% if vacina_detail.lote %}
-                            <p>Lote: {{vacina_detail.lote}}</p>
-                        {% endif %}
-                        {% if vacina_detail.local %}
-                            <p>Local: {{vacina_detail.local}}</p>
-                        {% endif %}
-
-                        <button id="button-left">
-                            <a href="{% url 'delete_vacina' vacina_detail.id_vacinas %}">Excluir</a>
-                        </button>
-                        <button id="button-left">Editar</button>
-
-                    {% else %}
-                        <h2>Clique na vacina para ver mais dados.</h2>
-                    {% endif %}
-                    <div>
-                        <p class="conteudo-information">
-                            
-                            
-                        </p>
-                    </div>
-
-                </div> -->
-
                 <div class="register">
                     <section>
                         <form {% if vacina_detail %} action="{% url 'vacina_detail' vacina_detail.id_vacinas %}" {% else %} action="{% url 'vacinas' %}" {% endif %} method="POST">
@@ -189,9 +155,8 @@
                             <div id="div-button">
                                 {% if vacina_detail %}
                                     <button type="submit">Editar</button>
-                                    <button id="button-left">
-                                        <a href="{% url 'delete_vacina' vacina_detail.id_vacinas %}">Excluir</a>
-                                    </button>
+                                    <a href="{% url 'delete_vacina' vacina_detail.id_vacinas %}">Excluir</a>
+
                                 {% else %}
                                     <button type="submit">Cadastrar</button>
                                 {% endif %}

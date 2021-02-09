@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/stylePerfil.css">
+    <title>{{ usuario.nome }}</title>
+</head>
+<body>
+    <p>{{ usuario.nome }}</p>
+    {% for dado in cirurgias %}
+    <p>{{ dado.cirurgia }}</p>
+    {% endfor %}
+
+    
+
+    <a href="{% url 'pdf_view' %}" target="_blank">Gerar PDF</a>
+	<a href="{% url 'pdf_download' %}">Gerar QRCode</a>
+    
+</body>
+</html>
