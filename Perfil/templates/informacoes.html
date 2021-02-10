@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ usuario.nome }}</title>
+</head>
+<body>
+    <img src="../media/{{ usuario.foto }}" alt="">
+
+    <h1>INFORMAÇÕES PESSOAIS</h1>
+    <p>{{ usuario.nome }}</p>
+    <p>{{ usuario.nascimento }}</p>
+    <p>{{ usuario.sexo }}</p>
+
+    <br>
+
+    {% if cirurgias %}
+        <h1>CIRURGIAS</h1>
+        {% for dado in cirurgias %}
+            <p>Cirurgia: {{ dado.cirurgia }}</p>
+            {% if dado.hospital  %}
+                <p>Local: {{ dado.hospital }}</p>
+            {% endif %}
+            <p>Data: {{ dado.data_cirurgia }}</p>
+            {% if dado.infos_extras  %}
+                <p>Informações extras: {{ dado.infos_extras }}</p>
+                {% endif %}
+        {% endfor %}
+    {% else %}
+         <p>Não há cirurgias cadastradas.</p>
+    {% endif %}
+
+    <br>
+
+    {% if doencas_existentes %}
+        <h1>DOENÇAS EXISTENTES</h1>
+        {% for dado in doencas_existentes %}
+            <p>Doença: {{ dado.doenca }}</p>
+            <p>Ano do diagnóstico: {{ dado.ano_diagnostico }}</p>
+            {% if dado.exame  %}
+                <p>Exames: {{ dado.exame }}</p>
+                {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Não há doenças cadastradas.</p>
+    {% endif %}
+
+
+    <br>
+
+    {% if historico_consultas %}
+        <h1>HISTÓRICO DE CONSULTAS</h1>
+        {% for dado in historico_consultas %}
+            <p>Lugar: {{ dado.lugar }}</p>
+            <p>Data: {{ dado.data }}</p>
+            {% if dado.receita  %}
+                <p>Receita: {{ dado.receita }}</p>
+            {% endif %}
+            {% if dado.atestado  %}
+                <p>Atestado: {{ dado.atestado }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Não há consultas cadastradas.</p>
+    {% endif %}
+
+
+    <br>
+
+    {% if historico_familiar %}
+        <h1>HISTÓRICO FAMILIAR</h1>
+        {% for dado in historico_familiar %}
+            <p>Doença hereditária: {{ dado.doenca_hereditarias }}</p>
+            <p>Grau parentesco: {{ dado.grau_parentesco }}</p>
+        {% endfor %}
+    {% else %}
+        <p>Não há histórico familiar cadastrado.</p>
+    {% endif %}
+
+
+    <br>
+
+    {% if medicamentos %}
+    <h1>MEDICAMENTOS</h1>
+    {% for dado in medicamentos %}
+        <p>Nome: {{ dado.nome }}</p>
+        {% if dado.funcao  %}
+                <p>Função: {{ dado.funcao }}</p>
+        {% endif %}
+        {% if dado.data_inicio  %}
+            <p>Data de início: {{ dado.data_inicio }}</p>
+        {% endif %}
+        {% if dado.data_final  %}
+        <p>Data de início: {{ dado.data_final }}</p>
+        {% endif %}
+        {% if dado.infos_extras  %}
+        <p>Data de início: {{ dado.infos_extras }}</p>
+        {% endif %}
+    {% endfor %}
+    {% else %}
+        <p>Não há medicamentos cadastrados.</p>
+    {% endif %}
+
+
+    <br>
+
+    {% if sangue %}
+        <h1>TIPO SANGUÍNEO</h1>
+        {% for dado in sangue %}
+            <p>Tipo Sanguíneo: {{ dado.tipo_sanguineo }}</p>
+            <p>Doador: {{ dado.doador }}</p>
+            {% if dado.historico_doacoes  %}
+                <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Não há tipo sanguíneo cadastrado.</p>
+    {% endif %}
+
+    <br>
+
+    {% if vacinas %}
+    <h1>VACINAS</h1>
+        {% for dado in vacinas %}
+            <p>Vacina: {{ dado.tipo_vacina }}</p>
+            <p>Data vacinação: {{ dado.data_vacinacao }}</p>
+            {% if dado.dose  %}
+                <p>Dose: {{ dado.dose }}</p>
+            {% endif %}
+            {% if dado.lote  %}
+                <p>Lote: {{ dado.lote }}</p>
+            {% endif %}
+            {% if dado.local  %}
+                <p>Local: {{ dado.local }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Não há vacinas cadastradas.</p>
+    {% endif %}
+
+
+    <a href="{% url 'pdf_view' %}" target="_blank">Gerar PDF</a>
+    
+</body>
+</html>
