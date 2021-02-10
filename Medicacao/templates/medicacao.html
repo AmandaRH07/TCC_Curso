@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/styleMedicacao.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
 </head>
 <body>
     <header>
@@ -102,45 +105,107 @@
                             <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" >
 
                         </div>
-                        {% if medicacao_detail %}
-                            <button type="submit">Editar</button>
+                        <div >
+
+                            {% if medicacao_detail %}
+                            <button type="submit" >Editar</button>
                             <a href="{% url 'medicacao_delete' medicacao_detail.id_medicamentos %}">Excluir</a>
                         {% else %}
-                            <button type="submit"> Cadastrar</button>
+                            <button type="submit" > Cadastrar</button>
                         {% endif %}
+
+                        </div>
+                        
                     </div>
                 </form>                
             
         </section>
 
         <div id="history-content" class="scroll">
-            {% for dado in dados_medicamentos %}
-            <div class="card">
-                <a href="{% url 'medicacao_detail' dado.id_medicamentos %}">
-                        <h2>{{dado.nome}}</h2>
-                        {% if dado.funcao %}
-                            <h3>Função</h3>
-                            <span>{{dado.funcao}}</span>
-                        {% endif %}
-                        {% if dado.data_inicio %}
-                            <h3>Data Inicio</h3>
-                            <span>{{dado.data_inicio|date:'d-m-Y'}}</span>
-                        {% endif %}
-                        {% if dado.data_final %}
-                            <h3>Data Final</h3>
-                            <span>{{dado.data_final|date:'d-m-Y'}}</span>
-                        {% endif %}
-                        {% if dado.infos_extras %}
-                            <h3>Informações Extras</h3>
-                            <span>{{dado.infos_extras}}</span>
-                        {% endif %}
-                </a>
+            
+           
+            <div class="history-card">
+                {% for dado in dados_medicamentos %}
+                <div class="card">
+                    
+                    <a href="{% url 'medicacao_detail' dado.id_medicamentos %}">
+                            <h2>{{dado.nome}}</h2>
+                            {% if dado.funcao %}
+                                <h3>Função</h3>
+                                <span>{{dado.funcao}}</span>
+                            {% endif %}
+                            {% if dado.data_inicio %}
+                                <h3>Data Inicio</h3>
+                                <span>{{dado.data_inicio|date:'d-m-Y'}}</span>
+                            {% endif %}
+                            {% if dado.data_final %}
+                                <h3>Data Final</h3>
+                                <span>{{dado.data_final|date:'d-m-Y'}}</span>
+                            {% endif %}
+                            {% if dado.infos_extras %}
+                                <h3>Informações Extras</h3>
+                                <span>{{dado.infos_extras}}</span>
+                            {% endif %}
+                            <div class="start-btn">
+                                <a type="" id="mais-informacao" href="#">+</a>
+                            </div>
+                            
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+           
         </div>
+        <br>
     </div>
+
     </main>
+
+
+        <div class="center modal-box">
+            <div class="close-modal">
+
+                <button class=" fa-times">X</button>
+            </div>
+            <div class="form-edit">
+                <form action="" >
+                    <input type="text" placeholder="Nome do medicamento:" class="input-edit">
+                    <input type="text" placeholder="Função do medicamento:"  class="input-edit">
+                    <div class="input-form">
+                        <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="input-date"  name="data_inicio" value="">
+                        <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="input-date" name="data_final" value="">
+                        
+        
+                    </div>
+                    <div class="div-buttons">
+        
+                        
+                        <button type="submit" >Editar</button>
+                        <a href="">Excluir</a>
+                    </div>
+        
+                </form>
+            </div>
+
+    </div>
+    <script>
+            $(document).ready(function(){
+            $('.start-btn').click(function(){
+                
+                $('.modal-box').toggleClass("show-modal");
+                $('.start-btn').toggleClass("show-modal");
+            });
+            $('.fa-times').click(function(){
+                $('.modal-box').toggleClass("show-modal");
+                $('.start-btn').toggleClass("show-modal");
+            });
+            });
+        </script>
+
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+	
 </body>
 </html>

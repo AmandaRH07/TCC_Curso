@@ -4,7 +4,7 @@
 
 {% block title %}Sangue{%endblock%}
 {% block css %} {% static 'css/sangue/styleSangue.css' %} {%endblock%}
-{% block content%}
+{% block content%} 
 <header>
     <!-- <div class="center">  -->
 
@@ -21,32 +21,42 @@
                     <p class="text">Tipo Sanguíneo</p>
                 </div>
                 <div class="buttons" id="buttons-1">
-                    <!-- <button class="button-type" value="a+"><p class="text-button">A+</p></button>
-                    <button class="button-type" value="a-"><p class="text-button">A-</p></button>
-                    <button class="button-type" value="b+"><p class="text-button">B+</p></button>
-                    <button class="button-type" value="b-"><p class="text-button">B-</p></button> -->
-                    <input type="radio" name="tipo_sanguineo" value="aPositivo">
-                    <label>A+</label>
-                    <input type="radio" name="tipo_sanguineo" value="aNegativo">
-                    <label>A-</label>
-                    <input type="radio" name="tipo_sanguineo" value="bPositivo">
-                    <label>B+</label>
-                    <input type="radio" name="tipo_sanguineo" value="bNegativo">
-                    <label>B-</label>
-                    <input type="radio" name="tipo_sanguineo" value="abPositivo">
-                    <label>AB+</label>
-                    <input type="radio" name="tipo_sanguineo" value="abNegativo">
-                    <label>AB-</label>
-                    <input type="radio" name="tipo_sanguineo" value="oPositivo">
-                    <label>O+</label>
-                    <input type="radio" name="tipo_sanguineo" value="oNegativo">
-                    <label>O-</label>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="aPositivo" class="button-type">
+                        <label>A+</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="aNegativo" class="button-type">
+                        <label>A-</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="bPositivo" class="button-type">
+                        <label>B+</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="bNegativo" class="button-type">
+                        <label>B-</label>
+                    </div>
+                  
                 </div>
-                <div class="buttons">
-                    <!-- <button class="button-type" value="ab+"><p class="text-button">AB+</p></button>
-                    <button class="button-type" value="ab-"><p class="text-button">AB-</p></button>
-                    <button class="button-type" value="o+"><p class="text-button">O+</p></button>
-                    <button class="button-type" value="o-"><p class="text-button">O-</p></button> -->
+                <div class="buttons" id="buttons-2">
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="abPositivo" class="button-type">
+                        <label>AB+</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="abNegativo" class="button-type">
+                        <label>AB-</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="oPositivo" class="button-type">
+                        <label>O+</label>
+                    </div>
+                    <div class="button-option">
+                        <input type="radio" name="tipo_sanguineo" value="oNegativo" class="button-type">
+                        <label>O-</label>
+                    </div>
+    
                 </div>
             </div>
         </div>

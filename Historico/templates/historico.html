@@ -6,14 +6,9 @@
 {% block css %} {% static 'css/historico/historico.css' %} {%endblock%}
 {% block content%}
 
-
-
-
 <html>
 
 <body>
-    
-
     <main>
 
         <div class="container">
@@ -28,141 +23,53 @@
                 </div>
 
                 <div class="primary-card">
-
-                    <form action="{% url 'historico' %}" method="POST" enctype="multipart/form-data">
-                        {%csrf_token%}
-                        <input type="text" name="lugar" id="" placeholder="Local">
-                        <input type="date" name="data" id="" placeholder="Data">
-
+                    <form {% if historico_consultas_detail %} action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="lugar" id="" placeholder="Local" value="{% if historico_consultas_detail %} {{ historico_consultas_detail.lugar }} {% endif %}" required>
+                        <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name= "data" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.data|date:'Y-m-d' }}{% endif %}" required>
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
-
 
                         <div class="input-content">
                             <div class="first-file">
                                 <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' name="receita">
+                                <input id='selecao-arquivo-receita' type='file' name="receita" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.receita }}{% endif %}">
                                 <p id="file-name"></p>
                             </div>
                             <div class="second-file">
                                 <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                                <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado"  value="{% if historico_consultas_detail %}{{ historico_consultas_detail.atestado }}{% endif %}">
                                 <p id="file-name2"></p>
                             </div>
                         </div>
-                        <button>Cadastrar</button>
+                        {% if historico_consultas_detail %}
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
+                        {% else %}
+                            <button type="submit"> Cadastrar</button>
+                        {% endif %}
                     </form>
-
                 </div>
             </section>
 
             <div id="history-content" class="scroll">
                 {% for dado in dados_historico %}
-                    <div class="card">
-                        <h3>Local</h3>
-                        <h2>{{dado.lugar}}</h2>
-                        <h3>Data</h3>
-                        <h2>{{dado.data}}</h2>
-                        <h3>Receitas</h3>
-                        <span>{{ dado.receita }}</span>
-                        <h3>Atestados</h3>
-                        <span>{{ dado.atestado }}</span>
-                    </div>
+                    <a href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">
+                        <div class="card">
+                            <h3>Local</h3>
+                            <h2>{{ dado.lugar }}</h2>
+                            <h3>Data</h3>
+                            <h2>{{ dado.data }}</h2>
+                            <h3>Receitas</h3>
+                            <span>{{ dado.receita }}</span>
+                            <h3>Atestados</h3>
+                            <span>{{ dado.atestado }}</span>
+                        </div>
+                    </a>
                 {% endfor %}
-
-                <!-- <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div>
-
-                <div class="card">
-                    <h2>Roacutan</h2>
-                    <h3>Data</h3>
-                    <span>00/00/00</span>
-                    <h3>Horário</h3>
-                    <span>00:00</span>
-                    <h3>Função</h3>
-                    <span>Tratamento de acnes</span>
-                </div> -->
             </div>
 
             <div class="third-card">
-
                 <div class="subtitle-container-2">
                     <h2>Doenças Hereditárias</h2>
                 </div>
@@ -186,11 +93,8 @@
                             </div>
                         
                     </div>
-
                 </div>
- 
             </div>
-
             </div>
         </div>
 
@@ -203,28 +107,28 @@
          </div>
 
         <div class="center"> 
-
             <div class="left">
+                    <div class="register">
+                        <form {% if historico_familiar_detail %} action="{% url 'historico_familiar_detail' historico_familiar_detail.id_historico_familiar %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST">
+                                {% csrf_token %}
 
-                <form class="registro_doença" action="{% url 'historico-familiar' %}" method="POST">
+                                <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias" value="{% if historico_familiar_detail %} {{ historico_familiar_detail.doenca_hereditarias }} {% endif %}">
+                                <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
+                                    <option value="primeiro_grau" {% if historico_familiar_detail.grau_parentesco ==  'primeiro_grau' %} selected {% endif %}>Primeiro Grau</option>
+                                    <option value="segundo_grau" {% if historico_familiar_detail.grau_parentesco ==  'segundo_grau' %} selected {% endif %}>Segundo Grau</option>
+                                    <option value="Terceiro_grau" {% if historico_familiar_detail.grau_parentesco ==  'Terceiro_grau' %} selected {% endif %}>Terceiro Grau</option>
+                                    <option value="outros" {% if historico_familiar_detail.grau_parentesco ==  'outros' %} selected {% endif %}>Outros</option>
+                                </select>
 
-                    <div class="register"> 
-                        <!-- <form action="{% url 'historico-familiar' %}" method="POST"> -->
-                            {%csrf_token%}
-                            <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias">
-                            <!-- <input id="edit_information" type="text" required placeholder="Grau de parentesco" > -->
-                            <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
-                                <option value="primeiro_grau">Primeiro Grau</option>
-                                <option value="segundo_grau">Segundo Grau</option>
-                                <option value="Terceiro_grau">Terceiro Grau</option>
-                                <option value="outros">Outros</option>
-                            </select>
+                                <!-- fk -->
+                                <input type="hidden" name="fk_usuario_historico_familiar" value="{{ dados_user.id_usuario }}">
 
-                            <!-- fk -->
-                            <input type="hidden" name="fk_usuario_historico_familiar" value="{{dados_user.id_usuario}}">
-
-                            <button id="button-left" type="submit">Cadastrar</button>
-                        <!-- </form> -->
+                                {% if historico_familiar_detail %}
+                                    <button type="submit">Editar</button>
+                                    <a href="{% url 'historico_familiar_delete' historico_familiar_detail.id_historico_familiar %}">Excluir</a>
+                                {% else %}
+                                    <button type="submit"> Cadastrar</button>
+                                {% endif %}
 
                         <!-- <select>
                             <option selected disabled value=""> Número de mortes da doença na família</option>
@@ -237,87 +141,32 @@
                             <option value="6">mais de 5</option>
                         </select> -->
 
-                        
-                        
                         <div class="image"><img src="../static/img/ilustracao.png" alt=""></div>
-
-                    </div>
-                    
-
-                </form>
-                
+                    </form>
+                </div>
             </div>
+
             <div class="left" >
-
                 <div id="container-doecas" class="scroll">
-
                     <div class="information-doencas">
 
                         {% for dado in dados_familiar %}
-                            <div id="doencas">
-
-                                <p class="titulo-doenca"> {{dado.doenca_hereditarias}} </p>
-                                <p class="grau-doenca"> {{dado.grau_parentesco}} </p>
-                                <!-- <p class="qnt-mortes">Mortes 2</p> -->
-
-                            </div>
+                            <a href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">
+                                <div id="doencas">
+                                    <p class="titulo-doenca">{{ dado.doenca_hereditarias }}</p>
+                                    <p class="grau-doenca">{{ dado.grau_parentesco }}</p>
+                                    <!-- <p class="qnt-mortes">Mortes 2</p> -->
+                                    </div>
+                            </a>
                         {% endfor %}
 
-                        <!-- <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div>
-                        <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div>
-                        <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div>
-                        <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div>
-                        <div id="doencas">
-
-                            <p class="titulo-doenca"> Doença 01</p>
-                            <p class="grau-doenca" >Grau 2</p>
-                            <p class="qnt-mortes">Mortes 2</p>
-
-                        </div> -->
-
-                    </div>
-                    
-
-                        
-                    
+                    </div>  
                 </div>
-                
             </div>
         </div>
     </main>
     <script src="{% static 'js/historico.js' %}"></script>
-
-    
-    
-   
-    
-    
 </body>
-
 </html>
 
 {% endblock %}
