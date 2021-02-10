@@ -34,27 +34,6 @@ body {
     --branco: #FCFFF5;
 }
 
-/* ****************************************
-                        MENU
-**************************************** */
-
-header nav ul li {
-    list-style: none;
-}    
-
-.side-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--azul-escuro);
-    height: 80%;
-    width: 8%;
-    background-color: #112F41;
-    border-radius: 0 20px 20px 0;
-    position: fixed;
-    top: 10%;
-}
-
 .container {
     display: flex;
     align-items: center;
@@ -77,6 +56,14 @@ header nav ul li {
    color: var(--branco);
 }
 
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 section {
     width: 83%;
     margin-left: 15%;
@@ -86,21 +73,18 @@ section {
     justify-content: space-between;
 }
 
-.primary-card,
-.second-card {
-    width: 50rem;
-    height: 8rem;
-    border-radius: 20px;
-    min-height: 29rem;
-    margin-top: 7rem;
-}
 
 .primary-card {
+    width: 90%;
     background-color: var(--verde-piscina);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10rem;
+    padding: 2rem;
+
+    border-radius: 20px;
 }
 
 .primary-card > input,
@@ -168,10 +152,6 @@ section {
     padding: 20px 20px;
 }
 
-/* .scroll{
-
-    overflow-x: scroll;
-} */
 
 #history-content {
     background-color: var(--azul-escuro);
@@ -180,7 +160,6 @@ section {
 
     border-radius: 20px;
 
-    margin-left: 8%;
     margin-top: 5rem;
     display: flex;
     align-items: center;
@@ -232,15 +211,21 @@ section {
     }
 }
 
-@media (max-width: 1440px){
+@media (min-width: 1440px){
 
-    .primary-card,
-    .second-card {
-        width: 55rem;
+    .primary-card{
+        width: 70%;
         margin-top: 10rem;
     }
     #history-content {
-        
         margin-top: 8rem;
+    }
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
