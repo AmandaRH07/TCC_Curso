@@ -126,7 +126,7 @@ section {
 
 .primary-card > input,
 .input-content > input {
-    width: 90%;
+    width: 100%;
     padding: 1.5rem;
     margin: .5rem 0;
     border-radius: 20px;
@@ -149,11 +149,10 @@ section {
     
     display: flex;
     justify-content: center;
-    justify-content: space-between;
 }
 
-.input-content > input {
-    width: 48%;
+.input-content t {
+    width: 100%;
 }
 
 .primary-card button {
@@ -188,11 +187,6 @@ section {
     color: var(--branco);
     padding: 20px 20px;
 }
-
-/* .scroll{
-
-    overflow-x: scroll;
-} */
 
 
 @media (max-width: 1024px){
