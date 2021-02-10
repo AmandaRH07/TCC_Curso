@@ -15,14 +15,14 @@
                 {% csrf_token %}
                 <section>                
                     <div class="primary-card">
-                        <input type="text" name="cirurgia" id="" placeholder="Nome:" value="{% if cirurgia_detail %} {{ cirurgia_detail.cirurgia }} {% endif %}">
+                        <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:" value="{% if cirurgia_detail %} {{ cirurgia_detail.cirurgia }} {% endif %}">
 
-                        <input type="text" name="hospital" id="" placeholder="Onde:" value="{% if cirurgia_detail %} {{ cirurgia_detail.hospital }} {% endif %}">
+                        <input type="text" name="hospital" id="" placeholder="Nome do Hospital:" value="{% if cirurgia_detail %} {{ cirurgia_detail.hospital }} {% endif %}">
                         <div class="input-content">
 
-                        <input type="text" onfocus="(this.type='date')" name="data_cirurgia" id="" value="{% if cirurgia_detail %} {{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }} {% endif %}">
+                        <input type="text" onfocus="(this.type='date')" placeholder="Data da cirurgia:" name="data_cirurgia" id="" value="{% if cirurgia_detail %} {{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }} {% endif %}">
 
-                        <input type="text" name="infos_extras" id="" placeholder="Anotações" value="{% if cirurgia_detail %} {{ cirurgia_detail.infos_extras }} {% endif %}">
+                        <input type="text" name="infos_extras" id="" placeholder="Anotação:" value="{% if cirurgia_detail %} {{ cirurgia_detail.infos_extras }} {% endif %}">
 
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_cirurgias" value="{{ dados_user.id_usuario }}">
