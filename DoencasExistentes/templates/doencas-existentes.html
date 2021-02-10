@@ -94,12 +94,11 @@
                 <form {% if doenca_detail %} action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" {% else %} action="{% url 'doencas-existentes' %}" {% endif %} method="POST"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="primary-card">
-                        <input type="text" name="doenca" id="" placeholder="Nome:" required value="{% if doenca_detail %} {{ doenca_detail.doenca }} {% endif %}">
-                        <div class="input-content">
-                            <input type="date" name="ano_diagnostico"  required value="{% if doenca_detail %}{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}{% endif %}">
-                            <input type="file" name="exame" id="">
+                        <input type="text" name="doenca" id="" placeholder="Nome da doença:" required value="{% if doenca_detail %} {{ doenca_detail.doenca }} {% endif %}">
+                        
+                            <input type="text" onfocus="(this.type='date')" placeholder="Data do diagnóstico:" name="ano_diagnostico" required value="{% if doenca_detail %}{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}{% endif %}">
                             <input type="hidden" name="fk_usuario_doencas_existentes" value="{{ usuario.id_usuario }}">
-                        </div>
+                        
                         {% if doenca_detail %}
                             <button type="submit">Editar</button>
                             <a href="{% url 'doencas_existentes_delete' doenca_detail.id_doencas_existentes %}">Excluir</a>
