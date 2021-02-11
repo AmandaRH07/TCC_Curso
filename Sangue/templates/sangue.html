@@ -65,22 +65,20 @@
             <div class="options">
                 <div class="title">
                     <p class="text">Você é doador(a) de sangue?</p>
-                    <label for="id_doador">Doador:</label>
-                    <input type="checkbox" name="doador" id="id_doador">
                     <!-- fk -->
                     <input type="hidden" name="fk_usuario_tipo_sanguineo" value="{{dados_user.id_usuario}}">
                 </div>
-                <div class="image">
-                    <img src="{% static 'img/icone_sangue.png'%}" alt="Gota de Sangue" width="200px" height="210px">
+                <div class="box2-content">
+                    <div class="image">
+                        <img src="{% static 'img/icone_sangue.png'%}" alt="Gota de Sangue" width="200px" height="210px">
+                    </div>
+                    <div class="doador">
+                        <label for="id_doador">Assinale se você for doador(a) de sangue:</label>
+                        <input type="checkbox" name="doador" id="id_doador">
+                    </div>
+
                 </div>
-                <div class="buttons">
-                    <!-- <button class="button-bool">
-                        <p class="text-bool">SIM</p>
-                    </button>
-                    <button class="button-bool">
-                        <p class="text-bool">NÃO</p>
-                    </button> -->
-                </div>
+                
                 <button type="submit">Enviar</button>   
                 
             </div>
