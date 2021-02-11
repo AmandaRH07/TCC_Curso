@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import HistoricoConsultasForm, HistoricoFamiliarForm
 from django.http import HttpResponseRedirect
 from CadastroDePessoa.models import Usuario
@@ -9,7 +9,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='index_login')
 def historico_consultas(request):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     dados_historico = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario.id_usuario)
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
 
@@ -24,11 +26,15 @@ def historico_consultas(request):
 
 @login_required(redirect_field_name='index_login')
 def historico_consultas_detail(request, pk):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     dados_historico = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario.id_usuario)
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
 
-    historico_consultas_detail = HistoricoConsultas.objects.get(id_historico_consultas=pk)
+    # historico_consultas_detail = HistoricoConsultas.objects.get(id_historico_consultas=pk)
+    historico_consultas_detail = get_object_or_404(HistoricoConsultas, id_historico_consultas=pk)
+
 
     if str(request.method) == 'POST':
         form = HistoricoConsultasForm(request.POST, request.FILES, instance=historico_consultas_detail)
@@ -41,7 +47,8 @@ def historico_consultas_detail(request, pk):
 
 @login_required(redirect_field_name='index_login')
 def historico_consultas_delete(request, pk):
-    consulta = HistoricoConsultas.objects.get(id_historico_consultas=pk)
+    # consulta = HistoricoConsultas.objects.get(id_historico_consultas=pk)
+    consulta = get_object_or_404(HistoricoConsultas, id_historico_consultas=pk)
     consulta.delete()
 
     return redirect('historico')
@@ -50,7 +57,9 @@ def historico_consultas_delete(request, pk):
 ####################### HISTÓRICO FAMILIAR #######################
 @login_required(redirect_field_name='index_login')
 def historico_familiar(request):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
 
     if str(request.method) == 'POST':
@@ -64,13 +73,14 @@ def historico_familiar(request):
 
 @login_required(redirect_field_name='index_login')
 def historico_familiar_detail(request, pk):
-    print('chegou')
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     dados_historico = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario.id_usuario)
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
 
-    historico_familiar_detail = HistoricoFamiliar.objects.get(id_historico_familiar=pk)
-    print(historico_familiar_detail)
+    # historico_familiar_detail = HistoricoFamiliar.objects.get(id_historico_familiar=pk)
+    historico_familiar_detail = get_object_or_404(HistoricoFamiliar, id_historico_familiar=pk)
 
     if str(request.method) == 'POST':
         form = HistoricoFamiliarForm(request.POST, instance=historico_familiar_detail)
@@ -83,7 +93,8 @@ def historico_familiar_detail(request, pk):
 
 @login_required(redirect_field_name='index_login')
 def historico_familiar_delete(request, pk):
-    historico_familiar = HistoricoFamiliar.objects.get(id_historico_familiar=pk)
+    # historico_familiar = HistoricoFamiliar.objects.get(id_historico_familiar=pk)
+    historico_familiar = get_object_or_404(HistoricoFamiliar, id_historico_familiar=pk)
     historico_familiar.delete()
 
     return redirect('historico')

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap');
+
+
+@font-face { 
+    font-family: Poppins-Regular;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-Regular.8b6af8e5e832.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-SemiBold.4cdacb8f89d5.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-Medium.f61a4eb27371.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-Light.f6ea751e936a.ttf");
+}
+
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins-Regular;
+  overflow-x: hidden;
+}
+
+body{
+    background-color: var(--branco);
+}
+
+/* _____style-título_____ */
+
+#begin{
+    color:var(--branco);
+    font-size: 80px;
+    font-family: Philosopher;
+}
+
+#end{
+    margin-left: -12px;
+    color: var(--azul-escuro);
+    font-size: 90px;
+    font-family: Philosopher;
+    font-weight: bold;
+}
+
+.title{
+    position: absolute;
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.title-text{
+    position: relative;
+      
+    margin-left: -15px;
+    z-index: 100;
+}
+
+/* _____style-logo_____ */
+
+#logo{
+    width: 155px;
+    height: 120px;
+}
+
+header{
+    width: 100%;
+
+    justify-items: left;
+    align-items: center;
+
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    width: 100%;
+    margin-top: 17%;
+}
+
+/* _____style-box1_____ */
+
+.box1{
+    width: 30%;
+    padding: 10px 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;  
+}
+
+form > input{
+    margin: 0 16px 10px;
+    padding-left: 5%;
+
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+
+    height: 50px;
+    width: 92%;
+
+    border-radius: 40px;
+    border: none;
+
+    text-align: left;
+    font-size: 12px;
+    font-family: Poppins-Light;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.box1 ::placeholder{
+    color: var(--branco);
+}
+
+/* ____config-para-firefox_____ */
+input:invalid {
+    box-shadow:none;
+}
+
+/* _____style-botões______ */
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.buttons button, a{
+    border: 2px solid var(--branco);
+    border-radius: 40px;
+
+    background-color: var(--salmao);
+    color: var(--branco);
+
+    height: 50px;
+    width: 40%;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    font-family: Poppins-Medium;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    font-size: 13px;
+    padding: 12px 0 ;
+}
+
+.buttons button:hover, a:hover{
+    background-color: #FCFFF5;
+    color: #ED553B;
+    border: 2px solid #ED553B;
+}
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--azul-escuro) inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--branco) !important;
+    -webkit-text-fill-font: Poppins-Regular !important;
+}
+
+/* _____style-da-imagem_____ */
+
+.box2{ 
+    display: flex;
+    width: 40%;
+}
+
+.box2 > img{
+    width: 90%;
+    height: 90%;
+    z-index: 100;
+}
+
+/* _____animação-nuvens_____ */
+
+.waves-component{
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    transform: scaleY(-1);
+    box-shadow: 40px #061722;
+}
+
+.dark-wave{
+    animation: movedark-wave 3s ease-in-out infinite alternate;
+}
+
+@keyframes movedark-wave{
+    from{
+        transform: translateX(-2500px)
+    }
+}
+
+.light-wave {
+    animation: moveWave2 3s 1.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveWave2 {
+    from {
+      transform: translateX(-1000px);
+    }
+  }

@@ -1,0 +1,238 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina 
+#068587 verde piscina escuro 
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-Regular.8b6af8e5e832.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url("/static/fonts/Poppins/Poppins-SemiBold.4cdacb8f89d5.ttf");
+}
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--branco);
+}
+
+main{
+    display: flex; 
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style dos tópicos */
+.box1 , .box2{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 70%;
+}
+
+.box2{
+    height: 700px;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .buttons input[type=radio]{
+    display: none;
+    outline: none;
+}
+
+.buttons input[type=radio] + label{
+    display:inline-block;    
+    height:20px;    
+    padding:0 0 0 25px;    
+    margin:0 10px 0 0;    
+    background-image: url("/static/img/icone_sangue.580a935597ea.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+} */
+
+
+/* Style dos títulos */
+.title .text{
+    color: var(--azul-escuro);
+    background-color: var(--branco);
+    margin-top: 20px;
+    text-align: center;
+    height: 70px;
+    padding-top: 5px;
+    font-size: 40px;
+}
+
+/* Style dos conteúdos das boxes */
+.options{
+    background-color: var(--verde-piscina);
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin-top: 5%;
+    display: grid;
+}
+
+.box2 .options{
+    background-color: var(--azul-claro);
+}
+
+/* Style da imagem da box2 */
+/* ps.: qualidade ruim */
+.image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style dos botões em geral */
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style botões específicos - tipo sanguíneo */
+ .button-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+input[type="radio"] { 
+    display: none; 
+} 
+
+input[type="radio"] + label { 
+    font-weight: 500; 
+    font-size: 2rem; 
+    font-family: Poppins-Regular;
+    color: var(--azul-escuro);
+
+} 
+
+input[type="radio"] + label span { 
+    display:flex; 
+    width: 45px; 
+    height: 45px; 
+    margin: -2px 10px 0 0; 
+    vertical-align: middle; 
+    cursor: pointer; 
+    -moz-border-radius: 50%; 
+    border-radius: 50%; 
+    border: 3px solid var(--salmao); 
+    
+}
+
+input[type="radio"] + label span { 
+    background-color: var(--gelo); 
+} 
+
+input[type="radio"]:checked + label { 
+    color:var(--azul-escuro); 
+    font-weight: 700; 
+    font-family: Poppins-Regular;
+}
+
+input[type="radio"]:checked + label span { 
+    background-color: var(--azul-bebe); 
+    border: 3px solid var(--salmao); 
+    box-shadow: 2px 2px 2px rgba(0,0,0,.1); 
+}
+
+input[type="radio"] + label span, input[type="radio"]:checked + label span { 
+    -webkit-transition: background-color 0.24s linear; 
+    -o-transition: background-color 0.24s linear; 
+    -moz-transition: background-color 0.24s linear; 
+    transition: background-color 0.24s linear; 
+}
+
+
+
+/* Style botões específicos - sim ou não */
+.button-bool{
+    background-color: var(--gelo);
+    border: 3px solid var(--gelo); 
+    height: 65px;
+    width: 160px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
+    color: var(--azul-piscina-escuro);
+    z-index: 100;
+}
+
+.text-bool{
+    font-size: 30px;
+    text-align: center;
+}
+
+/* //////////////////////////////////// */
+
+.waves-component{
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: scaleY(1);
+    box-shadow: 40px #061722;
+    margin-top: 42%;
+    bottom: -10;
+}
+
+.dark-wave{
+    animation: movedark-wave 3s ease-in-out infinite alternate;
+}
+
+@keyframes movedark-wave{
+    from{
+        transform: translateX(-2500px)
+    }
+}
+
+.light-wave {
+    animation: moveWave2 3s 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes moveWave2 {
+    from {
+        transform: translateX(-1000px);
+    }
+}
+

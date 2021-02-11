@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -21,7 +21,9 @@ from xhtml2pdf import pisa
 
 @login_required(redirect_field_name='index_login')
 def perfil(request):
-    user = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # user = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    user = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     form = UsuarioUpdateForm(request.POST, request.FILES or None, instance=user)
 
     if str(request.method) == 'POST' or str(request.method) == 'FILES':
