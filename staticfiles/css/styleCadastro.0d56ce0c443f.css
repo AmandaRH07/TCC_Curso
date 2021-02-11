@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    outline: none;
+
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", serif;
+}
+
+body{
+
+    background-color: #FCFFF5;
+}
+
+/* Background */
+
+section{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #112F41;
+    overflow: hidden;
+
+}
+
+section .wave{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("/static/img/wave.2553535d4082.png");
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+
+    animation: animate 25s linear infinite;
+    z-index: 1000;
+    opacity: 0.6;
+    animation-delay: 0s;
+    bottom: 0;
+}
+section .wave.wave2{
+
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: 0px;
+}
+
+
+@keyframes animate{
+
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2{
+
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
+}
+/* Fim background */
+
+/* Classes */
+
+select{
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ; 
+    background-image: url("../img/icone.e4c171068e7c.png");
+    background-repeat: no-repeat;
+    background-position: 263px; 
+    background-size: 20px;
+    height: 50px;
+    width: 300px;
+    border-radius: 20px; 
+    border: 1px solid #112F41;
+    padding-left: 4%;
+    margin: 2%; 
+    background-color: #FCFFF5;
+    color: #112F41;
+    font-size: 15px;
+}
+
+.content{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: #FCFFF5;
+    box-shadow: 0px 0px 18px #061722;
+    height: 80%;
+    width:55%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+ h1{
+
+    
+    font-family: 'Poppins', serif;
+    text-align: center;
+    font-size: 30px;
+    color: #112F41;
+    margin-top: 30px;
+    
+} 
+form{
+
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    margin-left: 0px;
+    margin-top: 45px;
+
+}
+
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 360px;
+    width: 500px;
+}
+
+::placeholder{
+
+    color: #112F41;
+    font-family: 'Poppins',serif;
+    font-size: 15px;
+}
+.button{
+
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* IDs */
+
+#edit_information{
+
+    height: 50px;
+    width: 300px;
+    border-radius: 20px; 
+    border: 1px solid #112F41;
+    padding: 4%;
+    margin: 2%; 
+    background: #FCFFF5;
+    color: #112F41;
+}
+
+#button_information{
+
+    color: #FCFFF5;
+    background: #ED553B;
+    font-family: 'Poppins',serif;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    
+}
+#button_information:hover{
+
+    background-color: #FCFFF5;
+    color: #ED553B;
+    border: 2px solid #ED553B;
+}
+
+
+@media (max-width: 768px){
+
+    .content{
+
+        height: 75%;
+        width:70%;
+    
+    }
+    form{
+
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+
+    #edit_information{
+
+        margin: 3%; 
+    }
+}
+
+@media (max-width: 1024px){
+
+    .content{
+
+        height: 52%;
+        width:70%;
+    
+    }
+    h1{
+
+        margin-top: 20px;
+    }
+
+    form{
+
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+
+    #edit_information{
+
+        margin: 5%; 
+    }
+}
+
+ @media (min-width: 1440px){
+
+    .content{
+
+        height: 60%;
+        width:70%;
+        align-items: center;
+        left: 50%;
+    
+    
+    }
+    #edit_information{
+
+        
+        margin: 2.5%; 
+        width: 400px;
+        height: 50px;
+    
+    }
+
+    h1{
+        margin-top: 50px;
+        font-size: 30px;
+    }
+
+    select{
+
+        width: 400px;
+        height: 50px;
+        background-position: 363px; 
+        background-size: 15px;
+    }
+    .button{
+
+        margin-top: 30px;
+    }
+
+}

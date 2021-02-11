@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 
 from .forms import VacinasForm
@@ -10,7 +10,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='index_login')
 def vacinas(request):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user.id)
+
     dados_vacinas = Vacinas.objects.filter(fk_usuario_vacinas=usuario.id_usuario)
 
     if str(request.method) == 'POST':
@@ -24,11 +26,14 @@ def vacinas(request):
 
 @login_required(redirect_field_name='index_login')
 def vacinas_detail(request, pk):
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user.id)
 
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
     dados_vacinas = Vacinas.objects.filter(fk_usuario_vacinas=usuario.id_usuario)
     
-    vacina_detail = Vacinas.objects.get(id_vacinas=pk)
+    # vacina_detail = Vacinas.objects.get(id_vacinas=pk)
+    vacina_detail = get_object_or_404(Vacinas, id_vacinas=pk)
+
 
     if str(request.method) == 'POST':
         form = VacinasForm(request.POST, instance=vacina_detail)
@@ -40,7 +45,9 @@ def vacinas_detail(request, pk):
 
 @login_required(redirect_field_name='index_login')
 def delete_vacina(request, pk):
-    vacina = Vacinas.objects.get(id_vacinas=pk)
+    # vacina = Vacinas.objects.get(id_vacinas=pk)
+    vacina = get_object_or_404(Vacinas, id_vacinas=pk)
+
     vacina.delete()
 
     return redirect('vacinas')
