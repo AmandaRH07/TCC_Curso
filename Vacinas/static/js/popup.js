@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 
         $('.modal-box').toggleClass("show-modal");
-        $('.start-btn').toggleClass("show-modal");
+        // $('.start-btn').toggleClass("show-modal");
 
         if ($(".modal-box").hasClass("show-modal")) {
 
