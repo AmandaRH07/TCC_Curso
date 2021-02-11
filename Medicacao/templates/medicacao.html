@@ -93,29 +93,20 @@
             </div>
 
         <section>
-                <form {% if medicacao_detail %} action="{% url 'medicacao_detail' medicacao_detail.id_medicamentos %}" {% else %} action="{% url 'medicacao' %}" {% endif %} method="POST">
+                <form action="{% url 'medicacao' %}" method="POST">
                     <div class="primary-card">
                         {% csrf_token %}
 
-                        <input type="text" name="nome" id="" placeholder="Nome do medicamento:" value="{% if medicacao_detail %} {{ medicacao_detail.nome }} {% endif %}">
-                        <input type="text" name="funcao" id="" placeholder="Função do medicamento:"  value="{% if medicacao_detail %} {{ medicacao_detail.funcao }} {% endif %}">
+                        <input type="text" name="nome" id="" placeholder="Nome do medicamento:">
+                        <input type="text" name="funcao" id="" placeholder="Função do medicamento:">
                         <div class="input-content">
-                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information"  name="data_inicio" value="{% if medicacao_detail %}{{ medicacao_detail.data_inicio|date:'Y-m-d' }}{% endif %}">
-                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" name="data_final" value="{% if medicacao_detail %}{{ medicacao_detail.data_final|date:'Y-m-d' }}{% endif %}">
-                            <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}" >
-
+                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information"  name="data_inicio">
+                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" name="data_final">
+                            <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}">
                         </div>
                         <div >
-
-                            {% if medicacao_detail %}
-                            <button type="submit" >Editar</button>
-                            <a href="{% url 'medicacao_delete' medicacao_detail.id_medicamentos %}">Excluir</a>
-                        {% else %}
                             <button type="submit" > Cadastrar</button>
-                        {% endif %}
-
                         </div>
-                        
                     </div>
                 </form>                
             
@@ -129,10 +120,10 @@
                 <div class="card">
                     
                     <a href="{% url 'medicacao_detail' dado.id_medicamentos %}">
-                            <h2>{{dado.nome}}</h2>
+                            <h2>{{ dado.nome }}</h2>
                             {% if dado.funcao %}
                                 <h3>Função</h3>
-                                <span>{{dado.funcao}}</span>
+                                <span>{{ dado.funcao }}</span>
                             {% endif %}
                             {% if dado.data_inicio %}
                                 <h3>Data Inicio</h3>
@@ -147,65 +138,53 @@
                                 <span>{{dado.infos_extras}}</span>
                             {% endif %}
                             <div class="start-btn">
-                                <a type="" id="mais-informacao" href="#">+</a>
+                                <a type="" id="mais-informacao" href="{% url 'medicacao_detail' dado.id_medicamentos %}">+</a>
                             </div>
-                            
                     </a>
                 </div>
                 {% endfor %}
             </div>
-           
         </div>
         <br>
     </div>
-
     </main>
 
-
+    {% if medicacao_detail %}
         <div class="center modal-box">
-            <div class="close-modal">
+                <div class="close-modal">
+                    <button class=" fa-times">X</button>
+                </div>
+                <div class="form-edit">
+                    <form action="{% url 'medicacao_detail' medicacao_detail.id_medicamentos %}" method='POST' >
+                        {% csrf_token %}
+                        <input type="text" placeholder="Nome do medicamento:" class="input-edit" name="nome" value="{{ medicacao_detail.nome }}">
+                        <input type="text" placeholder="Função do medicamento:"  class="input-edit" name="funcao"  value="{{ medicacao_detail.funcao }}">
+                        <div class="input-form">
+                            <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="input-date"  name="data_inicio"  value="{{ medicacao_detail.data_inicio|date:'Y-m-d' }}">
+                            <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="input-date" name="data_final" value="{{ medicacao_detail.data_final|date:'Y-m-d' }}">
+                        </div>
+                        <input type="hidden" name="fk_user_medicacao" value="{{ usuario.id_usuario }}">
+                        <div class="div-buttons">
+                            <button type="submit" >Editar</button>
+                            <a href="{% url 'medicacao_delete' medicacao_detail.id_medicamentos %}">Excluir</a>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    {% endif %}
 
-                <button class=" fa-times">X</button>
-            </div>
-            <div class="form-edit">
-                <form action="" >
-                    <input type="text" placeholder="Nome do medicamento:" class="input-edit">
-                    <input type="text" placeholder="Função do medicamento:"  class="input-edit">
-                    <div class="input-form">
-                        <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="input-date"  name="data_inicio" value="">
-                        <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="input-date" name="data_final" value="">
-                        
-        
-                    </div>
-                    <div class="div-buttons">
-        
-                        
-                        <button type="submit" >Editar</button>
-                        <a href="">Excluir</a>
-                    </div>
-        
-                </form>
-            </div>
-
-    </div>
     <script>
             $(document).ready(function(){
-            $('.start-btn').click(function(){
+            // $('.start-btn').click(function(){
                 
                 $('.modal-box').toggleClass("show-modal");
-                $('.start-btn').toggleClass("show-modal");
+                // $('.start-btn').toggleClass("show-modal");
             });
             $('.fa-times').click(function(){
                 $('.modal-box').toggleClass("show-modal");
-                $('.start-btn').toggleClass("show-modal");
+                // $('.start-btn').toggleClass("show-modal");
             });
-            });
+            // });
         </script>
-
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-	
 </body>
 </html>

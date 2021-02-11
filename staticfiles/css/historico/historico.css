@@ -1,0 +1,641 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina 
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
+}
+ 
+@font-face {
+    font-family: Poppins-Medium;
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
+}
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+    
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins-Regular;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--branco);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+
+   width: 50%;
+   height: 9rem;
+   border-radius: 0 0 20px 20px;
+
+   font-weight: 600;
+   font-size: 4rem;
+   color: var(--branco);
+}
+
+.subtitle-container{
+    left: 15%;
+
+    padding: 0 20px 2px;
+    margin-bottom: 18px;
+    margin-left: 50px;
+    position: absolute;
+    color: var(--azul-escuro);
+    font-family: Poppins-Medium;
+    font-size: 2rem;
+
+    border-bottom: 2px solid var(--salmao);
+    
+}
+
+section {
+    margin-top: 5%;
+    width: 83%;
+    height: 80%;
+    margin-left: 15%;
+    margin-right: 7% ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+}
+
+.primary-card {
+    width: 70%;
+    height: 20%;
+    border-radius: 20px;
+    min-height: 29rem;
+    margin-top: 7rem;
+    background-color: var(--verde-piscina);
+    padding-top: 5px;
+}
+
+.primary-card form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.primary-card input 
+{
+    width: 90%;
+    padding: 1.5rem;
+    margin: .5rem 0;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--branco);
+    height: 53px;
+    
+}
+
+input[type='file'] {
+    display: none
+}
+ 
+.first-file, .second-file{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-file{
+    margin-top: 10px;
+}
+
+#file-name, #file-name2, label{
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: Poppins-Regular;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--branco);
+}
+
+#file-name, #file-name2{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input-content p{
+    width: 60%;
+    max-width: 60%;
+    height: 53px;
+    max-height: 53px;
+}
+
+.input-content label{
+    cursor: pointer;
+    color: var(--azul-escuro);
+}
+
+label:hover{
+    background-color: #91fdfab6;
+}
+
+::placeholder {
+    color: var(--verde-piscina);
+    font-family: Poppins-Regular;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.input-content {
+    height: 30%;
+    width: 90%;
+    margin: 5px 0;
+    display: flex;
+    justify-content:right;
+    flex-direction: column;
+}
+
+.primary-card button {
+    width: 17rem;
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: Poppins-Regular;
+
+    padding: 1rem;
+    margin: 10px 0 1rem;
+    background-color: var(--salmao);
+
+    border-radius: 20px;
+    border: 3px solid var(--salmao);
+}
+
+.primary-card input{
+    color: var(--verde-piscina);
+    font-family: Poppins-Regular;
+}
+
+.primary-card button:hover {
+    cursor: pointer;
+    color: var(--salmao);
+    background-color: var(--branco);
+    border: 3px solid var(--salmao);
+}
+
+
+#history-content {
+    background-color: var(--azul-escuro);
+    width: 80%;
+    min-height: 30rem;
+    height: 100px;
+
+    border: 3px solid var(--azul-escuro);
+    border-radius: 20px;
+
+    margin-left: 8%;
+    margin-top: 5rem;
+    margin-bottom: 50px;    
+
+    overflow-x: scroll;
+    display: inline-flex;
+    overflow-y: hidden;
+    justify-content: start;
+}
+
+
+.card {
+    background-color: var(--branco);
+    
+    height: 90%;
+    width: 200px;
+    border-radius: 10px;
+
+    margin: 10px;
+    text-align: center;
+    min-width: 200px;
+    
+}
+
+.history-content .card h2 {
+    color: var(--azul-piscina-escuro);
+    font-weight: 500;
+    font-size: 2.3rem;
+}
+
+
+.history-content .card h3 {
+    font-weight: 600;
+    color: var(--verde-piscina);
+}
+
+
+.history-content .card span {
+    font-weight: 600;
+    color: var(--verde-piscina);
+}
+
+.third-card{
+    width: 70%;
+}
+
+.box-total{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.third-card .subtitle-container-2{
+    color: var(--azul-escuro);
+    font-family: Poppins-Medium;
+    font-size: 2rem;
+
+    width: 30%;
+    border-bottom: 2px solid var(--salmao);
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.third-card-box1{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.third-card .first-background{
+    background-color: var(--azul-escuro);
+    border-radius: 20px;
+    
+    z-index: 100;
+}
+
+.first-background h2{
+    color: var(--branco);
+    text-align: center;
+    width: 100%;
+   
+    padding: 10%;
+}
+
+.third-card .question{
+    background-color: var(--verde-piscina);
+    height: 200px;
+    width: 100%;
+    margin-top: -100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-end;
+    position: relative;
+}
+
+.option-1, .option-2{
+    margin-top: 15%;
+
+}
+
+.question label{
+    background: none;
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.question input{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.question-content{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--verde-piscina) !important;
+    -webkit-text-fill-font: Poppins-Regular !important;
+}
+
+
+/* STYLE HISTÓRICO FAMILIAR */
+
+
+/* Classes */
+
+.roof{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 100px;
+    margin-top: 8%;
+    
+}
+
+.title{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #4FB99F;
+    height: 80px;
+    width: 50%;
+    align-self: flex-end;
+    border-radius: 20px  0px 0px 20px;
+    
+}
+
+h1{
+
+    font-family: "Poppins", sans-serif;
+    color: #112F41;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.content{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+::placeholder{
+    color: #112F41;
+    
+}
+
+.center{
+    
+    margin-top: 5%!important;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    height: 630px;
+   
+}
+.registro_doença{
+
+    width: 450px;
+    height: 280px;
+    background: #ED553B;
+    margin-top: 10px;
+    border-radius: 15px;
+
+
+}
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 280px;
+    
+}
+
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+p{
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+img{
+    width: 400px;
+    height: 300px;
+}
+
+.image{
+
+    position: absolute;
+    margin-top: 300px;
+}
+.titulo-doenca{
+
+    text-align: center;
+    font-size: 18px;
+    color: #ED553B;
+}
+.grau-doenca{
+
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+
+}
+.qnt-mortes{
+
+    
+    text-align: center;
+    font-size: 15px;
+    color: #4FB99F;
+}
+
+.information-doencas{
+    display: block;
+
+}
+
+
+/* Fim Classes */
+
+
+/* Específicos */
+
+.scroll{
+
+    overflow-y:  scroll;
+    
+}
+
+.scroll::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: #4FB99F;
+    border-radius: 20px;
+    width: 16px;
+}
+
+
+select{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 3%;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none ;
+    background-image: url(/Historico/static/img/icone.png);
+    background-repeat: no-repeat;
+    background-position:  310px;
+    background-size: 20px;
+    
+}
+
+/* Fim específicos */
+
+/* IDs */
+
+#doencas{
+
+    width: 300px;
+    height: 150px;
+    background-color: #FCFFF5 ;
+    border-radius: 15px;
+    margin-top: 40px;
+    padding: 8px;
+ 
+}
+
+#doencas:hover{
+
+    transform: scale(1.1);
+}
+#container-doecas{
+
+    width: 480px;
+    height: 600px;
+    background-color: #112F41;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-bottom: 2px solid #112F41;
+    border-top: 2px solid #112F41;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+
+}
+
+
+
+#edit_information{
+
+    border-radius: 20px; 
+    border: 0px;
+    padding: 2%;
+    margin: 10px; 
+    margin-top: 18px; 
+    align-items: center;
+    width: 340px;
+    height: 42px;
+    color: #112F41;
+
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+#button-left{
+    
+    margin-top: 3%;
+    color: #FCFFF5;
+    background-color: #112F41;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    height: 35px;
+    border: 0px;
+    width: 150px;
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+
+#div-button{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#button-left:hover{
+
+    background-color: #FCFFF5;
+    border: solid 2px #112F41;
+    color: #112F41;
+    padding-top: 3px;
+    font-weight: bold;
+}
+
+
+/* Fim IDs */
