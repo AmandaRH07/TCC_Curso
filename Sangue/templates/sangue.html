@@ -13,7 +13,7 @@
 </header>
 
 <main class="content">
-    <form action="{% url 'sangue' %}" method="POST" enctype="multipart/form-data">
+    <form {% if tipo_sanguineo %} action="{% url 'sangue_detail' %}" {% else %} action="{% url 'sangue' %}" {% endif %} method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="box1">
             <div class="options">

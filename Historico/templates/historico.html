@@ -109,7 +109,7 @@
         <div class="center"> 
             <div class="left">
                     <div class="register">
-                        <form {% if historico_familiar_detail %} action="{% url 'historico_familiar_detail' historico_familiar_detail.id_historico_familiar %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST">
+                        <form {% if historico_familiar_detail %} action="{% url 'historico_familiar_detail' historico_familiar_detail.id_historico_familiar %}" {% else %} action="{% url 'historico-familiar' %}" {% endif %} method="POST">
                                 {% csrf_token %}
 
                                 <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias" value="{% if historico_familiar_detail %} {{ historico_familiar_detail.doenca_hereditarias }} {% endif %}">
