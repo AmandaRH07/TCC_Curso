@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import AvaliacaoDiariaForm
@@ -8,7 +8,9 @@ from CadastroDePessoa.models import Usuario
 
 @login_required(redirect_field_name='index_login')
 def index(request):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+    usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
+
     dados_avaliacao_diaria = AvaliacaoDiaria.objects.filter(fk_usuario_avaliacao_diaria=usuario.id_usuario)
     
     if str(request.method) == 'POST' :

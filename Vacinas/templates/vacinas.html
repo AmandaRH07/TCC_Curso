@@ -8,6 +8,9 @@
     <title>Vacinas | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/vacinas/styleVacinas.css'%}">
     <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 </head>
 
 <body>
@@ -104,7 +107,7 @@
 
         <br>
 
-        <div class="center">
+        <div class="center-vaccines">
 
             <div id="scroll-vaccines" class="scroll">
                 {% for dado in dados_vacinas %}
@@ -112,6 +115,9 @@
                     <a href="{% url 'vacina_detail' dado.id_vacinas %}">
                         <h2>{{dado.tipo_vacina}} </h2>
                         <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
+                        <div class="start-btn">
+                            <a type="" id="mais-informacao" href="#">+</a>
+                        </div>
                     </a>
                 </button>
                 {% endfor %}
@@ -166,8 +172,43 @@
                 </div>
             </div>
         </div>
+
+    
     </main>
 
+    <div id = 'essa_praga' class="center modal-box">
+        <div class="close-modal">
+
+            <button id = 'button_close' class=" fa-times">X</button>
+        </div>
+        <div class="form-edit">
+            <form action="" >
+                <input type="text" placeholder="Nome da vacina:" class="input-edit">
+                
+                <div class="input-form">
+                    <input type="text" placeholder="Dose:"  class="input-edit">
+                    <input placeholder="Lote" type="text" onfocus="(this.type='date')" class="input-date" name="data_final" value="">
+                    
+    
+                </div>
+                <div class="input-form">
+                    <input type="text" placeholder="Data de Vacinação:"  class="input-edit">
+                    <input type="text" placeholder="Dose:"  class="input-edit">
+                    
+    
+                </div>
+                <div class="div-buttons">
+    
+                    
+                    <button type="submit" >Editar</button>
+                    <a href="">Excluir</a>
+                </div>
+    
+            </form>
+        </div>
+
+    </div>
+    <script src="{% static 'js/popup.js' %}"></script>
 </body>
 
 </html>

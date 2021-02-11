@@ -1,0 +1,496 @@
+/* Cores
+#FCFFF5 branco falso
+#E6EBE0 gelo
+#ED553B salmao
+#4FB99F verde piscina
+#068587 verde piscina escuro
+#3DCCC7 azul claro 
+#112F41 azul escuro*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif; 
+    outline: none;
+    
+  }
+
+
+
+/* Classes */
+body{
+    background-color: #FCFFF5;
+}
+
+.roof{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    height: 100px;
+    
+}
+
+.title{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ED553B;
+    height: 100px;
+    width: 40%;
+    align-self: flex-end;
+    border-radius: 0 0 20px 20px ;
+}
+
+h1{
+
+    font-family: "Poppins", sans-serif;
+    color: #FCFFF5;
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.content{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.center{
+    
+    margin-top: 25px !important;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+   
+}
+
+.conteudo-information{
+
+    text-align: justify;
+    font-size: 15px;
+    color: #112F41;
+    font-weight: normal;
+}
+
+.data-vacinnes{
+
+    text-align: center;
+    font-size: 15px;
+    color: #068587;
+    font-weight: normal;
+
+}
+
+h2{
+
+    color: #112F41;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+p{
+    color: #112F41;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#vaccines > a{
+
+    text-decoration: none;
+
+
+}
+
+form > p{
+    color: #112F41;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid #4FB99F;
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    height: 330px;
+}
+
+form{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.titulo-information{
+
+    color: #112F41;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 10px;
+    font-size: 20px;
+    
+}
+/* Fim Classes */
+
+
+/* Específicos */
+
+.search-box{ 
+
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+    border-radius: 40px; 
+    border: 2px solid #112F41; 
+    margin-left: 430px;
+    margin-top: 0px;
+    top: 75px;
+}
+
+.search-box:hover > .txt-search,.search-box .txt-search:focus{
+
+    width: 300px; 
+}
+
+.search-box:hover > .btn-search{
+
+     background: white; 
+}
+
+.btn-search{ 
+    
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    border: 0px;
+    background: #4FB99F;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.4s;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.txt-search{ 
+
+    font-family: 'Poppins';
+    border: none; 
+    background: none; 
+    outline: none; 
+    float: left; 
+    margin-left: 8px; 
+    color: gray;  
+    transition: 0.4s; 
+    padding: 12px;
+    width: 200px;
+} 
+
+.scroll{
+
+    overflow-y:  scroll;
+    
+}
+
+.scroll::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: #ED553B;
+    border-radius: 20px;
+    width: 16px;
+}
+
+/* Fim específicos */
+
+/* IDs */
+
+#scroll-vaccines{
+
+    background-color: #4FB99F;
+    height: 560px;
+    width: 40%;
+    border-radius: 20px;
+    border-right: 2px solid white;
+    margin-top: 0px !important;
+    margin: 10%;
+    border-top: 2px solid #4FB99F;
+    border-bottom: 2px solid #4FB99F;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+
+#vaccines{
+    background-color: #FCFFF5;
+    margin: 15px;
+    height: 20%;
+    width: 80%;
+    border-radius: 20px;
+    align-self: center;
+    cursor: pointer;
+    border: 0px;
+}
+
+#vaccines:hover{
+
+    background-color: #ED553B ;
+    transform: scale(1.1);
+
+}
+
+#vaccines:hover > .data-vacinnes{
+
+    color:  #FCFFF5;
+}
+
+#information{
+    background-color: #FCFFF5;
+    color: #112F41;
+    border-radius: 15px;
+    border: 2px solid #4FB99F;
+    height: 30%;
+    overflow-y: scroll;
+}
+
+.register-information{
+
+    border-radius: 20px; 
+    border: 1px solid #4FB99F;
+    padding: 2%;
+    margin: 2%; 
+    align-items: center;
+    width: 200px;
+    color: gray;
+    appearance: none;
+    background-color: #FCFFF5;
+
+
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#button-left{
+    margin-top: 2%;
+    color: #FCFFF5;
+    background-color: #068587;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    border: #068587;
+    height: 40px;
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    
+
+    
+}
+
+#div-button{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#button-left:hover{
+
+    background-color: #FCFFF5;
+    border-radius: 20px;
+    border: 2px solid #068587;
+    color: #068587;
+    
+}
+
+#register-information-local{
+
+    border-radius: 20px; 
+    border: 1px solid #4FB99F;
+    padding: 2%;
+    margin: 2%;
+    width: 200px;
+    color: gray;
+    background-color: #FCFFF5;
+}
+/* Fim IDs */
+
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5;
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+
+
+
+
+
+.navbar {
+    margin: 4.5% 0;
+    width: 50px;
+    height: 75%;
+    position: fixed;
+    background-color: var(--azul-escuro);
+    transition: 0.3s ease;
+    border-radius: 0 20px 20px 0;
+    z-index: 100;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    list-style: none;
+}
+
+
+.nav-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    color: var(--branco);
+    text-decoration: none;
+    white-space: nowrap;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
+    padding-left: 8%;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+    font-size: 15px;
+    padding: 12px 0;
+}
+
+.nav-link img {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar:hover {
+    width: 18%;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.nav-link:hover {
+    filter: grayscale(0) opacity(1);
+    background: #53b6a138;
+    color: var(--salmao);
+    border-radius: 0 20px 20px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+#historico img,
+#cirurgia img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: 1440px){
+
+    .center{
+
+        margin: 5%;
+    }
+
+    #scroll-vaccines{
+
+        height: 700px;
+        
+    }
+    
+    .right{
+
+        width: 50%;
+        margin-top: 10px;
+    }
+    .register{
+
+        height: 480px;
+        margin-top: 10%;
+    }
+    .register-information{
+
+        width: 320px;
+    }
+    #register-information-local{
+
+        width: 260px;
+    }
+    #information{
+        background-color: #FCFFF5;
+        height: 50%;
+    }
+    form > p{
+
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin: 10px;
+    }
+}
