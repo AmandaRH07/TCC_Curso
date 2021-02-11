@@ -11,7 +11,7 @@
     --azul-piscina-escuro: #068587;
     --verde-piscina: #4FB99F;
     --salmao: #ED553B;
-    --branco: #FCFFF5;
+    --branco: #FCFFF5; 
     --gelo: #E6EBE0;
     --azul-claro: #3DCCC7;
     --azul-bebe: #b0fffc;
@@ -59,7 +59,7 @@ main{
 }
 
 .box2{
-    height: 700px;
+    height: 600px;
 }
 
 form{
@@ -69,22 +69,6 @@ form{
     justify-content: center;
     align-items: center;
 }
-
-/* .buttons input[type=radio]{
-    display: none;
-    outline: none;
-}
-
-.buttons input[type=radio] + label{
-    display:inline-block;    
-    height:20px;    
-    padding:0 0 0 25px;    
-    margin:0 10px 0 0;    
-    background-image: url(/static/img/icone_sangue.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-} */
-
 
 /* Style dos títulos */
 .title .text{
@@ -104,11 +88,65 @@ form{
     height: 100%;
     border-radius: 30px;
     margin-top: 5%;
-    display: grid;
 }
 
 .box2 .options{
     background-color: var(--azul-claro);
+}
+
+.box2-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.doador label{
+    font-family: Poppins-Regular;
+    font-weight: 500;
+    font-size: 2rem;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.doador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doador input{
+    background-color: var(--branco);
+    border: 2px solid var(--salmao);
+    border-radius: 100%;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.doador input:checked {
+    background-color: var(--salmao);
+}
+
+.options button{
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+    border: 3px solid var(--branco);
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    font-family: Poppins-Regular, sans-serif;
+    cursor: pointer;
+}
+
+.options button:hover{
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+    border: 3px solid var(--azul-escuro);
 }
 
 /* Style da imagem da box2 */
@@ -180,30 +218,6 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     -moz-transition: background-color 0.24s linear; 
     transition: background-color 0.24s linear; 
 }
-
-
-
-/* Style botões específicos - sim ou não */
-.button-bool{
-    background-color: var(--gelo);
-    border: 3px solid var(--gelo); 
-    height: 65px;
-    width: 160px;
-    line-height: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 20px;
-    box-shadow: 0px 0px 18px var(--azul-piscina-escuro);
-    color: var(--azul-piscina-escuro);
-    z-index: 100;
-}
-
-.text-bool{
-    font-size: 30px;
-    text-align: center;
-}
-
 /* //////////////////////////////////// */
 
 .waves-component{
