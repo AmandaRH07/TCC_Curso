@@ -17,7 +17,7 @@ function FormValidator(form) {
     // validando data de nascimento
    validator = ValidaData(form.nascimento.value)
    if (!validator){
-       const spanData = documentElement.querySelector('#nascimento_validator')
+       const spanData = document.querySelector('#nascimento_validator')
        spanData.style.display = 'block'
        return false
    }
@@ -32,16 +32,17 @@ function FormValidator(form) {
 function ValidaData(data) {
     let verifica = true
     today = new Date()
+    console.log(data)
 
-    d = Number(today.getDate())
-    m = Number(today.getMonth() + 1)
-    y = Number(today.getFullYear())
+    d = parseInt(today.getDate())
+    m = parseInt(today.getMonth() + 1)
+    y = parseInt(today.getFullYear())
 
    data = data.split('-')
 
-   ano_nasc = Number(data[0])
-   mes_nasc = Number(data[1])
-   dia_nasc = Number(data[2])
+   ano_nasc = parseInt(data[0])
+   mes_nasc = parseInt(data[1])
+   dia_nasc = parseInt(data[2])
 
    if (ano_nasc <= y){
        if (mes_nasc <= m){
@@ -59,7 +60,6 @@ function ValidaData(data) {
    else {
     verifica = false
    }
- 
 
    return verifica
 }
