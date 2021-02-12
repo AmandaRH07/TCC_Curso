@@ -1,0 +1,85 @@
+:root {
+    --azul-escuro: #112F41;
+    --azul-piscina-escuro: #068587;
+    --verde-piscina: #4FB99F;
+    --salmao: #ED553B;
+    --branco: #FCFFF5; 
+    --gelo: #E6EBE0;
+    --azul-claro: #3DCCC7;
+    --azul-bebe: #b0fffc;
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Poppins-Regular;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #ddf2eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+main{
+    margin-top: 70px;
+    width: 70%;
+    background-color: var(--branco);
+
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil, .cirurgia, .doencas, .sangue, .historico-consulta, .historico-familiar, .vacinas, .medicamentos{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.perfil img{
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin: 20px 0 50px;
+}
+
+.perfil .imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+p{
+    font-size: 1rem;
+    font-family: Poppins-Regular;
+}
+
+h1{
+    font-family: Poppins-Regular;
+    font-size: 1.2rem;
+}
+
+.pdf img{
+    width: 70px;
+    height: 85px;
+}

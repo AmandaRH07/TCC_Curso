@@ -33,7 +33,26 @@ def perfil(request):
     return render(request, "perfil.html", {'dados_user': Usuario.objects.get(id_fk_cadastro_user=request.user.id), 'form': form})
 
 def informacoes(request):
-    return render(request, "informacoes.html")
+    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user).__dict__
+    cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario['id_usuario'])
+    doencas_existentes = DoencasExistentes.objects.filter(fk_usuario_doencas_existentes=usuario['id_usuario'])
+    historico_consultas = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario['id_usuario'])
+    historico_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario['id_usuario'])
+    medicamentos = Medicamentos.objects.filter(fk_user_medicacao=usuario['id_usuario'])
+    sangue = TipoSanguineo.objects.filter(fk_usuario_tipo_sanguineo=usuario['id_usuario'])
+    vacinas = Vacinas.objects.filter(fk_usuario_vacinas=usuario['id_usuario'])
+
+    data = {
+        'usuario': usuario,
+        'cirurgias': cirurgias,
+        'doencas_existentes': doencas_existentes,
+        'historico_consultas': historico_consultas,
+        'historico_familiar': historico_familiar,
+        'medicamentos': medicamentos,
+        'sangue': sangue,
+        'vacinas': vacinas,
+    }
+    return render(request, "informacoes.html", data)
 
 
 def render_to_pdf(template_src, context_dict={}):
