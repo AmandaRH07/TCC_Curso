@@ -21,6 +21,14 @@ body{
     background-color: #FCFFF5;
 }
 
+/* Validação Form */
+#senha_validator, #nascimento_validator {
+    color: #ED553B;
+    font-size: 14px;
+    display: none;
+}
+/* fim validação */
+
 /* Background */
 
 section{

@@ -2,6 +2,8 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from CadastroDePessoa.models import Usuario
 
+from django.utils import timezone
+
 
 class AvaliacaoDiaria(models.Model):
     SINTOMAS_CHOICES = (
@@ -20,5 +22,6 @@ class AvaliacaoDiaria(models.Model):
     sintomas = MultiSelectField('Sintomas', choices=SINTOMAS_CHOICES, max_length=50, max_choices=10)
     observacoes = models.TextField('Observações', blank=True)
     outro = models.TextField('Outro sintoma', blank=True)
+    data = models.DateField('Data ', default=timezone.now())
     fk_usuario_avaliacao_diaria = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
 
