@@ -17,7 +17,13 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 # from django.views import View
+
+import qrcode
+import image
+
 from xhtml2pdf import pisa
+import requests
+import json
 
 @login_required(redirect_field_name='index_login')
 def perfil(request):
@@ -33,7 +39,26 @@ def perfil(request):
     return render(request, "perfil.html", {'dados_user': Usuario.objects.get(id_fk_cadastro_user=request.user.id), 'form': form})
 
 def informacoes(request):
-    return render(request, "informacoes.html")
+    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user).__dict__
+    cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario['id_usuario'])
+    doencas_existentes = DoencasExistentes.objects.filter(fk_usuario_doencas_existentes=usuario['id_usuario'])
+    historico_consultas = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario['id_usuario'])
+    historico_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario['id_usuario'])
+    medicamentos = Medicamentos.objects.filter(fk_user_medicacao=usuario['id_usuario'])
+    sangue = TipoSanguineo.objects.filter(fk_usuario_tipo_sanguineo=usuario['id_usuario'])
+    vacinas = Vacinas.objects.filter(fk_usuario_vacinas=usuario['id_usuario'])
+
+    data = {
+        'usuario': usuario,
+        'cirurgias': cirurgias,
+        'doencas_existentes': doencas_existentes,
+        'historico_consultas': historico_consultas,
+        'historico_familiar': historico_familiar,
+        'medicamentos': medicamentos,
+        'sangue': sangue,
+        'vacinas': vacinas,
+    }
+    return render(request, "informacoes.html", data)
 
 
 def render_to_pdf(template_src, context_dict={}):
@@ -86,3 +111,24 @@ def pdf_download(request):
 	response['Content-Disposition'] = content
 	return response
 
+
+def qrcode (request):
+    import qrcode
+
+    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+
+    qr = qrcode.QRCode(
+        version=1,
+        box_size=15,
+        border=5
+    )
+
+    data = 'http://medfile1.herokuapp.com/pdf_view'
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="#112F41", back_color="#b0fffc")
+    img.save(f'media/qrcode/{request.user.username}{usuario.id_usuario}.png')
+    usuario.qrcode = f'qrcode/{request.user.username}{usuario.id_usuario}.png'
+    usuario.save()
+ 
+    return redirect('perfil')
