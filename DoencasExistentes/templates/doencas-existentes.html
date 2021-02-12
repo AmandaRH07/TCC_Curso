@@ -91,7 +91,7 @@
             </div>
 
             <section>
-                <form {% if doenca_detail %} action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" {% else %} action="{% url 'doencas-existentes' %}" {% endif %} method="POST"  enctype="multipart/form-data">
+                <form {% if doencas_existentes_detail %} action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" {% else %} action="{% url 'doencas-existentes' %}" {% endif %} method="POST"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="primary-card">
                         <input type="text" name="doenca" id="" placeholder="Nome da doença:" required value="{% if doenca_detail %} {{ doenca_detail.doenca }} {% endif %}">
@@ -99,7 +99,7 @@
                             <input type="text" onfocus="(this.type='date')" placeholder="Data do diagnóstico:" name="ano_diagnostico" required value="{% if doenca_detail %}{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}{% endif %}">
                             <input type="hidden" name="fk_usuario_doencas_existentes" value="{{ usuario.id_usuario }}">
                         
-                        {% if doenca_detail %}
+                        {% if doencas_existentes_detail %}
                             <button type="submit">Editar</button>
                             <a href="{% url 'doencas_existentes_delete' doenca_detail.id_doencas_existentes %}">Excluir</a>
                         {% else %}
@@ -111,21 +111,19 @@
             </section>
 
             <div id="history-content" class="scroll">
-                
-                    <a href="">
+                {% for dado in dados_doencas_existentes %}
+                    <a href="{% url 'doencas_existentes_detail' dado.id_doencas_existentes %}">
                         <div class="card">
-                            
                             <h3>Nome</h3>
-                            <h2>Diabetes</h2>
+                            <h2>{{dado.doenca}}</h2>
                             <h3>Data</h3>
-                            <h2>00/00/0000</h2>
+                            <h2>{{dado.ano_diagnostico|date:'Y-m-d'}}</h2>
                             <div class="start-btn">
                                 <a type="" id="mais-informacao" href="#">+</a>
                             </div>
-                            
                         </div>
                     </a>
-                
+                {% endfor %}   
             </div>
             <br>
             <br>
