@@ -15,52 +15,67 @@ function FormValidator(form) {
     }
 
     // validando data de nascimento
-   validator = ValidaData(form.nascimento.value)
-   if (!validator){
-       const spanData = documentElement.querySelector('#nascimento_validator')
-       spanData.style.display = 'block'
-       return false
-   }
-   else {
-       spanData.style.display = 'none'
-   }
+    validator = ValidaData(form.nascimento.value)
+    if (!validator){
+        const spanData = document.querySelector('#nascimento_validator')
+        spanData.style.display = 'block'
+        return false
+    }
+    else {
+        spanData.style.display = 'none'
+    }
 
     return validator
- 
+   
 }
 
 function ValidaData(data) {
     let verifica = true
-    today = new Date()
+    // today = new Date()
+    let today = new Date()
+    let form = new Date(data)
 
-    d = Number(today.getDate())
-    m = Number(today.getMonth() + 1)
-    y = Number(today.getFullYear())
+    console.log(today)
+    console.log(form)
 
-   data = data.split('-')
+    if (form <= today){
+        verifica = true
+    }
+    else{
+        verifica = false
+    }
 
-   ano_nasc = Number(data[0])
-   mes_nasc = Number(data[1])
-   dia_nasc = Number(data[2])
+    return verifica
+//     console.log(data)
+//     console.log(today)
 
-   if (ano_nasc <= y){
-       if (mes_nasc <= m){
-           if( dia_nasc <= d){
-               verifica = true
-           }
-           else {
-               verifica = false
-           }
-       }
-       else {
-           verifica = false
-       }
-   }
-   else {
-    verifica = false
-   }
- 
+//     d = parseInt(today.getDate())
+//     m = parseInt(today.getMonth() + 1)
+//     y = parseInt(today.getFullYear())
 
-   return verifica
+//    data = data.split('-')
+
+//    ano_nasc = parseInt(data[0])
+//    mes_nasc = parseInt(data[1])
+//    dia_nasc = parseInt(data[2])
+
+//    if (ano_nasc <= y){
+//        if (mes_nasc <= m && y <= ano_nasc){
+//            if(dia_nasc <= d){
+//                verifica = true
+//            }
+//            else {
+//                verifica = false
+//            }
+//        }
+//        else {
+//            verifica = false
+//        }
+//    }
+//    else {
+//     verifica = false
+//    }
+
+//    return verifica
 }
 
