@@ -36,10 +36,6 @@
                     {% endif %}
 
                     
-                    <!-- <div class="second-card">
-                        <h1>Sobre:</h1>
-                        
-                    </div> -->
                 </section>
             </form>
 
@@ -47,6 +43,9 @@
             {% for dado in dados_cirurgias %}
             <div class="card">
                 <a href="{% url 'cirurgia_detail' dado.id_cirugias %}">
+                    <div class="start-btn">
+                        <a type="" id="mais-informacao" href="#">+</a>
+                    </div>
                     <h2>{{dado.cirurgia}}</h2>
                     <h3>Data</h3>
                     <span>{{dado.data_cirurgia|date:'Y-m-d'}}</span>
@@ -62,8 +61,42 @@
             </div>
             {% endfor %}   
         </div>
+        <br>
     </div>
     </main>
+
+  
+    <div class="center modal-box">
+        <div class="close-modal">
+            <button id='button_close' class="fa-times">X</button>
+        </div>
+        <div class="form-edit">
+            <form action="" method=''>
+                    
+                    <input type="text" placeholder="Nome da cirurgia:" class="input-edit" name=""
+                        value="">
+                    <input class="input-edit" type=text name="" placeholder="Nome do hospital:"
+                        value="">
+
+                    <div class="input-form">
+                        <input placeholder="Data da cirurgia" type="text" onfocus="(this.type='date')" class="input-date"
+                            name="" value="">
+                        <input type="text" class="input-edit" name="" placeholder="Anotação"
+                        value="">
+                    </div>
+                    
+                    <div class="div-buttons">
+                        <button type="submit">Editar</button>
+                        <a href="">Excluir</a>
+                    </div>
+                </form>
+            </div>
+    </div>
+    
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="{% static 'js/popupCirurgias.js' %}"></script>
 </body>
 </html>
 

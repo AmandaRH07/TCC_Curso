@@ -472,7 +472,7 @@ section {
 
 .center{
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -481,7 +481,7 @@ section {
 .modal-box{
  
 
-    top: 80%;
+    top: 50%;
     opacity: 0;
     visibility: hidden;
     background: #FCFFF5;
@@ -496,10 +496,10 @@ section {
   visibility: hidden;
 }
 .modal-box.show-modal{
-  top: 90%;
+  top: 50%;
   opacity: 1;
   visibility: visible;
-  /* transition: .4s; */
+  transition: .4s;
 }
 
 .fa-times{
