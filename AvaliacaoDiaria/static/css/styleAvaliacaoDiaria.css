@@ -194,17 +194,6 @@ textarea:focus{
     outline: none;
 }
 
-/* .adict-sintoma button{
-    background-color: var(--azul-piscina-escuro);;
-    color: var(--branco);
-    padding: 5px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-} */
 
 input::placeholder{
     color: var(--azul-escuro);
@@ -262,7 +251,6 @@ input:-webkit-autofill {
     position: relative;
 }
 
-
 .box2-first-subtitle{
     height: 50px;
     position: absolute;
@@ -282,6 +270,7 @@ input:-webkit-autofill {
     bottom: 1;
     align-items: center;
 }
+
 .text3{
     background-color: var(--salmao);
     color: var(--azul-escuro);
@@ -294,10 +283,6 @@ input:-webkit-autofill {
     padding: 5px 8px;
 
 }
-
-/* #text-passada{
-    margin-top: 60%;
-}  */
 
 .semana-atual, .semana-passada{
     display: flex;

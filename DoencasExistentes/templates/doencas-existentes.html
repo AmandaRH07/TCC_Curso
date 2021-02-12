@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doenças Existentes | MedFile</title>
-    <link rel="stylesheet" href="{% static 'css/styleMedicacao.css' %}">
+    <link rel="stylesheet" href="{% static 'css/doencas-existentes.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
 </head>
@@ -84,7 +84,7 @@
 
         </nav>
     </header>
-    <main>
+    <main class="main">
         <div class="container">
             <div class="title-container">
                 <span>Doenças Existentes</span>
@@ -108,19 +108,55 @@
                     </div>
                 </form>
 
-                <div class="second-card">
-                    {% for dado in dados_doencas_existentes %}
-                    <a href="{% url 'doencas_existentes_detail' dado.id_doencas_existentes%}">
-                        <h2>{{ dado.doenca }}</h2>
-                        <h2>Ano Diagnóstico</h2>
-                        <spam>{{ dado.ano_diagnostico }}</spam>
-                    </a>
-                {% endfor %}
-                </div>
             </section>
+
+            <div id="history-content" class="scroll">
+                
+                    <a href="">
+                        <div class="card">
+                            
+                            <h3>Nome</h3>
+                            <h2>Diabetes</h2>
+                            <h3>Data</h3>
+                            <h2>00/00/0000</h2>
+                            <div class="start-btn">
+                                <a type="" id="mais-informacao" href="#">+</a>
+                            </div>
+                            
+                        </div>
+                    </a>
+                
+            </div>
+            <br>
+            <br>
+
 
         </div>
     </main>
+
+    <div class="center modal-box">
+        <div class="close-modal">
+            <button id='button_close' class="fa-times">X</button>
+        </div>
+        <div class="form-edit">
+            <form action="" method=''>
+                
+                    <input type="text" placeholder="Nome da doença:" class="input-edit" name="tipo_vacina"
+                        value="">
+                    <input placeholder="Data do diagnóstico:" type="text" onfocus="(this.type='date')" class="input-date"
+                        name="" value="">
+                    
+                    <div class="div-buttons">
+                        <button type="submit">Editar</button>
+                        <a href="">Excluir</a>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="{% static 'js/popupDoenca.js' %}"></script>
 </body>
 
 </html>

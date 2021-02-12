@@ -78,110 +78,37 @@
 
     <div class="box2">
 
-        <p class="subtitle">Calendário Semanal</p>
-        <div class="box2-first-subtitle">
+        <p class="subtitle">Últimas avalições</p>
+        <!-- <div class="box2-first-subtitle">
             <p class="text3" id="text-atual">Semana Atual</p>
         </div>
 
         <div class="box2-second-subtitle">
             <p class="text3" id="text-passada">Semana Passada</p>
-        </div>
+        </div> -->
 
         <div class="box2-container">
-
-            <!-- <div class="box2-subtitle">
-                    <p class="text3" id="text-atual">Semana Atual</p>
-                    <p class="text3" id="text-passada">Semana Passada</p>
-                </div> -->
-
-
-
             <div class="box2-content">
                 <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
 
-
                 <div class="semana-atual">
+                    {% for dado in dados_avaliacao_diaria %}
+                        <div class="week">
+                            <div class="days" id="dom">
+                                <!-- <label for="dom">DOM</label> -->
+                                <p>{{ dado.data|date:'d-m-Y' }}</p>
+                                <span>{{ dado.sintomas }}</span>
+                                <span>{{ dado.observacoes }}</span>
+                                <span>{{ dado.outro }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
 
-                    <div class="week">
-                        <div class="days" id="dom"></div>
-                        <label for="dom">DOM</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="seg"></div>
-                        <label for="seg">SEG</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="ter"></div>
-                        <label for="ter">TER</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="qua"></div>
-                        <label for="qua">QUA</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="qui"></div>
-                        <label for="qui">QUI</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="sex"></div>
-                        <label for="sex">SEX</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="sab"></div>
-                        <label for="sab">SAB</label>
-                    </div>
 
                 </div>
-
-                <div class="semana-passada">
-                    <div class="week">
-                        <div class="days" id="dom1"></div>
-                        <label for="dom1">DOM</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="seg1"></div>
-                        <label for="seg1">SEG</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="ter1"></div>
-                        <label for="ter1">TER</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="qua1"></div>
-                        <label for="qua1">QUA</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="qui1"></div>
-                        <label for="qui1">QUI</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="sex1"></div>
-                        <label for="sex1">SEX</label>
-                    </div>
-
-                    <div class="week">
-                        <div class="days" id="sab1"></div>
-                        <label for="sab1">SAB</label>
-                    </div>
-
-                </div>
-
             </div>
         </div>
-
     </div>
-
 </main>
 
 <footer>
