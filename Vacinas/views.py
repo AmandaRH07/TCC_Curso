@@ -24,6 +24,7 @@ def vacinas(request):
             
     return render(request, "vacinas.html", {'dados_user': usuario, 'dados_vacinas': dados_vacinas})
 
+
 @login_required(redirect_field_name='index_login')
 def vacinas_detail(request, pk):
     # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user.id)
@@ -33,7 +34,6 @@ def vacinas_detail(request, pk):
     
     # vacina_detail = Vacinas.objects.get(id_vacinas=pk)
     vacina_detail = get_object_or_404(Vacinas, id_vacinas=pk)
-
 
     if str(request.method) == 'POST':
         form = VacinasForm(request.POST, instance=vacina_detail)
@@ -47,7 +47,6 @@ def vacinas_detail(request, pk):
 def delete_vacina(request, pk):
     # vacina = Vacinas.objects.get(id_vacinas=pk)
     vacina = get_object_or_404(Vacinas, id_vacinas=pk)
-
     vacina.delete()
 
     return redirect('vacinas')

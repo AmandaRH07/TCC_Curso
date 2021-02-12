@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | MedFile</title>
     <link rel="stylesheet" href="{% static 'css/styleCadastro.css' %}">
-    <link rel="shortcut icon" href="#" />
+    <link rel="shortcut icon" href="{% static 'img/MedFile_favicon.ico' %}" type="image/x-icon" sizes="32x32"/>
 </head>
 
 <body>
@@ -20,12 +20,13 @@
         <div>
             <h1>CADASTRE-SE!</h1>
         </div>
-        <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data" >
+        <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return FormValidator(this);" >
             {% csrf_token %}
             <div class="register">
                 <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
                 <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required />
                 <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
+                <label for="nascimento" id="nascimento_validator" >Data de nascimento inválida!</label>
                 <input id="edit_information" placeholder="Data de nascimento:" type="text" onfocus="(this.type='date')" name= "nascimento" required/>
                 <select  name="sexo" id="id_sexo" required>
                     <option selected disabled value=""> Gênero</option>
@@ -38,16 +39,19 @@
             <div class="register" >
                 <input id="edit_information" name="email" type="email" placeholder="E-mail" required />
                 <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required />
+                <label for="senha" id="senha_validator" >As senhas não correspondem!</label>
                 <input id="edit_information" name="senha" type="password" placeholder="Senha" required />
                 <input id="edit_information" name="senha2" type="password" placeholder="Confirme a senha" required />
                 <div class="button" >
-                    <button id="button_information" >
+                    <button id="button_information" type="submit">
                         FINALIZAR CADASTRO
                     </button>
                 </div>
             </div>
         </form>
     </main>
+
+    <script src="{% static 'js/formvalidator.js' %}"></script>
 </body>
 
 </html>
