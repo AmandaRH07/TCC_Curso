@@ -11,7 +11,8 @@ def index(request):
     # usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
 
-    dados_avaliacao_diaria = AvaliacaoDiaria.objects.filter(fk_usuario_avaliacao_diaria=usuario.id_usuario)
+    dados_avaliacao_diaria = AvaliacaoDiaria.objects.filter(fk_usuario_avaliacao_diaria=usuario.id_usuario).order_by('-data')
+    print(dados_avaliacao_diaria)
     
     if str(request.method) == 'POST' :
         form = AvaliacaoDiariaForm(request.POST)
@@ -19,5 +20,5 @@ def index(request):
             form.save()
             return HttpResponseRedirect("avaliacao-diaria")
 
-    return render(request, "index.html", {'dados_user': usuario, 'dados_avaliacao_diaria':dados_avaliacao_diaria})
+    return render(request, "index.html", {'dados_user': usuario, 'dados_avaliacao_diaria' :dados_avaliacao_diaria})
 
