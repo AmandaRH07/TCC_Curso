@@ -17,7 +17,13 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 # from django.views import View
+
+import qrcode
+import image
+
 from xhtml2pdf import pisa
+import requests
+import json
 
 @login_required(redirect_field_name='index_login')
 def perfil(request):
@@ -86,3 +92,24 @@ def pdf_download(request):
 	response['Content-Disposition'] = content
 	return response
 
+
+def qrcode (request):
+    import qrcode
+
+    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user)
+
+    qr = qrcode.QRCode(
+        version=1,
+        box_size=15,
+        border=5
+    )
+
+    data = 'http://medfile1.herokuapp.com/pdf_view'
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="#112F41", back_color="#b0fffc")
+    img.save(f'media/qrcode/{request.user.username}{usuario.id_usuario}.png')
+    usuario.qrcode = f'qrcode/{request.user.username}{usuario.id_usuario}.png'
+    usuario.save()
+ 
+    return redirect('perfil')
