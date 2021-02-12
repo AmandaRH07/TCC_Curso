@@ -84,82 +84,86 @@
             </ul>
 
         </nav>
-        <div class="roof">
-
-            <div class="title">
-                <h1> Vacinas</h1>
-            </div>
-
-        </div>
+        
 
     </header>
 
 
-    <main class="content">
+    <main>
 
-        <!-- <div class="search-box">
+        <div class="content">
+            <!-- <div class="search-box">
 
-            <input class="txt-search" type="text" name="" placeholder="Pesquisar...">
-            <button class="btn-search" type="submit">
-                <img style="width: 30px;" src="../static/img/lupa.png"></button>
+                <input class="txt-search" type="text" name="" placeholder="Pesquisar...">
+                <button class="btn-search" type="submit">
+                    <img style="width: 30px;" src="../static/img/lupa.png"></button>
 
-        </div> -->
+            </div> -->
 
-        <br>
+            <div class="roof">
 
-        <div class="center-vaccines">
-
-            <div id="scroll-vaccines" class="scroll">
-                {% for dado in dados_vacinas %}
-                <button id="vaccines">
-                    <a href="{% url 'vacina_detail' dado.id_vacinas %}">
-                        <h2>{{dado.tipo_vacina}} </h2>
-                        <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
-                        <div class="start-btn">
-                            <a type="" id="mais-informacao" href="{% url 'vacina_detail' dado.id_vacinas %}">+</a>
-                        </div>
-                    </a>
-                </button>
-                {% endfor %}
+                <div class="title">
+                    <h1> Vacinas</h1>
+                </div>
 
             </div>
 
-            <div class="right">
-                <div class="register">
-                    <section>
-                        <form {% if vacina_detail %} action="{% url 'vacina_detail' vacina_detail.id_vacinas %}"
-                            {% else %} action="{% url 'vacinas' %}" {% endif %} method="POST">
-                            {% csrf_token %}
-                            <p>Cadastro de Vacina</p>
+            <br>
 
-                            <br>
+            <div class="center-vaccines">
 
-                            <div id="cadastro">
-                                <input class="register-information" type=text name="tipo_vacina"
-                                    placeholder="Nome da vacina:">
-
-                                <input class="register-information" type=text name="dose" placeholder="Dose:">
+                <div id="scroll-vaccines" class="scroll">
+                    {% for dado in dados_vacinas %}
+                    <button id="vaccines">
+                        <a href="{% url 'vacina_detail' dado.id_vacinas %}">
+                            <h2>{{dado.tipo_vacina}} </h2>
+                            <p class="data-vacinnes">{{dado.data_vacinacao|date:'d-m-Y'}}</p>
+                            <div class="start-btn">
+                                <a type="" id="mais-informacao" href="{% url 'vacina_detail' dado.id_vacinas %}">+</a>
                             </div>
+                        </a>
+                    </button>
+                    {% endfor %}
 
-                            <div id="cadastro">
-                                <input class="register-information" type=text name="lote" placeholder="Lote:">
-                                <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')"
-                                    class="register-information" name="data_vacinacao">
-                            </div>
+                </div>
 
-                            <div id="cadastro">
-                                <input id="register-information-local" type=text name="local" placeholder="Local:"
-                                    value="{% if vacina_detail %} {{ vacina_detail.local }} {% endif %}">
-                                <input type="hidden" name="fk_usuario_vacinas" value="{{ dados_user.id_usuario }}">
-                            </div>
+                <div class="right">
+                    <div class="register">
+                        <section>
+                            <form {% if vacina_detail %} action="{% url 'vacina_detail' vacina_detail.id_vacinas %}"
+                                {% else %} action="{% url 'vacinas' %}" {% endif %} method="POST">
+                                {% csrf_token %}
+                                <p>Cadastro de Vacina</p>
 
-                            <br>
+                                <br>
 
-                            <div id="div-button">
-                                <button type="submit">Cadastrar</button>
-                            </div>
-                        </form>
-                    </section>
+                                <div id="cadastro">
+                                    <input class="register-information" type=text name="tipo_vacina"
+                                        placeholder="Nome da vacina:">
+
+                                    <input class="register-information" type=text name="dose" placeholder="Dose:">
+                                </div>
+
+                                <div id="cadastro">
+                                    <input class="register-information" type=text name="lote" placeholder="Lote:">
+                                    <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')"
+                                        class="register-information" name="data_vacinacao">
+                                </div>
+
+                                <div id="cadastro">
+                                    <input id="register-information-local" type=text name="local" placeholder="Local:"
+                                        value="{% if vacina_detail %} {{ vacina_detail.local }} {% endif %}">
+                                    <input type="hidden" name="fk_usuario_vacinas" value="{{ dados_user.id_usuario }}">
+                                </div>
+
+                                <br>
+
+                                <div id="div-button">
+                                    <button type="submit" id="button-left">Cadastrar</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,12 +171,12 @@
 
 
     {% if vacina_detail %}
-    <div id='essa_praga' class="center modal-box">
+    <div class="center modal-box">
         <div class="close-modal">
             <button id='button_close' class="fa-times">X</button>
         </div>
         <div class="form-edit">
-        <form action="{% url 'vacina_detail' vacina_detail.id_vacinas %}"           method='POST'>
+        <form action="{% url 'vacina_detail' vacina_detail.id_vacinas %}" method='POST'>
                 {% csrf_token %}
                 <input type="text" placeholder="Nome da vacina:" class="input-edit" name="tipo_vacina"
                     value="{{ vacina_detail.tipo_vacina }}">
@@ -184,7 +188,9 @@
                 </div>
                 <div class="input-form">
                     <input type="text" class="input-edit" name="lote" placeholder="Lote:"
-                    value="{{ vacina_detail.lote }}">>
+                    value="{{ vacina_detail.lote }}">
+                    <input type="text" class="input-edit" name="local" placeholder="Local:"
+                    value="{{ vacina_detail.local }}">
                 </div>
                 <input type="hidden" name="fk_usuario_vacinas" value="{{ dados_user.id_usuario }}">
                 <div class="div-buttons">
@@ -196,21 +202,8 @@
     </div>
     {% endif %}
 
-    <!-- <script src="{% static 'js/popup.js' %}"></script> -->
-    <script>
-        $(document).ready(function(){
-        // $('.start-btn').click(function(){
-            
-            $('.modal-box').toggleClass("show-modal");
-            // $('.start-btn').toggleClass("show-modal");
-        });
-        $('.fa-times').click(function(){
-            $('.modal-box').toggleClass("show-modal");
-            // $('.start-btn').toggleClass("show-modal");
-        });
-        // });
-    </script>
-
+    <script src="{% static 'js/popupVacinas.js' %}"></script>
+    
 </body>
 
 </html>

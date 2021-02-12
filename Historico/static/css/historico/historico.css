@@ -138,6 +138,7 @@ section {
     
 }
 
+
 input[type='file'] {
     display: none
 }
@@ -232,7 +233,7 @@ label:hover{
     background-color: var(--azul-escuro);
     width: 80%;
     min-height: 30rem;
-    height: 100px;
+    height: 150px;
 
     border: 3px solid var(--azul-escuro);
     border-radius: 20px;
@@ -245,38 +246,52 @@ label:hover{
     display: inline-flex;
     overflow-y: hidden;
     justify-content: start;
+    border-bottom: 2px solid #FCFFF5;
+}
+#history-content a{
+
+    text-decoration: none;
 }
 
 
 .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--branco);
     
-    height: 90%;
-    width: 200px;
+    height: 250px;
+    width: 230px;
     border-radius: 10px;
 
     margin: 10px;
-    text-align: center;
+    
     min-width: 200px;
+    overflow: hidden;
     
 }
 
-.history-content .card h2 {
+#history-content .card h2 {
     color: var(--azul-piscina-escuro);
     font-weight: 500;
-    font-size: 2.3rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 
-.history-content .card h3 {
+#history-content .card h3 {
     font-weight: 600;
     color: var(--verde-piscina);
+    font-size: 2.2rem;
 }
 
 
-.history-content .card span {
+#history-content .card span {
     font-weight: 600;
     color: var(--verde-piscina);
+    
 }
 
 .third-card{
@@ -417,7 +432,7 @@ h1{
     
 }
 
-.center{
+.center-history-family{
     
     margin-top: 5%!important;
     margin: 10%;
@@ -426,26 +441,29 @@ h1{
     height: 630px;
    
 }
-.registro_doença{
 
-    width: 450px;
-    height: 280px;
-    background: #ED553B;
-    margin-top: 10px;
-    border-radius: 15px;
-
-
-}
 .register{
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 450px;
     height: 280px;
+    background: #ED553B;
+    margin-top: 10px;
+    border-radius: 15px;
     
 }
 
+form{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .left{
     display: flex;
@@ -467,11 +485,7 @@ img{
     height: 300px;
 }
 
-.image{
 
-    position: absolute;
-    margin-top: 300px;
-}
 .titulo-doenca{
 
     text-align: center;
@@ -496,6 +510,11 @@ img{
 .information-doencas{
     display: block;
 
+}
+
+.information-doencas a{
+
+    text-decoration: none;
 }
 
 
@@ -532,16 +551,11 @@ select{
     padding: 2%;
     margin: 3%;
     width: 340px;
-    height: 42px;
+    height: 50px;
     color: #112F41;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none ;
-    background-image: url(/Historico/static/img/icone.png);
-    background-repeat: no-repeat;
-    background-position:  310px;
-    background-size: 20px;
+    font-size: 16px;
+    
     
 }
 
@@ -549,21 +563,22 @@ select{
 
 /* IDs */
 
-#doencas{
+#doencas-card{
 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 300px;
-    height: 150px;
+    height: 130px;
     background-color: #FCFFF5 ;
     border-radius: 15px;
     margin-top: 40px;
-    padding: 8px;
+
  
 }
 
-#doencas:hover{
-
-    transform: scale(1.1);
-}
 #container-doecas{
 
     width: 480px;
@@ -591,8 +606,9 @@ select{
     margin-top: 18px; 
     align-items: center;
     width: 340px;
-    height: 42px;
+    height: 50px;
     color: #112F41;
+    font-size: 18px;
 
 }
 
@@ -605,28 +621,19 @@ select{
 
 #button-left{
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 3%;
     color: #FCFFF5;
     background-color: #112F41;
-    border-radius: 15px;
-    display: flex;
+    border-radius: 20px;
     cursor: pointer;
-    height: 35px;
+    height: 50px;
     border: 0px;
-    width: 150px;
-    justify-content: center;
-    padding-top: 5px;
-    font-size: 16px;
+    width: 155px;
+    font-size: 18px;
 }
-
-
-#div-button{
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 
 #button-left:hover{
 
@@ -637,5 +644,268 @@ select{
     font-weight: bold;
 }
 
-
 /* Fim IDs */
+
+/* POPUP */
+
+#mais-informacao{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+
+    padding: 1rem;
+
+    background-color: var(--salmao);
+
+    border-radius: 100%;
+    border: 3px solid var(--salmao);
+    text-decoration: none;
+}
+
+
+
+#mais-informacao:hover{
+
+    cursor: pointer;
+    color: var(--salmao);
+    background: var(--branco);
+}
+
+.start-btn{
+    
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: -220px;
+    position: absolute;
+    margin-left: 8px;
+}
+
+.start-btn-family{
+    
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    margin-top: -35px;
+    position: absolute;
+    margin-left: 8px;
+}
+
+
+
+.close-modal , .close-modal-family{
+
+    margin-top: 0px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.close-modal > button , .close-modal-family > button{
+
+    border: none;
+}
+
+
+
+.center , .center-family{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    
+}
+.modal-box , .modal-box-family{
+ 
+    top: 50%;
+    opacity: 0;
+    visibility: hidden;
+    background: #FCFFF5;
+    height: 500px;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+    z-index: 5;
+}
+
+
+.start-btn.show-modal , .start-btn-family.show-modal-family{
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-box.show-modal , .modal-box-family.show-modal-family{
+  top: 50%;
+  opacity: 1;
+  visibility: visible;
+  transition: .4s; 
+}
+
+.fa-times, .fa-times-family{
+    text-align: center;
+    position: absolute;
+    background: #ED553B;
+    height: 52px;
+    width: 52px;
+    color: #FCFFF5;
+    font-size: 18px;
+    border-radius: 100%;
+    cursor: pointer;
+    outline: none;
+    margin-top: -10px;
+    
+}
+.fa-times:hover , .fa-times-family:hover{
+  font-size: 22px;
+}
+
+.fa-times::before , .fa-times-family::before{
+
+    display: none;
+}
+
+.form-edit{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 70%;
+    color: var(--verde-piscina);
+}
+
+.form-edit form{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verde-piscina);
+    border-radius: 20px;
+    width: 90%;
+    height: 700px;
+    color: var(--verde-piscina);
+}
+
+
+.form-edit input{
+
+    width: 90%;
+    padding: 1.5rem;
+    margin: .5rem 0;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--branco);
+    height: 53px;
+
+}
+.div-buttons {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.div-buttons-family {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 100%;
+}
+.div-buttons button {
+
+    background-color: var(--azul-escuro);
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+    border-radius: 20px;
+    color: var(--branco);
+    border: 2px solid var(--azul-escuro);
+}
+
+.div-buttons-family button {
+
+    background-color: var(--azul-escuro);
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+    border-radius: 20px;
+    color: var(--branco);
+    border: 2px solid var(--azul-escuro);
+}
+
+.div-buttons button:hover {
+
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+.div-buttons-family button:hover {
+
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+.div-buttons a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azul-escuro);
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 20px;
+    color: var(--branco);
+    border: 2px solid var(--azul-escuro);
+}
+
+.div-buttons-family a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azul-escuro);
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 20px;
+    color: var(--branco);
+    border: 2px solid var(--azul-escuro);
+}
+
+.div-buttons a:hover {
+
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+.div-buttons-family a:hover {
+
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
