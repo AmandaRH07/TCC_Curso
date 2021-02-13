@@ -48,7 +48,7 @@ def cirurgia_detail(request, pk):
 def cirurgia_delete(request, pk):
     # cirurgia = Cirurgias.objects.get(id_cirugias=pk)
     cirurgia_detail = get_object_or_404(Cirurgias, id_cirugias=pk)
-    cirurgia.delete()
+    cirurgia_detail.delete()
 
     return redirect('cirurgias')
 

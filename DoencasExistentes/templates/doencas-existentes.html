@@ -79,11 +79,10 @@
                         <span class="link-text">Sair</span>
                     </a>
                 </li>
-
             </ul>
-
         </nav>
     </header>
+
     <main class="main">
         <div class="container">
             <div class="title-container">
@@ -91,68 +90,62 @@
             </div>
 
             <section>
-                <form {% if doenca_detail %} action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" {% else %} action="{% url 'doencas-existentes' %}" {% endif %} method="POST"  enctype="multipart/form-data">
+                <form action="{% url 'doencas-existentes' %}" method="POST"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="primary-card">
-                        <input type="text" name="doenca" id="" placeholder="Nome da doença:" required value="{% if doenca_detail %} {{ doenca_detail.doenca }} {% endif %}">
+                        <input type="text" name="doenca" id="" placeholder="Nome da doença:" required>
                         
-                            <input type="text" onfocus="(this.type='date')" placeholder="Data do diagnóstico:" name="ano_diagnostico" required value="{% if doenca_detail %}{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}{% endif %}">
+                            <input type="text" onfocus="(this.type='date')" placeholder="Data do diagnóstico:" name="ano_diagnostico" required>
                             <input type="hidden" name="fk_usuario_doencas_existentes" value="{{ usuario.id_usuario }}">
+                                              
+                        <button type="submit"> Cadastrar</button>
                         
-                        {% if doenca_detail %}
-                            <button type="submit">Editar</button>
-                            <a href="{% url 'doencas_existentes_delete' doenca_detail.id_doencas_existentes %}">Excluir</a>
-                        {% else %}
-                            <button type="submit"> Cadastrar</button>
-                        {% endif %}
                     </div>
                 </form>
 
             </section>
 
             <div id="history-content" class="scroll">
-                
-                    <a href="">
+                {% for dado in dados_doencas_existentes %}
                         <div class="card">
-                            
                             <h3>Nome</h3>
-                            <h2>Diabetes</h2>
-                            <h3>Data</h3>
-                            <h2>00/00/0000</h2>
+                            <h2>{{ dado.doenca }}</h2>
+                            <h3>Ano do diagnóstico</h3>
+                            <h2>{{ dado.ano_diagnostico|date:'d-m-Y' }}</h2>
                             <div class="start-btn">
-                                <a type="" id="mais-informacao" href="#">+</a>
+                                <a type="" id="mais-informacao" href="{% url 'doencas_existentes_detail' dado.id_doencas_existentes %}">+</a>
                             </div>
-                            
                         </div>
-                    </a>
-                
+                {% endfor %}
             </div>
             <br>
             <br>
-
-
         </div>
     </main>
 
-    <div class="center modal-box">
-        <div class="close-modal">
-            <button id='button_close' class="fa-times">X</button>
+
+    {% if doenca_detail %}
+        <div class="center modal-box">
+            <div class="close-modal">
+                <button id='button_close' class="fa-times">X</button>
+            </div>
+            <div class="form-edit">
+                <form action="{% url 'doencas_existentes_detail' doenca_detail.id_doencas_existentes %}" method='POST'>
+                        {% csrf_token %}
+                        <input type="text" placeholder="Nome da doença:" class="input-edit" name="doenca"
+                        value="{{ doenca_detail.doenca }}">
+                        <input placeholder="Data do diagnóstico:" type="text" onfocus="(this.type='date')" class="input-date"
+                            name="ano_diagnostico" value="{{ doenca_detail.ano_diagnostico|date:'Y-m-d' }}">
+                        <input type="hidden" name="fk_usuario_doencas_existentes" value="{{ usuario.id_usuario }}">
+                        
+                        <div class="div-buttons">
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'doencas_existentes_delete' doenca_detail.id_doencas_existentes %}">Excluir</a>
+                        </div>
+                    </form>
+            </div>
         </div>
-        <div class="form-edit">
-            <form action="" method=''>
-                
-                    <input type="text" placeholder="Nome da doença:" class="input-edit" name="tipo_vacina"
-                        value="">
-                    <input placeholder="Data do diagnóstico:" type="text" onfocus="(this.type='date')" class="input-date"
-                        name="" value="">
-                    
-                    <div class="div-buttons">
-                        <button type="submit">Editar</button>
-                        <a href="">Excluir</a>
-                    </div>
-                </form>
-        </div>
-    </div>
+    {% endif %}
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

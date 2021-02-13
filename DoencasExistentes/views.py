@@ -35,10 +35,11 @@ def doencas_existentes_detail(request, pk):
 
     if str(request.method) == 'POST':
         form = DoencasExistentesForm(request.POST, request.FILES, instance=doenca_detail)
-        print(form)
         if form.is_valid():
             form.save()
             return redirect('doencas-existentes')
+        else:
+            print(form.errors)
 
     return render(request, "doencas-existentes.html", {"usuario": usuario, 'dados_doencas_existentes': dados_doencas_existentes, 'doenca_detail': doenca_detail})
 
@@ -47,7 +48,6 @@ def doencas_existentes_detail(request, pk):
 def doencas_existentes_delete(request, pk):
     # doencas = DoencasExistentes.objects.get(id_doencas_existentes=pk)
     doencas = get_object_or_404(DoencasExistentes, id_doencas_existentes=pk)
-
     doencas.delete()
 
     return redirect('doencas-existentes')
