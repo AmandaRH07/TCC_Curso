@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import HistoricoConsultasForm, HistoricoFamiliarForm, DoencaCronicaForm
 from django.http import HttpResponseRedirect
 from CadastroDePessoa.models import Usuario
-from .models import HistoricoConsultas, HistoricoFamiliar
+from .models import HistoricoConsultas, HistoricoFamiliar, DoencaCronica
 
 from django.contrib.auth.decorators import login_required
 
@@ -13,8 +13,9 @@ def historico_consultas(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
 
     dados_historico = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario.id_usuario)
+    doenca_cronica = DoencaCronica.objects.filter(fk_usuario_doenca_cronica=usuario.id_usuario)
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
-    print(dados_familiar)
+    # print(doenca_cronica[0].__dict__)
 
     if str(request.method) == 'POST' or str(request.method) == 'FILES':
         form = HistoricoConsultasForm(request.POST, request.FILES)
@@ -22,7 +23,7 @@ def historico_consultas(request):
             form.save()
             return HttpResponseRedirect('historico')
 
-    return render(request, "historico.html", {'dados_user': usuario, 'dados_historico': dados_historico, 'dados_familiar': dados_familiar})
+    return render(request, "historico.html", {'dados_user': usuario, 'dados_historico': dados_historico, 'dados_familiar': dados_familiar, 'doenca_cronica': doenca_cronica[0]})
 
 
 @login_required(redirect_field_name='index_login')
@@ -106,26 +107,23 @@ def historico_familiar_delete(request, pk):
 @login_required(redirect_field_name='index_login')
 def doenca_cronica_create(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
-
     if str(request.method) == 'POST':
         form = DoencaCronicaForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('historico')
-
-    return render(request, "historico.html", {'dados_user': usuario, 'dados_historico': dados_historico, 'dados_familiar': dados_familiar, 'historico_familiar_detail': historico_familiar_detail,  'doenca_cronica': doenca_cronica})
+    return redirect('historico')
 
 
 @login_required(redirect_field_name='index_login')
 def doenca_cronica_edit(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
-
-    doenca_cronica = get_object_or_404(HistoricoFamiliar, fk_usuario_historico_familiar=usuario.id_usuario)
-
+    doenca_cronica = get_object_or_404(DoencaCronica, fk_usuario_doenca_cronica=usuario.id_usuario)
     if str(request.method) == 'POST':
         form = DoencaCronicaForm(request.POST, instance=doenca_cronica)
         if form.is_valid():
             form.save()
             return redirect('historico')
-
-    return render(request, "historico.html", {'dados_user': usuario, 'dados_historico': dados_historico, 'dados_familiar': dados_familiar, 'historico_familiar_detail': historico_familiar_detail,  'doenca_cronica': doenca_cronica})
+        else:
+            print(form.errors)
+    return redirect('historico')
