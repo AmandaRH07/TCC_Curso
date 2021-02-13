@@ -26,17 +26,13 @@ function FormValidator(form) {
     }
 
     return validator
-   
 }
 
 function ValidaData(data) {
     let verifica = true
-    // today = new Date()
+
     let today = new Date()
     let form = new Date(data)
-
-    console.log(today)
-    console.log(form)
 
     if (form <= today){
         verifica = true
@@ -46,36 +42,5 @@ function ValidaData(data) {
     }
 
     return verifica
-//     console.log(data)
-//     console.log(today)
-
-//     d = parseInt(today.getDate())
-//     m = parseInt(today.getMonth() + 1)
-//     y = parseInt(today.getFullYear())
-
-//    data = data.split('-')
-
-//    ano_nasc = parseInt(data[0])
-//    mes_nasc = parseInt(data[1])
-//    dia_nasc = parseInt(data[2])
-
-//    if (ano_nasc <= y){
-//        if (mes_nasc <= m && y <= ano_nasc){
-//            if(dia_nasc <= d){
-//                verifica = true
-//            }
-//            else {
-//                verifica = false
-//            }
-//        }
-//        else {
-//            verifica = false
-//        }
-//    }
-//    else {
-//     verifica = false
-//    }
-
-//    return verifica
 }
 

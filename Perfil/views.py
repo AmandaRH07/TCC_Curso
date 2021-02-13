@@ -72,8 +72,8 @@ def render_to_pdf(template_src, context_dict={}):
 
 
 # Opens up page as PDF
-def pdf_view(request):
-    usuario = Usuario.objects.get(id_fk_cadastro_user=request.user).__dict__
+def pdf_view(request, hash_user):
+    usuario = Usuario.objects.get(hash_user=hash_user).__dict__
     cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario['id_usuario'])
     doencas_existentes = DoencasExistentes.objects.filter(fk_usuario_doencas_existentes=usuario['id_usuario'])
     historico_consultas = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario['id_usuario'])
@@ -100,10 +100,8 @@ def pdf_view(request):
 
     return HttpResponse(pdf, content_type='application/pdf')
 
-
 # #Automaticly downloads to PDF file
 def pdf_download(request):
-	
 	pdf = render_to_pdf('app/informacoes.html', user)
 	response = HttpResponse(pdf, content_type='application/pdf')
 	filename = "Invoice_%s.pdf" %("12341231")
@@ -123,7 +121,11 @@ def qrcode (request):
         border=5
     )
 
-    data = 'http://medfile1.herokuapp.com/pdf_view'
+
+    data = f'http://medfile1.herokuapp.com/pdf_view/{usuario.hash_user}/'
+    print(data)
+    print(data)
+    print(data)
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill_color="#112F41", back_color="#b0fffc")
