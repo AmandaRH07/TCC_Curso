@@ -102,7 +102,7 @@ def pdf_view(request, hash_user):
 
 # #Automaticly downloads to PDF file
 def pdf_download(request):
-	pdf = render_to_pdf('app/informacoes.html', user)
+	pdf = render_to_pdf('app/informacoes.html')
 	response = HttpResponse(pdf, content_type='application/pdf')
 	filename = "Invoice_%s.pdf" %("12341231")
 	content = "attachment; filename='%s'" %(filename)
