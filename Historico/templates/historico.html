@@ -81,13 +81,17 @@
                     
                         <div class="question">
     
+                            <form action="{% url 'doenca_cronica_edit' %}" method="POST">
+                                {% csrf_token %}
                             <div class="question-content">
-                                <input type="radio" value="yes" name="doenca-familia" id="option-yes">
-                                <label for="option-yes">Sim</label>
-    
-                                <input type="radio" value="no" name="doenca-familia" id="option-no">
-                                <label for="option-no">Não</label>
-                            </div>
+                                    <input type="radio" value="Sim" name="doenca_cronica" id="option-yes">
+                                    <label for="option-yes">Sim</label>
+        
+                                    <input type="radio" value="Não" name="doenca_cronica" id="option-no" checked>
+                                    <label for="option-no">Não</label>
+                                    <button type="submit">Enviar</button>
+                                </div>
+                            </form>
                         
                     </div>
                 </div>
@@ -96,58 +100,56 @@
         </div>
 
         <!-- Histórico Familiar -->
-        
-        <div class="roof" >
-        
-            <div class="title">
-                 <h1>Histórico Familiar</h1>
-             </div>  
-            
-         </div>
-
-        <div class="center-history-family"> 
-            <div class="left">
-                <div class="register">
-                    <form action="{% url 'historico-familiar' %}" method="POST">
-                        {% csrf_token %}
-
-                        <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias">
-                        <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
-                            <option selected disabled value=""> Grau de parentesco</option>
-                            <option value="primeiro_grau">Primeiro Grau</option>
-                            <option value="segundo_grau">Segundo Grau</option>
-                            <option value="Terceiro_grau">Terceiro Grau</option>
-                            <option value="outros">Outros</option>
-                        </select>
-
-                        <!-- fk -->
-                        <input type="hidden" name="fk_usuario_historico_familiar" value="{{ dados_user.id_usuario }}">
-
+        <div id="container_hf">
+                <div class="roof active">
+                    <div class="title active">
+                        <h1 class="active">Histórico Familiar</h1>
+                    </div>
+                </div>
+                <div class="center-history-family active">
+                    <div class="left active">
+                        <div class="register active">
+                            <form action="{% url 'historico-familiar' %}" method="POST" class="active">
+                                {% csrf_token %}
+                                <input id="edit_information" class="active" type="text" required placeholder="Nome da doença:"
+                                    name="doenca_hereditarias">
+                                <select class="active" name="grau_parentesco" aria-placeholder="Grau de parentesco">
+                                    <option selected disabled value=""> Grau de parentesco</option>
+                                    <option value="primeiro_grau">Primeiro Grau</option>
+                                    <option value="segundo_grau">Segundo Grau</option>
+                                    <option value="Terceiro_grau">Terceiro Grau</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                
+                                <!-- fk -->
+                                <input class="active" type="hidden" name="fk_usuario_historico_familiar" value="{{ dados_user.id_usuario }}">
+                                <br>
+                                <button class="active" type="submit" id="button-left"> Cadastrar</button>
+                            </form>
+                        </div>
                         <br>
-                            <button type="submit" id="button-left"> Cadastrar</button>
-                    </form>
+                        <img class="active" src="../static/img/ilustracao.png" alt="">
+                    </div>
+                
+                    <div class="left active">
+                        <div id="container-doecas" class="scroll active">
+                            <div class="information-doencas active">
+                                {% for dado in dados_familiar %}
+                                <a class="active" href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">
+                                    <div class="active" id="doencas-card">
+                                        <p class="titulo-doenca active">{{ dado.doenca_hereditarias }}</p>
+                                        <p class="grau-doenca active">{{ dado.grau_parentesco }}</p>
+                                    </div>
+                                    <div class="start-btn-family active">
+                                        <a class="active" id="mais-informacao"
+                                            href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">+</a>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <img src="../static/img/ilustracao.png" alt="">
-            </div>
-
-            <div class="left" >
-                <div id="container-doecas" class="scroll">
-                    <div class="information-doencas">
-                        {% for dado in dados_familiar %}
-                            <a href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">
-                                <div id="doencas-card">
-                                    <p class="titulo-doenca">{{ dado.doenca_hereditarias }}</p>
-                                    <p class="grau-doenca">{{ dado.grau_parentesco }}</p>
-                                </div>
-                                <div class="start-btn-family">
-                                    <a  id="mais-informacao" href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">+</a>
-                                </div>
-                            </a>
-                        {% endfor %}
-                    </div>  
-                </div>
-            </div>
         </div>
     </main>
 
@@ -229,6 +231,9 @@
     
     <script src="{% static 'js/popupHistorico.js' %}"></script>
     <script src="{% static 'js/popupFamiliar.js' %}"></script>
+    <script src="{% static 'js/historico_familiar.js' %}"></script>
+
+    
 </body>
 </html>
 
