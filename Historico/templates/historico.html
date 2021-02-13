@@ -17,37 +17,31 @@
             </div>
 
             <section>
-
                 <div class="subtitle-container">
                     <h2>Histórico de Consultas</h2>
                 </div>
 
                 <div class="primary-card">
-                    <form {% if historico_consultas_detail %} action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}" {% else %} action="{% url 'historico' %}" {% endif %} method="POST"  enctype="multipart/form-data">
+                    <form action="{% url 'historico' %}" method="POST"  enctype="multipart/form-data">
                         {% csrf_token %}
-                        <input type="text" name="lugar" id="" placeholder="Local:" value="{% if historico_consultas_detail %} {{ historico_consultas_detail.lugar }} {% endif %}" required>
-                        <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name= "data" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.data|date:'Y-m-d' }}{% endif %}" required>
+                        <input type="text" name="lugar" id="" placeholder="Local:" required>
+                        <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name= "data" required>
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
 
                         <div class="input-content">
                             <div class="first-file">
                                 <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' name="receita" value="{% if historico_consultas_detail %}{{ historico_consultas_detail.receita }}{% endif %}">
+                                <input id='selecao-arquivo-receita' type='file' name="receita">
                                 <p id="file-name"></p>
                             </div>
                             <div class="second-file">
                                 <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                                <input id='selecao-arquivo-atestado' type='file' name="atestado"  value="{% if historico_consultas_detail %}{{ historico_consultas_detail.atestado }}{% endif %}">
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado" >
                                 <p id="file-name2"></p>
                             </div>
                         </div>
-                        {% if historico_consultas_detail %}
-                            <button type="submit">Editar</button>
-                            <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
-                        {% else %}
-                            <button type="submit"> Cadastrar</button>
-                        {% endif %}
+                        <button type="submit"> Cadastrar</button>
                     </form>
                 </div>
             </section>
@@ -57,7 +51,7 @@
                     <a href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">
                         <div class="card">
                             <div class="start-btn">
-                                <a type="" id="mais-informacao" href="#">+</a>
+                                <a type="" id="mais-informacao" href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">+</a>
                             </div>
                             <h3>Local</h3>
                             <h2>{{ dado.lugar }}</h2>
@@ -114,31 +108,23 @@
         <div class="center-history-family"> 
             <div class="left">
                 <div class="register">
-                    <form {% if historico_familiar_detail %} action="{% url 'historico_familiar_detail' historico_familiar_detail.id_historico_familiar %}" {% else %} action="{% url 'historico-familiar' %}" {% endif %} method="POST">
+                    <form action="{% url 'historico-familiar' %}" method="POST">
                         {% csrf_token %}
 
-                        <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias" value="{% if historico_familiar_detail %} {{ historico_familiar_detail.doenca_hereditarias }} {% endif %}">
+                        <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias">
                         <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
                             <option selected disabled value=""> Grau de parentesco</option>
-                            <option value="primeiro_grau" {% if historico_familiar_detail.grau_parentesco ==  'primeiro_grau' %} selected {% endif %}>Primeiro Grau</option>
-                            <option value="segundo_grau" {% if historico_familiar_detail.grau_parentesco ==  'segundo_grau' %} selected {% endif %}>Segundo Grau</option>
-                            <option value="Terceiro_grau" {% if historico_familiar_detail.grau_parentesco ==  'Terceiro_grau' %} selected {% endif %}>Terceiro Grau</option>
-                            <option value="outros" {% if historico_familiar_detail.grau_parentesco ==  'outros' %} selected {% endif %}>Outros</option>
+                            <option value="primeiro_grau">Primeiro Grau</option>
+                            <option value="segundo_grau">Segundo Grau</option>
+                            <option value="Terceiro_grau">Terceiro Grau</option>
+                            <option value="outros">Outros</option>
                         </select>
 
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_historico_familiar" value="{{ dados_user.id_usuario }}">
 
-                        {% if historico_familiar_detail %}
-                            <button type="submit">Editar</button>
-                            <a href="{% url 'historico_familiar_delete' historico_familiar_detail.id_historico_familiar %}">Excluir</a>
-                        {% else %}
                         <br>
                             <button type="submit" id="button-left"> Cadastrar</button>
-                        {% endif %}
-
-                        
-
                     </form>
                 </div>
                 <br>
@@ -148,22 +134,17 @@
             <div class="left" >
                 <div id="container-doecas" class="scroll">
                     <div class="information-doencas">
-
                         {% for dado in dados_familiar %}
                             <a href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">
                                 <div id="doencas-card">
                                     <p class="titulo-doenca">{{ dado.doenca_hereditarias }}</p>
                                     <p class="grau-doenca">{{ dado.grau_parentesco }}</p>
-                                    
                                 </div>
                                 <div class="start-btn-family">
-                                    <a type="" id="mais-informacao" href="#">+</a>
+                                    <a  id="mais-informacao" href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">+</a>
                                 </div>
-                                
-                                
                             </a>
                         {% endfor %}
-
                     </div>  
                 </div>
             </div>
@@ -171,74 +152,77 @@
     </main>
 
     <!-- POPUP PRIMARY-CARD (HISTÓRICO) -->
-
-    <div class="center modal-box">
-        <div class="close-modal">
-            <button id='button_close' class="fa-times">X</button>
-        </div>
-        <div class="form-edit">
-            <form action="" method=''>
-                    
-                
-                <input type="text" name="lugar" id="" placeholder="Local:" value="" >
-                <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name= "data" value="" >
-                
-
-                <div class="input-content">
-                    <div class="first-file">
-                        <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                        <input id='selecao-arquivo-receita' type='file' name="receita" value="">
-                        <p id="file-name"></p>
-                    </div>
-                    <div class="second-file">
-                        <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                        <input id='selecao-arquivo-atestado' type='file' name="atestado"  value="">
-                        <p id="file-name2"></p>
-                    </div>
+    {% if historico_consultas_detail %}
+        <div class="center modal-box">
+                <div class="close-modal">
+                    <button id='button_close' class="fa-times">X</button>
                 </div>
-
-
-                <div class="div-buttons">
-                    <button type="submit">Editar</button>
-                    <a href="#">Excluir</a>
+                <div class="form-edit">
+                    <form action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}"
+                        method='POST'>
+                        {% csrf_token %}
+                        <input type="text" name="lugar" id="" placeholder="Local:" value="{{ historico_consultas_detail.lugar }}">
+                        <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name="data"
+                            value="{{ historico_consultas_detail.data|date:'Y-m-d' }}">
+        
+                        <div class="input-content">
+                            <div class="first-file">
+                                <label for='selecao-arquivo-receita'>Adicionar Receita</label>
+                                <input id='selecao-arquivo-receita' type='file' name="receita"
+                                    value="{{ historico_consultas_detail.receita }}">
+                                <p id="file-name"></p>
+                            </div>
+                            <div class="second-file">
+                                <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado"
+                                    value="{{ historico_consultas_detail.atestado }}">
+                                <p id="file-name2"></p>
+                            </div>
+                            <!-- fk -->
+                            <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
+                        </div>
+                        <div class="div-buttons">
+                            <button type="submit">Editar</button>
+                            <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-    </div>
+            </div>
+    {% endif %}
 
     <!-- POPUP REGISTER (HISTÓRICO-FAMILIAR) -->
 
-    <div class="center-family modal-box-family">
-        <div class="close-modal-family">
-            <button id='button_close' class="fa-times-family">X</button>
-        </div>
-        <div class="form-edit">
-            
-                <form  action="" action=""  method="">
-                    
-
-                    <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias" value="">
+    {% if historico_familiar_detail %}
+        <div class="center-family modal-box-family">
+            <div class="close-modal-family">
+                <button id='button_close' class="fa-times-family">X</button>
+            </div>
+            <div class="form-edit">
+        
+                <form action="{% url 'historico_familiar_detail' historico_familiar_detail.id_historico_familiar %}" method="POST">
+                    {% csrf_token %}
+                    <input id="edit_information" type="text" required placeholder="Nome da doença:" name="doenca_hereditarias"
+                    value="{{ historico_familiar_detail.doenca_hereditarias }}">
                     <select name="grau_parentesco" aria-placeholder="Grau de parentesco">
-                        <option selected disabled value=""> Grau de parentesco</option>
-                        <option value="primeiro_grau" >Primeiro Grau</option>
-                        <option value="segundo_grau" >Segundo Grau</option>
-                        <option value="Terceiro_grau" >Terceiro Grau</option>
-                        <option value="outros" >Outros</option>
+                        <option disabled value=""> Grau de parentesco</option>
+                        <option value="primeiro_grau"  {% if historico_familiar_detail.grau_parentesco ==  'primeiro_grau' %} selected {% endif %}>Primeiro Grau</option>
+                        <option value="segundo_grau" {% if historico_familiar_detail.grau_parentesco ==  'segundo_grau' %} selected {% endif %}>Segundo Grau</option>
+                        <option value="Terceiro_grau" {% if historico_familiar_detail.grau_parentesco ==  'Terceiro_grau' %} selected {% endif %}>Terceiro Grau</option>
+                        <option value="outros" {% if historico_familiar_detail.grau_parentesco ==  'outros' %} selected {% endif %}>Outros</option>
                     </select>
-
+                     <!-- fk -->
+                     <input type="hidden" name="fk_usuario_historico_familiar" value="{{ dados_user.id_usuario }}">
+        
                     <div class="div-buttons-family">
                         <button type="submit">Editar</button>
-                        <a href="#">Excluir</a>
+                        <a href="{% url 'historico_familiar_delete' historico_familiar_detail.id_historico_familiar %}">Excluir</a>
                     </div>
-
-                    
-                    
-
                 </form>
-            
+
+            </div>
         </div>
-    </div>
-    
+    {% endif %}
+
     <script src="{% static 'js/historico.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
