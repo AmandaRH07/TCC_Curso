@@ -100,10 +100,8 @@ def pdf_view(request, hash_user):
 
     return HttpResponse(pdf, content_type='application/pdf')
 
-
 # #Automaticly downloads to PDF file
 def pdf_download(request):
-	
 	pdf = render_to_pdf('app/informacoes.html', user)
 	response = HttpResponse(pdf, content_type='application/pdf')
 	filename = "Invoice_%s.pdf" %("12341231")
@@ -125,6 +123,8 @@ def qrcode (request):
 
 
     data = f'http://medfile1.herokuapp.com/pdf_view/{usuario.hash_user}/'
+    print(data)
+    print(data)
     print(data)
     qr.add_data(data)
     qr.make(fit=True)
