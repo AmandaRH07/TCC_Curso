@@ -1,8 +1,6 @@
 $(document).ready(function(){
-    $('.start-btn').click(function(){ //REMOVER LINHA NA IMPLEMENTAÇÃO EDITAR/EXCLUIR
         
         $('.modal-box').toggleClass("show-modal");
-        $('.start-btn').toggleClass("show-modal"); //REMOVER LINHA NA IMPLEMENTAÇÃO EDITAR/EXCLUIR
         if($(".modal-box").hasClass("show-modal")){
             $("body").css({"overflow":"hidden"});
             $('.container').animate({"opacity": "0.5"}, "slow");
@@ -10,10 +8,8 @@ $(document).ready(function(){
         }
     });
     $('.fa-times').click(function(){
-        $('.modal-box').toggleClass("show-modal");
-        $('.start-btn').toggleClass("show-modal"); //REMOVER LINHA NA IMPLEMENTAÇÃO EDITAR/EXCLUIR
+        // $('.modal-box').toggleClass("show-modal");
         $("body").css({"overflow":"auto"});
         $('.container').animate({"opacity": "1"}, "slow");
         $('.navbar').animate({"opacity": "1"}, "slow");
     });
-    }); //REMOVER LINHA NA IMPLEMENTAÇÃO EDITAR/EXCLUIR

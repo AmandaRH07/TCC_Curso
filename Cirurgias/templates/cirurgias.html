@@ -1,50 +1,43 @@
 {% extends 'base.html' %}
 
 {% load static %}
- 
+
 {% block title %}Cirurgias{%endblock%}
 {% block css %} {% static 'css/styleCirurgia.css' %} {%endblock%}
 {% block content%}
 
-    <main>
-        <div class="container">
-            <div class="title-container">
-                <span>Cirurgias</span>
-            </div>
-            <form {% if cirurgia_detail %} action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" {% else %} action="{% url 'cirurgias' %}" {% endif %} method="POST">
-                {% csrf_token %}
-                <section>                
-                    <div class="primary-card">
-                        <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:" value="{% if cirurgia_detail %} {{ cirurgia_detail.cirurgia }} {% endif %}">
+<main>
+    <div class="container">
+        <div class="title-container">
+            <span>Cirurgias</span>
+        </div>
+        <form {% if cirurgia_detail %} action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" {% else %}
+            action="{% url 'cirurgias' %}" {% endif %} method="POST">
+            {% csrf_token %}
+            <section>
+                <div class="primary-card">
+                    <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:">
 
-                        <input type="text" name="hospital" id="" placeholder="Nome do Hospital:" value="{% if cirurgia_detail %} {{ cirurgia_detail.hospital }} {% endif %}">
-                        <div class="input-content">
+                    <input type="text" name="hospital" id="" placeholder="Nome do Hospital:">
+                    <div class="input-content">
 
-                        <input type="text" onfocus="(this.type='date')" placeholder="Data da cirurgia:" name="data_cirurgia" id="" value="{% if cirurgia_detail %} {{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }} {% endif %}">
+                        <input type="text" onfocus="(this.type='date')" placeholder="Data da cirurgia:"
+                            name="data_cirurgia" id="">
 
-                        <input type="text" name="infos_extras" id="" placeholder="Anotação:" value="{% if cirurgia_detail %} {{ cirurgia_detail.infos_extras }} {% endif %}">
+                        <input type="text" name="infos_extras" id="" placeholder="Anotação:">
 
                         <!-- fk -->
                         <input type="hidden" name="fk_usuario_cirurgias" value="{{ dados_user.id_usuario }}">
                     </div>
-
-                    {% if cirurgia_detail %}
-                        <button type="submit">Editar</button>
-                        <a href="{% url 'cirurgia_delete' cirurgia_detail.id_cirugias %}">Excluir</a>
-                    {% else %}
-                        <button type="submit">Cadastrar</button>
-                    {% endif %}
-
-                    
-                </section>
-            </form>
+                    <button type="submit">Cadastrar</button>
+            </section>
+        </form>
 
         <div id="history-content" class="scroll">
             {% for dado in dados_cirurgias %}
             <div class="card">
-                <a href="{% url 'cirurgia_detail' dado.id_cirugias %}">
                     <div class="start-btn">
-                        <a type="" id="mais-informacao" href="#">+</a>
+                        <a type="" id="mais-informacao" href="{% url 'cirurgia_detail' dado.id_cirugias %}">+</a>
                     </div>
                     <h2>{{dado.cirurgia}}</h2>
                     <h3>Data</h3>
@@ -57,47 +50,53 @@
                         <h3>Informações Extras</h3>
                         <span>{{dado.infos_extras}}</span>
                     {% endif %}
-                </a>
             </div>
-            {% endfor %}   
+            {% endfor %}
         </div>
         <br>
     </div>
-    </main>
+</main>
 
-  
-    <div class="center modal-box">
-        <div class="close-modal">
-            <button id='button_close' class="fa-times">X</button>
-        </div>
-        <div class="form-edit">
-            <form action="" method=''>
-                    
-                    <input type="text" placeholder="Nome da cirurgia:" class="input-edit" name=""
-                        value="">
-                    <input class="input-edit" type=text name="" placeholder="Nome do hospital:"
-                        value="">
-
-                    <div class="input-form">
-                        <input placeholder="Data da cirurgia" type="text" onfocus="(this.type='date')" class="input-date"
-                            name="" value="">
-                        <input type="text" class="input-edit" name="" placeholder="Anotação"
-                        value="">
-                    </div>
-                    
-                    <div class="div-buttons">
-                        <button type="submit">Editar</button>
-                        <a href="">Excluir</a>
-                    </div>
-                </form>
-            </div>
+{% if cirurgia_detail %}
+<div class="center modal-box">
+    <div class="close-modal">
+        <button id='button_close' class="fa-times">X</button>
     </div>
-    
+    <div class="form-edit">
+        <form action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" method="POST">
+            {% csrf_token %}
+            <div class="primary-card">
+                <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:"
+                    value="{{ cirurgia_detail.cirurgia }}">
+
+                <input type="text" name="hospital" id="" placeholder="Nome do Hospital:"
+                    value="{{ cirurgia_detail.hospital }}">
+
+                <div class="input-content">
+                    <input type="text" onfocus="(this.type='date')" placeholder="Data da cirurgia:" name="data_cirurgia"
+                        id="" value="{{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }}">
+
+                    <input type="text" name="infos_extras" id="" placeholder="Anotação:"
+                        value="{{ cirurgia_detail.infos_extras }} ">
+
+                    <!-- fk -->
+                    <input type="hidden" name="fk_usuario_cirurgias" value="{{ dados_user.id_usuario }}">
+                </div>
+                <div class="div-buttons">
+                    <button type="submit">Editar</button>
+                    <a href="{% url 'cirurgia_delete' cirurgia_detail.id_cirugias %}">Excluir</a>
+                </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="{% static 'js/popupCirurgias.js' %}"></script>
-</body>
-</html>
+    </body>
 
-{%endblock%}
+    </html>
+
+{% endblock %}

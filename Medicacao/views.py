@@ -36,7 +36,6 @@ def medicacao_detail(request, pk):
 
     if str(request.method) == 'POST':
         form = MedicacaoForm(request.POST, instance=medicacao_detail)
-        print(form)
         if form.is_valid():
             form.save()
             return redirect('medicacao')
