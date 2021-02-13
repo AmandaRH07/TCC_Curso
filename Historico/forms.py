@@ -12,3 +12,9 @@ class HistoricoFamiliarForm(forms.ModelForm):
     class Meta:
         model = HistoricoFamiliar
         fields = ['doenca_hereditarias', 'grau_parentesco', 'fk_usuario_historico_familiar']
+
+
+class DoencaCronicaForm(forms.ModelForm):
+    class Meta:
+        model = HistoricoFamiliar
+        fields = ['doenca_cronica', 'fk_usuario_historico_familiar']
