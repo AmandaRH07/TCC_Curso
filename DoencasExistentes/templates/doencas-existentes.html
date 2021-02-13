@@ -90,7 +90,7 @@
             </div>
 
             <section>
-                <form action="{% url 'doencas-existentes' %}" method="POST"  enctype="multipart/form-data">
+
                     {% csrf_token %}
                     <div class="primary-card">
                         <input type="text" name="doenca" id="" placeholder="Nome da doença:" required>
@@ -107,16 +107,12 @@
 
             <div id="history-content" class="scroll">
                 {% for dado in dados_doencas_existentes %}
-                        <div class="card">
-                            <h3>Nome</h3>
-                            <h2>{{ dado.doenca }}</h2>
-                            <h3>Ano do diagnóstico</h3>
-                            <h2>{{ dado.ano_diagnostico|date:'d-m-Y' }}</h2>
+
                             <div class="start-btn">
                                 <a type="" id="mais-informacao" href="{% url 'doencas_existentes_detail' dado.id_doencas_existentes %}">+</a>
                             </div>
                         </div>
-                {% endfor %}
+
             </div>
             <br>
             <br>
