@@ -13,9 +13,12 @@ def historico_consultas(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
 
     dados_historico = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario.id_usuario)
+
     doenca_cronica = DoencaCronica.objects.filter(fk_usuario_doenca_cronica=usuario.id_usuario)
+    if doenca_cronica:
+        doenca_cronica = doenca_cronica[0]
+
     dados_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario.id_usuario)
-    # print(doenca_cronica[0].__dict__)
 
     if str(request.method) == 'POST' or str(request.method) == 'FILES':
         form = HistoricoConsultasForm(request.POST, request.FILES)
@@ -23,7 +26,13 @@ def historico_consultas(request):
             form.save()
             return HttpResponseRedirect('historico')
 
-    return render(request, "historico.html", {'dados_user': usuario, 'dados_historico': dados_historico, 'dados_familiar': dados_familiar, 'doenca_cronica': doenca_cronica[0]})
+    return render(request, "historico.html", 
+    {
+        'dados_user': usuario, 
+        'dados_historico': dados_historico, 
+        'dados_familiar': dados_familiar, 
+        'doenca_cronica': doenca_cronica
+    })
 
 
 @login_required(redirect_field_name='index_login')

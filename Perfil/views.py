@@ -16,7 +16,6 @@ from CadastroDePessoa.models import Usuario
 from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
-# from django.views import View
 
 import qrcode
 import image
@@ -102,7 +101,7 @@ def pdf_view(request, hash_user):
 
 # #Automaticly downloads to PDF file
 def pdf_download(request):
-	pdf = render_to_pdf('app/informacoes.html', user)
+	pdf = render_to_pdf('app/informacoes.html')
 	response = HttpResponse(pdf, content_type='application/pdf')
 	filename = "Invoice_%s.pdf" %("12341231")
 	content = "attachment; filename='%s'" %(filename)
@@ -122,7 +121,7 @@ def qrcode (request):
     )
 
 
-    data = f'http://medfile1.herokuapp.com/pdf_view/{usuario.hash_user}/'
+    data = f'http://medfile2.herokuapp.com/pdf_view/{usuario.hash_user}/'
     print(data)
     print(data)
     print(data)
