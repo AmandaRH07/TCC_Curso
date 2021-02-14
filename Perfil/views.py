@@ -122,7 +122,7 @@ def qrcode (request):
     )
 
 
-    data = f'http://medfile1.herokuapp.com/pdf_view/{usuario.hash_user}/'
+    data = f'http://medfile2.herokuapp.com/pdf_view/{usuario.hash_user}/'
     print(data)
     print(data)
     print(data)
