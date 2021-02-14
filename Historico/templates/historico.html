@@ -33,12 +33,12 @@
                         <div class="input-content">
                             <div class="first-file">
                                 <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' name="receita">
+                                <input id='selecao-arquivo-receita' type='file' accept="images/*" name="receita">
                                 <p id="file-name"></p>
                             </div>
                             <div class="second-file">
                                 <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                                <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                                <input id='selecao-arquivo-atestado' type='file' accept="images/*" name="atestado">
                                 <p id="file-name2"></p>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
         </div>
         <div class="form-edit">
             <form action="{% url 'historico_consultas_detail' historico_consultas_detail.id_historico_consultas %}"
-                method='POST'>
+                method='POST' enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="text" name="lugar" id="" placeholder="Local:"
                     value="{{ historico_consultas_detail.lugar }}">
@@ -180,23 +180,22 @@
                 <div class="input-content">
                     <div class="first-file">
                         <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                        <input id='selecao-arquivo-receita' type='file' name="receita"
-                            value="{{ historico_consultas_detail.receita }}">
-                        <p id="file-name"></p>
+                        <input id='selecao-arquivo-receita' type='file' name="receita">
+                        <p id="file-name"> {{ historico_consultas_detail.receita }} </p>
+                        <a href="/media/{{ historico_consultas_detail.receita }}" alt="" target="_blank">Ver receita</a>
                     </div>
                     <div class="second-file">
                         <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                        <input id='selecao-arquivo-atestado' type='file' name="atestado"
-                            value="{{ historico_consultas_detail.atestado }}">
-                        <p id="file-name2"></p>
+                        <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                        <p id="file-name2"> {{ historico_consultas_detail.atestado }} </p>
+                        <a href="/media/{{ historico_consultas_detail.atestado }}" alt="" target="_blank">Ver atestado</a>
                     </div>
                     <!-- fk -->
                     <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
                 </div>
                 <div class="div-buttons">
                     <button type="submit">Editar</button>
-                    <a
-                        href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
+                    <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>
                 </div>
             </form>
         </div>
