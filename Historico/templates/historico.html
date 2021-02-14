@@ -92,11 +92,14 @@
 
                                     <input type="radio" value="False" name="doenca_cronica" id="option-no" {% if not doenca_cronica.doenca_cronica %} checked {% endif %}>
                                     <label for="option-no">Não</label>
-                                    <button type="submit">Enviar</button>
 
+                                    <div class="botao">
+                                        <button type="submit">Enviar</button>
+                                    </div>
+                                   
                                     <input class="active" type="hidden" name="fk_usuario_doenca_cronica" value="{{ dados_user.id_usuario }}">
-
                                 </div>
+                                
                             </form>
 
                         </div>
