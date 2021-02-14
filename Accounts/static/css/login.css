@@ -11,7 +11,7 @@
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
-@font-face {
+@font-face { 
     font-family: Poppins-Medium;
     src: local(Poppins), url(/static/fonts/Poppins/Poppins-Medium.ttf);
 }
@@ -253,4 +253,79 @@ input:-webkit-autofill {
     from {
       transform: translateX(-1000px);
     }
+  }
+
+/* ______________________Resposividade_____________________________ */
+  @media screen and (min-width: 300px) and (max-width: 800px){
+    
+    #logo{
+        width: 70px;
+        height: 50px;
+        margin-top: -5px;
+    }
+
+    #begin{
+        font-size: 40px;
+    }
+    
+    #end{
+        font-size: 45px;
+        margin-left: -5px;
+    }
+
+    .container{
+        flex-direction: column;
+        justify-content: center;
+    
+        margin-top: 30%;
+    }
+
+    .box1{
+        width: 90%;
+    }
+
+    .waves-component{
+        top: 1px;
+    }
+
+    .title{
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .title-text{
+        margin-left: -10px;
+        margin-top: -7px;
+
+    }
+
+    .box2 > img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .box2{
+        margin-top: 20px;
+        width: 90%;
+    }
+
+  }
+
+  @media screen and (min-width: 700px) and (max-width: 900px){
+
+    #begin{
+        font-size: 60px;
+    }
+    
+    #end{
+        font-size: 65px;
+        margin-left: -5px;
+    }
+
+    #logo{
+        width: 110px;
+        height: 90px;
+        margin-top: -5px;
+    }
+
   }

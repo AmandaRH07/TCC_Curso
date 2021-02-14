@@ -54,16 +54,14 @@ h1{
     font-family: "Poppins", sans-serif;
     color: #FCFFF5;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
 .content{
 
     display: flex;
     flex-direction: column;
-    
 }
-
 
 .center-vaccines{
     
