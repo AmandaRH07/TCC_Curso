@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -7,7 +8,7 @@ from django.contrib import messages
 from CadastroDePessoa.forms import UsuarioForm
 from CadastroDePessoa.models import Usuario
 
-from django.contrib.auth.decorators import login_required
+
 
 def login(request):
     if request.method !="POST":
@@ -24,9 +25,11 @@ def login(request):
         auth.login(request, user)
         return redirect('index')
 
+
 def logout(request):
     auth.logout(request)
     return redirect('index_login')
+
 
 def cadastro(request):
     if request.method != 'POST':
@@ -50,10 +53,9 @@ def cadastro(request):
         user.save()
         usuario_db = Usuario(nome=nome, foto=foto, nascimento=nascimento, sexo=sexo, telefone=telefone, email=email, id_fk_cadastro_user=user)
         usuario_db.save()
-    else:
-        print('form invalid')
 
     return redirect('index_login')
+
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
