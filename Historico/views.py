@@ -49,9 +49,9 @@ def historico_consultas_detail(request, pk):
     historico_consultas_detail = get_object_or_404(
         HistoricoConsultas, id_historico_consultas=pk)
 
-    if str(request.method) == 'POST':
-        form = HistoricoConsultasForm(
-            request.POST, request.FILES, instance=historico_consultas_detail)
+    if str(request.method) == 'POST' or str(request.method) == 'FILES':
+        form = HistoricoConsultasForm(request.POST, request.FILES, instance=historico_consultas_detail)
+        print(form)
         if form.is_valid():
             form.save()
             return redirect('historico')
@@ -148,3 +148,5 @@ def doenca_cronica_edit(request):
             return redirect('historico')
             
     return redirect('historico')
+
+
