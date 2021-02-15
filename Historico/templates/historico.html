@@ -32,14 +32,14 @@
 
                         <div class="input-content">
                             <div class="first-file">
-                                <label for='selecao-arquivo-receita'>Adicionar Receita</label>
-                                <input id='selecao-arquivo-receita' type='file' accept="images/*" name="receita">
-                                <p id="file-name"></p>
+                                <!-- <label for='selecao-arquivo-receita'>Adicionar Receita</label> -->
+                                <input id='selecao-arquivo-receita' type='file' name="receita">
+                                <!-- <p id="file-name"></p> -->
                             </div>
                             <div class="second-file">
-                                <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
-                                <input id='selecao-arquivo-atestado' type='file' accept="images/*" name="atestado">
-                                <p id="file-name2"></p>
+                                <!-- <label for='selecao-arquivo-atestado'>Adicionar Atestado</label> -->
+                                <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                                <!-- <p id="file-name2"></p> -->
                             </div>
                         </div>
                         <button type="submit"> Cadastrar</button>
@@ -147,7 +147,24 @@
                             <a class="active" href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">
                                 <div class="active" id="doencas-card">
                                     <p class="titulo-doenca active">{{ dado.doenca_hereditarias }}</p>
-                                    <p class="grau-doenca active">{{ dado.grau_parentesco }}</p>
+                                    <p class="grau-doenca active">
+                                        {% if dado.grau_parentesco == 'primeiro_grau' %}
+                                            Segundo Grau
+                                        {% endif %}
+
+                                        {% if dado.grau_parentesco == 'segundo_grau' %}
+                                            Segundo Grau
+                                        {% endif %}
+
+                                        {% if dado.grau_parentesco == 'Terceiro_grau' %}
+                                            Terceiro Grau
+                                        {% endif %}
+
+                                        {% if dado.grau_parentesco == 'outros' %}
+                                            Outros
+                                        {% endif %}
+                                    </p>
+                                    
                                 </div>
                                 <div class="start-btn-family active">
                                     <a class="active" id="mais-informacao"
@@ -179,16 +196,20 @@
 
                 <div class="input-content">
                     <div class="first-file">
-                        <label for='selecao-arquivo-receita'>Adicionar Receita</label>
+                        <!-- <label for='selecao-arquivo-receita'>Adicionar Receita</label> -->
                         <input id='selecao-arquivo-receita' type='file' name="receita">
-                        <p id="file-name"> {{ historico_consultas_detail.receita }} </p>
-                        <a href="/media/{{ historico_consultas_detail.receita }}" alt="" target="_blank">Ver receita</a>
+                        <!-- <p id="file-name"> {{ historico_consultas_detail.receita }} </p> -->
+                        {% if historico_consultas_detail.receita %}
+                            <a href="/media/{{ historico_consultas_detail.receita }}" alt="" target="_blank">Ver receita</a>
+                        {% endif %}
                     </div>
                     <div class="second-file">
-                        <label for='selecao-arquivo-atestado'>Adicionar Atestado</label>
+                        <!-- <label for='selecao-arquivo-atestado'>Adicionar Atestado</label> -->
                         <input id='selecao-arquivo-atestado' type='file' name="atestado">
-                        <p id="file-name2"> {{ historico_consultas_detail.atestado }} </p>
-                        <a href="/media/{{ historico_consultas_detail.atestado }}" alt="" target="_blank">Ver atestado</a>
+                        <!-- <p id="file-name2"> {{ historico_consultas_detail.atestado }} </p> -->
+                        {% if historico_consultas_detail.atestado %}
+                            <a href="/media/{{ historico_consultas_detail.atestado }}" alt="" target="_blank">Ver atestado</a>
+                        {% endif %}
                     </div>
                     <!-- fk -->
                     <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
@@ -232,7 +253,6 @@
                         href="{% url 'historico_familiar_delete' historico_familiar_detail.id_historico_familiar %}">Excluir</a>
                 </div>
             </form>
-
         </div>
     </div>
     {% endif %}
@@ -244,6 +264,7 @@
     <script src="{% static 'js/popupHistorico.js' %}"></script>
     <script src="{% static 'js/popupFamiliar.js' %}"></script>
     <script src="{% static 'js/historico_familiar.js' %}"></script>
+    <script src="{% static 'js/historico_popu.js' %}"></script>
 
 
 </body>
