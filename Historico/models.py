@@ -9,10 +9,17 @@ class HistoricoFamiliar(models.Model):
         ('Terceiro_grau',"Terceiro Grau" ), # bisavô
         ('outros', "Outros" ),
     )
+
     id_historico_familiar = models.AutoField(primary_key=True)
     doenca_hereditarias = models.TextField("Doenças Hereditarias", blank=True)
     grau_parentesco = models.CharField("Grau Parentesco", choices=GRAU_PARENTESCO, max_length=13)
     fk_usuario_historico_familiar = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+
+
+class DoencaCronica(models.Model):
+    id_doenca_cronica = models.AutoField(primary_key=True)
+    doenca_cronica = models.BooleanField("Doença Crônica", default=False)
+    fk_usuario_doenca_cronica = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
 
 
 class HistoricoConsultas(models.Model):

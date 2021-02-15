@@ -26,7 +26,7 @@
                 <input type="hidden" value="{{user.id}}" name="id_fk_cadastro_user">
                 <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required />
                 <input id="edit_information" name="usuario" type="text" placeholder="Username" required />
-                <label for="nascimento" id="nascimento_validator" >Data de nascimento inválida!</label>
+                <label for="nascimento" id="nascimento_validator">Data de nascimento inválida!</label>
                 <input id="edit_information" placeholder="Data de nascimento:" type="text" onfocus="(this.type='date')" name= "nascimento" required/>
                 <select  name="sexo" id="id_sexo" required>
                     <option selected disabled value=""> Gênero</option>
@@ -39,7 +39,12 @@
             <div class="register" >
                 <input id="edit_information" name="email" type="email" placeholder="E-mail" required />
                 <input id="edit_information" name="telefone" type="tel" placeholder="Telefone" required />
-                <label for="senha" id="senha_validator" >As senhas não correspondem!</label>
+                <label for="senha" id="senha_validator">As senhas não correspondem!</label>
+                <label for="senha" id="senha_validator_maiuscula">Sua senha precisa conter pelo menos uma letra maiúscula.</label>
+                <label for="senha" id="senha_validator_minuscula">Sua senha precisa conter pelo menos uma letra minúscula.</label>
+                <label for="senha" id="senha_validator_numero">Sua senha precisa conter pelo menos um número.</label>
+                <label for="senha" id="senha_validator_caractere_especial">Sua senha precisa conter pelo menos um caractere especial.</label>
+                <label for="senha" id="senha_validator_length">Sua senha precisa ter pelo menos 8 caracteres.</label>
                 <input id="edit_information" name="senha" type="password" placeholder="Senha" required />
                 <input id="edit_information" name="senha2" type="password" placeholder="Confirme a senha" required />
                 <div class="button" >
