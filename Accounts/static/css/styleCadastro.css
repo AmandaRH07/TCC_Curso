@@ -19,6 +19,7 @@ body {
 body{
 
     background-color: #FCFFF5;
+    
 }
 
 /* Validação Form */
@@ -42,7 +43,7 @@ section{
     width: 100%;
     height: 100%;
     background: #112F41;
-    overflow: hidden;
+    overflow-x: hidden;
 
 }
 
@@ -60,7 +61,7 @@ section .wave{
 section .wave.wave1{
 
     animation: animate 25s linear infinite;
-    z-index: 1000;
+    z-index: 90;
     opacity: 0.6;
     animation-delay: 0s;
     bottom: 0;
@@ -68,7 +69,7 @@ section .wave.wave1{
 section .wave.wave2{
 
     animation: animate2 15s linear infinite;
-    z-index: 999;
+    z-index: 89;
     opacity: 0.2;
     animation-delay: -5s;
     bottom: 0px;
@@ -107,8 +108,8 @@ select{
     background-repeat: no-repeat;
     background-position: 263px; 
     background-size: 20px;
-    height: 50px;
-    width: 300px;
+    height: 15%;
+    width: 80%;
     border-radius: 20px; 
     border: 1px solid #112F41;
     padding-left: 4%;
@@ -131,7 +132,9 @@ select{
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+    z-index: 100;
 
 }
 
@@ -148,8 +151,9 @@ select{
 form{
 
     display: flex;
-    flex-direction: row;
-    height: 400px;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
     margin-left: 0px;
     margin-top: 45px;
 
@@ -160,8 +164,9 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 360px;
-    width: 500px;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
 }
 
 ::placeholder{
@@ -172,18 +177,26 @@ form{
 }
 .button{
 
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    width: 100%;
+}
+.register-information{
+
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+    width: 100%;
 }
 
 /* IDs */
 
 #edit_information{
 
-    height: 50px;
-    width: 300px;
+    height: 15%;
+    width: 80%;
     border-radius: 20px; 
     border: 1px solid #112F41;
     padding: 4%;
@@ -213,64 +226,11 @@ form{
 }
 
 
-@media (max-width: 768px){
+@media (min-width: 1440px){
 
     .content{
 
-        height: 75%;
-        width:70%;
-    
-    }
-    form{
-
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-    
-    }
-
-    #edit_information{
-
-        margin: 3%; 
-    }
-}
-
-@media (max-width: 1024px){
-
-    .content{
-
-        height: 52%;
-        width:70%;
-    
-    }
-    h1{
-
-        margin-top: 20px;
-    }
-
-    form{
-
-        align-items: center;
-        margin-top: 20px;
-    
-    }
-
-    #edit_information{
-
-        margin: 5%; 
-    }
-}
-
- @media (min-width: 1440px){
-
-    .content{
-
-        height: 60%;
-        width:70%;
-        align-items: center;
-        left: 50%;
-    
-    
+        height: 70%;
     }
     #edit_information{
 
@@ -299,3 +259,101 @@ form{
     }
 
 }
+
+@media (max-width: 1024px){
+
+    .content{
+
+        height: 52%;
+        width:70%;
+    
+    }
+    h1{
+
+        margin-top: 20px;
+    }
+
+    
+    form{
+
+        align-items: center;
+        margin-top: 20px;
+    
+    }
+
+    #edit_information{
+
+        margin: 5%; 
+    }
+}
+
+@media (max-width: 768px){
+
+    .content{
+
+        height: 92%;
+        width:70%;
+    
+    }
+    form{
+
+        flex-direction: column;
+        align-items: center;
+        
+    
+    }
+    .register{
+
+        width: 70%;
+    }
+    /* #edit_information{
+
+        margin: 3%; 
+    } */
+    select{
+
+        width: 70%;
+        height: 15%;
+    }
+    .register-information{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 320px){
+
+    .content{
+
+        height: 70%;
+        width:80%;
+    
+    }
+    h1{
+
+        font-size: 25px;
+    }
+    form{
+
+        flex-direction: column;
+        align-items: center;
+        height: 50px;
+    }
+    .register{
+
+        width: 300px;
+    }
+    .register-information{
+
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
