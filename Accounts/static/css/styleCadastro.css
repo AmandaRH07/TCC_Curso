@@ -22,7 +22,12 @@ body{
 }
 
 /* Validação Form */
-#senha_validator, #nascimento_validator {
+#senha_validator, #nascimento_validator, #senha_validator_maiuscula, #senha_validator_minuscula, #senha_validator_numero, #senha_validator_caractere_especial{
+    color: #ED553B;
+    font-size: 14px;
+    display: none;
+}
+#senha_validator_length {
     color: #ED553B;
     font-size: 14px;
     display: none;
