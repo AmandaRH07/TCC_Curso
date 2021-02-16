@@ -138,10 +138,6 @@ section {
     
 }
 
-
-/* input[type='file'] {
-    /* display: none; */
-
  
 .first-file, .second-file{
     display: flex;
@@ -152,7 +148,7 @@ section {
     margin-top: 10px;
 }
 
-#file-name, #file-name2, label{
+/* #file-name, #file-name2, label{
     padding: 1.5rem;
     border-radius: 20px;
     border: none;
@@ -167,7 +163,7 @@ section {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
+} */
 
 .input-content p{
     width: 60%;
