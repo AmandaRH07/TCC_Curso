@@ -126,7 +126,7 @@ def qrcode (request):
 
     qr.add_data(data)
     qr.make(fit=True)
-    img = qr.make_image(fill_color="#112F41", back_color="#b0fffc")
+    img = qr.make_image(fill_color="#112F41", back_color="#FCFFF5")
     img.save(f'media/qrcode/{request.user.username}{usuario.id_usuario}.png')
     usuario.qrcode = f'qrcode/{request.user.username}{usuario.id_usuario}.png'
     usuario.save()

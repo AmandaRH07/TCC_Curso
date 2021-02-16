@@ -16,8 +16,8 @@ class AvaliacaoDiaria(models.Model):
         ('coriza', 'Coriza'),
         ('faltaDeAr', 'Falta de ar'),
         ('insonia', 'Insonia'),
-        # ('outro', 'Outro'),
     )
+    
     id_avaliacao_diaria = models.AutoField(primary_key=True) 
     sintomas = MultiSelectField('Sintomas', choices=SINTOMAS_CHOICES, max_length=50, max_choices=10)
     observacoes = models.TextField('Observações', blank=True)
