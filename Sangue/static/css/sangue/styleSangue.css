@@ -20,7 +20,7 @@
 }
 
 *{
-    margin: 0px;
+    margin: 0px; 
     box-sizing: border-box;
     font-family: Poppins-Regular;
     padding: 0px;
@@ -49,7 +49,8 @@ main{
     flex-direction: column;
     height: 500px;
     width: 70%;
-    z-index: 100;
+    z-index: 90;
+    margin-left: 5%;
 }
 
 .box2{
@@ -70,13 +71,20 @@ form{
 
 /* Style dos títulos */
 .title .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: var(--azul-escuro);
     background-color: var(--branco);
     margin-top: 20px;
     text-align: center;
-    height: 70px;
+    height: 100%;
     padding-top: 5px;
     font-size: 40px;
+}
+
+#title-2{
+    
 }
 
 /* Style dos conteúdos das boxes */
@@ -258,5 +266,18 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     from {
         transform: translateX(-1000px);
     }
+}
+
+
+@media screen and (max-width: 600px){
+    .title .text{
+        /* color: var(--azul-escuro);
+        background-color: var(--branco);
+        margin-top: 20px;
+        text-align: center;
+        height: 70px; */
+        font-size: 3rem;
+    }
+
 }
 

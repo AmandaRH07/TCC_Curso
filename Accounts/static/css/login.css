@@ -117,7 +117,7 @@ header{
 /* _____style-box1_____ */
 
 .box1{
-    width: 30%;
+    width: 40%;
     padding: 10px 0;
 
     display: flex;
@@ -134,7 +134,7 @@ form > input{
     color: var(--branco);
 
     height: 50px;
-    width: 92%;
+    width: 100%;
 
     border-radius: 40px;
     border: none;
@@ -256,7 +256,7 @@ input:-webkit-autofill {
   }
 
 /* ______________________Resposividade_____________________________ */
-  @media screen and (min-width: 300px) and (max-width: 800px){
+  @media screen and (max-width: 899px){
     
     #logo{
         width: 70px;
@@ -285,7 +285,7 @@ input:-webkit-autofill {
     }
 
     .waves-component{
-        top: 1px;
+        top: 0;
     }
 
     .title{
@@ -326,6 +326,30 @@ input:-webkit-autofill {
         width: 110px;
         height: 90px;
         margin-top: -5px;
+    }
+
+  }
+
+  @media screen and (min-width: 899px){
+
+    .container{ 
+        margin-top: 30%;
+    }
+
+    .waves-component{
+        top: 0;
+    }
+
+  }
+
+  @media screen and (max-height: 700px){
+
+    .container{ 
+        margin-top: 17%;
+    }
+
+    .waves-component{
+        top: -70px;
     }
 
   }

@@ -60,21 +60,23 @@
 {% if cirurgia_detail %}
 <div class="center modal-box">
     <div class="close-modal">
-        <button id='button_close' class="fa-times">X</button>
+        <button id='button_close' class="fa-times">
+            <a style="text-decoration: none; color: #FCFFF5;" href="{% url 'cirurgias' %}">X</a>
+            </button>
     </div>
     <div class="form-edit">
         <form action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" method="POST">
             {% csrf_token %}
             <div class="primary-card">
                 <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:"
-                    value="{{ cirurgia_detail.cirurgia }}">
+                    value="{{ cirurgia_detail.cirurgia }}" required>
 
                 <input type="text" name="hospital" id="" placeholder="Nome do Hospital:"
                     value="{{ cirurgia_detail.hospital }}">
 
                 <div class="input-content">
                     <input type="text" onfocus="(this.type='date')" placeholder="Data da cirurgia:" name="data_cirurgia"
-                        id="" value="{{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }}">
+                        id="" value="{{ cirurgia_detail.data_cirurgia|date:'Y-m-d' }}" required>
 
                     <input type="text" name="infos_extras" id="" placeholder="Anotação:"
                         value="{{ cirurgia_detail.infos_extras }} ">
@@ -86,6 +88,7 @@
                     <button type="submit">Editar</button>
                     <a href="{% url 'cirurgia_delete' cirurgia_detail.id_cirugias %}">Excluir</a>
                 </div>
+            </div>
         </form>
     </div>
 </div>

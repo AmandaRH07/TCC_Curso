@@ -139,9 +139,9 @@ section {
 }
 
 
-input[type='file'] {
-    display: none
-}
+/* input[type='file'] {
+    /* display: none; */
+
  
 .first-file, .second-file{
     display: flex;
