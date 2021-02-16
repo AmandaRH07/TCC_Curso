@@ -12,10 +12,12 @@ def index(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
 
     dados_avaliacao_diaria = AvaliacaoDiaria.objects.filter(
-        fk_usuario_avaliacao_diaria=usuario.id_usuario).order_by('-data')
+        fk_usuario_avaliacao_diaria=usuario.id_usuario)
+    print("oi")
     
     if str(request.method) == 'POST' :
         form = AvaliacaoDiariaForm(request.POST)
+        print(form)
         if form.is_valid():
             form.save()
             return redirect('index')
