@@ -97,8 +97,8 @@
                     <div class="primary-card">
                         {% csrf_token %}
 
-                        <input type="text" name="nome" id="" placeholder="Nome do medicamento:">
-                        <input type="text" name="funcao" id="" placeholder="Função do medicamento:">
+                        <input type="text" name="nome" id="" placeholder="Nome do medicamento:" required>
+                        <input type="text" name="funcao" id="" placeholder="Função do medicamento:" required>
                         <div class="input-content">
                             <input placeholder="Data - início do tratamento:" type="text" onfocus="(this.type='date')" class="register-information"  name="data_inicio">
                             <input placeholder="Data - final do tratamento:" type="text" onfocus="(this.type='date')" class="register-information" name="data_final">

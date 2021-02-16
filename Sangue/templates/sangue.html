@@ -5,12 +5,6 @@
 {% block title %}Sangue{%endblock%}
 {% block css %} {% static 'css/sangue/styleSangue.css' %} {%endblock%}
 {% block content%} 
-<header>
-    <!-- <div class="center">  -->
-
-    <!-- </div> -->
-
-</header>
 
 <main class="content">
     <form {% if tipo_sanguineo %} action="{% url 'sangue_detail' %}" {% else %} action="{% url 'sangue' %}" {% endif %} method="POST" enctype="multipart/form-data">
@@ -64,7 +58,7 @@
         <div class="box2">
             <div class="options">
                 <div class="title">
-                    <p class="text">Você é doador(a) de sangue?</p>
+                    <p class="text" id="title-2">Você é doador(a) de sangue?</p>
                     <!-- fk -->
                     <input type="hidden" name="fk_usuario_tipo_sanguineo" value="{{dados_user.id_usuario}}">
                 </div>
@@ -75,7 +69,7 @@
                     <div class="doador">
                         <label for="id_doador">Assinale se você for doador(a) de sangue:</label>
                         <input type="checkbox" name="doador" id="id_doador">
-                    </div>
+                    </div> 
  
                 </div>
                 

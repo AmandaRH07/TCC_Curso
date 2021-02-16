@@ -101,15 +101,15 @@ h1{
     <main>
 
     <div class="perfil">
-        {% if usuario %}
+        {% if usuario.foto %}
             <div class="imagem">
-                <img src="../media/{{ usuario.foto }}" alt="">
+                <img src="/media/{{ usuario.foto }}" alt="">
             </div>
+        {% endif %}
             
             <p>Nome: {{ usuario.nome }}</p>
             <p>Data de Nascimento: {{ usuario.nascimento }}</p>
-            <p>Gênero: {{ usuario.sexo }}</p>
-        {% endif %}
+            <p>Gênero: {{ usuario.sexo|title }}</p>
     </div>
     
     <div class="cirurgia">
@@ -155,11 +155,16 @@ h1{
             <p>Lugar: {{ dado.lugar }}</p>
             <p>Data: {{ dado.data }}</p>
             {% if dado.receita  %}
-                <p>Receita: {{ dado.receita }}</p>
+                <p>Receita:
+                    <a target="_blank" href="/media/{{ dado.receita }}"> Ver receita</a>
+                </p>
             {% endif %}
             {% if dado.atestado  %}
-                <p>Atestado: {{ dado.atestado }}</p>
+                <p>Atestado: 
+                    <a target="_blank" href="/media/{{ dado.atestado }}"> Ver atestado</a>
+                </p>
             {% endif %}
+            <br>
         {% endfor %}
     {% else %}
         <p>Não há consultas cadastradas.</p>
@@ -173,7 +178,24 @@ h1{
         
         {% for dado in historico_familiar %}
             <p>Doença hereditária: {{ dado.doenca_hereditarias }}</p>
-            <p>Grau parentesco: {{ dado.grau_parentesco }}</p>
+            <p>Grau parentesco:
+                {% if dado.grau_parentesco == 'primeiro_grau' %}
+                    Segundo Grau
+                {% endif %}
+
+                {% if dado.grau_parentesco == 'segundo_grau' %}
+                    Segundo Grau
+                {% endif %}
+
+                {% if dado.grau_parentesco == 'Terceiro_grau' %}
+                    Terceiro Grau
+                {% endif %}
+
+                {% if dado.grau_parentesco == 'outros' %}
+                    Outros
+                {% endif %}
+            </p>
+            <br>
         {% endfor %}
     {% else %}
         <p>Não há histórico familiar cadastrado.</p>
@@ -194,10 +216,10 @@ h1{
                 <p>Data de início: {{ dado.data_inicio }}</p>
             {% endif %}
             {% if dado.data_final  %}
-            <p>Data de início: {{ dado.data_final }}</p>
+                <p>Data final: {{ dado.data_final }}</p>
             {% endif %}
             {% if dado.infos_extras  %}
-            <p>Data de início: {{ dado.infos_extras }}</p>
+                <p>Informações extras: {{ dado.infos_extras }}</p>
             {% endif %}
         {% endfor %}
         {% else %}
@@ -211,8 +233,43 @@ h1{
         {% if sangue %}
        
         {% for dado in sangue %}
-            <p>Tipo Sanguíneo: {{ dado.tipo_sanguineo }}</p>
-            <p>Doador: {{ dado.doador }}</p>
+            <p>Tipo Sanguíneo:
+                {% if dado.tipo_sanguineo == 'aPositivo' %}
+                    A+
+                {% endif %}
+                {% if dado.tipo_sanguineo == 'aNegativo' %}
+                    A-
+                {% endif %}
+
+                {% if dado.tipo_sanguineo == 'bPositivo' %}
+                    B+
+                {% endif %}
+                {% if dado.tipo_sanguineo == 'bNegativo' %}
+                    B-
+                {% endif %}
+
+                {% if dado.tipo_sanguineo == 'abPositivo' %}
+                    AB+
+                {% endif %}
+                {% if dado.tipo_sanguineo == 'abNegativo' %}
+                    AB-
+                {% endif %}
+
+                {% if dado.tipo_sanguineo == 'oPositivo' %}
+                    O+
+                {% endif %}
+                {% if dado.tipo_sanguineo == 'oNegativo' %}
+                    O-
+                {% endif %}
+            </p>
+
+            <p>Doador: 
+                {% if dado.doador %}
+                    Sim
+                {% else %}
+                    Não
+                {% endif %}
+            </p>
             {% if dado.historico_doacoes  %}
                 <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
             {% endif %}
@@ -228,7 +285,7 @@ h1{
         
             {% for dado in vacinas %}
                 <p>Vacina: {{ dado.tipo_vacina }}</p>
-                <p>Data vacinação: {{ dado.data_vacinacao }}</p>
+                <p>Data da vacinação: {{ dado.data_vacinacao }}</p>
                 {% if dado.dose  %}
                     <p>Dose: {{ dado.dose }}</p>
                 {% endif %}
@@ -238,6 +295,7 @@ h1{
                 {% if dado.local  %}
                     <p>Local: {{ dado.local }}</p>
                 {% endif %}
+                <br>
             {% endfor %}
         {% else %}
             <p>Não há vacinas cadastradas.</p>
@@ -258,7 +316,6 @@ h1{
     </div>
     
     </main>
-    
-    
+
 </body>
 </html>
