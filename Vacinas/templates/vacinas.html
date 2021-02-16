@@ -137,20 +137,20 @@
 
                                 <br>
 
-                                <div id="cadastro">
+                                <div class="cadastro">
                                     <input class="register-information" type=text name="tipo_vacina"
                                         placeholder="Nome da vacina:" required>
 
                                     <input class="register-information" type=text name="dose" placeholder="Dose:">
                                 </div>
 
-                                <div id="cadastro">
+                                <div class="cadastro">
                                     <input class="register-information" type=text name="lote" placeholder="Lote:">
                                     <input placeholder="Data de Vacinação:" type="text" onfocus="(this.type='date')"
                                         class="register-information" name="data_vacinacao" required>
                                 </div>
 
-                                <div id="cadastro">
+                                <div class="cadastro">
                                     <input id="register-information-local" type=text name="local" placeholder="Local:"
                                         value="{% if vacina_detail %} {{ vacina_detail.local }} {% endif %}">
                                     <input type="hidden" name="fk_usuario_vacinas" value="{{ dados_user.id_usuario }}">
