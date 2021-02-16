@@ -4,15 +4,6 @@ import uuid
 
 from stdimage.models import StdImageField
 
-# from AlergiaIntolerancia.models import Alergias, Intolerancias 
-# from AvaliacaoDiaria.models import AvaliacaoDiaria
-# from Cirurgias.models import Cirurgias
-# from DoencasExistentes.models import DoencasExistentes 
-# from Historico.models import HistoricoConsultas, HistoricoFamiliar 
-# from Medicacao.models import Medicamentos
-# # from Sangue.models import TipoSanguineo
-# from Vacinas.models import Vacinas
-
 
 class Usuario(models.Model):
     SEXO_CHOICES = (
@@ -33,36 +24,4 @@ class Usuario(models.Model):
     hash_user = models.UUIDField('Hash User', default=uuid.uuid4, unique=True, editable=False)
    
     id_fk_cadastro_user = models.ForeignKey(User, verbose_name='CadastroUser', on_delete=models.CASCADE, default="")
-    '''
-    Aqui estamos fazendo as ligações entre o usuário e os dados que serão 
-    cadastrados posteriormente 
-    '''
-    # Alergias 
-    # alergias = models.ManyToManyField(Alergias)
-
-    # # Intolerancias
-    # intolerancias = models.ManyToManyField(Intolerancias)
-
-    # # Avaliação Diaria
-    # avaliacao_diaria = models.ManyToManyField(AvaliacaoDiaria)
     
-    # # Cirurgias
-    # cirurgias = models.ManyToManyField(Cirurgias)
-
-    # # Doenças Existentes
-    # doencas = models.ManyToManyField(DoencasExistentes)
-
-    # # Histórico de Consultas
-    # historico_consultas = models.ManyToManyField(HistoricoConsultas)
-
-    # # Histórico Familiar
-    # historico_familiar = models.ManyToManyField(HistoricoFamiliar)
-
-    # # Medicação
-    # medicacao = models.ManyToManyField(Medicamentos)
-
-    # # Sangue
-    # # sangue = models.ManyToManyField(TipoSanguineo)
-    
-    # # Vacinas
-    # vacinas = models.ManyToManyField(Vacinas)
