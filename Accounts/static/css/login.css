@@ -57,6 +57,11 @@ body{
     background-color: var(--branco);
 }
 
+main{
+    width: 100%;
+
+}
+
 /* _____style-título_____ */
 
 #begin{
@@ -111,7 +116,6 @@ header{
     flex-direction: row;
 
     width: 100%;
-    margin-top: 17%;
 }
 
 /* _____style-box1_____ */
@@ -228,7 +232,7 @@ input:-webkit-autofill {
 
 .waves-component{
     position: absolute;
-    top: -70px;
+    top: -70;
     left: 0;
     right: 0;
     transform: scaleY(-1);
@@ -255,8 +259,9 @@ input:-webkit-autofill {
     }
   }
 
-/* ______________________Resposividade_____________________________ */
-  @media screen and (max-width: 899px){
+/* ______________________Resposividade___________________________ */
+
+@media screen and (max-width: 900px){
     
     #logo{
         width: 70px;
@@ -277,7 +282,6 @@ input:-webkit-autofill {
         flex-direction: column;
         justify-content: center;
     
-        margin-top: 30%;
     }
 
     .box1{
@@ -311,6 +315,38 @@ input:-webkit-autofill {
 
   }
 
+  @media screen and (min-width: 899px){
+
+    .container{ 
+        margin-top: 17%;
+    }
+
+    .waves-component{
+        top: 0;
+    }
+
+  }
+
+
+    @media screen and (max-height: 800px){
+
+        .container{ 
+            margin-top: 17%;
+        }
+
+        .waves-component{
+            top: -70px;
+        }
+
+  }
+
+  @media screen and (min-height: 700px){
+      main{
+        margin-top: 30%;
+      }
+  }
+
+
   @media screen and (min-width: 700px) and (max-width: 900px){
 
     #begin{
@@ -330,7 +366,7 @@ input:-webkit-autofill {
 
   }
 
-  @media screen and (min-width: 899px){
+  @media screen and (max-width: 550px){
 
     .container{ 
         margin-top: 30%;
@@ -340,16 +376,5 @@ input:-webkit-autofill {
         top: 0;
     }
 
-  }
-
-  @media screen and (max-height: 700px){
-
-    .container{ 
-        margin-top: 17%;
-    }
-
-    .waves-component{
-        top: -70px;
-    }
-
+      
   }

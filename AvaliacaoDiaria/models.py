@@ -19,7 +19,7 @@ class AvaliacaoDiaria(models.Model):
         # ('outro', 'Outro'),
     )
     id_avaliacao_diaria = models.AutoField(primary_key=True) 
-    sintomas = MultiSelectField('Sintomas', choices=SINTOMAS_CHOICES, max_length=50, max_choices=10)
+    sintomas = MultiSelectField('Sintomas', choices=SINTOMAS_CHOICES, max_length=100, max_choices=10)
     observacoes = models.TextField('Observações', blank=True)
     outro = models.TextField('Outro sintoma', blank=True)
     data = models.DateField('Data ', default=timezone.now())

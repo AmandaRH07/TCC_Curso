@@ -5,7 +5,7 @@
     --verde-piscina: #4FB99F;
     --salmao: #ED553B;
     --branco: #FCFFF5;
-    --gelo: #E6EBE0;
+    --gelo: #E6EBE0; 
     --azul-claro: #3DCCC7;
     --azul-bebe: #b0fffc;
 }
@@ -68,7 +68,6 @@ main{
     height: 25%;
     width: 70%;
     border-radius: 20px;
-    /* margin: 20%; */
     margin-top: 40px;
     margin-bottom: 20px;
     position: relative;
@@ -250,7 +249,7 @@ input:-webkit-autofill {
     justify-content: center;
     position: relative;
 }
-
+/* 
 .box2-first-subtitle{
     height: 50px;
     position: absolute;
@@ -269,9 +268,9 @@ input:-webkit-autofill {
     width: 100%;
     bottom: 1;
     align-items: center;
-}
+} */
 
-.text3{
+/* .text3{
     background-color: var(--salmao);
     color: var(--azul-escuro);
     border-radius: 10px 0 0 10px;
@@ -282,13 +281,13 @@ input:-webkit-autofill {
     width: 20%;
     padding: 5px 8px;
 
-}
+} */
 
-.semana-atual, .semana-passada{
+/* .semana-atual, .semana-passada{
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 .week{
     display: flex;
@@ -310,5 +309,105 @@ input:-webkit-autofill {
     font-weight: 500;
     font-size: 2rem;
 }
+
+
+
+
+#history-content {
+    background-color: var(--verde-piscina);
+    width: 80%;
+    min-height: 30rem;
+    height: 150px;
+
+    border: 3px solid var(--verde-piscina);
+    border-radius: 20px;
+
+    margin-left: 8%;
+    margin-top: 5rem;
+    margin-bottom: 50px;    
+
+    overflow-x: scroll;
+    display: inline-flex;
+    overflow-y: hidden;
+    justify-content: start;
+    border-bottom: 2px solid #FCFFF5;
+}
+
+#history-content a{
+    text-decoration: none;
+}
+ 
+
+#card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--branco);
+    
+    width: 230px;
+    border-radius: 10px;
+
+    margin: 10px;
+    
+    min-width: 200px;
+    padding: 5px;
+}
+
+#card p{
+    color: var(--salmao);
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+#card h3 {
+    font-weight: 600;
+    color: var(--azul-escuro);
+    font-size: 2rem;
+}
+
+
+#card span {
+    font-weight: 600;
+    color: var(--azul-piscina-escuro);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.scroll{
+    overflow-y:  scroll;
+}
+
+.scroll::-webkit-scrollbar{
+    width: 15px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background: var(--azul-escuro);
+    border-radius: 20px;
+    width: 16px;
+}
+
+.scroll-card{
+    overflow-y:  scroll;
+}
+
+.scroll-card::-webkit-scrollbar{
+    width: 15px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll-card::-webkit-scrollbar-thumb{
+    background: var(--salmao);
+    border-radius: 20px;
+    width: 12px;
+}
+
 
 /* Fim IDs */
