@@ -16,38 +16,38 @@
                 </div>
                 <div class="buttons" id="buttons-1">
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="aPositivo" class="button-type" id="optionA">
+                        <input type="radio" name="tipo_sanguineo" value="aPositivo" class="button-type" id="optionA" {% if tipo_sanguineo.tipo_sanguineo == 'aPositivo' %} checked {% endif %}>
                         <label for="optionA"> <span></span> A+</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="aNegativo" class="button-type" id="optionA-">
+                        <input type="radio" name="tipo_sanguineo" value="aNegativo" class="button-type" id="optionA-" {% if tipo_sanguineo.tipo_sanguineo == 'aNegativo' %} checked {% endif %}>
                         <label for="optionA-"> <span></span> A-</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="bPositivo" class="button-type" id="optionB">
+                        <input type="radio" name="tipo_sanguineo" value="bPositivo" class="button-type" id="optionB" {% if tipo_sanguineo.tipo_sanguineo == 'bPositivo' %} checked {% endif %}>
                         <label for="optionB"> <span></span> B+</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="bNegativo" class="button-type" id="optionB-">
+                        <input type="radio" name="tipo_sanguineo" value="bNegativo" class="button-type" id="optionB-" {% if tipo_sanguineo.tipo_sanguineo == 'bNegativo' %} checked {% endif %}>
                         <label for="optionB-"> <span></span> B-</label>
                     </div> 
                   
                 </div>
                 <div class="buttons" id="buttons-2">
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="abPositivo" class="button-type" id="optionAB">
+                        <input type="radio" name="tipo_sanguineo" value="abPositivo" class="button-type" id="optionAB" {% if tipo_sanguineo.tipo_sanguineo == 'abPositivo' %} checked {% endif %}>
                         <label for="optionAB"> <span></span> AB+</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="abNegativo" class="button-type" id="optionAB-">
+                        <input type="radio" name="tipo_sanguineo" value="abNegativo" class="button-type" id="optionAB-" {% if tipo_sanguineo.tipo_sanguineo == 'abNegativo' %} checked {% endif %}>
                         <label for="optionAB-"> <span></span> AB-</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="oPositivo" class="button-type" id="optionO">
+                        <input type="radio" name="tipo_sanguineo" value="oPositivo" class="button-type" id="optionO" {% if tipo_sanguineo.tipo_sanguineo == 'oPositivo' %} checked {% endif %}>
                         <label for="optionO"> <span></span> O+</label>
                     </div>
                     <div class="button-option">
-                        <input type="radio" name="tipo_sanguineo" value="oNegativo" class="button-type" id="optionO-">
+                        <input type="radio" name="tipo_sanguineo" value="oNegativo" class="button-type" id="optionO" {% if tipo_sanguineo.tipo_sanguineo == 'oNegativo' %} checked {% endif %}>
                         <label for="optionO-"> <span></span> O-</label>
                     </div>
     
@@ -67,8 +67,9 @@
                         <img src="{% static 'img/icone_sangue.png'%}" alt="Gota de Sangue" width="200px" height="210px">
                     </div>
                     <div class="doador">
-                        <label for="id_doador">Assinale se você for doador(a) de sangue:</label>
-                        <input type="checkbox" name="doador" id="id_doador">
+                        <label for="id_doador">Assinale se você for doador(a) de sangue:  {{tipo_sanguineo.doador}}</label>
+                        
+                        <input type="checkbox" name="doador" id="id_doador" {% if tipo_sanguineo.doador %} checked {% endif %}>
                     </div> 
  
                 </div>

@@ -191,29 +191,32 @@
                 {% csrf_token %}
                 <input type="text" name="lugar" id="" placeholder="Local:"
                     value="{{ historico_consultas_detail.lugar }}">
+                <br>
                 <input placeholder="Dia da consulta:" type="text" onfocus="(this.type='date')" name="data"
                     value="{{ historico_consultas_detail.data|date:'Y-m-d' }}">
 
                 <div class="input-content">
                     <div class="first-file">
-                        <!-- <label for='selecao-arquivo-receita'>Adicionar Receita</label> -->
-                        <input id='selecao-arquivo-receita' type='file' name="receita">
-                        <!-- <p id="file-name"> {{ historico_consultas_detail.receita }} </p> -->
-                        {% if historico_consultas_detail.receita %}
-                            <a href="/media/{{ historico_consultas_detail.receita }}" alt="" target="_blank">Ver receita</a>
-                        {% endif %}
+                        <div class="div-buttons"> 
+                            <input id='selecao-arquivo-receita' type='file' name="receita">
+                            {% if historico_consultas_detail.receita %}
+                                <a href="/media/{{ historico_consultas_detail.receita }}" alt="" target="_blank">Ver receita</a>
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="second-file">
-                        <!-- <label for='selecao-arquivo-atestado'>Adicionar Atestado</label> -->
-                        <input id='selecao-arquivo-atestado' type='file' name="atestado">
-                        <!-- <p id="file-name2"> {{ historico_consultas_detail.atestado }} </p> -->
-                        {% if historico_consultas_detail.atestado %}
-                            <a href="/media/{{ historico_consultas_detail.atestado }}" alt="" target="_blank">Ver atestado</a>
-                        {% endif %}
+                        <div class="div-buttons"> 
+                            <input id='selecao-arquivo-atestado' type='file' name="atestado">
+                            {% if historico_consultas_detail.atestado %}
+                                <a href="/media/{{ historico_consultas_detail.atestado }}" alt="" target="_blank">Ver atestado</a>
+                            {% endif %}
+                        </div>
                     </div>
                     <!-- fk -->
                     <input type="hidden" name="fk_usuario_historico_consulta" value="{{dados_user.id_usuario}}">
                 </div>
+                <br>
+                <br>
                 <div class="div-buttons">
                     <button type="submit">Editar</button>
                     <a href="{% url 'historico_consultas_delete' historico_consultas_detail.id_historico_consultas %}">Excluir</a>

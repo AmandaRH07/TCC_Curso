@@ -30,11 +30,6 @@
         </div>
     </header>
     
-    <!-- isso vai dentro do popup -->
-    <img src="/media/{{ dados_user.qrcode }}" width="200px" alt="">
-    <!-- fim -->
-
-    <a href="{% url 'qrcode' %}">qrcode</a>
     
     <form class="content" action="{% url 'perfil' %}" method="post" autocomplete="off" enctype="multipart/form-data">
         {% csrf_token %}
