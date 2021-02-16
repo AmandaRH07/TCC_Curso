@@ -114,7 +114,7 @@ h2{
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 100%;
+    height: 800px;
 }
 
 
@@ -619,51 +619,9 @@ section{
 
 /*  ______________________RESPONSIVIDADE_____________________________  */
 
-/* @media (min-width: 1440px){
-
-    .center{
-
-        margin: 5%;
-    }
-
-    #scroll-vaccines{
-
-        height: 700px;
-        
-    }
-    
-    .right{
-
-        width: 50%;
-        margin-top: 10px;
-    }
-    .register{
-
-        height: 480px;
-        margin-top: 10%;
-    }
-    .register-information{
-
-        width: 320px;
-    }
-    #register-information-local{
-
-        width: 260px;
-    }
-    #information{
-        background-color: #FCFFF5;
-        height: 50%;
-    }
-    form > p{
-
-        font-size: 30px;
-        margin-bottom: 20px;
-        margin: 10px;
-    }
-} */
 
 
-@media (max-width: 320px){
+@media (max-width: 540px){
 
     .center-vaccines{
 
@@ -672,12 +630,10 @@ section{
     }
 
     .right{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        
         width: 90%;
-        overflow-x: hidden;
+        height: 400px;
+       
         
     }
     .register{
@@ -734,6 +690,89 @@ section{
     }
     h1{
 
-        fon
+        font-size: 2rem;
     }
 }
+
+
+
+@media (max-width: 890px) {
+
+    .center-vaccines{
+
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .right{
+        
+        width: 90%;
+        height: 50%;
+
+       
+        
+    }
+    .register{
+
+        flex-direction: column;
+        overflow-x: hidden;
+        height: 100%;
+        
+        
+    }
+    section{
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .cadastro{
+        
+        flex-direction: column;
+        
+        
+    }
+    .register-information{
+
+        width: 80%;
+    }
+    #register-information-local{
+
+        width: 80%;
+    }
+    .content{
+
+        overflow-x: hidden;
+    }
+    html, body{
+
+        overflow-x: hidden;
+    }
+    #button-left{
+
+        width: 50%;
+        
+    }
+    .center-vaccines{
+
+        height: 90%
+    }
+    #scroll-vaccines{
+
+        width: 95%;
+    }
+    .roof{
+
+        height: 50px;
+    }
+    .title{
+
+        height: 50px;
+        width: 70%;
+    }
+    h1{
+
+        font-size: 2rem;
+    }
+}
+
