@@ -131,4 +131,4 @@ def qrcode (request):
     usuario.qrcode = f'qrcode/{request.user.username}{usuario.id_usuario}.png'
     usuario.save()
  
-    return redirect('perfil')
+    return redirect('informacoes')

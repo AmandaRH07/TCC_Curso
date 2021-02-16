@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,93 +9,211 @@
     <!-- <link rel="stylesheet" href="../static/css/informacoes.css"> -->
 
     <style>
-    :root {
-    --azul-escuro: #112F41;
-    --azul-piscina-escuro: #068587;
-    --verde-piscina: #4FB99F;
-    --salmao: #ED553B;
-    --branco: #FCFFF5; 
-    --gelo: #E6EBE0;
-    --azul-claro: #3DCCC7;
-    --azul-bebe: #b0fffc;
-    }
+        :root {
+        --azul-escuro: #112F41;
+        --azul-piscina-escuro: #068587;
+        --verde-piscina: #4FB99F;
+        --salmao: #ED553B;
+        --branco: #FCFFF5; 
+        --gelo: #E6EBE0;
+        --azul-claro: #3DCCC7;
+        --azul-bebe: #b0fffc;
+        }
 
-@font-face {
-    font-family: Poppins-Regular;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
-}
+        @font-face {
+            font-family: Poppins-Regular;
+            src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
+        }
 
-@font-face {
-    font-family: Poppins-Semibold;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
-}
+        @font-face {
+            font-family: Poppins-Semibold;
+            src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
+        }
 
-*{
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: Poppins-Regular;
-    padding: 0px;
-}
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Poppins-Regular;
+            padding: 0px;
+        }
 
-body{
-    overflow-x: hidden;
-    background-color: #ddf2eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Poppins-Regular, sans-serif;
-}
+        body{
+            overflow-x: hidden;
+            background-color: #ddf2eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Poppins-Regular, sans-serif;
+        }
 
-main{
-    margin-top: 70px;
-    width: 70%;
-    background-color: #FCFFF5;
+        main{
+            margin-top: 70px;
+            width: 70%;
+            background-color: #FCFFF5;
 
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-.perfil, .cirurgia, .doencas, .sangue, .historico-consulta, .historico-familiar, .vacinas, .medicamentos{
-    border: 1px solid gray;
-    border-radius: 10px;
-    width: 90%;
-    margin-top: 20px;
-    padding: 10px;
-}
+        .perfil, .cirurgia, .doencas, .sangue, .historico-consulta, .historico-familiar, .vacinas, .medicamentos{
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 90%;
+            margin-top: 20px;
+            padding: 10px;
+        }
 
-.perfil img{
-    border-radius: 100%;
-    height: 150px;
-    width: 150px;
-    margin: 20px 0 50px;
-}
+        .perfil img{
+            border-radius: 100%;
+            height: 150px;
+            width: 150px;
+            margin: 20px 0 50px;
+        }
 
-.perfil .imagem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+        .perfil .imagem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
 
-p{
-    font-size: 1rem;
-    font-family: Poppins-Regular;
-}
+        p{
+            font-size: 1rem;
+            font-family: Poppins-Regular;
+        }
 
-h1{
-    font-family: Poppins-Regular;
-    font-size: 1.2rem;
-}
+        h1{
+            font-family: Poppins-Regular;
+            font-size: 1.2rem;
+        }
 
-.pdf img{
-    width: 70px;
-    height: 85px;
-}
+        .pdf img{
+            width: 70px;
+            height: 85px;
+        }
 
-</style>
+        /* .botoes{
+            display: flex;
+            justify-content: wrap;
+            align-items: center;
+        } */
+
+
+        /* POPUP */
+
+        #mais-informacao{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        color: var(--branco);
+        font-size: 2rem;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+
+        padding: 1rem;
+
+        background-color: var(--salmao);
+
+        border-radius: 100%;
+        border: 3px solid var(--salmao);
+        text-decoration: none;
+        }
+
+        #mais-informacao:hover{
+
+        cursor: pointer;
+        color: var(--salmao);
+        background: var(--branco);
+        }
+
+        .start-btn{
+
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: -35px;
+        position: absolute;
+        margin-left: 8px;
+        }
+
+        .close-modal{
+
+        margin-top: 0px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+
+        }
+        .close-modal > button{
+
+        border: none;
+        }
+
+        .center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+
+        }
+        .modal-box{
+
+        top: 50%;
+        opacity: 0;
+        visibility: hidden;
+        background: #FCFFF5;
+        height: 500px;
+        width: 70%;
+        border-radius: 20px;
+        box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+        z-index: 5;
+        }
+        
+        /* .start-btn.show-modal{
+        opacity: 0;
+        visibility: hidden;
+        } */
+
+        .modal-box.show-modal{
+        top: 50%;
+        opacity: 1;
+        visibility: visible;
+        transition: .4s; 
+        }
+
+        .fa-times{
+        text-align: center;
+        position: absolute;
+        background: #ED553B;
+        height: 52px;
+        width: 52px;
+        color: #FCFFF5;
+        font-size: 18px;
+        border-radius: 100%;
+        cursor: pointer;
+        outline: none;
+        margin-top: -10px;
+
+        }
+        .fa-times:hover{
+        font-size: 22px;
+        }
+
+        .fa-times::before{
+
+        display: none;
+        }
+
+    </style>
+    <script src="{% static 'js/popupPerfil.js' %}"></script>
 
 </head>
 <body>
@@ -309,13 +429,31 @@ h1{
             </a> 
         </div>
     
-        <div class="qrcode">
-    
+        <div class="pdf">        
+            <div class="start-btn">
+                <a type="" id="mais-informacao" href="{% url 'qrcode' %}">
+                    <img src="../static/img/icone_qrcode.png" alt="qrcode">
+                </a>
+            </div>
+
         </div>
 
     </div>
-    
+        
     </main>
 
+    
+    {% if dados_user.qrcode %}
+    <div class="center modal-box show-modal">
+        <div class="close-modal">
+            <button id='button_close' class="fa-times">X</button>
+        </div>
+        <div class="form-edit">
+            <img src="/media/{{ dados_user.qrcode }}" width="200px" alt="">
+        </div>
+    </div>
+    {% endif %}
+
+    
 </body>
 </html>
