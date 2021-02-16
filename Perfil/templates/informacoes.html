@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ usuario.nome }}</title>
-    <!-- <link rel="stylesheet" href="../static/css/informacoes.css"> -->
+    <link rel="stylesheet" href="../static/css/informacoes.css">
 
-    <style>
+    <!-- <style>
         :root {
         --azul-escuro: #112F41;
         --azul-piscina-escuro: #068587;
@@ -102,117 +102,7 @@
         } */
 
 
-        /* POPUP */
-
-        #mais-informacao{
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 4rem;
-        height: 4rem;
-        color: var(--branco);
-        font-size: 2rem;
-        font-weight: 500;
-        font-family: "Poppins", sans-serif;
-
-        padding: 1rem;
-
-        background-color: var(--salmao);
-
-        border-radius: 100%;
-        border: 3px solid var(--salmao);
-        text-decoration: none;
-        }
-
-        #mais-informacao:hover{
-
-        cursor: pointer;
-        color: var(--salmao);
-        background: var(--branco);
-        }
-
-        .start-btn{
-
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        margin-top: -35px;
-        position: absolute;
-        margin-left: 8px;
-        }
-
-        .close-modal{
-
-        margin-top: 0px;
-        width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: flex-end;
-
-        }
-        .close-modal > button{
-
-        border: none;
-        }
-
-        .center{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 5;
-
-        }
-        .modal-box{
-
-        top: 50%;
-        opacity: 0;
-        visibility: hidden;
-        background: #FCFFF5;
-        height: 500px;
-        width: 70%;
-        border-radius: 20px;
-        box-shadow: 5px 5px 30px rgba(0,0,0,.2);
-        z-index: 5;
-        }
-        
-        /* .start-btn.show-modal{
-        opacity: 0;
-        visibility: hidden;
-        } */
-
-        .modal-box.show-modal{
-        top: 50%;
-        opacity: 1;
-        visibility: visible;
-        transition: .4s; 
-        }
-
-        .fa-times{
-        text-align: center;
-        position: absolute;
-        background: #ED553B;
-        height: 52px;
-        width: 52px;
-        color: #FCFFF5;
-        font-size: 18px;
-        border-radius: 100%;
-        cursor: pointer;
-        outline: none;
-        margin-top: -10px;
-
-        }
-        .fa-times:hover{
-        font-size: 22px;
-        }
-
-        .fa-times::before{
-
-        display: none;
-        }
-
-    </style>
+    </style> -->
     <script src="{% static 'js/popupPerfil.js' %}"></script>
 
 </head>
@@ -232,66 +122,78 @@
             <p>Gênero: {{ usuario.sexo|title }}</p>
     </div>
     
-    <div class="cirurgia">
-        <h1>CIRURGIAS</h1>
-        {% if cirurgias %}
-        {% for dado in cirurgias %}
-            <p>Cirurgia: {{ dado.cirurgia }}</p>
-            {% if dado.hospital  %}
-                <p>Local: {{ dado.hospital }}</p>
-            {% endif %}
-            <p>Data: {{ dado.data_cirurgia }}</p>
-            {% if dado.infos_extras  %}
-                <p>Informações extras: {{ dado.infos_extras }}</p>
+    <div class="sangue">
+        <h1>TIPO SANGUÍNEO</h1>
+        {% if sangue %}   
+            {% for dado in sangue %}
+                <p>Tipo Sanguíneo:
+                    {% if dado.tipo_sanguineo == 'aPositivo' %}
+                        A+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'aNegativo' %}
+                        A-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'bPositivo' %}
+                        B+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'bNegativo' %}
+                        B-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'abPositivo' %}
+                        AB+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'abNegativo' %}
+                        AB-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'oPositivo' %}
+                        O+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'oNegativo' %}
+                        O-
+                    {% endif %}
+                </p>
+
+                <p>Doador: 
+                    {% if dado.doador %}
+                        Sim
+                    {% else %}
+                        Não
+                    {% endif %}
+                </p>
+                {% if dado.historico_doacoes  %}
+                    <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
                 {% endif %}
-        {% endfor %}
+            {% endfor %}
         {% else %}
-            <p>Não há cirurgias cadastradas.</p>
+            <p>Não há tipo sanguíneo cadastrado.</p>
         {% endif %}
     </div>
 
-    <div class="doencas">
-        <h1>DOENÇAS EXISTENTES</h1>
-        {% if doencas_existentes %}
+    <div class="vacinas">
+        <h1>VACINAS</h1>
+        {% if vacinas %}
         
-        {% for dado in doencas_existentes %}
-            <p>Doença: {{ dado.doenca }}</p>
-            <p>Ano do diagnóstico: {{ dado.ano_diagnostico }}</p>
-            {% if dado.exame  %}
-                <p>Exames: {{ dado.exame }}</p>
-                {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>Não há doenças cadastradas.</p>
-    {% endif %}
-
-    </div>
-
-    <div class="historico-consulta">
-        <h1>HISTÓRICO DE CONSULTAS</h1>
-        {% if historico_consultas %}
-      
-        {% for dado in historico_consultas %}
-            <p>Lugar: {{ dado.lugar }}</p>
-            <p>Data: {{ dado.data }}</p>
-            {% if dado.receita  %}
-                <p>Receita:
-                    <a target="_blank" href="/media/{{ dado.receita }}"> Ver receita</a>
+            {% for dado in vacinas %}
+                <p>Vacina: {{ dado.tipo_vacina }}</p>
+                <p>Data da vacinação: {{ dado.data_vacinacao }}</p>
+                <p>
+                    {% if dado.dose  %}
+                        Dose: {{ dado.dose }}
+                    {% endif %}
+                    {% if dado.lote  %}
+                        Lote: {{ dado.lote }}
+                    {% endif %}
                 </p>
-            {% endif %}
-            {% if dado.atestado  %}
-                <p>Atestado: 
-                    <a target="_blank" href="/media/{{ dado.atestado }}"> Ver atestado</a>
-                </p>
-            {% endif %}
-            <br>
-        {% endfor %}
-    {% else %}
-        <p>Não há consultas cadastradas.</p>
-    {% endif %}
-
+                <br>
+            {% endfor %}
+        {% else %}
+            <p>Não há vacinas cadastradas.</p>
+        {% endif %}
     </div>
-
+    
     <div class="historico-familiar">
         <h1>HISTÓRICO FAMILIAR</h1>
         {% if historico_familiar %}
@@ -317,12 +219,61 @@
             </p>
             <br>
         {% endfor %}
+        {% else %}
+            <p>Não há histórico familiar cadastrado.</p>
+        {% endif %}
+
+    </div> 
+
+    <div class="historico-consulta">
+        <h1>HISTÓRICO DE CONSULTAS</h1>
+        {% if historico_consultas %}
+      
+        {% for dado in historico_consultas %}
+            <p>Lugar: {{ dado.lugar }}</p>
+            <p>Data: {{ dado.data }}</p>
+            <!-- {% if dado.receita  %}
+                <p>Receita:
+                    <a target="_blank" href="/media/{{ dado.receita }}"> Ver receita</a>
+                </p>
+            {% endif %}
+            {% if dado.atestado  %}
+                <p>Atestado: 
+                    <a target="_blank" href="/media/{{ dado.atestado }}"> Ver atestado</a>
+                </p>
+            {% endif %} -->
+            <br>
+        {% endfor %}
+        {% else %}
+            <p>Não há consultas cadastradas.</p>
+        {% endif %}
+
+    </div>
+
+    <div class="doencas">
+        <h1>DOENÇAS EXISTENTES</h1>
+        {% if doencas_existentes %}
+        
+        {% for dado in doencas_existentes %}
+            <p>Doença: {{ dado.doenca }}</p>
+            <p>Ano do diagnóstico: {{ dado.ano_diagnostico }}</p>
+            {% if dado.exame  %}
+                <p>Exames: {{ dado.exame }}</p>
+            {% endif %}
+            <br>
+        {% endfor %}
     {% else %}
-        <p>Não há histórico familiar cadastrado.</p>
+        <p>Não há doenças cadastradas.</p>
     {% endif %}
 
     </div>
+
+
     
+
+
+
+
     <div class="medicamentos">
         <h1>MEDICAMENTOS</h1>
             {% if medicamentos %}
@@ -332,15 +283,18 @@
             {% if dado.funcao  %}
                     <p>Função: {{ dado.funcao }}</p>
             {% endif %}
-            {% if dado.data_inicio  %}
-                <p>Data de início: {{ dado.data_inicio }}</p>
-            {% endif %}
-            {% if dado.data_final  %}
-                <p>Data final: {{ dado.data_final }}</p>
-            {% endif %}
+            <p>
+                {% if dado.data_inicio  %}
+                    Data de início: {{ dado.data_inicio|date:'d/m/Y' }}
+                {% endif %}
+                {% if dado.data_final  %}
+                    Data final: {{ dado.data_final|date:'d/m/Y' }}
+                {% endif %}
+            </p>
             {% if dado.infos_extras  %}
                 <p>Informações extras: {{ dado.infos_extras }}</p>
             {% endif %}
+            <br>
         {% endfor %}
         {% else %}
             <p>Não há medicamentos cadastrados.</p>
@@ -348,83 +302,29 @@
 
     </div>
 
-    <div class="sangue">
-        <h1>TIPO SANGUÍNEO</h1>
-        {% if sangue %}
-       
-        {% for dado in sangue %}
-            <p>Tipo Sanguíneo:
-                {% if dado.tipo_sanguineo == 'aPositivo' %}
-                    A+
-                {% endif %}
-                {% if dado.tipo_sanguineo == 'aNegativo' %}
-                    A-
-                {% endif %}
-
-                {% if dado.tipo_sanguineo == 'bPositivo' %}
-                    B+
-                {% endif %}
-                {% if dado.tipo_sanguineo == 'bNegativo' %}
-                    B-
-                {% endif %}
-
-                {% if dado.tipo_sanguineo == 'abPositivo' %}
-                    AB+
-                {% endif %}
-                {% if dado.tipo_sanguineo == 'abNegativo' %}
-                    AB-
-                {% endif %}
-
-                {% if dado.tipo_sanguineo == 'oPositivo' %}
-                    O+
-                {% endif %}
-                {% if dado.tipo_sanguineo == 'oNegativo' %}
-                    O-
-                {% endif %}
-            </p>
-
-            <p>Doador: 
-                {% if dado.doador %}
-                    Sim
-                {% else %}
-                    Não
-                {% endif %}
-            </p>
-            {% if dado.historico_doacoes  %}
-                <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
+    <div class="cirurgia">
+        <h1>CIRURGIAS</h1>
+        {% if cirurgias %}
+        {% for dado in cirurgias %}
+            <p>Cirurgia: {{ dado.cirurgia }}</p>
+            {% if dado.hospital  %}
+                <p>Local: {{ dado.hospital }}</p>
             {% endif %}
+            <p>Data: {{ dado.data_cirurgia }}</p>
+            {% if dado.infos_extras  %}
+                <p>Informações extras: {{ dado.infos_extras }}</p>
+            {% endif %}
+            <br>
         {% endfor %}
-    {% else %}
-        <p>Não há tipo sanguíneo cadastrado.</p>
-    {% endif %}
-    </div>
-    
-    <div class="vacinas">
-        <h1>VACINAS</h1>
-        {% if vacinas %}
-        
-            {% for dado in vacinas %}
-                <p>Vacina: {{ dado.tipo_vacina }}</p>
-                <p>Data da vacinação: {{ dado.data_vacinacao }}</p>
-                {% if dado.dose  %}
-                    <p>Dose: {{ dado.dose }}</p>
-                {% endif %}
-                {% if dado.lote  %}
-                    <p>Lote: {{ dado.lote }}</p>
-                {% endif %}
-                {% if dado.local  %}
-                    <p>Local: {{ dado.local }}</p>
-                {% endif %}
-                <br>
-            {% endfor %}
         {% else %}
-            <p>Não há vacinas cadastradas.</p>
+            <p>Não há cirurgias cadastradas.</p>
         {% endif %}
     </div>
 
     <div class="botoes">
         <div class="pdf">
-            <a href="{% url 'pdf_view' usuario.hash_user %}" target="_blank"> 
+            <!-- href="{% url 'pdf_view' usuario.hash_user %}"  -->
+            <a onclick="gerarPDF()" target="_blank"> 
                 <img src="../static/img/icone_pdf.png" alt="PDF">
             </a> 
         </div>
@@ -435,9 +335,7 @@
                     <img src="../static/img/icone_qrcode.png" alt="qrcode">
                 </a>
             </div>
-
         </div>
-
     </div>
         
     </main>
@@ -454,6 +352,6 @@
     </div>
     {% endif %}
 
-    
+    <script src="{% static 'js/printPDF.js' %}"></script>
 </body>
 </html>

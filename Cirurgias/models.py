@@ -8,3 +8,6 @@ class Cirurgias(models.Model):
     data_cirurgia = models.DateField('Data da Cirurgia')
     infos_extras = models.TextField('Informações Extras', blank=True)
     fk_usuario_cirurgias = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+
+    class Meta:
+        ordering = ("-data_cirurgia",)

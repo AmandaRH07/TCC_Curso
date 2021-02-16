@@ -55,6 +55,19 @@ main{
     padding: 10px;
 }
 
+.cirurgia {
+    height: 480px;
+}
+.doencas {
+    height: 250px;
+}
+.historico-consulta {
+    height: 315px;
+}
+.medicamentos {
+    height: 420px;
+}
+
 .perfil img{
     border-radius: 100%;
     height: 150px;

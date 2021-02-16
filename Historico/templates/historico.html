@@ -122,7 +122,7 @@
                             {% csrf_token %}
                             <input id="edit_information" class="active" type="text" required
                                 placeholder="Nome da doença:" name="doenca_hereditarias">
-                            <select class="active" name="grau_parentesco" aria-placeholder="Grau de parentesco">
+                            <select class="active" name="grau_parentesco" aria-placeholder="Grau de parentesco" required>
                                 <option selected disabled value=""> Grau de parentesco</option>
                                 <option value="primeiro_grau">Primeiro Grau</option>
                                 <option value="segundo_grau">Segundo Grau</option>

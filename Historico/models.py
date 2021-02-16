@@ -11,7 +11,7 @@ class HistoricoFamiliar(models.Model):
     )
 
     id_historico_familiar = models.AutoField(primary_key=True)
-    doenca_hereditarias = models.TextField("Doenças Hereditarias", blank=True)
+    doenca_hereditarias = models.TextField("Doenças Hereditarias")
     grau_parentesco = models.CharField("Grau Parentesco", choices=GRAU_PARENTESCO, max_length=13)
     fk_usuario_historico_familiar = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
 
@@ -29,3 +29,6 @@ class HistoricoConsultas(models.Model):
     receita = models.FileField("Receita", blank=True, upload_to='receitas')
     atestado = models.FileField("Atestado", blank=True, upload_to='atestados')
     fk_usuario_historico_consulta = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+
+    class Meta:
+        ordering = ("-data",)

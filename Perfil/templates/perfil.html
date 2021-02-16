@@ -41,7 +41,7 @@
                 <input id="edit_information" name="nome" type="text" placeholder="Nome completo" required
                     value="{{ dados_user.nome }}" />
                 <input id="edit_information" name="usuario" type="text" placeholder="Username" required
-                    value="{{ user }}" />
+                    value="{{ user }}" readonly="readonly" />
                 <input id="edit_information" name="nascimento" type="date" placeholder="Data nascimento" required
                     value="{{ dados_user.nascimento|date:'Y-m-d' }}" />
             </div>
