@@ -1,12 +1,12 @@
 from django.db import models
 from CadastroDePessoa.models import Usuario
 
-class Banco_Medicamento_Anvisa(models.Model):
-    id_anvisa = models.AutoField(primary_key=True)
-    nome = models.TextField("Nome Medicamento")
+# class Banco_Medicamento_Anvisa(models.Model):
+#     id_anvisa = models.AutoField(primary_key=True)
+#     nome = models.TextField("Nome Medicamento")
 
-    def __str__(self):
-        return self.nome
+#     def __str__(self):
+#         return self.nome
 
 class Medicamentos(models.Model):
     id_medicamentos = models.AutoField(primary_key=True) 
@@ -19,3 +19,6 @@ class Medicamentos(models.Model):
     infos_extras = models.TextField("Informações Extras", blank=True)
 
     fk_user_medicacao = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+
+    class Meta:
+        ordering = ("-data_inicio",)

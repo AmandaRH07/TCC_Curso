@@ -1,99 +1,109 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ usuario.nome }}</title>
-    <!-- <link rel="stylesheet" href="../static/css/informacoes.css"> -->
+    <link rel="stylesheet" href="../static/css/informacoes.css">
 
-    <style>
-    :root {
-    --azul-escuro: #112F41;
-    --azul-piscina-escuro: #068587;
-    --verde-piscina: #4FB99F;
-    --salmao: #ED553B;
-    --branco: #FCFFF5; 
-    --gelo: #E6EBE0;
-    --azul-claro: #3DCCC7;
-    --azul-bebe: #b0fffc;
-    }
+    <!-- <style>
+        :root {
+        --azul-escuro: #112F41;
+        --azul-piscina-escuro: #068587;
+        --verde-piscina: #4FB99F;
+        --salmao: #ED553B;
+        --branco: #FCFFF5; 
+        --gelo: #E6EBE0;
+        --azul-claro: #3DCCC7;
+        --azul-bebe: #b0fffc;
+        }
 
-@font-face {
-    font-family: Poppins-Regular;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
-}
+        @font-face {
+            font-family: Poppins-Regular;
+            src: local(Poppins), url(/static/fonts/Poppins/Poppins-Regular.ttf);
+        }
 
-@font-face {
-    font-family: Poppins-Semibold;
-    src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
-}
+        @font-face {
+            font-family: Poppins-Semibold;
+            src: local(Poppins), url(/static/fonts/Poppins/Poppins-SemiBold.ttf);
+        }
 
-*{
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: Poppins-Regular;
-    padding: 0px;
-}
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Poppins-Regular;
+            padding: 0px;
+        }
 
-body{
-    overflow-x: hidden;
-    background-color: #ddf2eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Poppins-Regular, sans-serif;
-}
+        body{
+            overflow-x: hidden;
+            background-color: #ddf2eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Poppins-Regular, sans-serif;
+        }
 
-main{
-    margin-top: 70px;
-    width: 70%;
-    background-color: #FCFFF5;
+        main{
+            margin-top: 70px;
+            width: 70%;
+            background-color: #FCFFF5;
 
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-.perfil, .cirurgia, .doencas, .sangue, .historico-consulta, .historico-familiar, .vacinas, .medicamentos{
-    border: 1px solid gray;
-    border-radius: 10px;
-    width: 90%;
-    margin-top: 20px;
-    padding: 10px;
-}
+        .perfil, .cirurgia, .doencas, .sangue, .historico-consulta, .historico-familiar, .vacinas, .medicamentos{
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 90%;
+            margin-top: 20px;
+            padding: 10px;
+        }
 
-.perfil img{
-    border-radius: 100%;
-    height: 150px;
-    width: 150px;
-    margin: 20px 0 50px;
-}
+        .perfil img{
+            border-radius: 100%;
+            height: 150px;
+            width: 150px;
+            margin: 20px 0 50px;
+        }
 
-.perfil .imagem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+        .perfil .imagem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
 
-p{
-    font-size: 1rem;
-    font-family: Poppins-Regular;
-}
+        p{
+            font-size: 1rem;
+            font-family: Poppins-Regular;
+        }
 
-h1{
-    font-family: Poppins-Regular;
-    font-size: 1.2rem;
-}
+        h1{
+            font-family: Poppins-Regular;
+            font-size: 1.2rem;
+        }
 
-.pdf img{
-    width: 70px;
-    height: 85px;
-}
+        .pdf img{
+            width: 70px;
+            height: 85px;
+        }
 
-</style>
+        /* .botoes{
+            display: flex;
+            justify-content: wrap;
+            align-items: center;
+        } */
+
+
+    </style> -->
+    <script src="{% static 'js/popupPerfil.js' %}"></script>
 
 </head>
 <body>
@@ -101,33 +111,143 @@ h1{
     <main>
 
     <div class="perfil">
-        {% if usuario %}
+        {% if usuario.foto %}
             <div class="imagem">
-                <img src="../media/{{ usuario.foto }}" alt="">
+                <img src="/media/{{ usuario.foto }}" alt="">
             </div>
+        {% endif %}
             
             <p>Nome: {{ usuario.nome }}</p>
             <p>Data de Nascimento: {{ usuario.nascimento }}</p>
-            <p>Gênero: {{ usuario.sexo }}</p>
+            <p>Gênero: {{ usuario.sexo|title }}</p>
+    </div>
+    
+    <div class="sangue">
+        <h1>TIPO SANGUÍNEO</h1>
+        {% if sangue %}   
+            {% for dado in sangue %}
+                <p>Tipo Sanguíneo:
+                    {% if dado.tipo_sanguineo == 'aPositivo' %}
+                        A+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'aNegativo' %}
+                        A-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'bPositivo' %}
+                        B+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'bNegativo' %}
+                        B-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'abPositivo' %}
+                        AB+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'abNegativo' %}
+                        AB-
+                    {% endif %}
+
+                    {% if dado.tipo_sanguineo == 'oPositivo' %}
+                        O+
+                    {% endif %}
+                    {% if dado.tipo_sanguineo == 'oNegativo' %}
+                        O-
+                    {% endif %}
+                </p>
+
+                <p>Doador: 
+                    {% if dado.doador %}
+                        Sim
+                    {% else %}
+                        Não
+                    {% endif %}
+                </p>
+                {% if dado.historico_doacoes  %}
+                    <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>Não há tipo sanguíneo cadastrado.</p>
+        {% endif %}
+    </div>
+
+    <div class="vacinas">
+        <h1>VACINAS</h1>
+        {% if vacinas %}
+        
+            {% for dado in vacinas %}
+                <p>Vacina: {{ dado.tipo_vacina }}</p>
+                <p>Data da vacinação: {{ dado.data_vacinacao }}</p>
+                <p>
+                    {% if dado.dose  %}
+                        Dose: {{ dado.dose }}
+                    {% endif %}
+                    {% if dado.lote  %}
+                        Lote: {{ dado.lote }}
+                    {% endif %}
+                </p>
+                <br>
+            {% endfor %}
+        {% else %}
+            <p>Não há vacinas cadastradas.</p>
         {% endif %}
     </div>
     
-    <div class="cirurgia">
-        <h1>CIRURGIAS</h1>
-        {% if cirurgias %}
-        {% for dado in cirurgias %}
-            <p>Cirurgia: {{ dado.cirurgia }}</p>
-            {% if dado.hospital  %}
-                <p>Local: {{ dado.hospital }}</p>
-            {% endif %}
-            <p>Data: {{ dado.data_cirurgia }}</p>
-            {% if dado.infos_extras  %}
-                <p>Informações extras: {{ dado.infos_extras }}</p>
+    <div class="historico-familiar">
+        <h1>HISTÓRICO FAMILIAR</h1>
+        {% if historico_familiar %}
+        
+        {% for dado in historico_familiar %}
+            <p>Doença hereditária: {{ dado.doenca_hereditarias }}</p>
+            <p>Grau parentesco:
+                {% if dado.grau_parentesco == 'primeiro_grau' %}
+                    Segundo Grau
                 {% endif %}
+
+                {% if dado.grau_parentesco == 'segundo_grau' %}
+                    Segundo Grau
+                {% endif %}
+
+                {% if dado.grau_parentesco == 'Terceiro_grau' %}
+                    Terceiro Grau
+                {% endif %}
+
+                {% if dado.grau_parentesco == 'outros' %}
+                    Outros
+                {% endif %}
+            </p>
+            <br>
         {% endfor %}
         {% else %}
-            <p>Não há cirurgias cadastradas.</p>
+            <p>Não há histórico familiar cadastrado.</p>
         {% endif %}
+
+    </div> 
+
+    <div class="historico-consulta">
+        <h1>HISTÓRICO DE CONSULTAS</h1>
+        {% if historico_consultas %}
+      
+        {% for dado in historico_consultas %}
+            <p>Lugar: {{ dado.lugar }}</p>
+            <p>Data: {{ dado.data }}</p>
+            <!-- {% if dado.receita  %}
+                <p>Receita:
+                    <a target="_blank" href="/media/{{ dado.receita }}"> Ver receita</a>
+                </p>
+            {% endif %}
+            {% if dado.atestado  %}
+                <p>Atestado: 
+                    <a target="_blank" href="/media/{{ dado.atestado }}"> Ver atestado</a>
+                </p>
+            {% endif %} -->
+            <br>
+        {% endfor %}
+        {% else %}
+            <p>Não há consultas cadastradas.</p>
+        {% endif %}
+
     </div>
 
     <div class="doencas">
@@ -139,7 +259,8 @@ h1{
             <p>Ano do diagnóstico: {{ dado.ano_diagnostico }}</p>
             {% if dado.exame  %}
                 <p>Exames: {{ dado.exame }}</p>
-                {% endif %}
+            {% endif %}
+            <br>
         {% endfor %}
     {% else %}
         <p>Não há doenças cadastradas.</p>
@@ -147,40 +268,12 @@ h1{
 
     </div>
 
-    <div class="historico-consulta">
-        <h1>HISTÓRICO DE CONSULTAS</h1>
-        {% if historico_consultas %}
-      
-        {% for dado in historico_consultas %}
-            <p>Lugar: {{ dado.lugar }}</p>
-            <p>Data: {{ dado.data }}</p>
-            {% if dado.receita  %}
-                <p>Receita: {{ dado.receita }}</p>
-            {% endif %}
-            {% if dado.atestado  %}
-                <p>Atestado: {{ dado.atestado }}</p>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>Não há consultas cadastradas.</p>
-    {% endif %}
 
-    </div>
-
-    <div class="historico-familiar">
-        <h1>HISTÓRICO FAMILIAR</h1>
-        {% if historico_familiar %}
-        
-        {% for dado in historico_familiar %}
-            <p>Doença hereditária: {{ dado.doenca_hereditarias }}</p>
-            <p>Grau parentesco: {{ dado.grau_parentesco }}</p>
-        {% endfor %}
-    {% else %}
-        <p>Não há histórico familiar cadastrado.</p>
-    {% endif %}
-
-    </div>
     
+
+
+
+
     <div class="medicamentos">
         <h1>MEDICAMENTOS</h1>
             {% if medicamentos %}
@@ -190,15 +283,18 @@ h1{
             {% if dado.funcao  %}
                     <p>Função: {{ dado.funcao }}</p>
             {% endif %}
-            {% if dado.data_inicio  %}
-                <p>Data de início: {{ dado.data_inicio }}</p>
-            {% endif %}
-            {% if dado.data_final  %}
-            <p>Data de início: {{ dado.data_final }}</p>
-            {% endif %}
+            <p>
+                {% if dado.data_inicio  %}
+                    Data de início: {{ dado.data_inicio|date:'d/m/Y' }}
+                {% endif %}
+                {% if dado.data_final  %}
+                    Data final: {{ dado.data_final|date:'d/m/Y' }}
+                {% endif %}
+            </p>
             {% if dado.infos_extras  %}
-            <p>Data de início: {{ dado.infos_extras }}</p>
+                <p>Informações extras: {{ dado.infos_extras }}</p>
             {% endif %}
+            <br>
         {% endfor %}
         {% else %}
             <p>Não há medicamentos cadastrados.</p>
@@ -206,59 +302,56 @@ h1{
 
     </div>
 
-    <div class="sangue">
-        <h1>TIPO SANGUÍNEO</h1>
-        {% if sangue %}
-       
-        {% for dado in sangue %}
-            <p>Tipo Sanguíneo: {{ dado.tipo_sanguineo }}</p>
-            <p>Doador: {{ dado.doador }}</p>
-            {% if dado.historico_doacoes  %}
-                <p>Histórico de doações: {{ dado.historico_doacoes }}</p>
+    <div class="cirurgia">
+        <h1>CIRURGIAS</h1>
+        {% if cirurgias %}
+        {% for dado in cirurgias %}
+            <p>Cirurgia: {{ dado.cirurgia }}</p>
+            {% if dado.hospital  %}
+                <p>Local: {{ dado.hospital }}</p>
             {% endif %}
+            <p>Data: {{ dado.data_cirurgia }}</p>
+            {% if dado.infos_extras  %}
+                <p>Informações extras: {{ dado.infos_extras }}</p>
+            {% endif %}
+            <br>
         {% endfor %}
-    {% else %}
-        <p>Não há tipo sanguíneo cadastrado.</p>
-    {% endif %}
-    </div>
-    
-    <div class="vacinas">
-        <h1>VACINAS</h1>
-        {% if vacinas %}
-        
-            {% for dado in vacinas %}
-                <p>Vacina: {{ dado.tipo_vacina }}</p>
-                <p>Data vacinação: {{ dado.data_vacinacao }}</p>
-                {% if dado.dose  %}
-                    <p>Dose: {{ dado.dose }}</p>
-                {% endif %}
-                {% if dado.lote  %}
-                    <p>Lote: {{ dado.lote }}</p>
-                {% endif %}
-                {% if dado.local  %}
-                    <p>Local: {{ dado.local }}</p>
-                {% endif %}
-            {% endfor %}
         {% else %}
-            <p>Não há vacinas cadastradas.</p>
+            <p>Não há cirurgias cadastradas.</p>
         {% endif %}
     </div>
 
     <div class="botoes">
         <div class="pdf">
-            <a href="{% url 'pdf_view' usuario.hash_user %}" target="_blank"> 
+            <!-- href="{% url 'pdf_view' usuario.hash_user %}"  -->
+            <a onclick="gerarPDF()" target="_blank"> 
                 <img src="../static/img/icone_pdf.png" alt="PDF">
             </a> 
         </div>
     
-        <div class="qrcode">
-    
+        <div class="pdf">        
+            <div class="start-btn">
+                <a type="" id="mais-informacao" href="{% url 'qrcode' %}">
+                    <img src="../static/img/icone_qrcode.png" alt="qrcode">
+                </a>
+            </div>
         </div>
-
     </div>
-    
+        
     </main>
+
     
-    
+    {% if dados_user.qrcode %}
+    <div class="center modal-box show-modal">
+        <div class="close-modal">
+            <button id='button_close' class="fa-times">X</button>
+        </div>
+        <div class="form-edit">
+            <img src="/media/{{ dados_user.qrcode }}" width="200px" alt="">
+        </div>
+    </div>
+    {% endif %}
+
+    <script src="{% static 'js/printPDF.js' %}"></script>
 </body>
 </html>

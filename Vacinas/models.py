@@ -9,3 +9,6 @@ class Vacinas(models.Model):
     lote = models.TextField("Lote da Vacina", blank=True)
     local = models.TextField("Local da Vacinação", blank=True)
     fk_usuario_vacinas = models.ForeignKey(Usuario, on_delete=models.CASCADE, default="")
+
+    class Meta:
+        ordering = ("-data_vacinacao",)

@@ -12,6 +12,10 @@ def sangue(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user.id)
     tipo_sanguineo = TipoSanguineo.objects.filter(fk_usuario_tipo_sanguineo=usuario.id_usuario)
     
+    if tipo_sanguineo:
+        tipo_sanguineo = tipo_sanguineo[0]
+
+
     if request.method == 'POST':
         form = TipoSanguineoForm(request.POST)
         if form.is_valid():
