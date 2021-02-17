@@ -32,15 +32,11 @@ body{
 }
 
 main{
-    display: flex; 
-    position: relative;
-}
-
-.content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* Style dos tópicos */
@@ -51,14 +47,11 @@ main{
     width: 70%;
     z-index: 90;
     margin-left: 5%;
+    margin-bottom: 50px;
 }
 
 .box2{
-    height: 600px;
-}
-
-.box1{
-    margin-bottom: 50px;
+    height: 400px;
 }
 
 form{
@@ -83,22 +76,22 @@ form{
     font-size: 40px;
 }
 
-#title-2{
-    
-}
 
 /* Style dos conteúdos das boxes */
 .options{
     background-color: var(--verde-piscina);
     width: 100%;
+    height: 100%;
 
     border-radius: 30px;
-    margin-top: 5%;
+    margin-top: 30px;
 }
 
-.box1 .options{
+.options-content{
+    width: 100%;
     display: grid;
-    height: 100%;
+    height: 80%;
+    align-items: center;
 }
 
 .box2 .options{
@@ -106,7 +99,6 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 35px;
 }
 
 .box2 .title{
@@ -173,6 +165,8 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 200px;
+    height: 210px;
 }
 
 /* Style dos botões em geral */
@@ -255,7 +249,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 @keyframes movedark-wave{
     from{
         transform: translateX(-2500px)
-    }
+    } 
 }
 
 .light-wave {
@@ -271,12 +265,25 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 @media screen and (max-width: 600px){
     .title .text{
-        /* color: var(--azul-escuro);
-        background-color: var(--branco);
-        margin-top: 20px;
-        text-align: center;
-        height: 70px; */
         font-size: 3rem;
+    }
+
+}
+
+@media screen and (min-width: 750px){
+
+    .box2-content{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box2{
+        height: 100%;
+    }
+
+    .image{
+        width: 100px;
+        height: 110px;
     }
 
 }

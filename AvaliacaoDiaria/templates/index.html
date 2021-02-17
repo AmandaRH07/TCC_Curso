@@ -11,12 +11,12 @@
     <div class="title">
         <p class="title-text"> Como você está se sentindo hoje?</p>
     </div>
-
+ 
 </header>
 
 <main class="content">
 
-    <form action="{% url 'index' %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'index' %}" method="POST">
         {% csrf_token %}
         <div class="box1">
             <div class="box1-content">
@@ -78,35 +78,22 @@
 
     <div class="box2">
 
-        <p class="subtitle">Últimas avalições</p>
-        <!-- <div class="box2-first-subtitle">
-            <p class="text3" id="text-atual">Semana Atual</p>
-        </div>
+        <p class="subtitle">Últimas avaliações</p>
 
-        <div class="box2-second-subtitle">
-            <p class="text3" id="text-passada">Semana Passada</p>
-        </div> -->
-
-        <div class="box2-container">
-            <div class="box2-content">
-                <!-- aqui a gente pode tentar por um for com o python pra cada dia da semana -->
-
-                <div class="semana-atual">
-                    {% for dado in dados_avaliacao_diaria %}
-                        <div class="week">
-                            <div class="days" id="dom">
-                                <!-- <label for="dom">DOM</label> -->
-                                <p>{{ dado.data|date:'d-m-Y' }}</p>
-                                <span>{{ dado.sintomas }}</span>
-                                <span>{{ dado.observacoes }}</span>
-                                <span>{{ dado.outro }}</span>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-
-                </div>
+        <div id= "history-content" class="scroll">
+            {% for dado in dados_avaliacao_diaria %}
+            <div id="card" class="scroll-card">
+               
+                    <p>{{ dado.data|date:'d-m-Y' }}</p>
+                    <h3>Sintomas:</h3>
+                    <span>{{ dado.sintomas }}</span>
+                    <h3>Observações:</h3>
+                    <span>{{ dado.observacoes }}</span>
+                    <h3>Outros sintomas:</h3>
+                    <span>{{ dado.outro }}</span>
+                
             </div>
+            {% endfor %}
         </div>
     </div>
 </main>
