@@ -9,6 +9,7 @@ from .models import HistoricoConsultas, HistoricoFamiliar, DoencaCronica
 
 @login_required(redirect_field_name='index_login')
 def historico_consultas(request):
+    print("teste")
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
 
     dados_historico = HistoricoConsultas.objects.filter(
