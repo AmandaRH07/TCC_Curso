@@ -222,13 +222,12 @@
         <div class="pdf">
             <!-- href="{% url 'pdf_view' usuario.hash_user %}"  -->
             <a class="btn" onclick="gerarPDF()" target="_blank"> 
-                <img src="../static/img/icone_pdf.png" alt="PDF">
+                <img src="../static/img/icone_pdf.png">
             </a> 
             <div >
                 <div class="start-btn">
                     <a class="btn" type="" id="mais-informacao" href="{% url 'qrcode' %}">
-                        <a class="btn" type="" id="mais-informacao" href="{% url 'qrcode' %}">
-                        <img src="../static/img/icone_qrcode.png" alt="qrcode">
+                        <img src="../static/img/icone_qrcode.png">
                     </a> 
                 </div>
             </div>
@@ -247,9 +246,6 @@
         </div>
     </div>
   
-
-    
-
     <script src="{% static 'js/printPDF.js' %}"></script>
     <script src="{% static 'js/popupPerfil.js' %}"></script>
 </body>
