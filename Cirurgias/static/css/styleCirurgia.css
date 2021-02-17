@@ -110,6 +110,7 @@ section {
     width: 90%;
     
     display: flex;
+    flex-direction: row;
     justify-content: center;
     justify-content: space-between;
 }
@@ -141,23 +142,16 @@ section {
     color: var(--salmao);
 }
 
-.second-card {
-    background-color: var(--azul-piscina-escuro);
-} 
 
-.second-card h1 {
-    font-weight: 500;
-    color: var(--branco);
-    padding: 20px 20px;
-}
+#scroll{
 
-.scroll{
+    overflow-x:  scroll;
+    overflow-y: hidden;
 
-    overflow-y:  scroll;
     
 }
 
-.scroll::-webkit-scrollbar{
+#scroll::-webkit-scrollbar{
 
     width: 18px;
     background: #FCFFF5;
@@ -165,84 +159,92 @@ section {
     
 }
 
-.scroll::-webkit-scrollbar-thumb{
+#scroll::-webkit-scrollbar-thumb{
+    background: #ED553B;
+    border-radius: 20px;
+    width: 16px;
+}
+
+#scroll-card{
+
+    overflow-y:  scroll;
+    overflow-x: hidden;
+    
+}
+
+#scroll-card::-webkit-scrollbar{
+
+    width: 18px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+#scroll-card::-webkit-scrollbar-thumb{
     background: #ED553B;
     border-radius: 20px;
     width: 16px;
 }
 
 
-#history-content {
+
+
+.history-content {
     background-color: var(--azul-escuro);
     width: 80%;
     min-height: 30rem;
-
     border-radius: 20px;
-
     margin-top: 5rem;
     display: flex;
     align-items: center;
     overflow: hidden;
     overflow-x: scroll;
+    
 }
 
-#history-content .card a{
+.history-content .card a{
 
     text-decoration: none;
 }
 
-#history-content .card {
+.history-content .card {
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     position: relative;
     background-color: var(--branco);
-
     height: 280px;
     width: 200px;
     border-radius: 10px;
-
     margin: 10px;
     margin-left: 30px;
     text-align: center;
     min-width: 200px;
-    
-    
 
 }
 
-#history-content .card h2 {
+.history-content .card h2 {
+    margin-top: 50px;
     color: var(--azul-piscina-escuro);
     font-weight: 500;
     font-size: 2.3rem;
 }
 
 
-#history-content .card h3 {
+.history-content .card h3 {
     margin-top: .5rem;
     font-weight: 600;
     color: var(--verde-piscina);
 }
 
 
-#history-content .card span {
+.history-content .card span {
     font-weight: 600;
     color: var(--verde-piscina);
     padding: 0 1rem;
-    text-align: justify;
+    text-align: center;
 }
-
-@media (max-width: 768px){
-
-    #history-content{
-
-        /* di */
-    }
-}
-
-
 
 /* POPUP */
 
@@ -279,7 +281,6 @@ section {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-top: -240px;
     position: absolute;
     margin-left: 8px;
 }
@@ -467,4 +468,51 @@ section {
 
     background-color: var(--branco);
     color: var(--azul-escuro);
+}
+
+/* FIM POPUP */
+
+@media (max-width: 700px){
+
+    .primary-card{
+
+        width: 90%;
+    }
+    .input-content{
+
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-content > input{
+
+        width: 90%;
+    }
+    .title-container{
+
+        height: 5rem;
+        font-size: 3rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .history-content{
+
+        display: block;
+        
+        height: 50rem;
+    }
+    .history-content .card{
+
+        width: 80%;
+     
+        margin-left: 10%;
+    }
+    #scroll{
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+
 }
