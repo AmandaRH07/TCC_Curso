@@ -29,15 +29,6 @@ body {
     
 } */
 
-main{
-
-    background-color: var(--azul-piscina-escuro);
-    width: 97%;
-    height: 920px;
-    border-radius: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-}
 
 :root {
     --azul-escuro: #112F41;
@@ -61,8 +52,12 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--azul-escuro);
+
     width: 50%;
     height: 9rem;
+    border-radius: 0 0 20px 20px;
+
     font-weight: 600;
     font-size: 4rem;
     color: var(--branco);
@@ -85,7 +80,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80rem;
+    width: 50%;
     height: 8rem;
     border-radius: 20px;
     min-height: 29rem;
@@ -153,7 +148,7 @@ section {
     color: var(--salmao);
 }
 
-#history-content {
+.history-content {
     background-color: var(--azul-escuro);
     width: 80%;
     min-height: 30rem;
@@ -162,17 +157,15 @@ section {
     border: 3px solid var(--azul-escuro);
     border-radius: 20px;
 
-    margin-left: 8%;
     margin-top: 5rem;
-    margin-bottom: 50px;    
+  
 
-    overflow-x: scroll;
     display: inline-flex;
-    overflow-y: hidden;
+
     justify-content: start;
     border-bottom: 2px solid #FCFFF5;
 }
-#history-content a{
+.history-content a{
 
     text-decoration: none;
 }
@@ -198,7 +191,7 @@ section {
     
 }
 
-#history-content .card h2 {
+.history-content .card h2 {
     color: var(--azul-piscina-escuro);
     font-weight: 500;
     font-size: 2rem;
@@ -206,7 +199,7 @@ section {
 }
 
 
-#history-content .card h3 {
+.history-content .card h3 {
     font-weight: 600;
     color: var(--verde-piscina);
     font-size: 2.2rem;
@@ -214,20 +207,22 @@ section {
 }
 
 
-#history-content .card span {
+.history-content .card span {
     font-weight: 600;
     color: var(--verde-piscina);
     text-align: center;
     
 }
 
-.scroll{
+#scroll{
 
-    overflow-y:  scroll;
+    overflow-y:  hidden;
+    
+    overflow-x: scroll;
     
 }
 
-.scroll::-webkit-scrollbar{
+#scroll::-webkit-scrollbar{
 
     width: 18px;
     background: #FCFFF5;
@@ -235,32 +230,19 @@ section {
     
 }
 
-.scroll::-webkit-scrollbar-thumb{
+#scroll::-webkit-scrollbar-thumb{
     background: #4FB99F;
     border-radius: 20px;
     width: 16px;
 }
 
 
-@media (max-width: 1024px){
+form{
 
-    .primary-card,
-    .second-card {
-        width: 40rem;
-    }
-}
-
-@media (max-width: 1440px){
-
-    .primary-card,
-    .second-card {
-        width: 55rem;
-        margin-top: 10rem;
-    }
-    #history-content {
-        
-        margin-top: 8rem;
-    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* MENU */
@@ -589,4 +571,71 @@ body {
 
     background-color: var(--branco);
     color: var(--azul-escuro);
+}
+
+@media (max-width: 768px){
+
+    .primary-card{
+
+        width: 80%;
+        height: 350px;
+    }
+    .input-content{
+
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-content > input{
+
+        width: 90%;
+    }
+    .title-container{
+
+        height: 5rem;
+        width: 80%;
+        font-size: 2rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .history-content{
+
+        display: block;
+        
+        height: 50rem;
+    }
+    .history-content .card{
+
+        width: 80%;
+     
+        margin-left: 10%;
+    }
+    #scroll{
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .history-card{
+
+        flex-direction: column;
+    }
+    .start-btn{
+
+        margin-top: 210px;
+        margin-left: 12px;
+    }
+    .modal-box{
+
+        width: 90%;
+        z-index: 100;
+    }
+    .input-form{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }

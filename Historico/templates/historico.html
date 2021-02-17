@@ -32,14 +32,12 @@
 
                         <div class="input-content">
                             <div class="first-file">
-                                <!-- <label for='selecao-arquivo-receita'>Adicionar Receita</label> -->
+                                <label for='selecao-arquivo-receita'>Receita:</label>
                                 <input id='selecao-arquivo-receita' type='file' name="receita">
-                                <!-- <p id="file-name"></p> -->
                             </div>
                             <div class="second-file">
-                                <!-- <label for='selecao-arquivo-atestado'>Adicionar Atestado</label> -->
+                                <label for='selecao-arquivo-atestado'>Atestado:</label>
                                 <input id='selecao-arquivo-atestado' type='file' name="atestado">
-                                <!-- <p id="file-name2"></p> -->
                             </div>
                         </div>
                         <button type="submit"> Cadastrar</button>
@@ -50,7 +48,7 @@
             <div id="history-content" class="scroll">
                 {% for dado in dados_historico %}
                 <a href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">
-                    <div class="card">
+                    <div id="card" class="scroll-card">
                         <div class="start-btn">
                             <a type="" id="mais-informacao"
                                 href="{% url 'historico_consultas_detail' dado.id_historico_consultas %}">+</a>
@@ -59,7 +57,7 @@
                         <h2>{{ dado.lugar }}</h2>
                         <h3>Data</h3>
                         <h2>{{ dado.data }}</h2>
-                        <h3>Receitas</h3>
+                        <h3>Receitas</h3> 
                         <span>{{ dado.receita }}</span>
                         <h3>Atestados</h3>
                         <span>{{ dado.atestado }}</span>
@@ -87,11 +85,16 @@
                                 action="{% url 'doenca_cronica_create' %}" {% endif %} method="POST">
                                 {% csrf_token %}
                                 <div class="question-content">
-                                    <input type="radio" value="True" name="doenca_cronica" id="option-yes" {% if doenca_cronica.doenca_cronica %} checked {% endif %}>
-                                    <label for="option-yes">Sim</label>
+                                    
 
-                                    <input type="radio" value="False" name="doenca_cronica" id="option-no" {% if not doenca_cronica.doenca_cronica %} checked {% endif %}>
-                                    <label for="option-no">Não</label>
+                                    <div class="question-box">
+                                        <input type="radio" value="True" name="doenca_cronica" id="option-yes" {% if doenca_cronica.doenca_cronica %} checked {% endif %}>
+                                        <label for="option-yes">Sim</label>
+
+                                        <input type="radio" value="False" name="doenca_cronica" id="option-no" {% if not doenca_cronica.doenca_cronica %} checked {% endif %}>
+                                        <label for="option-no">Não</label>
+
+                                    </div>
 
                                     <div class="botao">
                                         <button type="submit">Enviar</button>
@@ -149,7 +152,7 @@
                                     <p class="titulo-doenca active">{{ dado.doenca_hereditarias }}</p>
                                     <p class="grau-doenca active">
                                         {% if dado.grau_parentesco == 'primeiro_grau' %}
-                                            Segundo Grau
+                                            Primeiro Grau
                                         {% endif %}
 
                                         {% if dado.grau_parentesco == 'segundo_grau' %}

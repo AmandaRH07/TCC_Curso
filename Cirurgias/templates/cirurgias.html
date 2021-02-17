@@ -33,9 +33,9 @@
             </section>
         </form>
 
-        <div id="history-content" class="scroll">
+        <div class="history-content" id="scroll">
             {% for dado in dados_cirurgias %}
-            <div class="card">
+            <div class="card" id="scroll-card">
                     <div class="start-btn">
                         <a type="" id="mais-informacao" href="{% url 'cirurgia_detail' dado.id_cirugias %}">+</a>
                     </div>
@@ -64,10 +64,10 @@
             <a style="text-decoration: none; color: #FCFFF5;" href="{% url 'cirurgias' %}">X</a>
             </button>
     </div>
-    <div class="form-edit">
+    
         <form action="{% url 'cirurgia_detail' cirurgia_detail.id_cirugias %}" method="POST">
             {% csrf_token %}
-            <div class="primary-card">
+            <div class="primary-card-popup">
                 <input type="text" name="cirurgia" id="" placeholder="Nome da cirurgia:"
                     value="{{ cirurgia_detail.cirurgia }}" required>
 
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </form>
-    </div>
+
 </div>
 {% endif %}
 
