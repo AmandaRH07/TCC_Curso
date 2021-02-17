@@ -271,15 +271,10 @@ html {
     font-size: 62.5%;
 }
 
-/* html,
-body {
-    height: 100%;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-} */
+/* ________menu________ */
 
 .navbar {
-    margin: 4.5% 0;
+    margin: 10rem 0;
     width: 50px;
     height: 75%;
     position: fixed;
@@ -296,7 +291,6 @@ body {
     height: 100%;
     list-style: none;
 }
-
 
 .nav-link {
     display: flex;
@@ -325,7 +319,7 @@ body {
 }
 
 .navbar:hover {
-    width: 18%;
+    width: 25rem;
 }
 
 .navbar:hover .link-text {

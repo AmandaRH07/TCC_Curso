@@ -325,7 +325,7 @@ section{
 /* MENU */
 
 .navbar {
-    margin: 4.5% 0;
+    margin: 10rem 0;
     width: 50px;
     height: 75%;
     position: fixed;
@@ -342,7 +342,6 @@ section{
     height: 100%;
     list-style: none;
 }
-
 
 .nav-link {
     display: flex;
@@ -371,7 +370,7 @@ section{
 }
 
 .navbar:hover {
-    width: 18%;
+    width: 25rem;
 }
 
 .navbar:hover .link-text {
@@ -385,6 +384,12 @@ section{
     border-radius: 0 20px 20px 0;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
+}
+
+#historico img,
+#cirurgia img {
+    width: 40px;
+    height: 40px;
 }
 
 /* FIM MENU */

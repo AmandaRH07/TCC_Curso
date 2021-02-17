@@ -12,7 +12,7 @@ html {
     font-size: 62.5%;
 }
 
-html,
+html, 
 body {
   height: 100%;
   width: 100%;
@@ -386,7 +386,7 @@ form{
 /* MENU */
 
 .navbar {
-    margin: 4.5% 0;
+    margin: 10rem 0;
     width: 50px;
     height: 75%;
     position: fixed;
@@ -403,7 +403,6 @@ form{
     height: 100%;
     list-style: none;
 }
-
 
 .nav-link {
     display: flex;
@@ -432,7 +431,7 @@ form{
 }
 
 .navbar:hover {
-    width: 18%;
+    width: 25rem;
 }
 
 .navbar:hover .link-text {
