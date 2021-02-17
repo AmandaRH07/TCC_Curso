@@ -181,6 +181,7 @@ textarea:focus{
     background-color: var(--salmao);
     border-radius: 10px;
     outline: none;
+    padding: 5px;
 }
 
 .adict-sintoma input{

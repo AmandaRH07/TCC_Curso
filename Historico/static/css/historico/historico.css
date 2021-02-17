@@ -321,7 +321,7 @@ label:hover{
 }
 
 .third-card .subtitle-container-2{
-    color: var(--azul-escuro);
+    color: var(--azul-escuro); 
     font-family: Poppins-Medium;
     font-size: 2rem;
 
@@ -550,10 +550,8 @@ h1{
 .center-history-family{
     
     margin-top: 5%!important;
-    margin: 10%;
     display: flex;
-    flex-direction: row;
-    height: 630px;
+    justify-content: center;
    
 }
 
@@ -563,10 +561,9 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 450px;
+    width: 80%;
     height: 280px;
     background: #ED553B;
-    margin-top: 10px;
     border-radius: 15px;
     
 }
@@ -583,7 +580,7 @@ form{
 .left{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     align-items: center;
 }
 
@@ -679,36 +676,33 @@ select{
 /* IDs */
 
 #doencas-card{
-
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    min-width: 300px;
     height: 130px;
     background-color: #FCFFF5 ;
     border-radius: 15px;
     margin-top: 40px;
-    margin-left: 55px;
 
- 
 }
 
 #container-doecas{
-
-    width: 480px;
-    height: 600px;
-    background-color: #112F41;
-    margin-top: 10px;
-    border-radius: 15px;
-    border-bottom: 2px solid #112F41;
-    border-top: 2px solid #112F41;
-    display: block
+    background-color: #4FB99F;
+    height: 560px;
+    width: 70%;
+    border-radius: 20px;
+    border-right: 2px solid white;
+    border-top: 2px solid #4FB99F;
+    border-bottom: 2px solid #4FB99F;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
-
-
 
 #edit_information{
 
@@ -792,27 +786,17 @@ select{
     background: var(--branco);
 }
 
-.start-btn{
-    
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: -12px;
-    position: absolute;
-    margin-right: 9px;
-}
 
 .start-btn-family{
-    
     display: flex;
     justify-content: flex-end;
     width: 300px;
-    margin-top: -35px;
+    right: 1;
+    top: 0;
     position: absolute;
-    margin-left: 8px;
+    margin-top: -5px;
 }
-
-
+  
 
 .close-modal , .close-modal-family{
 
@@ -823,11 +807,11 @@ select{
     justify-content: flex-end;
     
 }
+
 .close-modal > button , .close-modal-family > button{
 
     border: none;
 }
-
 
 
 .center , .center-family{
@@ -997,8 +981,7 @@ select{
 }
 
 .div-buttons-family a {
-
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     background-color: var(--azul-escuro);
@@ -1047,4 +1030,11 @@ select{
 
         width: 280px;
     }
+
+    .register{
+        width:30rem;
+        
+    }
+    
+    
 }
