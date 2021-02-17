@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ usuario.nome }}</title>
+    <link rel="stylesheet" href="../static/css/informacoes.css">
+
+</head>
+<body>
+    <main>
+        <div id="qrcode">
+            <img src="/media/{{ usuario.qrcode }}" width="400px" alt="">
+        </div>
+    </main>
+</body>
+</html>

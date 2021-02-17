@@ -4,6 +4,7 @@ $(document).ready(function(){
         
             $('.modal-box').toggleClass("show-modal");
             // $('.start-btn').toggleClass("show-modal");
+            console.log("teste")
             if($(".modal-box").hasClass("show-modal")){
                 $("body").css({"overflow":"hidden"});
                 $('main').animate({"opacity": "0.5"}, "slow");
