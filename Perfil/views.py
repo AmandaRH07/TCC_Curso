@@ -96,15 +96,15 @@ def pdf_view(request, hash_user):
         'vacinas': vacinas,
     }
 
-    # pdf = render_to_pdf('informacoespdf.html', data)
+    pdf = render_to_pdf('informacoes.html', data)
 
-    return render('informacoespdf.html', content_type='application/pdf')
+    return HttpResponse(pdf, content_type='application/pdf')
 
 
 # #Automaticly downloads to PDF file
 def pdf_download(request):
 	pdf = render_to_pdf('app/informacoes.html')
-	response = HttpResponse(pdf, content_type='application/pdf')
+	response = HttpResponse(pdf, content_type='application/pdf').__str__
 	filename = "Invoice_%s.pdf" %("12341231")
 	content = "attachment; filename='%s'" %(filename)
 	response['Content-Disposition'] = content
