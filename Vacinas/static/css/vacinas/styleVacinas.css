@@ -114,7 +114,7 @@ h2{
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 800px;
+    height: 100%;
 }
 
 
@@ -182,6 +182,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 .cadastro{
     display: flex;
@@ -621,7 +622,7 @@ section{
 
 
 
-@media (max-width: 540px){
+@media (max-width: 700px){
 
     .center-vaccines{
 
@@ -692,11 +693,36 @@ section{
 
         font-size: 2rem;
     }
+    .modal-box{
+
+        width: 90%;
+        height: 600px;
+        z-index: 100;
+    }
+    .input-form{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .input-edit{
+
+        padding: 1rem;
+    }
+    .input-date{
+
+        padding: 1rem;
+    }
+    .div-buttons{
+
+        margin-top: 10px;
+    }
 }
 
 
 
-@media (max-width: 890px) {
+@media (max-width: 800px) {
 
     .center-vaccines{
 
@@ -774,5 +800,31 @@ section{
 
         font-size: 2rem;
     }
+    .modal-box{
+
+        width: 90%;
+        height: 600px;
+        z-index: 100;
+    }
+    .input-form{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .input-edit{
+
+        padding: 1rem;
+    }
+    .input-date{
+
+        padding: 1rem;
+    }
+    .div-buttons{
+
+        margin-top: 10px;
+    }
+    
 }
 

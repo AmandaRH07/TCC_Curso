@@ -85,6 +85,19 @@ section {
 
     border-radius: 20px;
 }
+.primary-card-popup {
+    width: 70%;
+    background-color: var(--verde-piscina);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+    padding: 2rem;
+
+    border-radius: 20px;
+}
+
 
 .primary-card > input,
 .input-content > input {
@@ -98,6 +111,21 @@ section {
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+.primary-card-popup > input,
+.input-content > input {
+    width: 90%;
+    padding: 1.5rem;
+    margin: .5rem 0;
+    border-radius: 20px;
+    border: none;
+    color: var(--verde-piscina);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
 
 ::placeholder {
     color: var(--verde-piscina);
@@ -142,6 +170,26 @@ section {
     color: var(--salmao);
 }
 
+.primary-card-popup button {
+    width: 17rem;
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+
+
+    background-color: var(--salmao);
+
+    border-radius: 20px;
+    border: 2px solid var(--salmao);
+}
+
+.primary-card-popup button:hover {
+    cursor: pointer;
+    border: 2px solid var(--salmao);
+    background-color: var(--branco);
+    color: var(--salmao);
+}
 
 #scroll{
 
@@ -450,18 +498,15 @@ section {
 
 .div-buttons a{
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--azul-escuro);
     height: 50px;
     width: 180px;
     font-size: 20px;
-    text-decoration: none;
-    margin-left: 10px;
     border-radius: 20px;
     color: var(--branco);
     border: 2px solid var(--azul-escuro);
+    text-decoration: none;
+
 }
 
 .div-buttons a:hover{
@@ -477,6 +522,7 @@ section {
     .primary-card{
 
         width: 90%;
+        margin-top: 50px;
     }
     .input-content{
 
@@ -513,6 +559,26 @@ section {
         overflow-y: scroll;
         overflow-x: hidden;
     }
+    .modal-box{
 
+        width: 90%;
+        z-index: 100;
+    }
+    .primary-card-popup{
+
+        width: 80%;
+    }
+    .primary-card-popup > input{
+
+        width: 90%;
+    }
+    .input-content{
+
+        width: 100%;
+    }
+    .input-content > input{
+
+        width: 95%;
+    }
 
 }

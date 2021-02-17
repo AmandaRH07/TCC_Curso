@@ -20,6 +20,7 @@
         <div>
             <h1>CADASTRE-SE!</h1>
         </div>
+        <br>
         <form action="{% url 'index_cadastro' %}" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return FormValidator(this);" >
             {% csrf_token %}
             <div class="register-information">
