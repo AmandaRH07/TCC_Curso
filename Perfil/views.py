@@ -96,9 +96,9 @@ def pdf_view(request, hash_user):
         'vacinas': vacinas,
     }
 
-    # pdf = render_to_pdf('informacoespdf.html', data)
+    pdf = render_to_pdf('informacoes.html', data)
 
-    return render('informacoespdf.html', content_type='application/pdf')
+    return render(pdf, content_type='application/pdf')
 
 
 # #Automaticly downloads to PDF file
