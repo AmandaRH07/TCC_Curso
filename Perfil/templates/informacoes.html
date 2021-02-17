@@ -8,8 +8,7 @@
     <title>{{ usuario.nome }}</title>
     <link rel="stylesheet" href="../static/css/informacoes.css">
     
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
 
 </head>
 <body>
@@ -199,7 +198,7 @@
     <div class="cirurgia">
         <h1>CIRURGIAS</h1>
         {% if cirurgias %}
-        {% for dado in cirurgias|slice:'0:5' %}
+        {% for dado in cirurgias|slice:'0:4' %}
             <p>Cirurgia: {{ dado.cirurgia }}</p>
             {% if dado.hospital  %}
                 <p>Local: {{ dado.hospital }}</p>
@@ -215,6 +214,24 @@
         {% endif %}
     </div>
 
+    <div class="cirurgia">
+        <h1>AVALIAÇÃO DIÁRIA</h1>
+        {% if avaliacao_diaria %}
+            {% for dado in avaliacao_diaria|slice:'0:4' %}               
+                <p>Dia: {{ dado.data|date:'d/m/Y' }}</p>
+                <p>Sintomas: {{ dado.sintomas }}</p>
+                {% if dado.observacoes %}
+                    <p>Observações: {{ dado.observacoes }}</p>
+                {% endif %}
+                {% if dado.outro %}
+                    <p>Outros sintomas: {{ dado.outro }}</p>
+                {% endif %}
+                <br>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
     <br>
     <br>
 
@@ -224,29 +241,18 @@
             <a class="btn" onclick="gerarPDF()" target="_blank"> 
                 <img src="../static/img/icone_pdf.png">
             </a> 
-            <div >
-                <div class="start-btn">
-                    <a class="btn" type="" id="mais-informacao" href="{% url 'qrcode' %}">
-                        <img src="../static/img/icone_qrcode.png">
-                    </a> 
-                </div>
-            </div>
+
+            <!-- <div class="start-btn"> -->
+                <a class="btn" type="" id="mais-informacao" href="{% url 'qrcode' %}" target="_blank">
+                    <img src="../static/img/icone_qrcode.png">
+                </a> 
+            <!-- </div> -->
         </div>
     </div>
     </main>
 
 
-    <div class="center modal-box">
-        <div class="close-modal">
-            <button class=" fa-times">X</button>
-        </div> 
-
-        <div id="qrcode">
-            <img src="/media/{{ usuario.qrcode }}" width="400px" alt="">
-        </div>
-    </div>
-  
     <script src="{% static 'js/printPDF.js' %}"></script>
-    <script src="{% static 'js/popupPerfil.js' %}"></script>
+    
 </body>
 </html>
