@@ -124,7 +124,8 @@ def qrcode (request):
         border=5
     )
 
-    data = f'http://medfile2.herokuapp.com/pdf_view/{usuario.hash_user}/'
+
+    data = f'http://medfile.herokuapp.com/pdf_view/{usuario.hash_user}/'
 
     qr.add_data(data)
     qr.make(fit=True)

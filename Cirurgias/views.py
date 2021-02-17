@@ -12,6 +12,7 @@ from CadastroDePessoa.models import Usuario
 def cirurgia(request):
     usuario = get_object_or_404(Usuario, id_fk_cadastro_user=request.user)
     dados_cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario.id_usuario)
+    print("teste")
 
     if str(request.method) == 'POST':
         form = CirurgiasForm(request.POST)
