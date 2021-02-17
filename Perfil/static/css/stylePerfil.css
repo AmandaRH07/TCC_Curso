@@ -15,6 +15,10 @@ html{
 
 /* Classes */
 
+header{
+    width: 100%;
+}
+
 .container_perfil{
 
     display: flex;
@@ -32,7 +36,7 @@ html{
     height: 100px;
     border-radius: 100%;
     
-}
+} 
 
 .foto_perfil {
     width: 110px;
@@ -72,42 +76,27 @@ p{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    margin-top: 8%;
+    margin-top: 100px;
 }
 
 .register{
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 40%;
 
 }
 
 .register-container{
     display: flex; 
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-
-
+    margin-top: 20px;
 }
-
-/* form{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: row;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    
-
-} */
 
 ::placeholder{
 
@@ -118,13 +107,14 @@ p{
 textarea:focus, input:focus, select:focus, button:focus{
     outline: 0;
 }
+
 .button{
 
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
     font-size: 20px;
     border-radius: 20px;
     border: 2px solid #112F41;
@@ -132,6 +122,7 @@ textarea:focus, input:focus, select:focus, button:focus{
     color: #FCFFF5;
     background-color: #112F41 ;
     text-decoration: none;
+    text-align: center;
 
 }
 .button:hover{
@@ -153,7 +144,8 @@ select{
     -moz-appearance: none ;
     background-image: url(../img/icone.png);
     background-repeat: no-repeat;
-    background-position:  360px;
+    background-position-x: right;
+    background-position-y: center;
     background-size: 20px;
     
 }
@@ -193,40 +185,23 @@ img{
 /* IDs */
 
 #buttons{
-
-    height: 80px;
-    width: 100%;
+    height: 40px;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-
-
-#information{
-
-    height: 50px;
-    width: 300px;
-    border-radius: 15px; 
-    border: 1px solid #112F41;
-    padding: 2%;
-    margin: 4%; 
-    color: #112F41;
-
-
+    margin: 4%
 }
 
 #edit_information{
 
-    height: 50px;
-    width: 400px;
+    height: 40px;
+    width: 90%;
     border-radius: 15px; 
     border: 1px solid #112F41;
     padding: 2%;
     margin: 4%; 
-
-
 }
 
 #button-container{
@@ -256,19 +231,46 @@ img{
     color: #068587;
 }
 
-
-@media (max-width: 1024px){
-
-    form{
-
-        height: 70%;
+@media screen and (max-width: 1000px){
+    .button{
+        font-size: 15px;
     }
 }
 
-@media (min-width: 1440px){
+@media screen and (max-width:700px){
 
-    form{
+    .register-container{
+        flex-direction: column;
+        align-items: center;
+    }
 
-        height: 70%;
+    .register{
+        width: 70%;
+    
+    }
+
+    #edit_information{
+        width: 100%;
+
+    }
+
+    .button{
+        font-size: 12px;
+    }
+
+    .roof{
+        height: 85px;
+    }
+
+    .container_perfil{
+        top: 60px;
+    }
+
+}
+
+@media screen and (min-height: 700px){
+    .register-container{
+        margin-top: 10%;
     }
 }
+
