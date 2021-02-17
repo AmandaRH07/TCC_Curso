@@ -504,9 +504,11 @@ input:-webkit-autofill {
 
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     height: 100px;
+    width: 100%;
     margin-top: 8%;
     
 }
@@ -519,8 +521,8 @@ input:-webkit-autofill {
     background-color: #4FB99F;
     height: 80px;
     width: 50%;
-    align-self: flex-end;
-    border-radius: 20px  0px 0px 20px;
+    
+    border-radius: 20px  ;
     
 }
 
@@ -688,6 +690,7 @@ select{
     background-color: #FCFFF5 ;
     border-radius: 15px;
     margin-top: 40px;
+    margin-left: 55px;
 
  
 }
@@ -701,10 +704,7 @@ select{
     border-radius: 15px;
     border-bottom: 2px solid #112F41;
     border-top: 2px solid #112F41;
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: center;
+    display: block
 
 }
 
@@ -763,6 +763,7 @@ select{
 
 #mais-informacao{
 
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1021,4 +1022,29 @@ select{
 
     background-color: var(--branco);
     color: var(--azul-escuro);
+}
+
+@media (max-width: 900px){
+
+    .center-history-family{
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+
+        width: 50%;
+    }
+    .register{
+
+        width: 300px;
+    }
+    #edit_information{
+
+        width: 280px;
+    }
+    select{
+
+        width: 280px;
+    }
 }

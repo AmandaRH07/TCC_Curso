@@ -33,13 +33,14 @@ body {
     --branco: #FCFFF5;
 }
 
-.scroll{
+#scroll{
 
     overflow-x:  scroll;
+    overflow-y: hidden;
     
 }
 
-.scroll::-webkit-scrollbar{
+#scroll::-webkit-scrollbar{
 
     width: 18px;
     background: #FCFFF5;
@@ -47,7 +48,7 @@ body {
     
 }
 
-.scroll::-webkit-scrollbar-thumb{
+#scroll::-webkit-scrollbar-thumb{
     background: #4FB99F;
     border-radius: 20px;
     width: 16px;
@@ -89,7 +90,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100rem;
+    width: 70%;
     height: 8rem;
     border-radius: 20px;
     min-height: 29rem;
@@ -240,6 +241,13 @@ section {
     width: 48%;
 }
 
+form{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .primary-card button {
 
 
@@ -304,23 +312,64 @@ section {
 }
 
 
-#history-content {
+.history-content {
 
     background-color: var(--azul-escuro);
     width: 80%;
-    height: 40rem;
+    min-height: 30rem;
     border-radius: 20px;
     margin-top: 5rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    overflow-x: scroll;
 
  
   
 }
 
+
+
+
+.history-content .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--branco);
+    height: 280px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-left: 30px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.history-content .card h2 {
+    color: var(--azul-piscina-escuro);
+    font-weight: 500;
+    font-size: 2.3rem;
+    padding-top: 2rem;
+}
+
+
+.history-content .card h3 {
+    margin-top: .8rem;
+    font-weight: 600;
+    color: var(--verde-piscina);
+}
+
+
+.history-content .card span {
+    font-weight: 600;
+    color: var(--verde-piscina);
+    
+}
+
 .history-card{
 
+    position: relative;
     background-color: var(--azul-escuro);
     width: 100%;
     height: 35rem;
@@ -332,42 +381,6 @@ section {
     
 
 }
-
-
-#history-content .card {
-    background-color: var(--branco);
-    
-    height: 90%;
-    width: 200px;
-    border-radius: 10px;
-
-    margin-left: 18px;
-    text-align: center;
-    min-width: 200px;
-    position: relative;
-}
-
-#history-content .card h2 {
-    color: var(--azul-piscina-escuro);
-    font-weight: 500;
-    font-size: 2.3rem;
-    padding-top: 2rem;
-}
-
-
-#history-content .card h3 {
-    margin-top: .8rem;
-    font-weight: 600;
-    color: var(--verde-piscina);
-}
-
-
-#history-content .card span {
-    font-weight: 600;
-    color: var(--verde-piscina);
-    
-}
-
 
 
 /* MENU */
@@ -449,12 +462,10 @@ section {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 232px;
     position: absolute;
     margin-left: 8px;
 }
-
-
 
 .close-modal{
 
@@ -527,5 +538,70 @@ section {
 
 /* fim popup */
 
+@media (max-width: 700px){
 
+    .primary-card{
+
+        width: 80%;
+        height: 350px;
+    }
+    .input-content{
+
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-content > input{
+
+        width: 90%;
+    }
+    .title-container{
+
+        height: 5rem;
+        width: 20rem;
+        font-size: 3rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .history-content{
+
+        display: block;
+        
+        height: 50rem;
+    }
+    .history-content .card{
+
+        width: 80%;
+     
+        margin-left: 10%;
+    }
+    #scroll{
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .history-card{
+
+        flex-direction: column;
+    }
+    .start-btn{
+
+        margin-top: 230px;
+        margin-left: 12px;
+    }
+    .modal-box{
+
+        width: 90%;
+        z-index: 100;
+    }
+    .input-form{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
 
