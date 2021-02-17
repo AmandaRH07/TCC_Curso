@@ -43,6 +43,7 @@ def perfil(request):
 def informacoes(request):
     usuario = Usuario.objects.get(id_fk_cadastro_user=request.user).__dict__
     cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario['id_usuario'])
+    avaliacao_diaria = AvaliacaoDiaria.objects.filter(fk_usuario_avaliacao_diaria=usuario['id_usuario'])
     doencas_existentes = DoencasExistentes.objects.filter(fk_usuario_doencas_existentes=usuario['id_usuario'])
     historico_consultas = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario['id_usuario'])
     historico_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario['id_usuario'])
@@ -53,6 +54,7 @@ def informacoes(request):
     data = {
         'usuario': usuario,
         'cirurgias': cirurgias,
+        'avaliacao_diaria': avaliacao_diaria,
         'doencas_existentes': doencas_existentes,
         'historico_consultas': historico_consultas,
         'historico_familiar': historico_familiar,
@@ -131,4 +133,4 @@ def qrcode (request):
     usuario.qrcode = f'qrcode/{request.user.username}{usuario.id_usuario}.png'
     usuario.save()
  
-    return redirect('informacoes')
+    return render(request, 'qrcode.html', {'usuario':usuario})
