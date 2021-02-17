@@ -69,22 +69,20 @@ body {
     justify-content: center;
     background-color: var(--azul-escuro);
 
-   width: 50%;
+   width: 60%;
    height: 9rem;
    border-radius: 0 0 20px 20px;
 
    font-weight: 600;
    font-size: 4rem;
    color: var(--branco);
+   margin: 0 auto;
 }
 
 .subtitle-container{
-    left: 15%;
 
     padding: 0 20px 2px;
-    margin-bottom: 18px;
-    margin-left: 50px;
-    position: absolute;
+    /* margin-bottom: 18px; */
     color: var(--azul-escuro);
     font-family: Poppins-Medium;
     font-size: 2rem;
@@ -97,11 +95,10 @@ section {
     margin-top: 5%;
     width: 83%;
     height: 80%;
-    margin-left: 15%;
-    margin-right: 7% ;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;  
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
 }
 
 .primary-card {
@@ -122,7 +119,7 @@ section {
 }
 
 
-.primary-card input 
+.primary-card input, label
 {
     width: 90%;
     padding: 1.5rem;
@@ -136,6 +133,13 @@ section {
     background-color: var(--branco);
     height: 53px;
     
+}
+
+.input-content label{
+    text-align: center;
+    width: 20%;
+    margin-right: 5px;
+    color: var(--azul-escuro);
 }
 
  
@@ -165,21 +169,21 @@ section {
     text-overflow: ellipsis;
 } */
 
-.input-content p{
+/* .input-content p{
     width: 60%;
     max-width: 60%;
     height: 53px;
     max-height: 53px;
-}
+} */
 
-.input-content label{
+/* .input-content label{
     cursor: pointer;
     color: var(--azul-escuro);
 }
 
 label:hover{
     background-color: #91fdfab6;
-}
+} */
 
 ::placeholder {
     color: var(--verde-piscina);
@@ -234,7 +238,6 @@ label:hover{
     border: 3px solid var(--azul-escuro);
     border-radius: 20px;
 
-    margin-left: 8%;
     margin-top: 5rem;
     margin-bottom: 50px;    
 
@@ -245,17 +248,16 @@ label:hover{
     border-bottom: 2px solid #FCFFF5;
 }
 
+
 #history-content a{
     text-decoration: none;
 }
- 
 
-.card {
+#card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: var(--branco);
     
     height: 250px;
@@ -265,33 +267,50 @@ label:hover{
     margin: 10px;
     
     min-width: 200px;
-    overflow: hidden;
+    overflow-x: hidden;
+    text-align: center;
     
 }
 
-#history-content .card h2 {
+#card h2 {
     color: var(--azul-piscina-escuro);
     font-weight: 500;
     font-size: 2rem;
-    text-align: center;
 }
 
 
-#history-content .card h3 {
+#card h3 {
     font-weight: 600;
     color: var(--verde-piscina);
     font-size: 2.2rem;
 }
 
 
-#history-content .card span {
+#card span {
     font-weight: 600;
     color: var(--verde-piscina);
     
 }
 
 .third-card{
-    width: 70%;
+    width: 80%;
+}
+
+.scroll-card{
+    overflow-y:  scroll;
+}
+
+.scroll-card::-webkit-scrollbar{
+    width: 15px;
+    background: #FCFFF5;
+    border-radius: 20px;
+    
+}
+
+.scroll-card::-webkit-scrollbar-thumb{
+    background: var(--salmao);
+    border-radius: 20px;
+    width: 12px;
 }
 
 .box-total{
@@ -313,7 +332,7 @@ label:hover{
 .subtitle-container-2 h2{
     border-bottom: 2px solid var(--salmao);
     padding:0 25px;
-    width: 40%;
+    width: 50%;
 }
 
 .third-card-box1{
@@ -321,12 +340,12 @@ label:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
 
 .third-card .first-background{
     background-color: var(--azul-escuro);
     border-radius: 20px;
+    width: 80%;
     
     z-index: 100;
 }
@@ -373,6 +392,10 @@ label:hover{
     position: absolute;
     bottom: 0;
     margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .botao{
@@ -406,6 +429,71 @@ input:-webkit-autofill {
     -webkit-text-fill-font: Poppins-Regular !important;
 }
 
+
+@media screen and (max-width:850px){
+
+    .primary-card input, label
+    {   
+        width: 90%;
+        padding: 12px;
+        font-size: 1.5rem;
+        height: 45px;
+    }
+
+    .primary-card {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:600px){
+
+    .first-file, .second-file{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .input-content label{
+        text-align: center;
+        width: 40%;
+        margin-right: 5px;
+    }
+
+    #history-content {
+
+        width: 70%;
+
+        height: 450px;
+    
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    #card {
+        min-height: 230px;
+        width: 200px;
+        overflow-x: hidden;
+    }
+
+    .first-background h2{
+        font-size: 1.5rem;
+    }
+    
+    .third-card .first-background{
+        margin-bottom: 30px;
+    }
+
+    .subtitle-container-2 h2{
+        width: 100%;
+    }
+
+}
 
 /* STYLE HISTÓRICO FAMILIAR */
 
@@ -529,7 +617,7 @@ img{
     
     text-align: center;
     font-size: 15px;
-    color: #4FB99F;
+    color: #4FB99F; 
 }
 
 .information-doencas{
@@ -706,11 +794,11 @@ select{
 .start-btn{
     
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
-    margin-top: -220px;
+    margin-top: -12px;
     position: absolute;
-    margin-left: 8px;
+    margin-right: 9px;
 }
 
 .start-btn-family{

@@ -34,7 +34,6 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
 }
@@ -51,7 +50,7 @@ main{
 }
 
 .box2{
-    height: 400px;
+    height: 100%;
 }
 
 form{
@@ -64,9 +63,6 @@ form{
 
 /* Style dos títulos */
 .title .text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     color: var(--azul-escuro);
     background-color: var(--branco);
     margin-top: 20px;
@@ -74,6 +70,18 @@ form{
     height: 100%;
     padding-top: 5px;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box2 .title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 
@@ -101,10 +109,6 @@ form{
     align-items: center;
 }
 
-.box2 .title{
-    width: 100%;
-}
-
 .box2-content{
     display: flex;
     flex-direction: row;
@@ -125,6 +129,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .doador input{
@@ -270,15 +275,15 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 }
 
-@media screen and (min-width: 750px){
+@media screen and (max-width: 750px){
 
     .box2-content{
         flex-direction: column;
-        justify-content: center;
+        height: 50%;
     }
 
     .box2{
-        height: 100%;
+        height: 570px;
     }
 
     .image{
@@ -286,5 +291,32 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
         height: 110px;
     }
 
+    .image img{
+        width: 100px;
+        height: 110px;
+    }
+
+    .box2 .options{
+        height: 90%;
+    }
+
+    input[type="radio"] + label span { 
+
+        width: 35px; 
+        height: 35px; 
+        
+    }
+
+    .doador label{
+        width: 80%;
+    }
+
 }
 
+@media screen and (min-height: 990px){
+    main{
+        height: 100%;
+        width: 100%;
+    }
+
+}

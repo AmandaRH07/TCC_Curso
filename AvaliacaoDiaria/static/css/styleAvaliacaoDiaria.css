@@ -20,7 +20,7 @@ body{
 }
 
 main{
-    display: flex; 
+    display: flex;
 }
 
 
@@ -29,12 +29,13 @@ main{
 
 .title{
     background-color: #ED553B;
-    height: 75px;
+    /* height: 75px; */
+    padding: 2%;
     width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
     border-radius: 0 0 20px 20px;
     align-items: center;
+    display: flex;
+    margin: 0 auto;
 }
 
 .title-text{
@@ -43,7 +44,7 @@ main{
     font-family: "Poppins", sans-serif;
 
     text-align: center;
-    padding: 7px;
+    font-weight: 500;
 }
 
 .content{
@@ -61,6 +62,7 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .box1{
     display: flex;
     justify-items: center;
@@ -73,7 +75,7 @@ main{
     position: relative;
 }
 
-.checkbox-round, .buttons button {
+.checkbox-round, .buttons button{
     width: 50px;
     height: 50px;
     background-color: var(--branco);
@@ -118,7 +120,6 @@ main{
     height: 250px;
     width: 20%;
     margin: 15px;
-    margin-top: 25px;
     float: right;
     border-radius: 10px;
 }
@@ -132,7 +133,7 @@ main{
 
 #text-observacao{
     width: 100%;
-    height: 222px;
+    height: 80%;
     border: 1px solid var(--branco);
     border-radius: 0 0 10px 10px;
     resize: none;
@@ -177,9 +178,7 @@ textarea:focus{
     position: absolute;
     right: 0;
     top: 45%;
-    padding: 15px;
     background-color: var(--salmao);
-    border: 2px solid var(--salmao);
     border-radius: 10px;
     outline: none;
 }
@@ -193,7 +192,7 @@ textarea:focus{
     outline: none;
 }
 
-
+ 
 input::placeholder{
     color: var(--azul-escuro);
 }
@@ -249,45 +248,6 @@ input:-webkit-autofill {
     justify-content: center;
     position: relative;
 }
-/* 
-.box2-first-subtitle{
-    height: 50px;
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    top: 30px;
-    align-items: center;
-}
-
-.box2-second-subtitle{
-    height: 50px;
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    bottom: 1;
-    align-items: center;
-} */
-
-/* .text3{
-    background-color: var(--salmao);
-    color: var(--azul-escuro);
-    border-radius: 10px 0 0 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    text-align: left;
-    font-size: 2rem;
-    width: 20%;
-    padding: 5px 8px;
-
-} */
-
-/* .semana-atual, .semana-passada{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-} */
 
 .week{
     display: flex;
@@ -310,9 +270,6 @@ input:-webkit-autofill {
     font-size: 2rem;
 }
 
-
-
-
 #history-content {
     background-color: var(--verde-piscina);
     width: 80%;
@@ -322,7 +279,6 @@ input:-webkit-autofill {
     border: 3px solid var(--verde-piscina);
     border-radius: 20px;
 
-    margin-left: 8%;
     margin-top: 5rem;
     margin-bottom: 50px;    
 
@@ -351,13 +307,21 @@ input:-webkit-autofill {
     
     min-width: 200px;
     padding: 5px;
+    text-align: center;
+    overflow-x: hidden;
 }
 
 #card p{
     color: var(--salmao);
     font-weight: 500;
     font-size: 2rem;
+}
+
+.visu-obs{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    width: 90%;
 }
 
 
@@ -372,7 +336,6 @@ input:-webkit-autofill {
     font-weight: 600;
     color: var(--azul-piscina-escuro);
     font-size: 1.5rem;
-    text-align: center;
 }
 
 .scroll{
@@ -410,4 +373,115 @@ input:-webkit-autofill {
 }
 
 
-/* Fim IDs */
+@media screen and (max-width: 1000px){
+
+    .checkbox-round, .buttons button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .labels label{
+        font-size: 1rem;
+    }
+
+    .notes{
+        height: 170px;
+    }
+    
+    .notes label{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+
+    .title-text{
+        font-size: 2.5rem;
+    }
+
+    .title{
+        width: 70%;
+    }
+    
+    .box1{
+        display: flex;
+        justify-items: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .notes{
+        height: 90px;
+        width: 80%;
+    }
+
+    .notes{
+        text-align: center;
+    }
+
+    .checkbox-round, .buttons button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .labels label{
+        font-size: 10px;
+    }
+
+    .box1-content{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #txt-outro-sintoma{
+        left: 0;
+        top: 50%;
+        padding: 5px;
+        width: 50%;
+        height: 40px;
+    }
+
+    .adict-sintoma input{
+        width: 100%;
+    }
+
+    #history-content {
+
+        width: 70%;
+
+        height: 450px;
+    
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    #card {
+        min-height: 230px;
+        width: 200px;
+        overflow-x: hidden;
+    }
+
+    
+    .scroll{
+        overflow-y:  scroll;
+    }
+
+    .scroll::-webkit-scrollbar{
+        width: 15px;
+        background: #FCFFF5;
+        border-radius: 20px;
+        
+    }
+
+    .scroll::-webkit-scrollbar-thumb{
+        background: var(--azul-escuro);
+        border-radius: 20px;
+        width: 16px;
+    }
+
+
+}
