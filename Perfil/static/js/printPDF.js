@@ -4,4 +4,7 @@ function gerarPDF(){
     botoes[1].style.display = 'none'
 
     print()
+    
+    botoes[0].style.display = 'block'
+    botoes[1].style.display = 'block'
 }
