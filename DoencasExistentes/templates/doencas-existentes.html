@@ -83,12 +83,12 @@
         </nav>
     </header>
 
-    <main class="main">
+    <main >
         <div class="container">
             <div class="title-container">
                 <span>Doenças Existentes</span>
             </div>
-
+            <br><br><br>
             <section>
                 <form action="{% url 'doencas-existentes' %}" method="POST"  enctype="multipart/form-data">
                     {% csrf_token %}
@@ -105,7 +105,7 @@
 
             </section>
 
-            <div id="history-content" class="scroll">
+            <div class="history-content" id="scroll">
                 {% for dado in dados_doencas_existentes %}
                         <div class="card">
                             <h3>Nome</h3>
