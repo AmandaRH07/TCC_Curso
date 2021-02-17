@@ -98,7 +98,7 @@ def pdf_view(request, hash_user):
 
     pdf = render_to_pdf('informacoes.html', data)
 
-    return render(request, pdf, content_type='application/pdf')
+    return HttpResponse(pdf, content_type='application/pdf')
 
 
 # #Automaticly downloads to PDF file
