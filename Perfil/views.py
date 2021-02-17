@@ -62,6 +62,7 @@ def informacoes(request):
         'sangue': sangue,
         'vacinas': vacinas,
     }
+    print(avaliacao_diaria)
     
     return render(request, "informacoes.html", data)
 
@@ -80,6 +81,7 @@ def render_to_pdf(template_src, context_dict={}):
 def pdf_view(request, hash_user):
     usuario = Usuario.objects.get(hash_user=hash_user).__dict__
     cirurgias = Cirurgias.objects.filter(fk_usuario_cirurgias=usuario['id_usuario'])
+    avaliacao_diaria = AvaliacaoDiaria.objects.filter(fk_usuario_avaliacao_diaria=usuario['id_usuario'])
     doencas_existentes = DoencasExistentes.objects.filter(fk_usuario_doencas_existentes=usuario['id_usuario'])
     historico_consultas = HistoricoConsultas.objects.filter(fk_usuario_historico_consulta=usuario['id_usuario'])
     historico_familiar = HistoricoFamiliar.objects.filter(fk_usuario_historico_familiar=usuario['id_usuario'])
@@ -90,6 +92,7 @@ def pdf_view(request, hash_user):
     data = {
         'usuario': usuario,
         'cirurgias': cirurgias,
+        'avaliacao_diaria': avaliacao_diaria,
         'doencas_existentes': doencas_existentes,
         'historico_consultas': historico_consultas,
         'historico_familiar': historico_familiar,
