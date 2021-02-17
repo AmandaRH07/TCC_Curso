@@ -156,7 +156,7 @@
                                         {% endif %}
 
                                         {% if dado.grau_parentesco == 'segundo_grau' %}
-                                            Segundo Grau
+                                            Segundo Grau 
                                         {% endif %}
 
                                         {% if dado.grau_parentesco == 'Terceiro_grau' %}
@@ -168,11 +168,12 @@
                                         {% endif %}
                                     </p>
                                     
-                                </div>
+                                
                                 <div class="start-btn-family active">
                                     <a class="active" id="mais-informacao"
                                         href="{% url 'historico_familiar_detail' dado.id_historico_familiar %}">+</a>
                                 </div>
+                            </div>
                             </a>
                             {% endfor %}
                         </div>
