@@ -1,6 +1,7 @@
 # MedFile
 
 Repositório criado para o Trabalho de Conclusão de Curso do programa Entra21. Grupo: Amanda Hass, Eduarda Taschetto, Gabrieli Ramos, Karla Dias e Luana Brito.
+Link: https://medfile.herokuapp.com
 
 ## Tecnologias
 
